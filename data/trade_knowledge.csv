@@ -1,0 +1,398 @@
+Term,Definition,Created By,Used By,Purpose,Common Problems
+Project Charter,"A document that formally authorizes the
+existence of a project.",Project Sponsor,Project Manager,"Provides the PM authority to
+use organizational resources.","No clear authority; project may be
+seen as ""unauthorized."""
+Business Case,"A justification for the project based on cost,
+benefits, and risks.",Sponsor / Business Analyst,Steering Committee,"To prove the project is worth
+the investment.","Money may be wasted on projects
+with no ROI."
+Stakeholder Register,"A list identifying all people or groups interested
+in the project.",Project Manager,Project Team,"To track influence and
+communication needs.","Key people might be ignored,
+leading to resistance."
+Scope Statement,"A detailed description of project deliverables
+and boundaries.",Project Manager,Client / Team,"To define what is (and isn't)
+included in the project.","""Scope creep"" where work grows
+uncontrollably."
+"WBS 
+(Work Breakdown Structure)","A hierarchical decomposition of the total scope
+of work.",Project Team,Project Manager,"To break down complex tasks
+into manageable chunks.","Tasks are missed; poor cost and
+time estimation."
+Project Management Plan,"The master document defining how the project is
+executed and controlled.",Project Manager,All Stakeholders,"To provide a baseline for
+progress and decision-making.","Lack of direction; team works in
+silos."
+Gantt Chart,"A visual timeline showing tasks, durations, and
+dependencies.",Project Manager,Project Team / Client,"To track the schedule and see
+task overlaps.","Deadlines are missed; team
+doesn't know what's next."
+Risk Register,"A log of potential ""what-if"" scenarios and their
+response plans.",Project Team,Project Manager,"To identify and mitigate threats
+before they happen.","Project is blindsided by predictable
+problems."
+RACI Matrix,"A chart showing who is Responsible,
+Accountable, Consulted, and Informed.",Project Manager,Project Team,"To clarify roles and avoid
+confusion over task ownership.","Duplicate work or tasks ""falling
+through the cracks."""
+Change Request,"A formal proposal to modify any document,
+deliverable, or baseline.",Any Stakeholder,"Change Control
+Board (CCB)","To ensure changes are
+evaluated for impact on
+cost/time.","Uncontrolled changes lead to
+budget and time overruns."
+Issue Log,"A record of current problems affecting the
+project.",Project Manager,Project Team,"To document, track, and resolve
+active hurdles.","Problems are forgotten and
+escalate into disasters."
+Status Report,"A regular update on the current health of the
+project.",Project Manager,Sponsor / Client,"To keep stakeholders informed
+on progress vs. plan.","Stakeholders lose trust or lack
+visibility."
+Quality Management Plan,"Standards and criteria the project must meet to
+be successful.",Quality Lead / PM,Project Team,"To ensure the final product is
+fit for use.","High defect rates and client
+dissatisfaction."
+Resource Calendar,"A schedule showing when specific resources
+(people/equip) are available.",Resource Manager,Project Manager,"To avoid over-allocating people
+or tools.","Resource conflicts; team members
+are overworked."
+"Procurement Statement
+of Work","A description of work to be done by an outside
+vendor.",Project Manager,Potential Vendors,"To clearly define what a
+contractor must deliver.","Disputes with vendors over what
+was ""promised."""
+Milestone List,A list of significant points or events in a project.,Project Manager,Client / Sponsor,"To show high-level progress
+without getting lost in details.","Hard to judge if the project is
+""on track"" overall."
+Communication Plan,"A strategy for who gets what info, when,
+and how.",Project Manager,All Stakeholders,"To ensure the right people are
+always informed.","Information silos; stakeholders
+feel left out."
+Critical Path,"The sequence of tasks that determines the
+shortest project duration.",Project Manager,Project Team,"To identify tasks that cannot be
+delayed without delaying
+the project.","Inability to prioritize tasks that
+impact the end date."
+Lesson Learned Register,"A document recording what went well and what
+didn't.",Project Team,Organization (PMO),"To improve performance in
+future projects.","Repeating the same mistakes in
+the next project."
+Project Closure Report,"A formal document confirming the project is
+finished.",Project Manager,Sponsor / Client,"To handover deliverables and
+release resources.","Projects ""drag on"" indefinitely
+without a clean end."
+Product Backlog,"An ordered list of everything that might
+be needed in the product.",Product Owner,Scrum Team,"To serve as the single source of
+requirements for any changes.","Team lacks a clear priority of what
+to build next."
+Sprint Backlog,"A set of backlog items selected for a specific
+Sprint (short work cycle).",Development Team,Scrum Team,"To define the work the team
+commits to doing in the next
+2-4 weeks.","Lack of focus during the work
+cycle; over-commitment."
+Burn-down Chart,"A graphic representation of work left to do
+versus time.",Scrum Master / PM,Project Team,"To track the progress of a sprint
+and predict if work will finish.","Team won't realize they are
+behind until the deadline hits."
+Velocity,"A measure of the amount of work a team
+can tackle during a single period.",Development Team,Product Owner / PM,"To help in planning future
+capacity and timelines.","Unrealistic scheduling and
+""guess-work"" planning."
+"Cost Performance
+Index (CPI)","A measure of the financial effectiveness of a
+project ($EV / AC$).",Project Manager,Sponsor / Stakeholders,"To see if the project is under or
+over budget.","Financial ""bleeding"" goes
+unnoticed until funds run out."
+"Schedule Performance
+Index (SPI)",A measure of schedule efficiency ($EV / PV$).,Project Manager,Sponsor / Stakeholders,"To see if the project is ahead of
+or behind schedule.","Delays are not quantified,
+making recovery difficult."
+Assumption Log,"A record of all factors believed to be true without
+proof.",Project Manager,Project Team,"To track variables that could
+become risks if proven false.","Decisions are made based on
+""guesses"" that may fail."
+Quality Metrics,"Specifically defined attributes to be measured
+(e.g., failure rate).",Quality Lead,Project Team,"To provide an objective way to
+measure ""success.""","Quality is subjective; arguments
+over ""finished"" work."
+"Responsibility Assignment
+Matrix (RAM)","A grid showing project resources assigned to
+each work package.",Project Manager,Functional Managers,"To ensure every task has a
+body assigned to it.","Resources are under-utilized or
+double-booked."
+Variance Analysis,"The practice of comparing planned results with
+actual results.",Project Manager,Project Board,"To identify why the project is
+deviating from the plan.","No understanding of why the
+project is failing or succeeding."
+Kick-off Meeting Agenda,"A document outlining the first formal meeting
+with all stakeholders.",Project Manager,All Stakeholders,"To align everyone on goals and
+set the tone for the project.","Confusion from day one; lack of
+team cohesion."
+"Request for
+Proposal (RFP)","A document that solicits proposals from vendors
+for a solution.",Procurement Dept / PM,Potential Vendors,"To compare different vendors'
+solutions and pricing fairly.","Biased vendor selection or
+overpaying for services."
+"SLA
+(Service Level Agreement)","A contract between a service provider and a
+customer.",Service Provider,Client,"To define the level of service
+(uptime, speed) expected.","No legal recourse if the service
+provider performs poorly."
+"Definition of
+Done (DoD)","A shared understanding of what it means for
+work to be complete.",Project Team,Stakeholders,"To ensure quality and prevent
+""half-baked"" deliverables.","Tasks are marked ""done"" but still
+require bug fixes later."
+"Baseline
+(Schedule/Cost)","The original approved version of the project
+schedule or budget.",Project Manager,Sponsor,"To serve as the ""yardstick"" for
+measuring performance.","No way to know if you are over
+budget or late."
+User Stories,"Informal, natural language descriptions of
+features from the end-user's view.",Product Owner / User,Development Team,"To capture functional
+requirements in a way that
+provides value.","Features are built that the
+customer doesn't actually want."
+Histogram (Resource),"A bar chart showing the amount of time a
+resource is scheduled.",Project Manager,Resource Manager,"To visually identify resource
+overloads or ""burnout.""","Team members are overworked
+while others sit idle."
+"Probability and
+Impact Matrix","A grid mapping the likelihood and severity
+of risks.",Risk Manager / PM,Project Team,"To prioritize which risks need
+immediate attention.","Waste of time focusing on
+""unlikely"" or ""minor"" risks."
+Change Log,"A list of all changes submitted and their current
+status.",Project Manager,Stakeholders,"To keep a history of how the
+project evolved from the original
+plan.","No record of why the budget or
+scope increased."
+"Final Deliverable
+Acceptance","A formal sign-off from the customer on the end
+product.",Client / Customer,Project Manager,"To legally and professionally
+close the project and stop work.","The client keeps asking for ""one
+more thing"" forever."
+SIPOC Diagram,"A tool to document Suppliers, Inputs, Process,
+Outputs, and Customers.",Project Team,Stakeholders,"To provide a high-level view of
+a process before detailing it.","Misunderstanding of where the
+project boundaries start/end."
+"Ishikawa (Fishbone)
+Diagram","A visualization tool to categorize potential causes
+of a problem.",Project Team,Project Manager,"To identify the root cause of an
+issue rather than just symptoms.","Solving the wrong problem; issues
+keep recurring."
+Monte Carlo Simulation,"A computerized mathematical technique to
+account for risk in quantitative analysis.",Data Analyst / PM,Sponsor,"To predict the probability of
+completing a project on a
+specific date.","Unrealistic confidence in a single
+""best-case"" date."
+Work Package,"The lowest level of the Work
+Breakdown Structure (WBS).",Project Manager,Team Lead,"To define specific tasks that
+can be estimated and managed.","Work is too vague to assign or
+estimate accurately."
+Kanban Board,"A visual workflow tool that uses cards to
+represent work items.",Project Team,Project Team,"To manage work-in-progress
+(WIP) and optimize flow.","Work gets ""stuck"" in bottlenecks
+without being noticed."
+"Critical Success
+Factors (CSF)","Key areas that must go right for the project to be
+a success.",Project Sponsor,Project Manager,"To focus the team's energy on
+the most important variables.","Efforts are wasted on ""nice-to-have""
+features that don't matter."
+Contingency Reserve,"Budget or time set aside for ""known-unknowns""
+(identified risks).",Project Manager,Project Team,"To handle risks that were
+predicted in the Risk Register.","Project runs out of money as soon
+as a single risk occurs."
+Management Reserve,"Budget set aside for ""unknown-unknowns""
+(unforeseen events).",Sponsor,Project Manager,"To provide a safety net for
+totally unexpected disasters.","Project is cancelled if a random,
+unpredicted crisis hits."
+Pareto Chart,"A bar graph where values are plotted in
+decreasing order of frequency.",Quality Manager,Project Team,"To follow the 80/20 rule (focus
+on the 20% of causes creating
+80% of problems).","Fixing minor issues while the
+biggest failures are ignored."
+Earned Value (EV),"The value of work actually performed expressed
+in terms of the budget.",Project Manager,Finance Dept,"To measure the ""true"" progress
+of a project vs. money spent.","Thinking you are ""under budget""
+just because you haven't spent
+much."
+Product Roadmap,"A high-level visual summary that maps out the
+vision of a product over time.",Product Manager,Stakeholders,"To communicate the long-term
+strategy and direction.","The team focuses on immediate
+tasks and loses the ""big picture."""
+"S.O.W.
+(Statement of Work)","A narrative description of products, services, or
+results to be delivered.",Client,Project Manager,"To define the technical and
+performance requirements
+of a contract.","Legal disputes over what was
+supposed to be built."
+Velocity Trend,A tracking of velocity over multiple sprints.,Scrum Master,Product Owner,"To see if the team is becoming
+more or less efficient over time.","Inability to forecast long-term
+release dates for the product."
+Retrospective Minutes,"Notes from a meeting where the team discusses
+how to improve.",Scrum Master,Project Team,"To implement process
+improvements immediately.","The team continues to work in an
+inefficient or toxic way."
+Feasibility Study,"An assessment of the practicality of a proposed
+plan or method.",Subject Matter Expert,Sponsor,"To determine if a project is
+technically or financially
+possible.","Investing millions into a project
+that is impossible to finish."
+Resource Leveling,"A technique in which start/finish dates are
+adjusted based on resource constraints.",Project Manager,Team Members,"To ensure no one person is
+assigned 60 hours of work in
+a 40-hour week.",High staff turnover and burnout.
+Dependency Log,"A list of tasks that rely on other tasks or external
+factors.",Project Manager,Project Team,"To ensure ""Task B"" doesn't start
+before ""Task A"" is finished.","Team members sit idle waiting for
+others to finish work."
+Escalation Matrix,"A plan defining when and how to move a
+problem to higher management.",Project Manager,Stakeholders,"To ensure big problems get the
+attention they need quickly.","Junior staff try to fix massive
+problems alone, wasting time."
+Benefits Realization Plan,"A plan to ensure the project benefits are actually
+achieved after closing.",Project Sponsor,Business Owner,"To track if the project actually
+improved the business as
+intended.","The project is ""finished,""
+but the business never sees
+the profit."
+Acceptance Criteria,"A set of conditions that must be met before a
+deliverable is accepted.",Product Owner,Project Team,"To remove ambiguity regarding
+""quality"" or ""completion.""","Rejection of work by the client
+at the very last minute."
+Value Stream Map,"A lean tool used to document every step in a
+process from start to finish.",Project Team,Stakeholders,"To identify and eliminate non-
+value-added activities (waste).","The project team remains
+inefficient without knowing where
+the lag is."
+"Project Funding
+Requirements","A forecast of project costs to be paid that
+includes the ""when"" and ""how much.""",Project Manager,Sponsor / Finance,"To ensure the organization has
+the cash flow ready for project
+bills.","Project stops abruptly because
+there is no cash to pay vendors."
+Tornado Diagram,"A sensitivity analysis tool showing which risks
+have the most impact.",Risk Manager,Project Manager,"To visually prioritize the risks
+that could swing the budget the
+most.","Focus is spread thin across all
+risks instead of the ""big hitters."""
+MoSCoW Prioritization,"A technique to categorize requirements: Must
+have, Should have, Could have, Won't have.",Product Owner,Project Team,"To manage scope when time or
+budget is limited.","Everything is treated as ""urgent,""
+leading to total project burnout."
+Burndown Velocity,"The rate at which the remaining work is
+decreasing.",Scrum Master,Team,"To predict the exact day the
+current workload will hit zero.","Management sets unrealistic
+launch dates based on hope,
+not data."
+Lead and Lag,"Adjustments to the start/end of dependent tasks
+(Lead accelerates, Lag delays).",Project Manager,Project Team,"To fine-tune the schedule for
+realistic transitions between
+tasks.","The schedule is too rigid or
+physically impossible to execute."
+Firm Fixed Price (FFP),"A contract type where the price is set and does
+not change.",Procurement,Vendor,"To shift the financial risk onto
+the seller/vendor.","Cost overruns by the vendor
+become the buyer's financial
+problem."
+Cost Plus (CPFF),"A contract where the buyer pays for costs plus a
+fixed fee.",Procurement,Vendor,"To encourage vendors to take
+on high-risk, experimental work.","No incentive for the vendor to
+control costs; budget may spiral."
+Control Account,"A management control point where scope, cost,
+and schedule are integrated.",Project Manager,Finance Dept,"To track performance at a level
+above individual work packages.","Hard to pinpoint which specific
+department is overspending."
+Project Dashboard,"A real-time visual display of Key Performance
+Indicators (KPIs).",Project Manager,All Stakeholders,"To provide an ""at-a-glance""
+health check of the project.","Stakeholders have to dig through
+50-page reports to find basic info."
+"Precedence Diagramming
+Method (PDM)","A technique used for constructing a schedule
+model (Boxes and Arrows).",Project Manager,Project Team,"To visualize how all tasks are
+logically connected.","Logic errors in the schedule
+(e.g., building the roof before
+the walls)."
+Basis of Estimates (BOE),"Supporting documentation explaining how
+cost/time figures were calculated.",Project Team,Project Manager,"To provide transparency and
+""defend"" the budget to the
+board.","The budget looks like
+""made-up numbers"" and gets
+cut by management."
+Procurement Audit,"A structured review of the procurement process
+from start to finish.",Auditor / PMO,Project Team,"To identify successes and
+failures in vendor management.","Legal loopholes or bad vendor
+behaviors are repeated in next
+project."
+"Project Management
+Information System (PMIS)","The software or tools used to gather and
+distribute information.",Organization / IT,Project Team,"To centralize all project data
+(e.g., Jira, MS Project, Asana).","Information is lost in email threads
+and personal spreadsheets."
+Work Authorization System,A formal procedure for sanctioning project work.,Project Manager,Functional Team,"To ensure work is done at the
+right time and in the right
+sequence.","Team members start tasks too
+early, wasting resources."
+"Project Governance
+Framework","The rules, roles, and processes that guide
+project activities.",PMO / Executive,Project Manager,"To ensure the project aligns
+with the company’s strategic
+goals.","The project is successful
+technically but fails the
+company's mission."
+Transition Plan,"A document detailing how the ""end product""
+moves to the ""end user.""",Project Manager,Operations Team,"To ensure the project isn't
+""dropped"" on users without
+training.","The product is built but nobody
+knows how to maintain or use it."
+Teaming Agreement,"A legal agreement between two entities to work
+together on a project.",Legal / Sponsor,Project Partners,"To define the partnership
+before a full contract is signed.","Partners fight over intellectual
+property or profit sharing later."
+"Requirement Traceability
+Matrix (RTM)","A grid that links requirements from their origin to
+the deliverables.",Project Manager,Quality Team,"To ensure that every single
+requirement is actually tested
+and met.","Features are missed during
+development, failing the client's
+needs."
+Gold Plating,"The practice of adding extra features not
+requested by the client.",Development Team,Project Manager,"(Often an error) Trying to ""wow""
+the client with unrequested work.","Wasted budget and time on things
+the client didn't ask for."
+Project Portfolio Map,"A high-level visual of all active projects within an
+organization.",PMO / Director,Executive Board,"To ensure the mix of projects
+balances risk and strategic
+reward.","The company takes on too many
+high-risk projects at once."
+"Variance at Completion
+(VAC)","A projection of the budget deficit or surplus at the
+end of the project.",Project Manager,Project Sponsor,"To warn stakeholders exactly
+how much the project will be
+over/under budget.","Financial surprises at the very
+end of the project when it's too
+late."
+"Operational Readiness
+Review (ORR)","An audit to ensure the organization is ready to
+support the new product.",Operations Manager,Project Manager,"To confirm that support staff,
+manuals, and tools are in place
+for launch.","The project ""goes live"" but the
+support team is unable to help
+users."
+"Post-Implementation
+Review (PIR)","An evaluation conducted months after the
+project is closed.",Business Analyst,Stakeholders,"To measure if the project actually
+delivered the expected long-term
+value.","No one knows if the project
+actually solved the original
+business problem."
+"Certificate of Practical
+Completion","A legal document stating the work is substantially
+complete and safe for use.",Project Manager / Architect,Client,"To hand over the responsibility/
+liability of the site or product
+to the owner.","Ongoing legal liability for the
+project team even after they
+have left."

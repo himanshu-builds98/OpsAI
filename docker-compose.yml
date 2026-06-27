@@ -1,0 +1,83 @@
+version: '3.8'
+
+services:
+  chromadb:
+    image: chromadb/chroma:0.5.3
+    container_name: opsai-chromadb
+    restart: unless-stopped
+    ports:
+      - "8001:8000"
+    volumes:
+      - chroma-data:/chroma/data
+    environment:
+      - IS_PERSISTENT=TRUE
+      - PERSIST_DIRECTORY=/chroma/data
+      - ANONYMIZED_TELEMETRY=FALSE
+    networks:
+      - opsai-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: opsai-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./data:/app/data
+      # Cache huggingface weights locally to prevent container reload downloads
+      - model-cache:/root/.cache
+    env_file:
+      - .env
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - ENVIRONMENT=production
+      - CHROMA_SERVER_HOST=chromadb
+      - CHROMA_SERVER_HTTP_PORT=8000
+      - OLLAMA_URL=http://ollama:11434
+    depends_on:
+      - chromadb
+      - ollama
+    networks:
+      - opsai-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: opsai-frontend
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    networks:
+      - opsai-network
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: opsai-ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    networks:
+      - opsai-network
+
+networks:
+  opsai-network:
+    driver: bridge
+
+volumes:
+  chroma-data:
+  ollama-data:
+  model-cache:

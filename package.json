@@ -1,0 +1,28 @@
+{
+  "name": "kaizen-ops-ai-assistant",
+  "version": "1.0.0",
+  "description": "Kaizen Trade Intelligence Assistant (OpsAI) - RAG system for logistics, trade, and compliance learning.",
+  "scripts": {
+    "dev:backend": "cd backend && uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+    "dev:frontend": "cd frontend && npm run dev",
+    "docker:up": "docker-compose up -d --build",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "setup:backend": "cd backend && pip install -r requirements.txt",
+    "setup:frontend": "cd frontend && npm install",
+    "setup": "npm run setup:frontend && npm run setup:backend"
+  },
+  "keywords": [
+    "rag",
+    "logistics",
+    "supply-chain",
+    "trade-compliance",
+    "assistant",
+    "fastapi",
+    "react",
+    "vite",
+    "langchain"
+  ],
+  "author": "OpsAI Contributors",
+  "license": "MIT"
+}

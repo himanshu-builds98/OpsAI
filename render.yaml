@@ -1,0 +1,36 @@
+services:
+  # FastAPI Backend Service
+  - type: web
+    name: opsai-backend
+    env: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: ENVIRONMENT
+        value: production
+      - key: DEBUG
+        value: "false"
+      - key: LLM_PROVIDER
+        # Default to OpenAI for cloud render deploys since local Ollama is on host
+        value: openai
+      - key: LLM_MODEL
+        value: gpt-4o-mini
+      - key: OPENAI_API_BASE
+        value: https://api.openai.com/v1
+      - key: OPENAI_API_KEY
+        sync: true
+      - key: CORS_ORIGINS
+        # Override this with your Vercel frontend URL after deployment
+        value: "*"
+      - key: CHROMA_PATH
+        value: /app/vector_store/chromadb
+      - key: TRADE_KNOWLEDGE_CSV
+        value: data/trade_knowledge.csv
+
+    # Persistent disk to save vector store and analytics JSON in Render
+    disk:
+      name: chroma-disk
+      mountPath: /app/vector_store
+      sizeGB: 1
