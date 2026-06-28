@@ -105,7 +105,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onSelectTopic
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y dark:divide-border/20 divide-slate-100 dark:text-amber-500/85 text-amber-600">
+          <tbody className="divide-y dark:divide-border/20 divide-slate-100 text-matrix-amber">
             {dataRows.map((row, rowIdx) => (
               <tr key={rowIdx} className="hover:bg-[#10b981]/5">
                 {row.map((val, colIdx) => (

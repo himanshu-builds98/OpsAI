@@ -43,11 +43,11 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend, onClear, isLoading
           <select
             value={workflow}
             onChange={(e) => setWorkflow(e.target.value)}
-            className="appearance-none bg-transparent border-0 text-[10px] font-matrix dark:text-[#FFB200] text-amber-600 pr-6 pl-1 py-1 focus:ring-0 focus:outline-none cursor-pointer uppercase tracking-wider outline-none"
+            className="appearance-none bg-transparent border-0 text-[10px] font-matrix text-matrix-amber pr-6 pl-1 py-1 focus:ring-0 focus:outline-none cursor-pointer uppercase tracking-wider outline-none"
           >
-            <option value="Logistics" className="dark:bg-[#141923] bg-slate-50 dark:text-[#FFB200] text-amber-600 font-matrix">Workflow: Logistics</option>
-            <option value="Customs" className="dark:bg-[#141923] bg-slate-50 dark:text-[#FFB200] text-amber-600 font-matrix">Workflow: Customs</option>
-            <option value="Finance" className="dark:bg-[#141923] bg-slate-50 dark:text-[#FFB200] text-amber-600 font-matrix">Workflow: Finance</option>
+            <option value="Logistics" className="dark:bg-[#141923] bg-slate-50 text-matrix-amber font-matrix">Workflow: Logistics</option>
+            <option value="Customs" className="dark:bg-[#141923] bg-slate-50 text-matrix-amber font-matrix">Workflow: Customs</option>
+            <option value="Finance" className="dark:bg-[#141923] bg-slate-50 text-matrix-amber font-matrix">Workflow: Finance</option>
           </select>
           {/* Custom micro chevron */}
           <span className="absolute right-1 top-2.5 pointer-events-none text-[8px] text-slate-500">▼</span>

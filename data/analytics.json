@@ -1,25 +1,25 @@
 {
-  "total_queries": 14,
+  "total_queries": 18,
   "mode_distribution": {
-    "quick": 5,
-    "detailed": 8,
-    "comparison": 1
+    "quick": 7,
+    "detailed": 9,
+    "comparison": 2
   },
   "popular_terms": {
     "Final Deliverable\nAcceptance": 1,
     "Kanban Board": 1,
-    "Basis of Estimates (BOE)": 8,
+    "Basis of Estimates (BOE)": 10,
     "Kick-off Meeting Agenda": 1,
     "Cost Plus (CPFF)": 1,
     "Firm Fixed Price (FFP)": 1,
     "Earned Value (EV)": 2,
     "Contingency Reserve": 1,
-    "Histogram (Resource)": 6,
-    "Variance at Completion\n(VAC)": 2,
-    "Cost Performance\nIndex (CPI)": 5,
-    "WBS \n(Work Breakdown Structure)": 5,
-    "Change Request": 1,
-    "Critical Success\nFactors (CSF)": 1
+    "Histogram (Resource)": 7,
+    "Variance at Completion\n(VAC)": 3,
+    "Cost Performance\nIndex (CPI)": 6,
+    "WBS \n(Work Breakdown Structure)": 6,
+    "Change Request": 2,
+    "Critical Success\nFactors (CSF)": 2
   },
   "unresolved_queries": [
     {
@@ -41,7 +41,15 @@
     {
       "query": "WBS \n(Work Breakdown Structure)",
       "timestamp": "2026-06-28T16:49:47Z"
+    },
+    {
+      "query": "WBS \n(Work Breakdown Structure)",
+      "timestamp": "2026-06-28T17:07:05Z"
+    },
+    {
+      "query": "Basis of Estimates (BOE)",
+      "timestamp": "2026-06-28T17:08:38Z"
     }
   ],
-  "total_execution_time": 804.524578332901
+  "total_execution_time": 990.6086287498474
 }

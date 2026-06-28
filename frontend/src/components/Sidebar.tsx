@@ -39,8 +39,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggleSidebar, onTog
         {/* Brand Header with Version & Toggle */}
         <div className="p-6 border-b dark:border-[#21232b]/60 border-slate-200 flex items-center justify-between">
           <div className="flex flex-col">
-            <h1 className="font-bold text-lg leading-none dark:text-white text-slate-800 font-matrix">OpsAI</h1>
-            <p className="text-[9px] dark:text-[#FFB200] text-amber-600 leading-none mt-2 font-matrix">v2.4.0-stable</p>
+            <h1 className="font-bold text-lg leading-none dark:text-white text-slate-800 font-matrix">Ops Bot</h1>
+            <p className="text-xs text-matrix-amber leading-none mt-2 font-matrix">Kaizen Ops AI Bot</p>
           </div>
           <div className="flex items-center space-x-2">
             {/* Sidebar toggle button embedded in sidebar when open */}

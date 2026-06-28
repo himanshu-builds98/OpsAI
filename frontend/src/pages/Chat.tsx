@@ -136,7 +136,10 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
                 <PanelLeft size={16} className="text-slate-400" />
               </button>
             )}
-            <h2 className="font-bold text-lg dark:text-[#fafafa] text-slate-800 font-matrix">Kaizen OpsAI Bot</h2>
+            <div className="flex flex-col justify-center">
+              <h2 className="font-bold text-lg dark:text-white text-black font-matrix leading-none">Ops Bot</h2>
+              <span className="text-xs text-matrix-amber font-semibold tracking-wide mt-1.5 leading-none font-matrix">Kaizen Ops AI Bot</span>
+            </div>
           </div>
 
 
@@ -184,7 +187,7 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
                 </div>
                 <div className="space-y-1.5 opacity-90 leading-relaxed font-medium">
                   {visibleLogs.map((logText, idx) => (
-                    <p key={idx} className="flex items-start dark:text-[#FFB200] text-amber-600 font-matrix-vt">
+                    <p key={idx} className="flex items-start text-matrix-amber font-matrix-vt">
                       <span className="dark:text-[#39d353] text-emerald-600 font-matrix-vt mr-2 flex-shrink-0">&gt;</span>
                       <span>{logText}</span>
                     </p>

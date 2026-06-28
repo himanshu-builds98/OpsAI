@@ -5,16 +5,16 @@
 
 @layer base {
   :root {
-    --background: 240 6% 95%; /* Premium Light Grey */
+    --background: 0 0% 100%; /* Pure White background */
     --foreground: 240 10% 4%; /* Charcoal Dark */
 
-    --card: 0 0% 100%;
+    --card: 240 5% 96%; /* Light Slate card */
     --card-foreground: 240 10% 4%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 4%;
 
-    --primary: 150 84% 35%; /* Premium Olive Green Accent (#10B981) */
+    --primary: 263 83% 58%; /* Premium Purple Accent (#7c3aed) */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 240 5% 90%;
@@ -23,7 +23,7 @@
     --muted: 240 5% 90%;
     --muted-foreground: 240 5% 45%;
 
-    --accent: 150 84% 35%;
+    --accent: 263 83% 58%; /* Purple accent */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -31,31 +31,31 @@
 
     --border: 240 5% 85%;
     --input: 240 5% 85%;
-    --ring: 150 84% 35%;
+    --ring: 263 83% 58%;
 
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: 224 37% 8%; /* Deep Dark Blue/Charcoal Slate (#0d111c) */
+    --background: 220 13% 10%; /* Dark Asphalt Slate background */
     --foreground: 0 0% 98%;
 
-    --card: 220 27% 11%; /* Solid Dark Navy-Gray (#141923) */
+    --card: 220 11% 15%; /* Asphalt Card container */
     --card-foreground: 0 0% 98%;
 
-    --popover: 220 27% 11%;
+    --popover: 220 11% 15%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 140 76% 53%; /* Electric Mint Green (#39d353) */
-    --primary-foreground: 224 37% 8%;
+    --primary: 263 83% 58%; /* Premium Purple Accent (#7c3aed) across all platforms */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 27% 14%;
+    --secondary: 220 11% 18%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 27% 14%;
+    --muted: 220 11% 18%;
     --muted-foreground: 220 15% 65%;
 
-    --accent: 263 83% 58%; /* Neon Purple (#7c3aed) */
+    --accent: 263 83% 58%; /* Premium Purple Accent (#7c3aed) */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
@@ -166,4 +166,12 @@
 .font-matrix-vt {
   font-family: 'VT323', monospace !important;
   letter-spacing: 0.02em;
+}
+
+.text-matrix-amber {
+  color: #7c3aed !important;
+}
+
+.dark .text-matrix-amber {
+  color: #a78bfa !important;
 }
