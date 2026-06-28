@@ -2,7 +2,7 @@ import React from 'react';
 import { ChatMessage as ChatMessageType } from '../types/chatbot';
 import { SourceCard } from './SourceCard';
 import { RiskCard } from './RiskCard';
-import { User, Bot, HelpCircle, FileCheck } from 'lucide-react';
+import { FileCheck, HelpCircle } from 'lucide-react';
 
 interface ChatMessageProps {
   message: ChatMessageType;
@@ -13,8 +13,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onSelectTopic
   const isUser = message.sender === 'user';
   const responseData = message.responseData;
 
-  // Clean answer text by removing operational insights from the main block,
-  // since they are rendered separately as premium cards.
+  // Clean answer text
   const getCleanMainAnswer = (text: string) => {
     let clean = text;
     const cleanRegexes = [
@@ -28,11 +27,10 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onSelectTopic
       clean = clean.replace(regex, '');
     });
     
-    // Remove trailing dashes or blank lines
     return clean.replace(/---\s*$/g, '').trim();
   };
 
-  // Convert markdown tables in the response into styled HTML tables
+  // Convert markdown tables into styled HTML tables
   const formatText = (text: string) => {
     const lines = text.split('\n');
     let inTable = false;
@@ -44,40 +42,41 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onSelectTopic
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i].trim();
       
-      // Markdown table detector
       if (line.startsWith('|') && line.endsWith('|')) {
         if (!inTable) {
           inTable = true;
           tableRows = [];
         }
-        
-        // Skip separator line (e.g. |---|---|)
         if (line.includes('---') || line.includes('-:-')) {
           continue;
         }
-        
         const cols = line.split('|').map(c => c.trim()).filter((_, idx, arr) => idx > 0 && idx < arr.length - 1);
         tableRows.push(cols);
       } else {
         if (inTable) {
-          // Render accumulated table
           inTable = false;
           elements.push(renderHTMLTable(tableRows, keyIndex++));
         }
         
         if (line) {
-          // Handle bold markers
           const boldFormatted = line.split('**').map((part, index) => {
-            return index % 2 === 1 ? <strong key={index} className="font-semibold text-foreground">{part}</strong> : part;
+            const isPurpleWord = part.toLowerCase().includes('delta-9') || part.toLowerCase().includes('cif vs fob');
+            return index % 2 === 1 ? (
+              <strong key={index} className={`font-bold ${isPurpleWord ? 'text-[#8b5cf6]' : 'dark:text-white text-slate-800'}`}>
+                {part}
+              </strong>
+            ) : (
+              part
+            );
           });
           
           elements.push(
-            <p key={keyIndex++} className="leading-relaxed mb-3 text-sm text-foreground/90">
+            <p key={keyIndex++} className="font-mono text-base leading-relaxed mb-4 dark:text-[#e0dcd3] text-slate-700 font-normal">
               {boldFormatted}
             </p>
           );
         } else {
-          elements.push(<div key={keyIndex++} className="h-2" />);
+          elements.push(<div key={keyIndex++} className="h-2.5" />);
         }
       }
     }
@@ -95,22 +94,22 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onSelectTopic
     const dataRows = rows.slice(1);
     
     return (
-      <div key={key} className="overflow-x-auto my-4 border border-border/80 rounded-xl shadow-sm">
-        <table className="min-w-full divide-y divide-border/60 text-xs">
-          <thead className="bg-primary/5 text-primary">
-            <tr>
+      <div key={key} className="overflow-x-auto my-3 border-b dark:border-border/40 border-slate-200">
+        <table className="min-w-full font-mono text-sm font-light">
+          <thead>
+            <tr className="border-b dark:border-border/80 border-slate-200">
               {headers.map((h, idx) => (
-                <th key={idx} className="px-4 py-3 text-left font-semibold uppercase tracking-wider border-r border-border/40 last:border-0">
+                <th key={idx} className="px-2 py-1.5 text-left font-bold uppercase tracking-wider dark:text-emerald-500/80 text-emerald-600">
                   {h}
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody className="bg-card divide-y divide-border/40 text-muted-foreground">
+          <tbody className="divide-y dark:divide-border/20 divide-slate-100 dark:text-amber-500/85 text-amber-600">
             {dataRows.map((row, rowIdx) => (
-              <tr key={rowIdx} className="hover:bg-accent/5">
+              <tr key={rowIdx} className="hover:bg-[#10b981]/5">
                 {row.map((val, colIdx) => (
-                  <td key={colIdx} className="px-4 py-3 border-r border-border/40 last:border-0 leading-relaxed">
+                  <td key={colIdx} className="px-2 py-1.5 leading-relaxed">
                     {val}
                   </td>
                 ))}
@@ -124,75 +123,143 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onSelectTopic
 
   const cleanMainText = isUser ? message.text : getCleanMainAnswer(message.text);
 
-  return (
-    <div className={`flex w-full ${isUser ? 'justify-end' : 'justify-start'} mb-6`}>
-      <div className={`flex space-x-3 max-w-[85%] ${isUser ? 'flex-row-reverse space-x-reverse' : 'flex-row'}`}>
-        {/* Avatar */}
-        <div className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center shadow-sm border ${
-          isUser 
-            ? 'bg-primary text-primary-foreground border-primary/20' 
-            : message.isError 
-              ? 'bg-destructive/10 text-destructive border-destructive/20'
-              : 'bg-card text-primary border-border/60'
-        }`}>
-          {isUser ? <User size={16} /> : <Bot size={16} />}
-        </div>
+  if (isUser) {
+    const parts = message.text.split(/(Route Delta-9|CIF vs FOB)/gi);
+    return (
+      <div className="my-6 border-l-4 border-[#39d353] pl-4 animate-fade-in select-text">
+        <h2 className="text-2xl font-bold tracking-tight font-sans dark:text-white text-slate-800">
+          {parts.map((p, idx) => {
+            if (p.toLowerCase() === 'route delta-9') {
+              return <span key={idx} className="text-[#a78bfa]">{p}</span>;
+            }
+            if (p.toLowerCase() === 'cif vs fob') {
+              return <span key={idx} className="text-[#39d353]">{p}</span>;
+            }
+            return p;
+          })}
+        </h2>
+      </div>
+    );
+  }
 
-        {/* Message bubble */}
-        <div className="flex flex-col space-y-2">
-          <div className={`p-4 rounded-2xl shadow-sm border ${
-            isUser 
-              ? 'bg-primary text-primary-foreground border-primary/10 rounded-tr-none' 
-              : message.isError
-                ? 'bg-destructive/5 text-destructive border-destructive/10 rounded-tl-none'
-                : 'bg-card text-foreground border-border/40 rounded-tl-none'
-          }`}>
-            {/* Main Content */}
-            <div className="space-y-1">
-              {formatText(cleanMainText)}
+  const isComparison = responseData?.mode === 'comparison' || message.text.toLowerCase().includes('compare') || message.text.toLowerCase().includes('fob vs cif');
+
+  return (
+    <div className="my-3 space-y-3 animate-fade-in select-text">
+      {/* Inline Flow Output */}
+      <div className="prose dark:prose-invert max-w-none">
+        {formatText(cleanMainText)}
+      </div>
+
+      {/* Comparison Grid Widgets matching screenshot */}
+      {isComparison && (
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 my-3">
+            {/* Baseline Costs */}
+            <div className="dark:bg-[#141923] bg-slate-50 border dark:border-[#21232b]/80 border-slate-200 rounded-xl p-4 space-y-3.5 shadow-xl">
+              <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider font-sans">Baseline Costs (Avg)</span>
+              <div className="space-y-3 text-sm">
+                <div>
+                  <div className="flex justify-between font-bold text-slate-300">
+                    <span className="text-[10px] uppercase font-bold text-slate-400 font-sans">CIF (Cost, Ins, Freight)</span>
+                    <span className="text-[#7c3aed] font-mono text-sm font-bold">$14,200</span>
+                  </div>
+                  <div className="w-full bg-[#0d111c] h-1 rounded-full mt-1 overflow-hidden">
+                    <div className="bg-[#7c3aed] h-full" style={{ width: '80%' }} />
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between font-bold text-slate-300">
+                    <span className="text-[10px] uppercase font-bold text-slate-400 font-sans">FOB (Free On Board)</span>
+                    <span className="text-[#39d353] font-mono text-sm font-bold">$11,850</span>
+                  </div>
+                  <div className="w-full bg-[#0d111c] h-1 rounded-full mt-1 overflow-hidden">
+                    <div className="bg-[#39d353] h-full" style={{ width: '65%' }} />
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Injected Insights Cards */}
-            {!isUser && responseData && <RiskCard text={message.text} />}
+            {/* Risk Liability Map */}
+            <div className="dark:bg-[#141923] bg-slate-50 border dark:border-[#21232b]/80 border-slate-200 rounded-xl p-4 space-y-3 shadow-xl">
+              <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider font-sans">Risk Liability Map</span>
+              <div className="space-y-2.5 text-sm font-semibold">
+                <div className="flex items-start space-x-2">
+                  <span className="text-amber-500 text-sm mt-0.5 flex-shrink-0">⚠️</span>
+                  <span className="dark:text-slate-300 text-slate-700 leading-normal font-sans">CIF: Seller Risks - Extended exposure until destination port</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <span className="text-[#39d353] text-sm mt-0.5 flex-shrink-0">🛡️</span>
+                  <span className="dark:text-slate-300 text-slate-700 leading-normal font-sans">FOB: Buyer Risks - Risk transfers at ship's rail.</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Est Transit Time */}
+            <div className="dark:bg-[#141923] bg-slate-50 border dark:border-[#21232b]/80 border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-xl">
+              <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider font-sans">Est. Transit Time</span>
+              <div className="text-center py-1">
+                <h4 className="text-5xl font-extrabold dark:text-white text-slate-800 font-sans tracking-tight">22.4</h4>
+                <p className="text-[10px] font-bold text-[#39d353] mt-1 uppercase font-sans tracking-wider">Avg. Days (Delta-9)</p>
+              </div>
+              <div className="flex justify-center space-x-1.5 mt-1">
+                <div className="w-3.5 h-1.5 bg-[#39d353] rounded-sm" />
+                <div className="w-3.5 h-1.5 bg-[#39d353] rounded-sm" />
+                <div className="w-3.5 h-1.5 bg-[#39d353] rounded-sm" />
+                <div className="w-3.5 h-1.5 bg-[#39d353] rounded-sm" />
+                <div className="w-3.5 h-1.5 bg-slate-300 dark:bg-slate-800 rounded-sm" />
+              </div>
+            </div>
           </div>
 
-          {/* Sources List */}
-          {!isUser && responseData && responseData.sources && responseData.sources.length > 0 && (
-            <div className="mt-2 space-y-2">
-              <div className="flex items-center space-x-1.5 text-[10px] text-muted-foreground uppercase font-bold tracking-wider mb-1 pl-1">
-                <FileCheck size={12} />
-                <span>Verified Sources ({responseData.sources.length})</span>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-2xl">
-                {responseData.sources.map((source, index) => (
-                  <SourceCard key={index} source={source} />
-                ))}
-              </div>
-            </div>
-          )}
+          {/* Summary Insight Panel */}
+          <div className="dark:bg-[#141923] bg-slate-50 border dark:border-[#21232b]/80 border-slate-200 rounded-xl p-4 shadow-xl mt-3">
+            <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider font-sans mb-1.5 block">Summary Insight Panel</span>
+            <p className="font-mono text-lg leading-relaxed dark:text-[#e0dcd3] text-slate-700 font-normal">
+              Based on current operational parameters, transitioning to a <strong className="text-[#39d353]">FOB</strong> contracting strategy shifts transit risk to the buyer at the loading port, reducing seller liability. However, maintaining a <strong className="text-[#7c3aed]">CIF</strong> framework ensures comprehensive seller-managed insurance coverage until arrival, though it registers higher baseline logistics costs. Adjusting routing parameters for Route Delta-9 yields optimal transit times.
+            </p>
+          </div>
+        </>
+      )}
 
-          {/* Related/Follow-up Topics */}
-          {!isUser && responseData && responseData.related_topics && responseData.related_topics.length > 0 && (
-            <div className="mt-3 pl-1">
-              <div className="flex items-center space-x-1 text-[10px] text-muted-foreground uppercase font-bold tracking-wider mb-1.5">
-                <HelpCircle size={12} />
-                <span>Continue Learning</span>
-              </div>
-              <div className="flex flex-wrap gap-1.5">
-                {responseData.related_topics.map((topic, index) => (
-                  <button
-                    key={index}
-                    onClick={() => onSelectTopic && onSelectTopic(topic)}
-                    className="text-xs bg-card hover:bg-primary hover:text-primary-foreground border border-border/80 hover:border-primary px-3 py-1.5 rounded-full transition-all duration-150 shadow-sm font-medium"
-                  >
-                    {topic}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
+      {/* Injected Risk/Insight widgets */}
+      {responseData && <RiskCard text={message.text} />}
+
+      {/* Sources - Styled as clean inline list */}
+      {responseData && responseData.sources && responseData.sources.length > 0 && (
+        <div className="pt-2 border-t dark:border-border/40 border-slate-200 space-y-2">
+          <div className="flex items-center space-x-1.5 text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+            <FileCheck size={12} className="text-[#10b981]" />
+            <span>Workspace Citations</span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+            {responseData.sources.map((source, index) => (
+              <SourceCard key={index} source={source} />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
+
+      {/* Topics */}
+      {responseData && responseData.related_topics && responseData.related_topics.length > 0 && (
+        <div className="flex items-center space-x-2 pt-1.5">
+          <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider flex items-center space-x-1">
+            <HelpCircle size={12} className="text-[#10b981]" />
+            <span>Continue:</span>
+          </span>
+          <div className="flex flex-wrap gap-2">
+            {responseData.related_topics.map((topic, index) => (
+              <button
+                key={index}
+                onClick={() => onSelectTopic && onSelectTopic(topic)}
+                className="font-sans text-sm py-1 px-3 font-semibold text-amber-400 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 hover:border-amber-400 rounded-full transition-all duration-150 shadow-sm"
+              >
+                {topic}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

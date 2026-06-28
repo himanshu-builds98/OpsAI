@@ -42,3 +42,18 @@ class AnalyticsResponse(BaseModel):
     failed_searches_count: int = Field(..., description="Total searches returning empty or fallback responses.")
     recent_failed_searches: List[str] = Field(..., description="List of recently failed query strings.")
     average_response_time: float = Field(..., description="Average pipeline processing time in seconds.")
+
+# Knowledge Status Schemas
+class SourceFileInfo(BaseModel):
+    filename: str = Field(..., description="Name of the source file.")
+    file_type: str = Field(..., description="Type of the file (e.g. csv, pdf).")
+    records_count: int = Field(..., description="Number of parsed chunks/records.")
+    last_modified: str = Field(..., description="ISO timestamp of last modification.")
+
+class KnowledgeStatusResponse(BaseModel):
+    is_initialized: bool = Field(..., description="Whether vector DB has initialized records.")
+    total_terms: int = Field(..., description="Total count of unique trade terms indexed.")
+    total_vectors: int = Field(..., description="Total count of vectors indexed in ChromaDB.")
+    last_sync_time: Optional[str] = Field(None, description="ISO timestamp of the latest sync.")
+    source_files: List[SourceFileInfo] = Field(..., description="List of source files registered in database.")
+

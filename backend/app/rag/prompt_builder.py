@@ -54,6 +54,7 @@ class PromptBuilder:
             "\"I don't have enough verified information on this topic.\"\n"
             "Do not attempt to answer using general pre-trained knowledge if the context is empty or unrelated.\n"
             f"4. Target your explanations to a user level of: {level.upper()}.\n"
+            "5. DO NOT COPY exact verbatim sentences or long phrases from the CONTEXT. You must summarize, synthesize, and rephrase the retrieved facts in your own words. Keep the output factual but change the phrasing to ensure it is not a direct copy-paste.\n"
         )
         
         if level == "student":

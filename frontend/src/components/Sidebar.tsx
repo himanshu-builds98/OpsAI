@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import { MessageSquare, Database, BarChart3, Moon, Sun, Anchor, RefreshCw } from 'lucide-react';
-import { apiService } from '../services/api';
+import { Layout, Database, BarChart3, Settings as SettingsIcon, HelpCircle, Sun, Moon, Plus, PanelLeft } from 'lucide-react';
 
-export const Sidebar: React.FC = () => {
+interface SidebarProps {
+  isOpen: boolean;
+  onToggleSidebar: () => void;
+  onToggleSettings: () => void;
+  onNewInstance: () => void;
+}
+
+export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggleSidebar, onToggleSettings, onNewInstance }) => {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     return localStorage.getItem('theme') === 'dark';
   });
 
-  const [dbStatus, setDbStatus] = useState<{ initialized: boolean; count: number }>({
-    initialized: false,
-    count: 0
-  });
-
   useEffect(() => {
-    // Apply theme
     if (darkMode) {
       document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
@@ -24,93 +23,89 @@ export const Sidebar: React.FC = () => {
     }
   }, [darkMode]);
 
-  // Load database vector counts on menu render
-  const fetchDBHealth = async () => {
-    try {
-      const res = await apiService.getKnowledgeStatus();
-      setDbStatus({
-        initialized: res.is_initialized,
-        count: res.total_vectors
-      });
-    } catch {
-      // Keep defaults if offline
-    }
-  };
-
-  useEffect(() => {
-    fetchDBHealth();
-    // Refresh health status every 20 seconds
-    const interval = setInterval(fetchDBHealth, 20000);
-    return () => clearInterval(interval);
-  }, []);
-
   const navItems = [
-    { to: '/', label: 'Assistant Chat', icon: <MessageSquare size={18} /> },
-    { to: '/knowledge', label: 'Knowledge Base', icon: <Database size={18} /> },
-    { to: '/analytics', label: 'Analytics Panel', icon: <BarChart3 size={18} /> }
+    { label: 'Workspace', active: true, icon: <Layout size={16} /> },
+    { label: 'Knowledge Base', active: false, icon: <Database size={16} /> },
+    { label: 'Logs', active: false, icon: <BarChart3 size={16} /> }
   ];
 
   return (
-    <aside className="w-64 bg-primary text-primary-foreground border-r border-primary/10 flex flex-col justify-between h-screen flex-shrink-0 select-none shadow-md">
-      {/* Brand Header */}
-      <div className="p-6 border-b border-primary-foreground/10">
-        <div className="flex items-center space-x-3">
-          <div className="p-2 bg-primary-foreground/10 text-primary-foreground rounded-xl">
-            <Anchor size={22} className="animate-spin-slow" />
-          </div>
-          <div>
-            <h1 className="font-bold text-lg leading-tight tracking-wide font-outfit">OpsAI</h1>
-            <p className="text-[9px] text-primary-foreground/65 font-medium leading-snug">AI Operations Copilot for Trade Intelligence</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Navigation List */}
-      <nav className="flex-1 px-4 py-6 space-y-1.5">
-        {navItems.map((item) => (
-          <NavLink
-            key={item.to}
-            to={item.to}
-            className={({ isActive }) => `
-              flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-200
-              ${isActive 
-                ? 'bg-primary-foreground text-primary shadow-sm scale-[1.02]' 
-                : 'text-primary-foreground/75 hover:bg-primary-foreground/10 hover:text-primary-foreground'
-              }
-            `}
-          >
-            {item.icon}
-            <span>{item.label}</span>
-          </NavLink>
-        ))}
-      </nav>
-
-      {/* Bottom Panel controls */}
-      <div className="p-4 border-t border-primary-foreground/10 space-y-4">
-        {/* Database Quick Health */}
-        <div className="bg-primary-foreground/5 rounded-xl p-3 border border-primary-foreground/5 flex items-center justify-between text-xs text-primary-foreground/70">
+    <aside 
+      className={`dark:bg-[#090c14] bg-slate-50 dark:text-[#fafafa] text-slate-800 flex flex-col justify-between h-screen flex-shrink-0 select-none shadow-2xl z-40 transition-all duration-300 ease-in-out border-r dark:border-[#21232b]/80 border-slate-200 ${
+        isOpen ? 'w-64 opacity-100' : 'w-0 opacity-0 pointer-events-none'
+      }`}
+    >
+      <div className="flex flex-col h-full overflow-hidden w-64">
+        {/* Brand Header with Version & Toggle */}
+        <div className="p-6 border-b dark:border-[#21232b]/60 border-slate-200 flex items-center justify-between">
           <div className="flex flex-col">
-            <span className="font-bold text-[9px] uppercase tracking-wider text-primary-foreground/55">RAG Database</span>
-            <span className="font-medium mt-0.5">{dbStatus.initialized ? `${dbStatus.count} Vectors` : 'Disconnected'}</span>
+            <h1 className="font-bold text-lg leading-none dark:text-white text-slate-800 font-matrix">OpsAI</h1>
+            <p className="text-[9px] dark:text-[#FFB200] text-amber-600 leading-none mt-2 font-matrix">v2.4.0-stable</p>
           </div>
-          <div className="flex items-center space-x-1.5">
-            <div className={`w-2 h-2 rounded-full ${dbStatus.initialized ? 'bg-emerald-400 animate-pulse' : 'bg-red-400'}`} />
-            <button onClick={fetchDBHealth} className="hover:text-primary-foreground transition-colors p-0.5">
-              <RefreshCw size={10} />
+          <div className="flex items-center space-x-2">
+            {/* Sidebar toggle button embedded in sidebar when open */}
+            <button
+              onClick={onToggleSidebar}
+              className="p-1.5 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg transition-all text-slate-400 hover:text-slate-800 dark:hover:text-white focus:outline-none border border-transparent"
+              title="Collapse Sidebar (Cmd+B)"
+            >
+              <PanelLeft size={16} className="text-[#7c3aed]" />
             </button>
           </div>
         </div>
 
-        {/* Theme Settings Toggle */}
-        <div className="flex items-center justify-between pt-1">
-          <span className="text-xs font-semibold text-primary-foreground/75">Color Theme</span>
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="p-2.5 bg-primary-foreground/10 hover:bg-primary-foreground/20 text-primary-foreground rounded-xl transition-all shadow-sm focus:outline-none"
-            title="Toggle theme color"
+        {/* Sidebar Nav items */}
+        <nav className="flex-1 px-4 py-6 space-y-1.5">
+          {navItems.map((item, idx) => (
+            <button
+              key={idx}
+              disabled={!item.active}
+              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-xs font-bold transition-all duration-150 border-l-2 text-left relative ${
+                item.active 
+                  ? 'bg-[#7c3aed]/10 dark:text-white text-slate-800 border-[#7c3aed]' 
+                  : 'dark:text-slate-500 text-slate-400 border-transparent cursor-not-allowed opacity-50'
+              }`}
+            >
+              {item.icon}
+              <span className="truncate font-matrix tracking-wide">{item.label}</span>
+            </button>
+          ))}
+        </nav>
+
+        {/* New Instance purple button and settings/support in footer */}
+        <div className="p-4 border-t dark:border-[#21232b]/60 border-slate-200 space-y-4">
+          <button 
+            onClick={onNewInstance}
+            className="w-full bg-[#7c3aed] hover:bg-[#7c3aed]/90 text-white rounded-xl py-3 px-4 text-xs font-bold flex items-center justify-center space-x-2 transition-all focus:outline-none shadow-lg shadow-[#7c3aed]/20 active:scale-[0.98]"
           >
-            {darkMode ? <Sun size={16} /> : <Moon size={16} />}
+            <Plus size={14} />
+            <span className="font-matrix">New Instance</span>
           </button>
+
+          <div className="space-y-1 pt-2 border-t dark:border-[#21232b]/40 border-slate-200">
+            <button 
+              onClick={onToggleSettings}
+              className="w-full flex items-center space-x-3 px-4 py-2.5 rounded-xl text-xs font-bold dark:text-slate-400 text-slate-600 dark:hover:text-white hover:text-slate-800 hover:bg-black/5 dark:hover:bg-white/5 transition-all text-left"
+            >
+              <SettingsIcon size={14} />
+              <span className="font-matrix">Settings</span>
+            </button>
+            <button className="w-full flex items-center space-x-3 px-4 py-2.5 rounded-xl text-xs font-bold dark:text-slate-400 text-slate-600 dark:hover:text-white hover:text-slate-800 hover:bg-black/5 dark:hover:bg-white/5 transition-all text-left">
+              <HelpCircle size={14} />
+              <span className="font-matrix">Support</span>
+            </button>
+          </div>
+
+          <div className="flex items-center justify-between pt-2 border-t dark:border-[#21232b]/40 border-slate-200">
+            <span className="text-[9px] font-matrix dark:text-slate-500 text-slate-400 uppercase tracking-wider">Mode</span>
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              className="p-1.5 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 dark:text-slate-400 text-slate-600 rounded-lg transition-all border dark:border-[#21232b]/80 border-slate-200 shadow-sm focus:outline-none"
+              title="Toggle Color Theme"
+            >
+              {darkMode ? <Sun size={12} /> : <Moon size={12} />}
+            </button>
+          </div>
         </div>
       </div>
     </aside>

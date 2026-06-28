@@ -1,23 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SourceDoc } from '../types/chatbot';
-import { FileText, ChevronDown, ChevronUp } from 'lucide-react';
+import { FileText } from 'lucide-react';
 
 interface SourceCardProps {
   source: SourceDoc;
 }
 
 export const SourceCard: React.FC<SourceCardProps> = ({ source }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <div className="bg-card hover:bg-accent/10 border border-border/80 rounded-xl transition-all duration-200 shadow-sm overflow-hidden">
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-3.5 text-left focus:outline-none"
-      >
+    <div className="dark:bg-[#141923] bg-slate-50 border dark:border-border/80 border-slate-200 rounded-xl transition-all duration-200 shadow-sm overflow-hidden flex flex-col">
+      {/* Header */}
+      <div className="flex items-center justify-between p-2.5 border-b dark:border-border/40 border-slate-200 bg-accent/5">
         <div className="flex items-center space-x-2.5">
-          <div className="p-1.5 bg-primary/10 text-primary rounded-lg">
-            <FileText size={16} />
+          <div className="p-1 bg-primary/10 text-primary rounded-lg">
+            <FileText size={15} />
           </div>
           <div>
             <span className="font-semibold text-sm text-foreground">{source.term}</span>
@@ -26,42 +22,38 @@ export const SourceCard: React.FC<SourceCardProps> = ({ source }) => {
             </span>
           </div>
         </div>
-        <div className="text-muted-foreground">
-          {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-        </div>
-      </button>
+      </div>
 
-      {isOpen && (
-        <div className="px-4 pb-4 pt-1 border-t border-border/40 text-xs text-muted-foreground space-y-3 bg-accent/5">
+      {/* Content */}
+      <div className="px-3 py-2.5 text-sm text-muted-foreground space-y-2.5 flex-1">
+        <div>
+          <span className="font-semibold text-foreground block mb-0.5">Definition:</span>
+          <p className="leading-relaxed dark:text-slate-300 text-slate-700">{source.definition}</p>
+        </div>
+        
+        <div className="grid grid-cols-2 gap-3 text-xs pt-2 border-t dark:border-border/30 border-slate-200">
           <div>
-            <span className="font-semibold text-foreground block mb-0.5">Definition:</span>
-            <p className="leading-relaxed">{source.definition}</p>
+            <span className="font-semibold text-foreground block">Created By:</span>
+            <span className="dark:text-slate-300 text-slate-700">{source.created_by}</span>
           </div>
-          
-          <div className="grid grid-cols-2 gap-3 text-[11px] pt-2 border-t border-border/30">
-            <div>
-              <span className="font-semibold text-foreground block">Created By:</span>
-              <span>{source.created_by}</span>
-            </div>
-            <div>
-              <span className="font-semibold text-foreground block">Used By:</span>
-              <span>{source.used_by}</span>
-            </div>
+          <div>
+            <span className="font-semibold text-foreground block">Used By:</span>
+            <span className="dark:text-slate-300 text-slate-700">{source.used_by}</span>
           </div>
-
-          <div className="pt-2 border-t border-border/30 text-[11px]">
-            <span className="font-semibold text-foreground block">Operational Purpose:</span>
-            <p className="leading-relaxed">{source.purpose}</p>
-          </div>
-
-          {source.common_problems && source.common_problems !== "Not Specified" && (
-            <div className="pt-2 border-t border-border/30 text-[11px]">
-              <span className="font-semibold text-destructive block">Common Problems:</span>
-              <p className="leading-relaxed">{source.common_problems}</p>
-            </div>
-          )}
         </div>
-      )}
+
+        <div className="pt-2 border-t dark:border-border/30 border-slate-200 text-xs">
+          <span className="font-semibold text-foreground block">Operational Purpose:</span>
+          <p className="leading-relaxed dark:text-slate-300 text-slate-700">{source.purpose}</p>
+        </div>
+
+        {source.common_problems && source.common_problems !== "Not Specified" && (
+          <div className="pt-2 border-t dark:border-border/30 border-slate-200 text-xs">
+            <span className="font-semibold text-rose-400 block">Common Problems:</span>
+            <p className="leading-relaxed dark:text-slate-300 text-slate-700">{source.common_problems}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

@@ -1,0 +1,47 @@
+{
+  "total_queries": 14,
+  "mode_distribution": {
+    "quick": 5,
+    "detailed": 8,
+    "comparison": 1
+  },
+  "popular_terms": {
+    "Final Deliverable\nAcceptance": 1,
+    "Kanban Board": 1,
+    "Basis of Estimates (BOE)": 8,
+    "Kick-off Meeting Agenda": 1,
+    "Cost Plus (CPFF)": 1,
+    "Firm Fixed Price (FFP)": 1,
+    "Earned Value (EV)": 2,
+    "Contingency Reserve": 1,
+    "Histogram (Resource)": 6,
+    "Variance at Completion\n(VAC)": 2,
+    "Cost Performance\nIndex (CPI)": 5,
+    "WBS \n(Work Breakdown Structure)": 5,
+    "Change Request": 1,
+    "Critical Success\nFactors (CSF)": 1
+  },
+  "unresolved_queries": [
+    {
+      "query": "Analyze Bill of Lading",
+      "timestamp": "2026-06-28T15:21:10Z"
+    },
+    {
+      "query": "Analyze Bill of Lading",
+      "timestamp": "2026-06-28T15:39:20Z"
+    },
+    {
+      "query": "Index Bill of Lading Chunk",
+      "timestamp": "2026-06-28T16:30:59Z"
+    },
+    {
+      "query": "Index Bill of Lading Chunk",
+      "timestamp": "2026-06-28T16:40:47Z"
+    },
+    {
+      "query": "WBS \n(Work Breakdown Structure)",
+      "timestamp": "2026-06-28T16:49:47Z"
+    }
+  ],
+  "total_execution_time": 804.524578332901
+}

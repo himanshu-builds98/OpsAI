@@ -2,7 +2,7 @@ import os
 import shutil
 import logging
 from fastapi import APIRouter, Depends, UploadFile, File, HTTPException
-from app.models.schemas import UploadResponse
+from app.models.schemas import UploadResponse, KnowledgeStatusResponse
 from app.services.document_processor import DocumentProcessorService
 from app.rag.vector_store import VectorStoreManager
 from app.dependencies import get_vector_store
@@ -111,3 +111,43 @@ def _log_upload_history(filename: str, file_type: str, count: int):
             json.dump(history, f, indent=2)
     except Exception:
         pass
+
+
+@router.get("/knowledge-status", response_model=KnowledgeStatusResponse)
+async def get_knowledge_status(
+    vector_store: VectorStoreManager = Depends(get_vector_store)
+):
+    """
+    GET /api/knowledge-status
+    Returns the initialization status, total vectors, and source files registry.
+    """
+    import json
+    registry_path = os.path.join(settings.REPO_ROOT, "data", "sources_registry.json")
+    
+    source_files = []
+    last_sync_time = None
+    if os.path.exists(registry_path):
+        try:
+            with open(registry_path, 'r', encoding='utf-8') as f:
+                source_files = json.load(f)
+                if source_files:
+                    # Find the latest last_modified time
+                    last_sync_time = max(file.get("last_modified", "") for file in source_files)
+        except Exception:
+            pass
+            
+    try:
+        total_vectors = vector_store.get_count()
+    except Exception:
+        total_vectors = 0
+        
+    is_initialized = total_vectors > 0
+    
+    return KnowledgeStatusResponse(
+        is_initialized=is_initialized,
+        total_terms=total_vectors,
+        total_vectors=total_vectors,
+        last_sync_time=last_sync_time,
+        source_files=source_files
+    )
+
