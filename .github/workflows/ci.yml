@@ -41,7 +41,7 @@ jobs:
           CHROMA_PATH: /tmp/chromadb_ci
           TRADE_KNOWLEDGE_CSV: data/sample_trade_knowledge.csv
         run: |
-          pytest backend/tests/
+          cd backend && pytest tests/
 
   validate-frontend:
     runs-on: ubuntu-latest
