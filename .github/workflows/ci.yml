@@ -34,7 +34,7 @@ jobs:
 
       - name: Run Backend Tests
         env:
-          PYTHONPATH: backend
+          PYTHONPATH: ${{ github.workspace }}/backend
           ENVIRONMENT: test
           LLM_PROVIDER: ollama
           LLM_MODEL: mistral
