@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Eye, EyeOff, ShieldCheck, Mail, Lock } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
 
 interface AuthScreenProps {
   onSuccess: () => void;
@@ -9,7 +9,7 @@ type AuthView = 'login' | 'otp';
 
 export const AuthScreen: React.FC<AuthScreenProps> = ({ onSuccess }) => {
   const [view, setView] = useState<AuthView>('login');
-  
+
   // Login states
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -25,7 +25,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({ onSuccess }) => {
   useEffect(() => {
     if (view !== 'otp') return;
     if (timer <= 0) return;
-    
+
     const interval = setInterval(() => {
       setTimer(prev => prev - 1);
     }, 1000);
@@ -78,7 +78,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({ onSuccess }) => {
   return (
     <div className="w-full h-full min-h-screen bg-[#0d111c] text-white flex items-center justify-center p-4 font-mono select-none">
       <div className="w-full max-w-md">
-        
+
         {/* VIEW 1: SIGN-IN SCREEN */}
         {view === 'login' && (
           <div className="bg-[#141923] border border-slate-700/80 rounded-none p-8 space-y-6 shadow-none">
@@ -205,7 +205,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({ onSuccess }) => {
 
               <div className="flex justify-between items-center text-[9px] text-slate-500 pt-4 border-t border-slate-800">
                 <span className="font-matrix">SESSION: PENDING_AUTH</span>
-                <button 
+                <button
                   onClick={() => setView('login')}
                   className="font-matrix text-[#7c3aed] hover:underline"
                 >
