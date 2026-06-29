@@ -1,6 +1,7 @@
 import os
 import shutil
 import logging
+import json
 from fastapi import APIRouter, Depends, UploadFile, File, HTTPException
 from app.models.schemas import UploadResponse, KnowledgeStatusResponse
 from app.services.document_processor import DocumentProcessorService
