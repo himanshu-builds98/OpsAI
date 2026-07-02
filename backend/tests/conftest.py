@@ -1,7 +1,10 @@
 import os
 import sys
+# pyrefly: ignore [missing-import]
 import pytest
+# pyrefly: ignore [missing-import]
 from fastapi.testclient import TestClient
+from app.rag.pipeline import RAGPipeline
 
 from app.dependencies import (
     get_vector_store,
@@ -10,19 +13,14 @@ from app.dependencies import (
     get_analytics_service,
 )
 
-from app.rag.pipeline import RAGPipeline
 
-class MockAnalytics:
-    def log_query(self, *args, **kwargs):
-        pass
+class MockRetriever:
+    def __init__(self, vector_store):
+        self.vector_store = vector_store
 
-mock_pipeline = RAGPipeline(
-    retriever=MockRetriever(mock_vs),
-    llm=mock_llm,
-    analytics_service=MockAnalytics(),
-)
-
-app.dependency_overrides[get_rag_pipeline] = lambda: mock_pipeline
+    def retrieve(self, query, limit=3):
+        results = self.vector_store.search_similarity(query, limit)
+        return results
 
 
 # Add backend directory to python path
