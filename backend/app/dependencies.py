@@ -47,5 +47,13 @@ def get_analytics_service() -> AnalyticsService:
 def get_rag_pipeline() -> RAGPipeline:
     global _pipeline
     if _pipeline is None:
-        _pipeline = RAGPipeline(get_retriever(), get_llm(), get_analytics_service())
+        _pipeline = RAGPipeline(
+            get_retriever(),
+            get_llm(),
+            get_analytics_service()
+        )
     return _pipeline
+
+# Backward compatibility
+def get_rag() -> RAGPipeline:
+    return get_rag_pipeline()
