@@ -1,44 +1,49 @@
 import re
-from typing import List, Dict, Any, Tuple
+from typing import Optional, List, Dict, Any, Tuple
 
 class PromptBuilder:
     """
     Constructs LLM prompts dynamically based on response modes and user levels.
     """
     @staticmethod
-    def detect_intent(query: str, requested_mode: str = "quick") -> str:
-        """
-        Automatically detects intent (quick, detailed, or comparison) from the query text.
-        If a specific mode is requested in the API payload, it takes precedence.
-        """
+    def detect_intent(query: str, requested_mode: Optional[str] = None) -> str:
         query_lower = query.lower().strip()
-        
-        # Check if the user specified a mode in the API call
-        if requested_mode in ["quick", "detailed", "comparison"]:
+
+        # Respect explicit API mode
+        if requested_mode in ("quick", "detailed", "comparison"):
             return requested_mode
 
-        # Comparison intent indicators
         comparison_patterns = [
-            r"\bvs\b", r"\bversus\b", r"\bcompare\b", r"\bdifference\b", 
-            r"\bdifferences\b", r"\band\b", r"\bdistinguish\b"
+            r"\bvs\b",
+            r"\bversus\b",
+            r"\bcompare\b",
+            r"\bdifference\b",
+            r"\bdifferences\b",
+            r"\bdistinguish\b",
         ]
+
         if any(re.search(pattern, query_lower) for pattern in comparison_patterns):
-            # Make sure there are multiple terms mentioned or a vs
             return "comparison"
-            
-        # Detailed learning intent indicators
+
         detailed_patterns = [
-            r"\bdetail\b", r"\bdetailed\b", r"\bdeep dive\b", r"\bexplain in detail\b",
-            r"\bproblems\b", r"\bissues\b", r"\bexam\b", r"\bstudy\b", r"\bpurpose\b"
+            r"\bdetail\b",
+            r"\bdetailed\b",
+            r"\bdeep dive\b",
+            r"\bexplain in detail\b",
+            r"\bproblems\b",
+            r"\bissues\b",
+            r"\bexam\b",
+            r"\bstudy\b",
+            r"\bpurpose\b",
         ]
+
         if any(re.search(pattern, query_lower) for pattern in detailed_patterns):
             return "detailed"
 
-        # Default to quick explanation
         return "quick"
-
+        
     @staticmethod
-    def build_system_prompt(user_level: str = "student") -> str:
+    def build_system_prompt(user_level: str) -> str:
         """
         Builds the system prompt that locks in personality and constraints.
         """

@@ -3,6 +3,28 @@ import sys
 import pytest
 from fastapi.testclient import TestClient
 
+from app.dependencies import (
+    get_vector_store,
+    get_llm,
+    get_rag_pipeline,
+    get_analytics_service,
+)
+
+from app.rag.pipeline import RAGPipeline
+
+class MockAnalytics:
+    def log_query(self, *args, **kwargs):
+        pass
+
+mock_pipeline = RAGPipeline(
+    retriever=MockRetriever(mock_vs),
+    llm=mock_llm,
+    analytics_service=MockAnalytics(),
+)
+
+app.dependency_overrides[get_rag_pipeline] = lambda: mock_pipeline
+
+
 # Add backend directory to python path
 backend_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "backend")
 sys.path.insert(0, backend_path)
@@ -101,12 +123,12 @@ def client():
 
     from app.main import app
     from app.dependencies import get_vector_store, get_llm, get_rag
-    from app.services.rag import RAGService
+    from app.services.rag import RAGPipeline
     
     # Instantiating mocks
     mock_vs = MockVectorStore()
     mock_llm = MockLLM()
-    mock_rag = RAGService(mock_vs, mock_llm)
+    mock_rag = RAGPipeline(mock_vs, mock_llm)
 
     # Apply FastAPI dependency overrides
     app.dependency_overrides[get_vector_store] = lambda: mock_vs
