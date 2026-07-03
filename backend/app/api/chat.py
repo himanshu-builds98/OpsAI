@@ -1,19 +1,29 @@
+import logging
+
 from fastapi import APIRouter, Depends, HTTPException
+
+from app.dependencies import get_rag_pipeline
 from app.models.schemas import ChatRequest, ChatResponse, SourceDoc
 from app.rag.pipeline import RAGPipeline
-from app.dependencies import get_rag_pipeline
-import logging
 
 router = APIRouter()
 
+logger = logging.getLogger("uvicorn.error")
+
+
 @router.post("/chat", response_model=ChatResponse)
-async def chat(request: ChatRequest, pipeline: RAGPipeline = Depends(get_rag_pipeline)):
+async def chat(
+    request: ChatRequest,
+    pipeline: RAGPipeline = Depends(get_rag_pipeline)
+):
     try:
         result = pipeline.run(question=request.question)
-        
+
         sources = [
             SourceDoc(
                 term=doc["term"],
+                aliases=doc.get("aliases", []),
+                keywords=doc.get("keywords", []),
                 definition=doc["definition"],
                 created_by=doc["created_by"],
                 used_by=doc["used_by"],
@@ -23,16 +33,18 @@ async def chat(request: ChatRequest, pipeline: RAGPipeline = Depends(get_rag_pip
             )
             for doc in result["sources"]
         ]
-        
+
         return ChatResponse(
             answer=result["answer"],
             sources=sources,
             confidence=result["confidence"],
             related_topics=result["related_topics"]
         )
-        
-        logger = logging.getLogger("uvicorn.error")
 
-    except Exception as e:
+    except Exception:
         logger.exception("Chat endpoint failed")
-        raise
+
+        raise HTTPException(
+            status_code=500,
+            detail="Internal server error while processing the query."
+        )

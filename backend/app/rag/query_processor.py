@@ -1,58 +1,85 @@
 import re
 from dataclasses import dataclass
-from typing import List
+from typing import List, Optional
 
 
 @dataclass
 class QueryAnalysis:
     """
-    Structured representation of a processed user query.
+    Result of preprocessing a user query.
     """
+
     original_query: str
     normalized_query: str
     search_query: str
+
     intent: str
+
     entities: List[str]
+
+    exact_term: Optional[str]
+
     top_k: int
 
 
 class QueryProcessor:
     """
-    Performs lightweight NLP preprocessing before vector retrieval.
+    Performs lightweight NLP before retrieval.
 
-    Responsibilities:
-    - Normalize user queries
-    - Detect user intent
-    - Extract important entities
-    - Remove filler words
-    - Expand common trade abbreviations
-    - Decide retrieval Top-K
+    Responsibilities
+    ----------------
+    • Normalize user input
+    • Detect query intent
+    • Extract entities
+    • Expand abbreviations
+    • Build a clean retrieval query
+    • Detect exact terminology lookups
     """
 
-    # Words that usually don't help semantic retrieval
     STOPWORDS = {
-        "what", "is", "are", "the", "a", "an",
-        "please", "can", "could", "would", "tell",
-        "me", "about", "explain", "define", "give",
-        "show", "describe", "know", "of", "for",
-        "to", "in", "on"
+        "what",
+        "is",
+        "are",
+        "the",
+        "a",
+        "an",
+        "please",
+        "can",
+        "could",
+        "would",
+        "tell",
+        "me",
+        "about",
+        "define",
+        "describe",
+        "explain",
+        "give",
+        "show",
+        "for",
+        "to",
+        "of",
+        "in",
+        "on",
+        "with",
+        "its",
+        "their",
     }
 
-    # Common trade abbreviations
     ACRONYMS = {
         "bol": "bill of lading",
         "bl": "bill of lading",
         "fob": "free on board",
-        "cif": "cost insurance freight",
+        "cif": "cost insurance and freight",
         "exw": "ex works",
         "ddp": "delivered duty paid",
-        "lcl": "less than container load",
+        "dap": "delivered at place",
         "fcl": "full container load",
+        "lcl": "less than container load",
         "lc": "letter of credit",
-        "coo": "certificate of origin"
+        "coo": "certificate of origin",
     }
 
-    COMPARISON_PATTERNS = [
+    COMPARISON_PATTERNS = (
         r"\bcompare\b",
         r"\bcomparison\b",
         r"\bvs\b",
@@ -60,33 +87,27 @@ class QueryProcessor:
         r"\bdifference\b",
         r"\bdifferent\b",
         r"\bdistinguish\b",
-    ]
+    )
 
-    DETAILED_PATTERNS = [
-        r"\bin detail\b",
-        r"\bdetailed\b",
-        r"\bdeep dive\b",
-        r"\bcomplete\b",
-        r"\bcomprehensive\b",
-        r"\bworkflow\b",
-        r"\bprocess\b",
-        r"\bhow\b",
-        r"\bwhy\b",
-    ]
-
-    WORKFLOW_PATTERNS = [
+    WORKFLOW_PATTERNS = (
         r"\bworkflow\b",
         r"\bprocess\b",
         r"\bsteps\b",
         r"\bprocedure\b",
         r"\bhow to\b",
-    ]
+    )
+
+    DETAILED_PATTERNS = (
+        r"\bin detail\b",
+        r"\bdetailed\b",
+        r"\bdeep dive\b",
+        r"\bcomplete\b",
+        r"\bcomprehensive\b",
+        r"\bfull\b",
+    )
 
     @classmethod
     def process(cls, query: str) -> QueryAnalysis:
-        """
-        Main preprocessing entry point.
-        """
 
         original = query.strip()
 
@@ -94,11 +115,13 @@ class QueryProcessor:
 
         intent = cls._detect_intent(normalized)
 
-        entities = cls._extract_entities(normalized)
-
         search_query = cls._build_search_query(normalized)
 
-        top_k = cls._determine_top_k(intent)
+        entities = cls._extract_entities(search_query)
+
+        exact_term = cls._detect_exact_term(search_query)
+
+        top_k = cls._top_k(intent)
 
         return QueryAnalysis(
             original_query=original,
@@ -106,14 +129,13 @@ class QueryProcessor:
             search_query=search_query,
             intent=intent,
             entities=entities,
-            top_k=top_k
+            exact_term=exact_term,
+            top_k=top_k,
         )
 
-    @classmethod
-    def _normalize(cls, text: str) -> str:
-        """
-        Lowercase, remove punctuation, normalize whitespace.
-        """
+    @staticmethod
+    def _normalize(text: str) -> str:
+
         text = text.lower()
 
         text = re.sub(r"[^\w\s]", " ", text)
@@ -140,44 +162,7 @@ class QueryProcessor:
         return "quick"
 
     @classmethod
-    def _extract_entities(cls, text: str) -> List[str]:
-        """
-        Extract important trade terms.
-        """
-
-        entities = []
-
-        # Known acronyms
-        for acronym in cls.ACRONYMS:
-            if re.search(rf"\b{re.escape(acronym)}\b", text):
-                entities.append(acronym.upper())
-
-        # Extract comparisons
-        comparison = re.findall(
-            r"([a-zA-Z ]+)\s+(?:vs|versus)\s+([a-zA-Z ]+)",
-            text
-        )
-
-        for left, right in comparison:
-            entities.append(left.strip().title())
-            entities.append(right.strip().title())
-
-        # Remove duplicates
-        seen = set()
-        cleaned = []
-
-        for entity in entities:
-            if entity.lower() not in seen:
-                cleaned.append(entity)
-                seen.add(entity.lower())
-
-        return cleaned
-
-    @classmethod
     def _build_search_query(cls, text: str) -> str:
-        """
-        Remove filler words and expand common abbreviations.
-        """
 
         words = []
 
@@ -187,20 +172,71 @@ class QueryProcessor:
                 continue
 
             if token in cls.ACRONYMS:
-                words.append(cls.ACRONYMS[token])
+                words.extend(cls.ACRONYMS[token].split())
             else:
                 words.append(token)
 
         return " ".join(words)
 
     @staticmethod
-    def _determine_top_k(intent: str) -> int:
+    def _extract_entities(search_query: str) -> List[str]:
+
+        entities = []
+
+        words = search_query.split()
+
+        current = []
+
+        for word in words:
+
+            if len(word) <= 2:
+                continue
+
+            current.append(word)
+
+        if current:
+            entities.append(" ".join(current).title())
+
+        return entities
+
+    @staticmethod
+    def _detect_exact_term(search_query: str) -> Optional[str]:
+        """
+        Detect whether the query is basically asking
+        about a single terminology/document.
+        """
+
+        noise = [
+            "detail",
+            "details",
+            "workflow",
+            "process",
+            "steps",
+            "risk",
+            "risks",
+            "comparison",
+        ]
+
+        cleaned = search_query
+
+        for word in noise:
+            cleaned = cleaned.replace(word, "")
+
+        cleaned = re.sub(r"\s+", " ", cleaned).strip()
+
+        if len(cleaned) >= 3:
+            return cleaned.title()
+
+        return None
+
+    @staticmethod
+    def _top_k(intent: str) -> int:
 
         mapping = {
-            "quick": 1,
-            "detailed": 2,
-            "workflow": 3,
-            "comparison": 4,
+            "quick": 2,
+            "detailed": 4,
+            "workflow": 4,
+            "comparison": 6,
         }
 
-        return mapping.get(intent, 2)
+        return mapping.get(intent, 4)

@@ -56,7 +56,8 @@ export const App: React.FC = () => {
   if (authLoading) {
     return (
       <div className="flex h-screen w-screen items-center justify-center bg-[#0d111c] text-[#39d353] font-mono text-xs">
-        INITIALIZING OPSAI...
+        INITIALIZING OPS BOT...
+        Kaizen Ops AI...
       </div>
     );
   }

@@ -1,24 +1,24 @@
 {
-  "total_queries": 30,
+  "total_queries": 36,
   "mode_distribution": {
-    "quick": 13,
+    "quick": 19,
     "detailed": 13,
     "comparison": 4
   },
   "popular_terms": {
     "Final Deliverable\nAcceptance": 1,
-    "Kanban Board": 1,
+    "Kanban Board": 2,
     "Basis of Estimates (BOE)": 15,
     "Kick-off Meeting Agenda": 1,
     "Cost Plus (CPFF)": 1,
     "Firm Fixed Price (FFP)": 1,
     "Earned Value (EV)": 2,
     "Contingency Reserve": 1,
-    "Histogram (Resource)": 11,
+    "Histogram (Resource)": 14,
     "Variance at Completion\n(VAC)": 4,
-    "Cost Performance\nIndex (CPI)": 9,
+    "Cost Performance\nIndex (CPI)": 12,
     "WBS \n(Work Breakdown Structure)": 9,
-    "Change Request": 3,
+    "Change Request": 4,
     "Critical Success\nFactors (CSF)": 3,
     "Lead and Lag": 2,
     "Critical Path": 2,
@@ -74,7 +74,15 @@
     {
       "query": "give in detail",
       "timestamp": "2026-07-02T07:48:46Z"
+    },
+    {
+      "query": "Change Request",
+      "timestamp": "2026-07-03T13:11:41Z"
+    },
+    {
+      "query": "Change request",
+      "timestamp": "2026-07-03T13:14:44Z"
     }
   ],
-  "total_execution_time": 1953.45361661911
+  "total_execution_time": 2647.1516304016113
 }

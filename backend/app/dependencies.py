@@ -1,60 +1,100 @@
+from typing import Optional
+from app.config import settings
 from app.rag.embeddings import BGEEmbeddings
 from app.rag.vector_store import VectorStoreManager
 from app.rag.retriever import Retriever
 from app.rag.pipeline import RAGPipeline
+from app.llm.base import BaseLLM
 from app.llm.llm_factory import LLMFactory
 from app.services.analytics_service import AnalyticsService
-from app.rag.query_processor import QueryProcessor
 
-# Singletons initialization
-_embeddings = None
-_vector_store = None
-_retriever = None
-_llm = None
-_analytics = None
-_pipeline = None
+# ============================================================
+# Singleton Instances
+# ============================================================
+_embeddings: Optional[BGEEmbeddings] = None
+_vector_store: Optional[VectorStoreManager] = None
+_retriever: Optional[Retriever] = None
+_llm: Optional[BaseLLM] = None
+_analytics: Optional[AnalyticsService] = None
+_pipeline: Optional[RAGPipeline] = None
 
+# ============================================================
+# Embeddings
+# ============================================================
 def get_embeddings() -> BGEEmbeddings:
     global _embeddings
+
     if _embeddings is None:
         _embeddings = BGEEmbeddings()
+
     return _embeddings
 
+# ============================================================
+# Vector Store
+# ============================================================
 def get_vector_store() -> VectorStoreManager:
     global _vector_store
+
     if _vector_store is None:
-        _vector_store = VectorStoreManager(get_embeddings())
+        _vector_store = VectorStoreManager(
+            get_embeddings()
+        )
+
     return _vector_store
 
+# ============================================================
+# Retriever
+# ============================================================
 def get_retriever() -> Retriever:
     global _retriever
+
     if _retriever is None:
-        from app.config import settings
-        _retriever = Retriever(get_vector_store(), threshold=settings.SIMILARITY_THRESHOLD)
+        _retriever = Retriever(
+            vector_store=get_vector_store(),
+            threshold=settings.SIMILARITY_THRESHOLD
+        )
+
     return _retriever
 
-def get_llm():
+# ============================================================
+# LLM
+# ============================================================
+def get_llm() -> BaseLLM:
     global _llm
+
     if _llm is None:
         _llm = LLMFactory.get_llm()
+
     return _llm
 
+# ============================================================
+# Analytics
+# ============================================================
 def get_analytics_service() -> AnalyticsService:
     global _analytics
+
     if _analytics is None:
         _analytics = AnalyticsService()
+
     return _analytics
 
+# ============================================================
+# Pipeline
+# ============================================================
 def get_rag_pipeline() -> RAGPipeline:
     global _pipeline
+
     if _pipeline is None:
         _pipeline = RAGPipeline(
-            get_retriever(),
-            get_llm(),
-            get_analytics_service()
+            retriever=get_retriever(),
+            llm=get_llm(),
+            analytics_service=get_analytics_service()
         )
+
     return _pipeline
 
-# Backward compatibility
+# ============================================================
+# Backward Compatibility
+# ============================================================
 def get_rag() -> RAGPipeline:
     return get_rag_pipeline()

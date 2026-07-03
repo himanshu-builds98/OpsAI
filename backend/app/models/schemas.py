@@ -1,56 +1,120 @@
 from pydantic import BaseModel, Field
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Optional
 
+# ============================================================
 # Chat Schemas
+# ============================================================
 class ChatRequest(BaseModel):
-    question: str = Field(..., description="The user query or trade terminology.")
-    
+    question: str = Field(
+        ...,
+        description="The user's natural language query."
+    )
+
+
 class SourceDoc(BaseModel):
-    term: str = Field(..., description="Matched trade term.")
-    definition: str = Field(..., description="Definition details.")
-    created_by: str = Field(..., description="Entity creating/sending the document.")
-    used_by: str = Field(..., description="Entity receiving/using the document.")
-    purpose: str = Field(..., description="Operational purpose.")
-    common_problems: str = Field(..., description="Common mistakes or issues.")
-    score: float = Field(..., description="Similarity score.")
+    term: str = Field(
+        ...,
+        description="Matched trade term."
+    )
+
+    aliases: List[str] = Field(
+        default_factory=list,
+        description="Known aliases or abbreviations."
+    )
+
+    keywords: List[str] = Field(
+        default_factory=list,
+        description="Indexed keywords."
+    )
+
+    definition: str = Field(
+        ...,
+        description="Definition."
+    )
+
+    created_by: str = Field(
+        ...,
+        description="Created By."
+    )
+
+    used_by: str = Field(
+        ...,
+        description="Used By."
+    )
+
+    purpose: str = Field(
+        ...,
+        description="Purpose."
+    )
+
+    common_problems: str = Field(
+        ...,
+        description="Common Problems."
+    )
+
+    score: float = Field(
+        ...,
+        description="Final retrieval score."
+    )
+
 
 class ChatResponse(BaseModel):
-    answer: str = Field(..., description="Structured AI response.")
-    sources: List[SourceDoc] = Field(..., description="List of source document citations from the vector database.")
-    confidence: str = Field(..., description="Database match confidence level ('High', 'Medium', 'Low', 'None').")
-    related_topics: List[str] = Field(..., description="List of 2-3 related concepts/terms for follow-up.")
+    answer: str = Field(
+        ...,
+        description="Generated answer."
+    )
 
-# Document Upload Schemas
+    sources: List[SourceDoc] = Field(
+        default_factory=list,
+        description="Retrieved source documents."
+    )
+
+    confidence: str = Field(
+        ...,
+        description="High / Medium / Low / None"
+    )
+
+    related_topics: List[str] = Field(
+        default_factory=list,
+        description="Suggested follow-up topics."
+    )
+
+# ============================================================
+# Upload Schemas
+# ============================================================
 class UploadResponse(BaseModel):
-    filename: str = Field(..., description="Name of the uploaded file.")
-    status: str = Field(..., description="Ingestion status ('success' or 'failed').")
-    records_indexed: int = Field(..., description="Number of document chunks or terms indexed into ChromaDB.")
-    message: str = Field(..., description="Detailed status message.")
+    filename: str
+    status: str
+    records_indexed: int
+    message: str
 
+# ============================================================
 # Analytics Schemas
+# ============================================================
 class TermCount(BaseModel):
     term: str
     count: int
 
 class AnalyticsResponse(BaseModel):
-    total_questions: int = Field(..., description="Total questions handled.")
-    mode_distribution: Dict[str, int] = Field(..., description="Mode selection distribution statistics.")
-    popular_terms: List[TermCount] = Field(..., description="Most frequently queried trade terms.")
-    failed_searches_count: int = Field(..., description="Total searches returning empty or fallback responses.")
-    recent_failed_searches: List[str] = Field(..., description="List of recently failed query strings.")
-    average_response_time: float = Field(..., description="Average pipeline processing time in seconds.")
+    total_questions: int
+    mode_distribution: Dict[str, int]
+    popular_terms: List[TermCount]
+    failed_searches_count: int
+    recent_failed_searches: List[str]
+    average_response_time: float
 
-# Knowledge Status Schemas
+# ============================================================
+# Knowledge Status
+# ============================================================
 class SourceFileInfo(BaseModel):
-    filename: str = Field(..., description="Name of the source file.")
-    file_type: str = Field(..., description="Type of the file (e.g. csv, pdf).")
-    records_count: int = Field(..., description="Number of parsed chunks/records.")
-    last_modified: str = Field(..., description="ISO timestamp of last modification.")
+    filename: str
+    file_type: str
+    records_count: int
+    last_modified: str
 
 class KnowledgeStatusResponse(BaseModel):
-    is_initialized: bool = Field(..., description="Whether vector DB has initialized records.")
-    total_terms: int = Field(..., description="Total count of unique trade terms indexed.")
-    total_vectors: int = Field(..., description="Total count of vectors indexed in ChromaDB.")
-    last_sync_time: Optional[str] = Field(None, description="ISO timestamp of the latest sync.")
-    source_files: List[SourceFileInfo] = Field(..., description="List of source files registered in database.")
-
+    is_initialized: bool
+    total_terms: int
+    total_vectors: int
+    last_sync_time: Optional[str] = None
+    source_files: List[SourceFileInfo]

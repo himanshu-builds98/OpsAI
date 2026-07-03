@@ -1,10 +1,11 @@
+from asyncio import windows_events
 import os
 import logging
 import chromadb
 from chromadb.api.types import EmbeddingFunction, Documents, Embeddings
-from typing import List, Dict, Any
 from app.config import settings
 from app.rag.embeddings import BGEEmbeddings
+from typing import List, Dict, Any, Optional
 
 logger = logging.getLogger("uvicorn.error")
 
@@ -70,14 +71,37 @@ class VectorStoreManager:
             ids.append(doc_id)
             
             # Form indexing document content representing the semantic context
-            doc_content = (
-                f"Term: {term}\n"
-                f"Definition: {definition}\n"
-                f"Created By: {created_by}\n"
-                f"Used By: {used_by}\n"
-                f"Purpose: {purpose}\n"
-                f"Common Problems: {common_problems}"
-            )
+            searchable_text = " ".join([
+                term,
+                definition,
+                purpose,
+                common_problems,
+                created_by,
+                used_by
+            ]).lower()
+
+            doc_content = f"""
+            TERM
+            {term}
+
+            DEFINITION
+            {definition}
+
+            PURPOSE
+            {purpose}
+
+            CREATED BY
+            {created_by}
+
+            USED BY
+            {used_by}
+
+            COMMON PROBLEMS
+            {common_problems}
+
+            SEARCHABLE TEXT
+            {searchable_text}
+            """.strip()
             texts.append(doc_content)
             
             metadatas.append({
@@ -87,6 +111,7 @@ class VectorStoreManager:
                 "used_by": used_by,
                 "purpose": purpose,
                 "common_problems": common_problems,
+                "searchable_text": searchable_text,
                 "source": source_name
             })
             
@@ -99,33 +124,49 @@ class VectorStoreManager:
             logger.info(f"Ingested {len(ids)} items from '{source_name}' into ChromaDB.")
         return len(ids)
 
-    def search(self, query: str, limit: int = 3) -> List[Dict[str, Any]]:
+    def search(
+        self,
+        query: str,
+        limit: int = 3
+    ) -> List[Dict[str, Any]]:
         """
-        Queries ChromaDB using the similarity query text.
+        Semantic vector search.
         """
+
         if self.collection.count() == 0:
             return []
 
-        # We pass query to Chroma; Chroma will automatically embed it using the bridge
         results = self.collection.query(
             query_texts=[query],
             n_results=limit
         )
-        
+
         output = []
-        if results and results.get("ids") and len(results["ids"][0]) > 0:
+
+        if (
+            results
+            and results.get("ids")
+            and len(results["ids"][0]) > 0
+        ):
+
             ids = results["ids"][0]
+
             metadatas = results["metadatas"][0]
-            distances = results["distances"][0] if "distances" in results else [0.0] * len(ids)
-            
+
+            distances = (
+                results["distances"][0]
+                if "distances" in results
+                else [0.0] * len(ids)
+            )
+
             for i in range(len(ids)):
                 meta = metadatas[i]
-                # Chroma cosine distance is (1 - similarity)
                 dist = distances[i] if distances[i] is not None else 1.0
                 score = 1.0 - dist
-                
                 output.append({
                     "term": meta.get("term", ""),
+                    "aliases": meta.get("aliases", []),
+                    "keywords": meta.get("keywords", []),
                     "definition": meta.get("definition", ""),
                     "created_by": meta.get("created_by", ""),
                     "used_by": meta.get("used_by", ""),
@@ -134,7 +175,58 @@ class VectorStoreManager:
                     "score": score,
                     "doc_id": ids[i]
                 })
+
+        output.sort(
+            key=lambda x: x["score"],
+            reverse=True
+        )
+
         return output
+
+    def search_exact_term(self, term: str) -> Optional[Dict[str, Any]]:
+        """
+        Performs an exact lookup using metadata before falling back
+        to vector similarity.
+
+        This is extremely useful for terminology databases where the
+        user directly asks about an indexed trade term.
+        """
+
+        if self.collection.count() == 0:
+            return None
+
+        try:
+
+            data = self.collection.get(
+                where={
+                    "term": term
+                },
+                include=["metadatas"]
+            )
+
+            if (
+                data
+                and data.get("metadatas")
+                and len(data["metadatas"]) > 0
+            ):
+
+                meta = data["metadatas"][0]
+
+                return {
+                    "term": meta["term"],
+                    "definition": meta["definition"],
+                    "created_by": meta["created_by"],
+                    "used_by": meta["used_by"],
+                    "purpose": meta["purpose"],
+                    "common_problems": meta["common_problems"],
+                    "score": 1.0,
+                    "doc_id": data["ids"][0]
+                }
+
+        except Exception:
+            pass
+
+        return None
 
     def get_count(self) -> int:
         return self.collection.count()

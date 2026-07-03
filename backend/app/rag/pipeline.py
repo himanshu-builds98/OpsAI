@@ -1,4 +1,3 @@
-from pip._internal.models import selection_prefs
 import time
 import logging
 from typing import List, Dict, Any, Optional
@@ -23,39 +22,47 @@ class RAGPipeline:
 
     def run(self, question: str) -> Dict[str, Any]:
         start_time = time.time()
-        from app.config import settings
-        
+
+        analysis = QueryProcessor.process(question)
+
         # Cache Check
-        cache_key = (question.lower().strip())
+        cache_key = (
+            analysis.normalized_query,
+            analysis.intent,
+            analysis.top_k,
+        )
         if cache_key in self.cache:
             logger.info(f"RAG Cache Hit: Query='{question}'")
             cached_res = self.cache[cache_key]
             # Log hit in analytics
             self.analytics_service.log_query(
-                question=question,
-                mode="auto",
-                is_unresolved=is_unresolved,
-                execution_time=execution_time,
-                matched_terms=terms_to_log
-            )
+            question=question,
+            intent=analysis.intent,
+            is_unresolved=cached_res["confidence"] == "None",
+            execution_time=time.time() - start_time,
+            matched_terms=[
+                s["term"] for s in cached_res["sources"]
+            ]
+        )
             return cached_res
 
         logger.info(f"RAG Pipeline Run: Query='{question}'")
         
         # 2. Retrieve Relevant Documents
         # For comparison mode, retrieve up to max(TOP_K, 4) items. For others, retrieve TOP_K.
-        limit = settings.TOP_K
-        analysis = QueryProcessor.process(question)
 
-        docs = self.retriever.retrieve(
-            analysis.search_query,
-            limit=analysis.top_k
-        )
+        docs = self.retriever.retrieve(analysis)
         
         # 3. Determine Confidence and Handle Empty Database/Matches
         if not docs:
             logger.warning(f"No relevant documents retrieved for query: {question}")
-            self.analytics_service.log_query(question, is_unresolved=True, execution_time=time.time() - start_time, matched_terms=[])
+            self.analytics_service.log_query(
+                question=question,
+                intent=analysis.intent,
+                is_unresolved=True,
+                execution_time=time.time() - start_time,
+                matched_terms=[]
+            )
             no_match_res = {
                 "answer": self.fallback_msg,
                 "sources": [],
@@ -67,7 +74,7 @@ class RAGPipeline:
             return no_match_res
             
         # Top match similarity score
-        top_score = docs[0].get("score", 0.0)
+        top_score = docs[0].get("final_score", docs[0].get("score", 0.0))
         
         # Map similarity score to Confidence Level string
         if top_score >= 0.70:
@@ -85,6 +92,8 @@ class RAGPipeline:
             matched_terms.append(term_name)
             context_blocks.append(
                 f"Term: {term_name}\n"
+                f"Aliases: {', '.join(doc.get('aliases', []))}\n"
+                f"Keywords: {', '.join(doc.get('keywords', []))}\n"
                 f"Definition: {doc['definition']}\n"
                 f"Created By: {doc['created_by']}\n"
                 f"Used By: {doc['used_by']}\n"
@@ -106,7 +115,9 @@ class RAGPipeline:
         logger.info("Calling LLM...")
         logger.info(f"System Prompt Length : {len(system_prompt)} characters")
         logger.info(f"User Prompt Length   : {len(user_prompt)} characters")
-        logger.info(f"Retrieved Documents  : {len(docs)}")
+        logger.info(f"Intent             : {analysis.intent}")
+        logger.info(f"Search Query       : {analysis.search_query}")
+        logger.info(f"Retrieved Documents: {len(docs)}")
         
         # 6. Call LLM
         try:
@@ -124,13 +135,16 @@ class RAGPipeline:
             answer = answer.strip()
 
         except Exception as e:
-            logger.error(f"LLM generation failed: {str(e)}")
-            return {
-                "answer": "LLM is unavailable. Please try again.",
-                "sources": [],
-                "confidence": "Low",
-                "related_topics": self._get_default_related_topics()
-            }
+
+            logger.exception("LLM generation failed")
+
+            self.analytics_service.log_query(
+                question=question,
+                intent=analysis.intent,
+                is_unresolved=True,
+                execution_time=time.time() - start_time,
+                matched_terms=[]
+            )
 
             return {
                 "answer": f"LLM Connection Error: {str(e)}",
@@ -156,7 +170,9 @@ class RAGPipeline:
                     "used_by": doc["used_by"],
                     "purpose": doc["purpose"],
                     "common_problems": doc["common_problems"],
-                    "score": round(doc["score"], 3)
+                    "aliases": doc.get("aliases", []),
+                    "keywords": doc.get("keywords", []),
+                    "score": round(doc.get("final_score", doc.get("score", 0)), 3)
                 }
                 for doc in docs
             ]
@@ -179,21 +195,26 @@ class RAGPipeline:
 
         # 8. Record Analytics
         execution_time = time.time() - start_time
+
         terms_to_log = [s["term"] for s in sources] if not is_unresolved else []
+
         self.analytics_service.log_query(
             question=question,
+            intent=analysis.intent,
             is_unresolved=is_unresolved,
             execution_time=execution_time,
             matched_terms=terms_to_log
         )
-        
+
         response_payload = {
             "answer": answer,
             "sources": sources,
             "confidence": confidence,
             "related_topics": related_topics
         }
+
         self.cache[cache_key] = response_payload
+
         return response_payload
 
     def _get_default_related_topics(self) -> List[str]:

@@ -30,7 +30,14 @@ class AnalyticsService:
                         "total_execution_time": 0.0
                     }, f, indent=2)
 
-    def log_query(self, question: str, is_unresolved: bool, execution_time: float, matched_terms: List[str]):
+    def log_query(
+        self,
+        question: str,
+        intent: str,
+        is_unresolved: bool,
+        execution_time: float,
+        matched_terms: List[str]
+    ):
         """
         Logs a single query entry into the analytics record.
         """
@@ -56,12 +63,13 @@ class AnalyticsService:
                 data["total_queries"] += 1
                 data["total_execution_time"] += execution_time
                 
-                # Mode distribution tracking
-                mode_key = mode.lower().strip()
-                if mode_key in data["mode_distribution"]:
-                    data["mode_distribution"][mode_key] += 1
-                else:
-                    data["mode_distribution"][mode_key] = 1
+                # Intent distribution tracking
+                intent_key = intent.lower().strip()
+
+                if intent_key not in data["mode_distribution"]:
+                    data["mode_distribution"][intent_key] = 0
+
+                data["mode_distribution"][intent_key] += 1
 
                 # Popular terms tracking
                 for term in matched_terms:

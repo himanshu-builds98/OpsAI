@@ -14,3 +14,5 @@ numpy>=1.26.0
 pypdf>=4.1.0
 openai>=1.14.0
 requests>=2.31.0
+sentence-transformers>=5.0
+rank-bm25>=0.2.2
