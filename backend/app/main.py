@@ -1,9 +1,12 @@
 import logging
 from contextlib import asynccontextmanager
+# pyrefly: ignore [missing-import]
 from fastapi import FastAPI
+# pyrefly: ignore [missing-import]
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
-from app.api import chat, upload, analytics, health
+from app.api import chat, upload, analytics, health, auth
+
 
 # Configure logger
 logging.basicConfig(level=logging.INFO)
@@ -62,3 +65,4 @@ app.include_router(health.router, prefix="/api")
 app.include_router(chat.router, prefix="/api")
 app.include_router(upload.router, prefix="/api")
 app.include_router(analytics.router, prefix="/api")
+app.include_router(auth.router, prefix="/api/auth", tags=["auth"])

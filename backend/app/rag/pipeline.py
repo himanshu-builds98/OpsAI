@@ -1,9 +1,11 @@
+from pip._internal.models import selection_prefs
 import time
 import logging
 from typing import List, Dict, Any, Optional
 from app.rag.retriever import Retriever
 from app.rag.prompt_builder import PromptBuilder
 from app.llm.base import BaseLLM
+from app.rag.query_processor import QueryProcessor
 
 logger = logging.getLogger("uvicorn.error")
 
@@ -19,42 +21,43 @@ class RAGPipeline:
         self.fallback_msg = "I don't have enough verified information on this topic."
         self.cache = {} # In-memory caching for repeated queries
 
-    def run(self, question: str, requested_mode: str = "quick", user_level: str = "student") -> Dict[str, Any]:
+    def run(self, question: str) -> Dict[str, Any]:
         start_time = time.time()
         from app.config import settings
         
-        # 1. Detect Intent (Quick, Detailed, or Comparison)
-        mode = PromptBuilder.detect_intent(question, requested_mode)
-        
         # Cache Check
-        cache_key = (question.lower().strip(), mode, user_level.lower())
+        cache_key = (question.lower().strip())
         if cache_key in self.cache:
             logger.info(f"RAG Cache Hit: Query='{question}'")
             cached_res = self.cache[cache_key]
             # Log hit in analytics
             self.analytics_service.log_query(
                 question=question,
-                mode=mode,
-                is_unresolved=cached_res["confidence"] == "None",
-                execution_time=time.time() - start_time,
-                matched_terms=[s["term"] for s in cached_res["sources"]]
+                mode="auto",
+                is_unresolved=is_unresolved,
+                execution_time=execution_time,
+                matched_terms=terms_to_log
             )
             return cached_res
 
-        logger.info(f"RAG Pipeline Run: Query='{question}', Mode='{mode}', Level='{user_level}'")
+        logger.info(f"RAG Pipeline Run: Query='{question}'")
         
         # 2. Retrieve Relevant Documents
         # For comparison mode, retrieve up to max(TOP_K, 4) items. For others, retrieve TOP_K.
-        limit = max(settings.TOP_K, 4) if mode == "comparison" else settings.TOP_K
-        docs = self.retriever.retrieve(question, limit=limit)
+        limit = settings.TOP_K
+        analysis = QueryProcessor.process(question)
+
+        docs = self.retriever.retrieve(
+            analysis.search_query,
+            limit=analysis.top_k
+        )
         
         # 3. Determine Confidence and Handle Empty Database/Matches
         if not docs:
             logger.warning(f"No relevant documents retrieved for query: {question}")
-            self.analytics_service.log_query(question, mode, is_unresolved=True, execution_time=time.time() - start_time, matched_terms=[])
+            self.analytics_service.log_query(question, is_unresolved=True, execution_time=time.time() - start_time, matched_terms=[])
             no_match_res = {
                 "answer": self.fallback_msg,
-                "mode": mode,
                 "sources": [],
                 "confidence": "None",
                 "related_topics": self._get_default_related_topics()
@@ -92,20 +95,45 @@ class RAGPipeline:
         context_str = "\n".join(context_blocks)
         
         # 5. Build Prompts
-        system_prompt = PromptBuilder.build_system_prompt(user_level)
-        user_prompt = PromptBuilder.build_user_prompt(question, context_str, mode)
+        system_prompt = PromptBuilder.build_system_prompt()
+        user_prompt = PromptBuilder.build_user_prompt(
+            question,
+            context_str,
+            analysis.intent
+        )
+
+        logger.info("=" * 60)
+        logger.info("Calling LLM...")
+        logger.info(f"System Prompt Length : {len(system_prompt)} characters")
+        logger.info(f"User Prompt Length   : {len(user_prompt)} characters")
+        logger.info(f"Retrieved Documents  : {len(docs)}")
         
         # 6. Call LLM
         try:
-            answer = self.llm.generate(user_prompt, system_prompt=system_prompt)
+            llm_start = time.time()
+
+            answer = self.llm.generate(
+                user_prompt,
+                system_prompt=system_prompt
+            )
+
+            logger.info(
+                f"LLM completed in {time.time() - llm_start:.2f} seconds"
+            )
+
             answer = answer.strip()
+
         except Exception as e:
-            logger.error(f"LLM generation failed inside RAG pipeline: {str(e)}")
-            # Return fallback in case of LLM crash
-            self.analytics_service.log_query(question, mode, is_unresolved=True, execution_time=time.time() - start_time, matched_terms=[])
+            logger.error(f"LLM generation failed: {str(e)}")
+            return {
+                "answer": "LLM is unavailable. Please try again.",
+                "sources": [],
+                "confidence": "Low",
+                "related_topics": self._get_default_related_topics()
+            }
+
             return {
                 "answer": f"LLM Connection Error: {str(e)}",
-                "mode": mode,
                 "sources": [],
                 "confidence": "Low",
                 "related_topics": self._get_default_related_topics()
@@ -154,7 +182,6 @@ class RAGPipeline:
         terms_to_log = [s["term"] for s in sources] if not is_unresolved else []
         self.analytics_service.log_query(
             question=question,
-            mode=mode,
             is_unresolved=is_unresolved,
             execution_time=execution_time,
             matched_terms=terms_to_log
@@ -162,7 +189,6 @@ class RAGPipeline:
         
         response_payload = {
             "answer": answer,
-            "mode": mode,
             "sources": sources,
             "confidence": confidence,
             "related_topics": related_topics

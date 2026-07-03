@@ -10,7 +10,7 @@ class RAGPipeline:
         self.vector_store = vector_store
         self.llm = llm
 
-    def run(self, question: str, requested_mode="quick", user_level="student"):
+    def run(self, question: str, requested_mode="quick"):
         """
         This method should never be called directly in tests because
         FastAPI dependency overrides replace the real dependency.

@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { 
-  ChatResponse, 
-  UploadResponse, 
-  KnowledgeStatusResponse, 
-  AnalyticsResponse 
+import {
+  ChatResponse,
+  UploadResponse,
+  KnowledgeStatusResponse,
+  AnalyticsResponse
 } from '../types/chatbot';
 
 // In production, use the environment VITE_API_URL.
@@ -15,7 +15,7 @@ const apiClient = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 45000, // Large timeout for slower LLMs / embedding steps
+  timeout: 120000, // 2 minutes, // Large timeout for slower LLMs / embedding steps
 });
 
 export const apiService = {
@@ -23,14 +23,12 @@ export const apiService = {
    * Send question to RAG pipeline.
    */
   async askQuestion(
-    question: string, 
-    mode: 'quick' | 'detailed' | 'comparison', 
-    userLevel: string
+    question: string,
+    mode: 'quick' | 'detailed' | 'comparison',
   ): Promise<ChatResponse> {
     const response = await apiClient.post<ChatResponse>('/chat', {
       question,
       mode,
-      user_level: userLevel.toLowerCase().replace(' ', '_'),
     });
     return response.data;
   },
@@ -41,7 +39,7 @@ export const apiService = {
   async uploadDocument(file: File, onUploadProgress?: (progressEvent: any) => void): Promise<UploadResponse> {
     const formData = new FormData();
     formData.append('file', file);
-    
+
     const response = await apiClient.post<UploadResponse>('/upload-document', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
@@ -66,5 +64,35 @@ export const apiService = {
     const response = await apiClient.get<AnalyticsResponse>('/analytics');
     return response.data;
   },
+
+  async register(email: string, password: string, captchaToken: string) {
+    const response = await apiClient.post('/auth/register', {
+      email, password, captcha_token: captchaToken
+    });
+    return response.data;
+  },
+
+  async verifyOtp(email: string, otp: string) {
+    const response = await apiClient.post('/auth/verify-otp', { email, otp },
+      { withCredentials: true });
+    return response.data;
+  },
+
+  async login(email: string, password: string, captchaToken: string) {
+    const response = await apiClient.post('/auth/login', {
+      email, password, captcha_token: captchaToken
+    }, { withCredentials: true });
+    return response.data;
+  },
+
+  async logout() {
+    await apiClient.post('/auth/logout', {}, { withCredentials: true });
+  },
+
+  async getMe() {
+    const response = await apiClient.get('/auth/me', { withCredentials: true });
+    return response.data;
+  },
 };
 export default apiService;
+

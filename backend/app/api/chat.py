@@ -2,30 +2,15 @@ from fastapi import APIRouter, Depends, HTTPException
 from app.models.schemas import ChatRequest, ChatResponse, SourceDoc
 from app.rag.pipeline import RAGPipeline
 from app.dependencies import get_rag_pipeline
+import logging
 
 router = APIRouter()
 
 @router.post("/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest, pipeline: RAGPipeline = Depends(get_rag_pipeline)):
-    """
-    POST /api/chat
-    Processes trade-related user queries using semantic search and local/cloud LLMs.
-    """
-    mode = request.mode.lower().strip()
-    if mode not in ["quick", "detailed", "comparison"]:
-        raise HTTPException(
-            status_code=400,
-            detail="Invalid mode parameter. Supported values: 'quick', 'detailed', 'comparison'."
-        )
-        
     try:
-        result = pipeline.run(
-            question=request.question,
-            requested_mode=mode,
-            user_level=request.user_level
-        )
+        result = pipeline.run(question=request.question)
         
-        # Map source dictionaries to Pydantic models
         sources = [
             SourceDoc(
                 term=doc["term"],
@@ -41,14 +26,13 @@ async def chat(request: ChatRequest, pipeline: RAGPipeline = Depends(get_rag_pip
         
         return ChatResponse(
             answer=result["answer"],
-            mode=result["mode"],
             sources=sources,
             confidence=result["confidence"],
             related_topics=result["related_topics"]
         )
         
+        logger = logging.getLogger("uvicorn.error")
+
     except Exception as e:
-        raise HTTPException(
-            status_code=500,
-            detail=f"Error executing query in RAG pipeline: {str(e)}"
-        )
+        logger.exception("Chat endpoint failed")
+        raise

@@ -31,7 +31,7 @@ class OllamaLLM(BaseLLM):
 
         try:
             logger.info(f"Ollama Request: Model={self.model_name}, Endpoint={self.chat_endpoint}")
-            response = requests.post(self.chat_endpoint, json=payload, timeout=90)
+            response = requests.post(self.chat_endpoint, json=payload, timeout=180)
             response.raise_for_status()
             
             result = response.json()

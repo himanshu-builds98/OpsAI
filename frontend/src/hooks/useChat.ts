@@ -15,8 +15,8 @@ export const useChat = () => {
   const [error, setError] = useState<string | null>(null);
 
   const sendMessage = useCallback(async (
-    text: string, 
-    mode: 'quick' | 'detailed' | 'comparison', 
+    text: string,
+    mode: 'quick' | 'detailed' | 'comparison',
     userLevel: string
   ) => {
     if (!text.trim()) return;
@@ -37,7 +37,7 @@ export const useChat = () => {
 
     try {
       const responseData = await apiService.askQuestion(text, mode, userLevel);
-      
+
       const newAssistantMessage: ChatMessage = {
         id: assistantMsgId,
         sender: 'assistant',
@@ -49,6 +49,7 @@ export const useChat = () => {
       setMessages((prev) => [...prev, newAssistantMessage]);
     } catch (err: any) {
       const errorMsg = err.response?.data?.detail || err.message || 'The server is currently offline or did not respond.';
+      console.error('CHAT ERROR:', err.response?.status, err.response?.data, err.message);
       setError(errorMsg);
 
       const errorAssistantMessage: ChatMessage = {

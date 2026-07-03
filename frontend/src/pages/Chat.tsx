@@ -57,7 +57,7 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
 
     return () => clearInterval(interval);
   }, [isLoading]);
-  
+
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     return localStorage.getItem('theme') === 'dark';
   });
@@ -93,10 +93,6 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
     fetchCustomResources();
   }, [settingsOpen, messages]);
 
-
-
-
-
   const handleSuggestClick = (promptText: string, mode: 'quick' | 'detailed' | 'comparison') => {
     sendMessage(promptText, mode, 'Student');
   };
@@ -122,7 +118,7 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
     <div className="flex-1 flex h-full overflow-hidden mesh-gradient relative">
       {/* Workspace Canvas (Fluid document edit style) */}
       <div className="flex-1 flex flex-col h-full overflow-hidden relative">
-        
+
         {/* System Cockpit Top Status Bar */}
         <header className="px-8 py-4 flex items-center justify-between border-b dark:border-[#21232b]/40 border-slate-200 bg-card/10 backdrop-blur-sm select-none z-20 min-h-[64px]">
           {/* Collapsible Trigger & Title */}
@@ -146,17 +142,15 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
 
           {/* Micro Status Indicators on Far Right */}
           <div className="flex items-center space-x-2">
-            <span className={`text-xs font-matrix tracking-wider mr-1 uppercase ${
-              backendStatus === 'connected' ? 'dark:text-[#39d353] text-emerald-600' : 'text-rose-500'
-            }`}>
+            <span className={`text-xs font-matrix tracking-wider mr-1 uppercase ${backendStatus === 'connected' ? 'dark:text-[#39d353] text-emerald-600' : 'text-rose-500'
+              }`}>
               {backendStatus === 'connected' ? 'Server Running' : 'Offline'}
             </span>
             {/* Wireless status indicator */}
-            <span className={`flex items-center justify-center p-1.5 rounded-lg border transition-all ${
-              backendStatus === 'connected'
+            <span className={`flex items-center justify-center p-1.5 rounded-lg border transition-all ${backendStatus === 'connected'
                 ? 'bg-[#39d353]/10 text-[#39d353] border-[#39d353]/20'
                 : 'bg-rose-500/10 text-rose-500 border-rose-500/20'
-            }`} title={backendStatus === 'connected' ? 'Server Connected' : 'Server Offline'}>
+              }`} title={backendStatus === 'connected' ? 'Server Connected' : 'Server Offline'}>
               <span className={`w-1.5 h-1.5 rounded-full ${backendStatus === 'connected' ? 'bg-[#39d353] animate-pulse' : 'bg-rose-500'}`} />
             </span>
             {/* Microchip icon for local server node connectivity */}
@@ -167,13 +161,13 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
         {/* Canvas Body (Dynamic document flow) */}
         <div className="flex-1 overflow-y-auto px-8 py-8 space-y-6">
           <div className="max-w-3xl mx-auto w-full pb-36">
-            
+
             {/* Document contents flow */}
             {messages.map((msg) => (
-              <ChatMessage 
-                key={msg.id} 
-                message={msg} 
-                onSelectTopic={(topic) => sendMessage(topic, 'quick', 'Student')} 
+              <ChatMessage
+                key={msg.id}
+                message={msg}
+                onSelectTopic={(topic) => sendMessage(topic, 'quick', 'Student')}
               />
             ))}
 
@@ -207,9 +201,9 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
 
         {/* Bottom Centered Floating Command Bar */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-full max-w-3xl px-4 z-20">
-          
+
           {/* Staggered organic cluster of pill-shaped Intent Bubbles floating above */}
-           {messages.length === 1 && !isLoading && (
+          {messages.length === 1 && !isLoading && (
             <div className="flex flex-wrap items-center justify-center gap-2.5 mb-4.5 animate-fade-in">
               <button
                 onClick={() => handleSuggestClick("Compare FOB vs. CIF", 'comparison')}
@@ -233,10 +227,10 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
           )}
 
           {/* Centered Command Bar */}
-          <ChatInput 
-            onSend={sendMessage} 
-            onClear={clearChat} 
-            isLoading={isLoading} 
+          <ChatInput
+            onSend={sendMessage}
+            onClear={clearChat}
+            isLoading={isLoading}
           />
         </div>
       </div>
@@ -275,11 +269,11 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
                     <span className="text-[9px] text-muted-foreground mt-0.5 font-semibold">Max size 10MB</span>
                   </>
                 )}
-                <input 
-                  type="file" 
-                  accept=".pdf,.csv,.txt" 
-                  className="hidden" 
-                  onChange={handleFileUpload} 
+                <input
+                  type="file"
+                  accept=".pdf,.csv,.txt"
+                  className="hidden"
+                  onChange={handleFileUpload}
                   disabled={uploading}
                 />
               </label>

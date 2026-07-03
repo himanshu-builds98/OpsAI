@@ -4,6 +4,7 @@ from app.rag.retriever import Retriever
 from app.rag.pipeline import RAGPipeline
 from app.llm.llm_factory import LLMFactory
 from app.services.analytics_service import AnalyticsService
+from app.rag.query_processor import QueryProcessor
 
 # Singletons initialization
 _embeddings = None

@@ -1,25 +1,34 @@
 {
-  "total_queries": 18,
+  "total_queries": 30,
   "mode_distribution": {
-    "quick": 7,
-    "detailed": 9,
-    "comparison": 2
+    "quick": 13,
+    "detailed": 13,
+    "comparison": 4
   },
   "popular_terms": {
     "Final Deliverable\nAcceptance": 1,
     "Kanban Board": 1,
-    "Basis of Estimates (BOE)": 10,
+    "Basis of Estimates (BOE)": 15,
     "Kick-off Meeting Agenda": 1,
     "Cost Plus (CPFF)": 1,
     "Firm Fixed Price (FFP)": 1,
     "Earned Value (EV)": 2,
     "Contingency Reserve": 1,
-    "Histogram (Resource)": 7,
-    "Variance at Completion\n(VAC)": 3,
-    "Cost Performance\nIndex (CPI)": 6,
-    "WBS \n(Work Breakdown Structure)": 6,
-    "Change Request": 2,
-    "Critical Success\nFactors (CSF)": 2
+    "Histogram (Resource)": 11,
+    "Variance at Completion\n(VAC)": 4,
+    "Cost Performance\nIndex (CPI)": 9,
+    "WBS \n(Work Breakdown Structure)": 9,
+    "Change Request": 3,
+    "Critical Success\nFactors (CSF)": 3,
+    "Lead and Lag": 2,
+    "Critical Path": 2,
+    "Burndown Velocity": 2,
+    "Precedence Diagramming\nMethod (PDM)": 2,
+    "Probability and\nImpact Matrix": 1,
+    "Risk Register": 1,
+    "Tornado Diagram": 2,
+    "Ishikawa (Fishbone)\nDiagram": 1,
+    "Burn-down Chart": 1
   },
   "unresolved_queries": [
     {
@@ -49,7 +58,23 @@
     {
       "query": "Basis of Estimates (BOE)",
       "timestamp": "2026-06-28T17:08:38Z"
+    },
+    {
+      "query": "Index Bill of Lading Chunk",
+      "timestamp": "2026-07-02T06:34:51Z"
+    },
+    {
+      "query": "WBS \n(Work Breakdown Structure)",
+      "timestamp": "2026-07-02T06:44:45Z"
+    },
+    {
+      "query": "Precedence Diagramming\nMethod (PDM)",
+      "timestamp": "2026-07-02T06:50:11Z"
+    },
+    {
+      "query": "give in detail",
+      "timestamp": "2026-07-02T07:48:46Z"
     }
   ],
-  "total_execution_time": 990.6086287498474
+  "total_execution_time": 1953.45361661911
 }

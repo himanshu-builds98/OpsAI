@@ -4,9 +4,7 @@ from typing import List, Dict, Any, Optional
 # Chat Schemas
 class ChatRequest(BaseModel):
     question: str = Field(..., description="The user query or trade terminology.")
-    mode: str = Field("quick", description="The response mode ('quick', 'detailed', or 'comparison'). Default is 'quick'.")
-    user_level: str = Field("student", description="Target persona level ('student' or 'professional'). Default is 'student'.")
-
+    
 class SourceDoc(BaseModel):
     term: str = Field(..., description="Matched trade term.")
     definition: str = Field(..., description="Definition details.")
@@ -18,7 +16,6 @@ class SourceDoc(BaseModel):
 
 class ChatResponse(BaseModel):
     answer: str = Field(..., description="Structured AI response.")
-    mode: str = Field(..., description="Active response mode used.")
     sources: List[SourceDoc] = Field(..., description="List of source document citations from the vector database.")
     confidence: str = Field(..., description="Database match confidence level ('High', 'Medium', 'Low', 'None').")
     related_topics: List[str] = Field(..., description="List of 2-3 related concepts/terms for follow-up.")

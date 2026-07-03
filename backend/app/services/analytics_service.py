@@ -30,7 +30,7 @@ class AnalyticsService:
                         "total_execution_time": 0.0
                     }, f, indent=2)
 
-    def log_query(self, question: str, mode: str, is_unresolved: bool, execution_time: float, matched_terms: List[str]):
+    def log_query(self, question: str, is_unresolved: bool, execution_time: float, matched_terms: List[str]):
         """
         Logs a single query entry into the analytics record.
         """

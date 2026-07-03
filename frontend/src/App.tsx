@@ -1,40 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import { Sidebar } from './components/Sidebar';
 import { Chat } from './pages/Chat';
+import { AuthScreen } from './components/AuthScreen';
 import { apiService } from './services/api';
 
 export const App: React.FC = () => {
-  const [sidebarOpen, setSidebarOpen] = useState<boolean>(true);
-  const [settingsOpen, setSettingsOpen] = useState<boolean>(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [authLoading, setAuthLoading] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [settingsOpen, setSettingsOpen] = useState(false);
   const [backendStatus, setBackendStatus] = useState<'connected' | 'disconnected'>('connected');
-  const [newInstanceTrigger, setNewInstanceTrigger] = useState<number>(0);
+  const [newInstanceTrigger, setNewInstanceTrigger] = useState(0);
+  const [chatHistory, setChatHistory] = useState<{ id: string; label: string }[]>([]);
 
-  // Monitor global key presses to support Cmd+B / Ctrl+B toggle shortcut
+  useEffect(() => {
+    apiService.getMe()
+      .then(() => setIsAuthenticated(true))
+      .catch(() => setIsAuthenticated(false))
+      .finally(() => setAuthLoading(false));
+  }, []);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      const isBKey = e.key === 'b' || e.key === 'B';
-      const isModifier = e.ctrlKey || e.metaKey;
-      
-      if (isModifier && isBKey) {
+      if ((e.ctrlKey || e.metaKey) && (e.key === 'b' || e.key === 'B')) {
         e.preventDefault();
         setSidebarOpen(prev => !prev);
       }
     };
-    
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Check backend health periodically
   useEffect(() => {
     const checkBackend = async () => {
       try {
-        const status = await apiService.getKnowledgeStatus();
-        if (status) {
-          setBackendStatus('connected');
-        } else {
-          setBackendStatus('disconnected');
-        }
+        await apiService.getKnowledgeStatus();
+        setBackendStatus('connected');
       } catch {
         setBackendStatus('disconnected');
       }
@@ -44,21 +45,39 @@ export const App: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <div className="flex h-screen w-screen overflow-hidden bg-background text-foreground transition-colors duration-200">
-      {/* Persistent side navigation (Collapsible toggle) */}
-      <Sidebar 
-        isOpen={sidebarOpen} 
-        onToggleSidebar={() => setSidebarOpen(prev => !prev)}
-        onToggleSettings={() => setSettingsOpen(prev => !prev)} 
-        onNewInstance={() => setNewInstanceTrigger(prev => prev + 1)}
-      />
+  const handleNewInstance = () => {
+    setChatHistory(prev => [
+      { id: Date.now().toString(), label: `Chat ${prev.length + 1}` },
+      ...prev
+    ]);
+    setNewInstanceTrigger(prev => prev + 1);
+  };
 
-      {/* Main Workspace Workspace views */}
+  if (authLoading) {
+    return (
+      <div className="flex h-screen w-screen items-center justify-center bg-[#0d111c] text-[#39d353] font-mono text-xs">
+        INITIALIZING OPSAI...
+      </div>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return <AuthScreen onSuccess={() => setIsAuthenticated(true)} />;
+  }
+
+  return (
+    <div className="flex h-screen w-screen overflow-hidden bg-background text-foreground">
+      <Sidebar
+        isOpen={sidebarOpen}
+        onToggleSidebar={() => setSidebarOpen(prev => !prev)}
+        onToggleSettings={() => setSettingsOpen(prev => !prev)}
+        onNewInstance={handleNewInstance}
+        chatHistory={chatHistory}
+      />
       <main className="flex-1 flex flex-col h-full overflow-hidden">
-        <Chat 
-          sidebarOpen={sidebarOpen} 
-          onToggleSidebar={() => setSidebarOpen(prev => !prev)} 
+        <Chat
+          sidebarOpen={sidebarOpen}
+          onToggleSidebar={() => setSidebarOpen(prev => !prev)}
           settingsOpen={settingsOpen}
           setSettingsOpen={setSettingsOpen}
           backendStatus={backendStatus}

@@ -17,7 +17,6 @@ def test_chat_quick_mode(client):
     payload = {
         "question": "What is FOB?",
         "mode": "quick",
-        "user_level": "student"
     }
     response = client.post("/api/chat", json=payload)
     assert response.status_code == 200
@@ -35,7 +34,6 @@ def test_chat_detailed_mode(client):
     payload = {
         "question": "Give me the details of CIF",
         "mode": "detailed",
-        "user_level": "professional"
     }
     response = client.post("/api/chat", json=payload)
     assert response.status_code == 200
@@ -53,7 +51,6 @@ def test_chat_comparison_mode(client):
     payload = {
         "question": "Compare FOB vs CIF",
         "mode": "comparison",
-        "user_level": "student"
     }
     response = client.post("/api/chat", json=payload)
     assert response.status_code == 200

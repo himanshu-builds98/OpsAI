@@ -28,7 +28,7 @@ class Settings(BaseSettings):
 
     # LLM Settings
     LLM_PROVIDER: str = "ollama"  # "ollama" or "openai"
-    LLM_MODEL: str = "mistral"    # "mistral", "llama3.1:8b"
+    LLM_MODEL: str = "mistral:7b"    # "mistral", "llama3.1:8b"
     OLLAMA_HOST: str = "http://localhost:11434"
     OLLAMA_URL: str = ""          # Fallback mapped in property
 
@@ -40,6 +40,11 @@ class Settings(BaseSettings):
     OPENAI_API_KEY: str = "placeholder-key"
     OPENAI_API_BASE: str = "https://api.openai.com/v1"
 
+    MONGODB_URL: str = "mongodb://localhost:27017"
+    MONGODB_DB_NAME: str = "opsai"
+    JWT_SECRET: str = "changeme"
+    JWT_EXPIRE_MINUTES: int = 60
+    
     @property
     def chroma_dir(self) -> str:
         if self.CHROMA_PATH:

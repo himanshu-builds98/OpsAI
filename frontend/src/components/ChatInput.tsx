@@ -9,7 +9,6 @@ interface ChatInputProps {
 
 export const ChatInput: React.FC<ChatInputProps> = ({ onSend, onClear, isLoading }) => {
   const [inputText, setInputText] = useState('');
-  const [workflow, setWorkflow] = useState('Logistics');
 
   const handleSend = () => {
     if (!inputText.trim() || isLoading) return;
@@ -28,7 +27,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend, onClear, isLoading
     <div className="w-full relative select-none">
       {/* Centered Command Bar Container */}
       <div className="glassmorphic rounded-2xl px-4 py-3 shadow-2xl border dark:border-slate-800/80 border-slate-200 flex items-center space-x-3.5 transition-all duration-200 dark:bg-[#141923] bg-slate-50">
-        
+
         {/* Attachment Clip */}
         <button
           type="button"
@@ -38,27 +37,12 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend, onClear, isLoading
           <Paperclip size={18} />
         </button>
 
-        {/* Borderless Workflow Dropdown Selector */}
-        <div className="relative flex-shrink-0">
-          <select
-            value={workflow}
-            onChange={(e) => setWorkflow(e.target.value)}
-            className="appearance-none bg-transparent border-0 text-[10px] font-matrix text-matrix-amber pr-6 pl-1 py-1 focus:ring-0 focus:outline-none cursor-pointer uppercase tracking-wider outline-none"
-          >
-            <option value="Logistics" className="dark:bg-[#141923] bg-slate-50 text-matrix-amber font-matrix">Workflow: Logistics</option>
-            <option value="Customs" className="dark:bg-[#141923] bg-slate-50 text-matrix-amber font-matrix">Workflow: Customs</option>
-            <option value="Finance" className="dark:bg-[#141923] bg-slate-50 text-matrix-amber font-matrix">Workflow: Finance</option>
-          </select>
-          {/* Custom micro chevron */}
-          <span className="absolute right-1 top-2.5 pointer-events-none text-[8px] text-slate-500">▼</span>
-        </div>
-
         {/* Textarea Input */}
         <textarea
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Inquire further about Route Delta-9..."
+          placeholder="Ask Questions Here"
           rows={1}
           className="flex-1 bg-transparent border-0 focus:ring-0 focus:outline-none text-sm py-2 px-1 resize-none placeholder:text-slate-400 dark:text-slate-100 text-slate-850 transition-all leading-normal outline-none"
           disabled={isLoading}
