@@ -2,7 +2,6 @@ import os
 import logging
 from typing import List
 from app.config import settings
-from sentence_transformers import SentenceTransformer
 
 logger = logging.getLogger("uvicorn.error")
 
@@ -30,6 +29,9 @@ class BGEEmbeddings:
     def _load_model(self):
         if self.model is None:
             logger.info(f"Loading embedding model: {self.model_name}")
+
+            from sentence_transformers import SentenceTransformer
+
             self.model = SentenceTransformer(
                 self.model_name,
                 cache_folder=self.cache_dir
