@@ -2,7 +2,7 @@ import React, { useState, KeyboardEvent } from 'react';
 import { Send, Paperclip, Square } from 'lucide-react';
 
 interface ChatInputProps {
-  onSend: (text: string, mode: 'quick' | 'detailed' | 'comparison', userLevel: string) => void;
+  onSend: (text: string, mode: 'quick' | 'detailed' | 'comparison') => void;
   onClear: () => void;
   isLoading: boolean;
 }
@@ -12,7 +12,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend, onClear, isLoading
 
   const handleSend = () => {
     if (!inputText.trim() || isLoading) return;
-    onSend(inputText, 'detailed', 'Executive');
+    onSend(inputText, 'detailed');
     setInputText('');
   };
 
