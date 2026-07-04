@@ -1,22 +1,29 @@
 import logging
 from contextlib import asynccontextmanager
-# pyrefly: ignore [missing-import]
+
 from fastapi import FastAPI
-# pyrefly: ignore [missing-import]
 from fastapi.middleware.cors import CORSMiddleware
+
 from app.config import settings
 from app.api import chat, upload, analytics, health, auth
+<<<<<<< Updated upstream
 from app.config import settings
+=======
+>>>>>>> Stashed changes
 from app.db.mongodb import MongoDB
 
 # Configure logger
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("uvicorn.error")
 
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup Ingestion Event
+    # ==========================================================
+    # Startup
+    # ==========================================================
     logger.info("Initializing Kaizen Trade Intelligence Assistant (OpsAI)...")
+<<<<<<< Updated upstream
     
     try:
         MongoDB.connect()
@@ -27,7 +34,68 @@ async def lifespan(app: FastAPI):
     yield
     # Shutdown Event
     MongoDB.close()
+=======
+
+    # Connect MongoDB
+    MongoDB.connect()
+
+    try:
+        from app.dependencies import get_vector_store
+        from app.services.csv_loader import CSVLoaderService
+
+        vector_store = get_vector_store()
+
+        if vector_store.get_count() == 0:
+
+            logger.info(
+                f"Vector store is empty. Building index from "
+                f"{settings.TRADE_KNOWLEDGE_CSV}"
+            )
+
+            records = CSVLoaderService.load_and_clean(
+                settings.TRADE_KNOWLEDGE_CSV
+            )
+
+            if records:
+
+                indexed = vector_store.add_documents(
+                    records,
+                    source_name="trade_knowledge.csv"
+                )
+
+                logger.info(
+                    f"Successfully indexed {indexed} trade records."
+                )
+
+            else:
+
+                logger.warning(
+                    "trade_knowledge.csv not found or contains no records."
+                )
+
+        else:
+
+            logger.info(
+                f"Vector store already contains "
+                f"{vector_store.get_count()} vectors."
+            )
+
+    except Exception as e:
+
+        logger.exception(
+            f"Startup vector indexing failed: {e}"
+        )
+
+    yield
+
+    # ==========================================================
+    # Shutdown
+    # ==========================================================
+    MongoDB.close()
+
+>>>>>>> Stashed changes
     logger.info("Shutting down Kaizen Trade Assistant backend...")
+
 
 app = FastAPI(
     title="Kaizen Trade Intelligence Assistant (OpsAI) API",
@@ -37,7 +105,7 @@ app = FastAPI(
     debug=settings.DEBUG
 )
 
-# Apply CORS middleware
+# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins_list,
@@ -46,11 +114,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Health Check mounted at both root and /api/health for routing safety
+# Routers
 app.include_router(health.router)
 app.include_router(health.router, prefix="/api")
 
-# Ingestion, Chat, and Analytics routers prefix-routed under /api
 app.include_router(chat.router, prefix="/api")
 app.include_router(upload.router, prefix="/api")
 app.include_router(analytics.router, prefix="/api")
