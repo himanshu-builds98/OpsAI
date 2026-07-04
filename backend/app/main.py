@@ -27,43 +27,6 @@ async def lifespan(app: FastAPI):
         from app.dependencies import get_vector_store
         from app.services.csv_loader import CSVLoaderService
 
-        vector_store = get_vector_store()
-
-        if vector_store.get_count() == 0:
-
-            logger.info(
-                f"Vector store is empty. Building index from "
-                f"{settings.TRADE_KNOWLEDGE_CSV}"
-            )
-
-            records = CSVLoaderService.load_and_clean(
-                settings.TRADE_KNOWLEDGE_CSV
-            )
-
-            if records:
-
-                indexed = vector_store.add_documents(
-                    records,
-                    source_name="trade_knowledge.csv"
-                )
-
-                logger.info(
-                    f"Successfully indexed {indexed} trade records."
-                )
-
-            else:
-
-                logger.warning(
-                    "trade_knowledge.csv not found or contains no records."
-                )
-
-        else:
-
-            logger.info(
-                f"Vector store already contains "
-                f"{vector_store.get_count()} vectors."
-            )
-
     except Exception as e:
 
         logger.exception(

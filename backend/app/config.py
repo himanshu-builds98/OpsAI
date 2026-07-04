@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     REPO_ROOT: str = os.path.dirname(BACKEND_ROOT)
 
     TRADE_KNOWLEDGE_CSV: str = os.path.join(REPO_ROOT, "data", "trade_knowledge.csv")
-    CHROMA_PERSIST_DIR: str = os.path.join(REPO_ROOT, "vector_store")
+    CHROMA_PERSIST_DIR: str = os.path.join(BACKEND_ROOT, "vector_store")
     CHROMA_PATH: str = "" # Fallback mapped in property
     CHROMA_SERVER_HOST: str = "" # Set in prod to run standalone container
     CHROMA_SERVER_HTTP_PORT: int = 8000
