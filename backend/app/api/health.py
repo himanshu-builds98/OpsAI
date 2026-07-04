@@ -1,3 +1,4 @@
+import os
 from fastapi import APIRouter
 from app.dependencies import get_vector_store
 from app.config import settings
@@ -6,8 +7,8 @@ router = APIRouter()
 
 @router.get("/health")
 async def health_check():
-    db_ok = True
-    db_count = 0
+    # db_ok = True
+    # db_count = 0
     try:
         vector_store = get_vector_store()
         db_count = vector_store.get_count()
