@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 aiohappyeyeballs==2.7.1
 aiohttp==3.14.1
 aiosignal==1.4.0
@@ -117,7 +116,7 @@ shellingham==1.5.4
 six==1.17.0
 sniffio==1.3.1
 SQLAlchemy==2.0.51
-starlette==1.3.1
+starlette==0.47.1
 sympy==1.14.0
 tenacity==9.1.4
 threadpoolctl==3.6.0
@@ -139,30 +138,3 @@ websockets==15.0.1
 xxhash==3.8.0
 yarl==1.24.2
 zstandard==0.25.0
-=======
-fastapi>=0.110.0
-uvicorn>=0.29.0
-python-multipart>=0.0.9
-pydantic>=2.6.0
-pydantic-settings>=2.2.0
-python-dotenv>=1.0.1
-pymongo>=4.6.3
-python-jose[cryptography]>=3.3.0
-passlib[bcrypt]>=1.7.4
-bcrypt==4.0.1
-numpy>=1.26.0
-pandas>=2.2.0
-chromadb>=0.4.24
-sentence-transformers>=5.0.0
-langchain>=0.1.13
-langchain-core>=0.1.33
-langchain-community>=0.0.29
-langchain-openai>=0.1.1
-rank-bm25>=0.2.2
-transformers>=4.42.0
-torch>=2.3.0
-pypdf>=4.1.0
-openai>=1.14.0
-requests>=2.31.0
-typing-extensions>=4.11.0
->>>>>>> Stashed changes
