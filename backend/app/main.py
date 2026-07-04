@@ -6,10 +6,6 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
 from app.api import chat, upload, analytics, health, auth
-<<<<<<< Updated upstream
-from app.config import settings
-=======
->>>>>>> Stashed changes
 from app.db.mongodb import MongoDB
 
 # Configure logger
@@ -23,18 +19,6 @@ async def lifespan(app: FastAPI):
     # Startup
     # ==========================================================
     logger.info("Initializing Kaizen Trade Intelligence Assistant (OpsAI)...")
-<<<<<<< Updated upstream
-    
-    try:
-        MongoDB.connect()
-        logger.info("MongoDB Connected.")
-    except Exception as e:
-        logger.error(f"MongoDB connection failed: {e}")
-
-    yield
-    # Shutdown Event
-    MongoDB.close()
-=======
 
     # Connect MongoDB
     MongoDB.connect()
@@ -93,7 +77,6 @@ async def lifespan(app: FastAPI):
     # ==========================================================
     MongoDB.close()
 
->>>>>>> Stashed changes
     logger.info("Shutting down Kaizen Trade Assistant backend...")
 
 
