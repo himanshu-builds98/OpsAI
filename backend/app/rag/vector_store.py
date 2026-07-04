@@ -61,7 +61,6 @@ class VectorStoreManager:
             self.client = chromadb.PersistentClient(
                 path=settings.chroma_dir
             )
-            import os
 
             logger.info(f"Chroma path: {settings.chroma_dir}")
             logger.info(f"Exists: {os.path.exists(settings.chroma_dir)}")
