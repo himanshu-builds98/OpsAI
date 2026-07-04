@@ -1,4 +1,3 @@
-from asyncio import windows_events
 import os
 import logging
 import chromadb
@@ -27,25 +26,55 @@ class VectorStoreManager:
     def __init__(self, embedding_service: BGEEmbeddings):
         self.embedding_service = embedding_service
         self.bridge = ChromaEmbeddingBridge(self.embedding_service)
+
+        self.client = None
+        self.collection = None
         
+    def _load_collection(self):
+        """
+        Lazily initializes the ChromaDB client and collection.
+        This is only called on the first operation that actually
+        needs the vector store.
+        """
+
+        if self.collection is not None:
+            return
+
         if settings.CHROMA_SERVER_HOST:
-            logger.info(f"Connecting to standalone ChromaDB server at: {settings.CHROMA_SERVER_HOST}:{settings.CHROMA_SERVER_HTTP_PORT}")
+
+            logger.info(
+                f"Connecting to ChromaDB server at "
+                f"{settings.CHROMA_SERVER_HOST}:{settings.CHROMA_SERVER_HTTP_PORT}"
+            )
+
             self.client = chromadb.HttpClient(
                 host=settings.CHROMA_SERVER_HOST,
                 port=settings.CHROMA_SERVER_HTTP_PORT
             )
+
         else:
-            logger.info(f"Initializing persistent ChromaDB client at: {settings.chroma_dir}")
+            logger.info(
+                f"Opening persistent ChromaDB at: {settings.chroma_dir}"
+            )
+
             os.makedirs(settings.chroma_dir, exist_ok=True)
-            self.client = chromadb.PersistentClient(path=settings.chroma_dir)
-            
+            self.client = chromadb.PersistentClient(
+                path=settings.chroma_dir
+            )
+
         self.collection = self.client.get_or_create_collection(
             name="trade_knowledge",
             embedding_function=self.bridge,
-            metadata={"hnsw:space": "cosine"} # cosine similarity space
+            metadata={
+                "hnsw:space": "cosine"
+            }
         )
-        logger.info(f"ChromaDB collection loaded. Count: {self.collection.count()} vectors.")
 
+        logger.info(
+            f"ChromaDB ready. Collection contains "
+            f"{self.collection.count()} vectors."
+        )
+        
     def add_documents(self, documents: List[Dict[str, Any]], source_name: str) -> int:
         """
         Adds normalized trade documents to the database.
@@ -132,6 +161,7 @@ class VectorStoreManager:
         """
         Semantic vector search.
         """
+        self._load_collection()
 
         if self.collection.count() == 0:
             return []
@@ -162,7 +192,7 @@ class VectorStoreManager:
             for i in range(len(ids)):
                 meta = metadatas[i]
                 dist = distances[i] if distances[i] is not None else 1.0
-                score = 1.0 - dist
+                score = max(0.0, 1.0 - dist)
                 output.append({
                     "term": meta.get("term", ""),
                     "aliases": meta.get("aliases", []),
@@ -191,6 +221,7 @@ class VectorStoreManager:
         This is extremely useful for terminology databases where the
         user directly asks about an indexed trade term.
         """
+        self._load_collection()
 
         if self.collection.count() == 0:
             return None
@@ -235,12 +266,16 @@ class VectorStoreManager:
         """
         Returns all metadata currently stored in ChromaDB.
         """
+        self._load_collection()
+
         data = self.collection.get(include=["metadatas"])
         if data and data.get("metadatas"):
             return [m for m in data["metadatas"] if m is not None]
         return []
 
     def clear(self):
+        self._load_collection()
+        
         try:
             self.client.delete_collection("trade_knowledge")
         except Exception:

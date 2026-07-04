@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
 from app.api import chat, upload, analytics, health, auth
 from app.config import settings
+from app.db.mongodb import MongoDB
 
 # Configure logger
 logging.basicConfig(level=logging.INFO)
@@ -16,28 +17,16 @@ logger = logging.getLogger("uvicorn.error")
 async def lifespan(app: FastAPI):
     # Startup Ingestion Event
     logger.info("Initializing Kaizen Trade Intelligence Assistant (OpsAI)...")
+    
     try:
-        from app.dependencies import get_vector_store
-        from app.services.csv_loader import CSVLoaderService
-        
-        vector_store = get_vector_store()
-        count = vector_store.get_count()
-        
-        if count == 0:
-            logger.info(f"Vector store is empty. Starting auto-ingestion of: {settings.TRADE_KNOWLEDGE_CSV}")
-            records = CSVLoaderService.load_and_clean(settings.TRADE_KNOWLEDGE_CSV)
-            if records:
-                indexed = vector_store.add_documents(records, source_name="trade_knowledge.csv")
-                logger.info(f"Successfully auto-ingested {indexed} records into ChromaDB.")
-            else:
-                logger.warning("Default trade knowledge CSV not found or is empty. Ingestion skipped.")
-        else:
-            logger.info(f"Vector store is ready with {count} indexed records.")
+        MongoDB.connect()
+        logger.info("MongoDB Connected.")
     except Exception as e:
-        logger.error(f"Error during startup vector store ingestion: {str(e)}")
-        
+        logger.error(f"MongoDB connection failed: {e}")
+
     yield
     # Shutdown Event
+    MongoDB.close()
     logger.info("Shutting down Kaizen Trade Assistant backend...")
 
 app = FastAPI(
