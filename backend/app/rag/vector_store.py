@@ -84,6 +84,8 @@ class VectorStoreManager:
         texts = []
         metadatas = []
         
+        self._load_collection()
+
         for doc in documents:
             term = doc.get("Term", "").strip()
             definition = doc.get("Definition", "").strip()
@@ -260,6 +262,7 @@ class VectorStoreManager:
         return None
 
     def get_count(self) -> int:
+        self._load_collection()
         return self.collection.count()
 
     def get_all_records(self) -> List[Dict[str, Any]]:
