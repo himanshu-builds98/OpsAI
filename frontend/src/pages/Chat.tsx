@@ -94,7 +94,7 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
   }, [settingsOpen, messages]);
 
   const handleSuggestClick = (promptText: string, mode: 'quick' | 'detailed' | 'comparison') => {
-    sendMessage(promptText, mode, 'Student');
+    sendMessage(promptText, mode);
   };
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -148,8 +148,8 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
             </span>
             {/* Wireless status indicator */}
             <span className={`flex items-center justify-center p-1.5 rounded-lg border transition-all ${backendStatus === 'connected'
-                ? 'bg-[#39d353]/10 text-[#39d353] border-[#39d353]/20'
-                : 'bg-rose-500/10 text-rose-500 border-rose-500/20'
+              ? 'bg-[#39d353]/10 text-[#39d353] border-[#39d353]/20'
+              : 'bg-rose-500/10 text-rose-500 border-rose-500/20'
               }`} title={backendStatus === 'connected' ? 'Server Connected' : 'Server Offline'}>
               <span className={`w-1.5 h-1.5 rounded-full ${backendStatus === 'connected' ? 'bg-[#39d353] animate-pulse' : 'bg-rose-500'}`} />
             </span>
@@ -167,7 +167,7 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
               <ChatMessage
                 key={msg.id}
                 message={msg}
-                onSelectTopic={(topic) => sendMessage(topic, 'quick', 'Student')}
+                onSelectTopic={(topic) => sendMessage(topic, 'quick')}
               />
             ))}
 
