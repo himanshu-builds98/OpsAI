@@ -33,7 +33,7 @@ class VectorStoreManager:
     def _load_collection(self):
         """
         Lazily initializes the ChromaDB client and collection.
-        This is only called on the first operation that actually
+        This is only called on the first operaion that actually
         needs the vector store.
         """
 
@@ -61,6 +61,13 @@ class VectorStoreManager:
             self.client = chromadb.PersistentClient(
                 path=settings.chroma_dir
             )
+            import os
+
+            logger.info(f"Chroma path: {settings.chroma_dir}")
+            logger.info(f"Exists: {os.path.exists(settings.chroma_dir)}")
+
+            if os.path.exists(settings.chroma_dir):
+                logger.info(f"Files: {os.listdir(settings.chroma_dir)}")
 
         self.collection = self.client.get_or_create_collection(
             name="trade_knowledge",
