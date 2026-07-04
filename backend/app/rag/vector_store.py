@@ -296,3 +296,6 @@ class VectorStoreManager:
             metadata={"hnsw:space": "cosine"}
         )
         logger.info("ChromaDB collection cleared.")
+        logger.info("=" * 80)
+        logger.info("DEBUG BUILD 2026-07-05 VECTOR STORE")
+        logger.info("=" * 80)
