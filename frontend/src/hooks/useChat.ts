@@ -17,7 +17,6 @@ export const useChat = () => {
   const sendMessage = useCallback(async (
     text: string,
     mode: 'quick' | 'detailed' | 'comparison',
-    userLevel: string
   ) => {
     if (!text.trim()) return;
 
@@ -36,7 +35,7 @@ export const useChat = () => {
     setIsLoading(true);
 
     try {
-      const responseData = await apiService.askQuestion(text, mode, userLevel);
+      const responseData = await apiService.askQuestion(text, mode);
 
       const newAssistantMessage: ChatMessage = {
         id: assistantMsgId,
