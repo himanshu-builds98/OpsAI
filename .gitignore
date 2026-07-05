@@ -28,13 +28,9 @@ env/
 python_env/
 
 # Vector Store
-
-# Ignore only HuggingFace cache
-backend/vector_store/hf_cache/
-
 # Keep Chroma database
-backend/vector_store/chroma.sqlite3
-backend/vector_store/**
+backend/vector_store/hf_cache/
+backend/vector_store/**/*.lock
 
 # Environment variables
 .env
