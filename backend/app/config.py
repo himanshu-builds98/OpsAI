@@ -28,7 +28,7 @@ class Settings(BaseSettings):
 
     # LLM Settings
     LLM_PROVIDER: str = "ollama"
-    LLM_MODEL: str = "mistral:7b"
+    LLM_MODEL: str = "tinyllama"
     OLLAMA_HOST: str = "http://localhost:11434"
     OLLAMA_URL: str = ""
 
