@@ -13,19 +13,13 @@ from typing import List, Dict, Any
 from app.llm.base import BaseLLM
 from app.rag.prompt_builder import PromptBuilder
 from app.rag.query_processor import QueryAnalysis
-from app.rag.response_engine.formatter import ResponseFormatter, FormatterResult
+from app.rag.response_engine.formatter import (
+    ResponseFormatter,
+    FormatterResult,
+    LLMGenerationError,
+)
 
 logger = logging.getLogger("uvicorn.error")
-
-
-class LLMGenerationError(Exception):
-    """
-    Raised when the underlying LLM call fails. Carries a
-    user-presentable message matching the original pipeline's
-    "LLM Connection Error: ..." format.
-    """
-
-    pass
 
 
 class LLMFormatter(ResponseFormatter):

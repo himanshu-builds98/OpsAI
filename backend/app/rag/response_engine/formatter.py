@@ -21,6 +21,22 @@ class FormatterResult:
     is_unresolved: bool
 
 
+class LLMGenerationError(Exception):
+    """
+    Raised by a ResponseFormatter when answer generation fails in a way
+    that ResponseEngine should surface as a formatted error response.
+
+    Defined here (rather than in llm_formatter.py) so that engine.py can
+    catch it without importing any LLM-specific formatter module. That
+    matters because llm_formatter.py imports PromptBuilder: if engine.py
+    imported LLMGenerationError from llm_formatter.py, PromptBuilder
+    would get imported on every request, even when
+    settings.ANSWER_MODE == "verbatim" and no LLM is ever used.
+    """
+
+    pass
+
+
 class ResponseFormatter(ABC):
     """
     Abstract interface for turning (question, analysis, retrieved docs)

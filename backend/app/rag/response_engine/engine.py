@@ -9,8 +9,7 @@ import logging
 from typing import List, Dict, Any, Optional
 
 from app.rag.query_processor import QueryAnalysis
-from app.rag.response_engine.formatter import ResponseFormatter
-from app.rag.response_engine.llm_formatter import LLMGenerationError
+from app.rag.response_engine.formatter import ResponseFormatter, LLMGenerationError
 from app.rag.response_engine.confidence import ConfidenceResolver
 from app.rag.response_engine.source_builder import SourceBuilder
 from app.rag.response_engine.related_topics import RelatedTopicsBuilder
