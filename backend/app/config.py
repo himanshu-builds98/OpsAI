@@ -32,6 +32,9 @@ class Settings(BaseSettings):
     OLLAMA_HOST: str = "http://localhost:11434"
     OLLAMA_URL: str = ""          # Fallback mapped in property
 
+    # Response Engine Settings
+    ANSWER_MODE: str = "llm"  # "llm" (Sprint 2). Sprint 3 adds "verbatim".
+
     # RAG Settings
     SIMILARITY_THRESHOLD: float = 0.25
     TOP_K: int = 4
@@ -44,6 +47,18 @@ class Settings(BaseSettings):
     MONGODB_DB_NAME: str = "opsai"
     JWT_SECRET: str = "changeme"
     JWT_EXPIRE_MINUTES: int = 60
+
+    # Response Engine
+    MAX_RELATED_TOPICS: int = 3
+
+    # Default fallback when retrieval confidence is too low
+    FALLBACK_MESSAGE: str = (
+        "I don't have enough verified information on this topic."
+    )
+
+    # Cache
+    ENABLE_RESPONSE_CACHE: bool = True
+    CACHE_SIZE: int = 100
     
     @property
     def chroma_dir(self) -> str:
