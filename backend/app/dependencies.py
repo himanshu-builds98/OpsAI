@@ -4,6 +4,8 @@ from app.rag.embeddings import BGEEmbeddings
 from app.rag.vector_store import VectorStoreManager
 from app.rag.retriever import Retriever
 from app.rag.pipeline import RAGPipeline
+from app.rag.response_engine.engine import ResponseEngine
+from app.rag.response_engine.llm_formatter import LLMFormatter
 from app.llm.base import BaseLLM
 from app.llm.llm_factory import LLMFactory
 from app.services.analytics_service import AnalyticsService
@@ -16,6 +18,7 @@ _vector_store: Optional[VectorStoreManager] = None
 _retriever: Optional[Retriever] = None
 _llm: Optional[BaseLLM] = None
 _analytics: Optional[AnalyticsService] = None
+_response_engine: Optional[ResponseEngine] = None
 _pipeline: Optional[RAGPipeline] = None
 
 # ============================================================
@@ -79,6 +82,26 @@ def get_analytics_service() -> AnalyticsService:
     return _analytics
 
 # ============================================================
+# Response Engine
+# ============================================================
+def get_response_engine() -> ResponseEngine:
+    """
+    Builds the ResponseEngine used by the RAG pipeline. Currently always
+    wires up an LLMFormatter (settings.ANSWER_MODE == "llm"); Sprint 3
+    will branch here to select a VerbatimFormatter instead.
+    """
+    global _response_engine
+
+    if _response_engine is None:
+        formatter = LLMFormatter(
+            llm=get_llm(),
+            fallback_message=ResponseEngine.FALLBACK_MESSAGE,
+        )
+        _response_engine = ResponseEngine(formatter=formatter)
+
+    return _response_engine
+
+# ============================================================
 # Pipeline
 # ============================================================
 def get_rag_pipeline() -> RAGPipeline:
@@ -87,7 +110,7 @@ def get_rag_pipeline() -> RAGPipeline:
     if _pipeline is None:
         _pipeline = RAGPipeline(
             retriever=get_retriever(),
-            llm=get_llm(),
+            response_engine=get_response_engine(),
             analytics_service=get_analytics_service()
         )
 
