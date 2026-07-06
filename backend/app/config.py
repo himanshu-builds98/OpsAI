@@ -16,7 +16,11 @@ class Settings(BaseSettings):
     REPO_ROOT: str = os.path.dirname(BACKEND_ROOT)
 
     TRADE_KNOWLEDGE_CSV: str = os.path.join(REPO_ROOT, "data", "trade_knowledge.csv")
+<<<<<<< HEAD
     CHROMA_PERSIST_DIR: str = os.path.join(REPO_ROOT, "vector_store")
+=======
+    CHROMA_PERSIST_DIR: str = os.path.join(BACKEND_ROOT, "vector_store")
+>>>>>>> backend_new_rag
     CHROMA_PATH: str = "" # Fallback mapped in property
     CHROMA_SERVER_HOST: str = "" # Set in prod to run standalone container
     CHROMA_SERVER_HTTP_PORT: int = 8000
@@ -28,14 +32,34 @@ class Settings(BaseSettings):
 
     # LLM Settings
     LLM_PROVIDER: str = "ollama"  # "ollama" or "openai"
+<<<<<<< HEAD
     LLM_MODEL: str = "mistral:7b"    # "mistral", "llama3.1:8b"
     OLLAMA_HOST: str = "http://localhost:11434"
     OLLAMA_URL: str = ""          # Fallback mapped in property
+=======
+    LLM_MODEL: str = "tinyllama:latest"
+    OLLAMA_HOST: str = "http://localhost:11434"
+    OLLAMA_URL: str = ""          # Fallback mapped in property
+
+    # Response Engine Settings
+    ANSWER_MODE: str = "verbatim"  # "llm" or "verbatim"
+    FALLBACK_MESSAGE: str = (
+        "I don't have enough verified information on this topic."
+    )
+>>>>>>> backend_new_rag
 
     # RAG Settings
     SIMILARITY_THRESHOLD: float = 0.25
     TOP_K: int = 4
 
+<<<<<<< HEAD
+=======
+    # Retrieval Ranking
+    ENABLE_EXACT_MATCH: bool = True
+    EXACT_MATCH_BOOST: float = 0.40
+    CONTAINS_MATCH_BOOST: float = 0.15
+
+>>>>>>> backend_new_rag
     # OpenAI-compatible API Fallback
     OPENAI_API_KEY: str = "placeholder-key"
     OPENAI_API_BASE: str = "https://api.openai.com/v1"
