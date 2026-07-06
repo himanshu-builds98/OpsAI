@@ -2,9 +2,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useChat } from '../hooks/useChat';
 import { ChatMessage } from '../components/ChatMessage';
 import { ChatInput } from '../components/ChatInput';
-import { Settings as SettingsIcon, X, Upload, Loader2, FileText, Sun, Moon, Cpu, Terminal } from 'lucide-react';
 import { apiService } from '../services/api';
-
+import { Terminal, Loader2, X, Upload, FileText, Sun, Moon, Settings } from 'lucide-react';
 interface ChatProps {
   sidebarOpen: boolean;
   onToggleSidebar: () => void;
@@ -130,42 +129,22 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
       <div className="flex-1 flex flex-col h-full overflow-hidden relative">
 
         {/* System Cockpit Top Status Bar - Glassmorphism applied with black base */}
-        <header className="px-6 md:px-8 py-4 flex items-center justify-between border-b border-slate-200/60 dark:border-slate-800/80 bg-white/70 dark:bg-black/70 backdrop-blur-md select-none z-20 min-h-[64px] shrink-0 shadow-sm">
-
-          {/* Logo Group & Left-Side Hover Toggle */}
-          <div className="group flex items-center cursor-pointer relative pl-1 md:pl-0">
-
-            {/* The Ops Icon Toggle - Slides in from the left */}
+        <header className="px-6 py-3 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-black/70 backdrop-blur-md z-20 min-h-[50px]">
+          <div className="group flex items-center cursor-pointer">
             {!sidebarOpen && (
-              <button
-                onClick={onToggleSidebar}
-                className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 mr-3 p-1.5 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg transition-all duration-300 ease-out text-sky-500 dark:text-sky-400 hover:text-sky-600 dark:hover:text-sky-300 focus:outline-none flex-shrink-0 shadow-sm"
-                title="Open Command Center (Cmd+B)"
-              >
-                <Terminal size={16} strokeWidth={2.5} />
+              <button onClick={onToggleSidebar} className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 mr-3 p-1 text-[#7c3aed] transition-all">
+                <Terminal size={14} />
               </button>
             )}
-
-            {/* Brand Text - Shifts slightly right on hover to make room for the icon */}
-            <div className="flex flex-col justify-center transition-transform duration-300 group-hover:translate-x-1">
-              <h2 className="font-bold text-lg text-slate-900 dark:text-white font-sans leading-none tracking-tight">Ops Bot</h2>
-              <span className="text-[10px] text-sky-600 dark:text-sky-500 font-semibold tracking-widest mt-1.5 leading-none uppercase">Kaizen Ops AI</span>
+            <div className="flex flex-col transition-transform group-hover:translate-x-1">
+              <h2 className="font-bold text-[13px] text-slate-900 dark:text-white leading-none">Ops Bot</h2>
+              <span className="text-[8px] text-sky-500 uppercase tracking-widest mt-1 font-matrix">Kaizen Ops AI</span>
             </div>
-          </div>
-
-          {/* Micro Status Indicators on Far Right */}
-          <div className="flex items-center space-x-2.5">
-            <span className={`text-[10px] font-bold tracking-widest uppercase ${backendStatus === 'connected' ? 'text-emerald-500' : 'text-rose-500'}`}>
-              {backendStatus === 'connected' ? 'Connected' : 'Offline'}
-            </span>
-            {/* Wireless status indicator */}
-            <span className={`flex items-center justify-center p-1.5 rounded-lg border transition-all ${backendStatus === 'connected'
-              ? 'bg-[#39d353]/10 text-[#39d353] border-[#39d353]/20'
-              : 'bg-rose-500/10 text-rose-500 border-rose-500/20'
-              }`} title={backendStatus === 'connected' ? 'Server Connected' : 'Server Offline'}>
-              <span className={`w-1.5 h-1.5 rounded-full ${backendStatus === 'connected' ? 'bg-[#39d353] animate-pulse' : 'bg-rose-500'}`} />
-            </span>
-            <Cpu size={14} className={backendStatus === 'connected' ? 'text-emerald-500' : 'text-rose-500'} />
+            <div className="flex items-center space-x-2">
+              <span className={`text-[10px] font-matrix ${backendStatus === 'connected' ? 'text-emerald-500' : 'text-rose-500'}`}>
+                {backendStatus === 'connected' ? 'Server Running' : 'Offline'}
+              </span>
+            </div>
           </div>
         </header>
 
@@ -184,26 +163,17 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
 
             {/* Loading State Container - Upgraded to Premium Card */}
             {isLoading && (
-              <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/80 rounded-2xl p-6 font-sans text-sm space-y-4 shadow-lg shadow-slate-200/40 dark:shadow-none max-w-[85%] md:max-w-2xl mx-auto my-8 select-none transition-all">
-                <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3 mb-3">
-                  <span className="font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider text-[11px]">Processing Query</span>
-                  <span className="font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider text-[11px]">
-                    {visibleLogs.length >= 4 ? 'Status: Finalizing' : 'Status: Computing'}
-                  </span>
+              <div className="p-3 bg-slate-950 border border-slate-800 rounded-md w-full max-w-sm mx-auto shadow-sm my-4">
+                <div className="flex justify-between items-center mb-2">
+                  <h2 className="text-[8px] font-bold text-slate-500 uppercase tracking-widest font-matrix">Processing...</h2>
+                  <span className="text-[7px] text-slate-600 uppercase font-matrix">Status: Finalizing</span>
                 </div>
-                <div className="space-y-2.5 font-medium text-slate-600 dark:text-slate-300">
-                  {visibleLogs.map((logText, idx) => (
-                    <p key={idx} className="flex items-center text-xs md:text-sm animate-fade-in">
-                      <Loader2 size={12} className="text-blue-500 mr-3 flex-shrink-0 animate-spin" />
-                      <span>{logText}</span>
+                <div className="space-y-1">
+                  {visibleLogs.map((log, i) => (
+                    <p key={i} className="text-[9px] text-slate-400 font-matrix flex items-center">
+                      <Loader2 className="w-2 h-2 mr-2 animate-spin text-[#7c3aed]" /> {log}
                     </p>
                   ))}
-                  {visibleLogs.length < 4 && (
-                    <p className="flex items-center text-slate-400 dark:text-slate-500 text-xs md:text-sm">
-                      <span className="w-3 h-0.5 bg-blue-500/50 mr-3 flex-shrink-0 animate-pulse" />
-                      <span className="animate-pulse">_</span>
-                    </p>
-                  )}
                 </div>
               </div>
             )}
@@ -246,8 +216,10 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
           {/* Header */}
           <div className="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-white dark:bg-black/50">
             <div className="flex items-center space-x-2.5">
-              <SettingsIcon size={16} className="text-sky-500" />
-              <span className="text-xs font-bold text-slate-800 dark:text-white uppercase tracking-wider">Workspace Settings</span>
+              <Settings size={16} className="text-sky-500" />
+              <span className="text-xs font-bold text-slate-800 dark:text-white uppercase tracking-wider">
+                Workspace Settings
+              </span>
             </div>
             <button
               onClick={() => setSettingsOpen(false)}
