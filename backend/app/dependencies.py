@@ -4,8 +4,6 @@ from app.rag.embeddings import BGEEmbeddings
 from app.rag.vector_store import VectorStoreManager
 from app.rag.retriever import Retriever
 from app.rag.pipeline import RAGPipeline
-from app.rag.response_engine.engine import ResponseEngine
-from app.rag.response_engine.formatter_factory import FormatterFactory
 from app.llm.base import BaseLLM
 from app.llm.llm_factory import LLMFactory
 from app.services.analytics_service import AnalyticsService
@@ -80,30 +78,6 @@ def get_analytics_service() -> AnalyticsService:
         _analytics = AnalyticsService()
 
     return _analytics
-
-# ============================================================
-# Response Engine
-# ============================================================
-def get_response_engine() -> ResponseEngine:
-    """
-    Builds the ResponseEngine used by the RAG pipeline. The concrete
-    formatter (LLMFormatter vs VerbatimFormatter) is selected by
-    FormatterFactory based on settings.ANSWER_MODE.
-
-    get_llm() is only called when ANSWER_MODE == "llm" - in "verbatim"
-    mode, no BaseLLM (Ollama/OpenAI) is ever constructed.
-    """
-    global _response_engine
-
-    if _response_engine is None:
-        if settings.ANSWER_MODE == "llm":
-            formatter = FormatterFactory.create(llm=get_llm())
-        else:
-            formatter = FormatterFactory.create()
-
-        _response_engine = ResponseEngine(formatter=formatter)
-
-    return _response_engine
 
 # ============================================================
 # Pipeline
