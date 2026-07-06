@@ -158,8 +158,12 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
             <span className={`text-[10px] font-bold tracking-widest uppercase ${backendStatus === 'connected' ? 'text-emerald-500' : 'text-rose-500'}`}>
               {backendStatus === 'connected' ? 'Connected' : 'Offline'}
             </span>
-            <span className={`flex items-center justify-center p-1.5 rounded-lg border transition-all ${backendStatus === 'connected' ? 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20' : 'bg-rose-500/10 text-rose-500 border-rose-500/20'}`}>
-              <span className={`w-1.5 h-1.5 rounded-full ${backendStatus === 'connected' ? 'bg-emerald-500 animate-pulse' : 'bg-rose-500'}`} />
+            {/* Wireless status indicator */}
+            <span className={`flex items-center justify-center p-1.5 rounded-lg border transition-all ${backendStatus === 'connected'
+              ? 'bg-[#39d353]/10 text-[#39d353] border-[#39d353]/20'
+              : 'bg-rose-500/10 text-rose-500 border-rose-500/20'
+              }`} title={backendStatus === 'connected' ? 'Server Connected' : 'Server Offline'}>
+              <span className={`w-1.5 h-1.5 rounded-full ${backendStatus === 'connected' ? 'bg-[#39d353] animate-pulse' : 'bg-rose-500'}`} />
             </span>
             <Cpu size={14} className={backendStatus === 'connected' ? 'text-emerald-500' : 'text-rose-500'} />
           </div>
