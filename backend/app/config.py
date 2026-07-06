@@ -28,7 +28,7 @@ class Settings(BaseSettings):
 
     # LLM Settings
     LLM_PROVIDER: str = "ollama"  # "ollama" or "openai"
-    LLM_MODEL: str = "mistral:7b"    # "mistral", "llama3.1:8b"
+    LLM_MODEL: str = "tinyllama:latest"
     OLLAMA_HOST: str = "http://localhost:11434"
     OLLAMA_URL: str = ""          # Fallback mapped in property
 
@@ -41,6 +41,11 @@ class Settings(BaseSettings):
     # RAG Settings
     SIMILARITY_THRESHOLD: float = 0.25
     TOP_K: int = 4
+
+    # Retrieval Ranking
+    ENABLE_EXACT_MATCH: bool = True
+    EXACT_MATCH_BOOST: float = 0.40
+    CONTAINS_MATCH_BOOST: float = 0.15
 
     # OpenAI-compatible API Fallback
     OPENAI_API_KEY: str = "placeholder-key"
