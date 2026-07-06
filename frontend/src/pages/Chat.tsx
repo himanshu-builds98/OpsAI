@@ -2,7 +2,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useChat } from '../hooks/useChat';
 import { ChatMessage } from '../components/ChatMessage';
 import { ChatInput } from '../components/ChatInput';
-import { Settings as SettingsIcon, X, Upload, Loader2, FileText, Sun, Moon, Cpu, Terminal } from 'lucide-react';
+import { Settings as SettingsIcon, X, Upload, Loader2, FileText, Sun, Moon, PanelLeft, Cpu } from 'lucide-react';
+
 import { apiService } from '../services/api';
 
 interface ChatProps {
@@ -36,10 +37,10 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
     }
 
     const logTemplates = [
-      "Initializing environment...",
-      "Analyzing parameters...",
-      "Searching knowledge base...",
-      "Generating response..."
+      "Initializing...",
+      "Starting...",
+      "Searching...",
+      "Generating..."
     ];
 
     setVisibleLogs([logTemplates[0]]);
@@ -81,7 +82,7 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
   const fetchCustomResources = async () => {
     try {
       const res = await apiService.getKnowledgeStatus();
-      const customOnly = res.source_files.filter((f: any) => f.filename !== 'trade_knowledge.csv');
+      const customOnly = res.source_files.filter(f => f.filename !== 'trade_knowledge.csv');
       setUploadedFiles(customOnly);
     } catch {
       // Offline fallback
@@ -111,52 +112,39 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
     }
   };
 
-  const suggestedQuestions = [
-    { label: "⚡ Compare CPI vs SPI", query: "Compare CPI vs SPI", mode: "comparison" as const },
-    { label: "📋 Explain Project Charter", query: "Explain Project Charter", mode: "detailed" as const },
-    { label: "⚠ Explain Risk Register", query: "Explain Risk Register", mode: "detailed" as const },
-    { label: "👥 What is a RACI Matrix?", query: "What is a RACI Matrix?", mode: "quick" as const },
-    { label: "📅 Explain Gantt Chart", query: "Explain Gantt Chart", mode: "quick" as const },
-    { label: "📈 What is Earned Value?", query: "What is Earned Value?", mode: "quick" as const },
-    { label: "📝 Compare Business Case vs Project Charter", query: "Compare Business Case vs Project Charter", mode: "comparison" as const },
-    { label: "👤 Who creates the Business Case?", query: "Who creates the Business Case?", mode: "quick" as const },
-    { label: "📊 Explain Cost Performance Index", query: "Explain Cost Performance Index", mode: "detailed" as const },
-  ];
+
 
   return (
-    // FIXED: bg-slate-50 for light mode, pure black for dark mode.
-    <div className="flex-1 flex h-full overflow-hidden relative bg-slate-50 dark:bg-black">
-      {/* Workspace Canvas */}
+    <div className="flex-1 flex h-full overflow-hidden mesh-gradient relative">
+      {/* Workspace Canvas (Fluid document edit style) */}
       <div className="flex-1 flex flex-col h-full overflow-hidden relative">
 
-        {/* System Cockpit Top Status Bar - Glassmorphism applied with black base */}
-        <header className="px-6 md:px-8 py-4 flex items-center justify-between border-b border-slate-200/60 dark:border-slate-800/80 bg-white/70 dark:bg-black/70 backdrop-blur-md select-none z-20 min-h-[64px] shrink-0 shadow-sm">
-
-          {/* Logo Group & Left-Side Hover Toggle */}
-          <div className="group flex items-center cursor-pointer relative pl-1 md:pl-0">
-
-            {/* The Ops Icon Toggle - Slides in from the left */}
+        {/* System Cockpit Top Status Bar */}
+        <header className="px-8 py-4 flex items-center justify-between border-b dark:border-[#21232b]/40 border-slate-200 bg-card/10 backdrop-blur-sm select-none z-20 min-h-[64px]">
+          {/* Collapsible Trigger & Title */}
+          <div className="flex items-center space-x-3">
             {!sidebarOpen && (
               <button
                 onClick={onToggleSidebar}
-                className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 mr-3 p-1.5 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg transition-all duration-300 ease-out text-sky-500 dark:text-sky-400 hover:text-sky-600 dark:hover:text-sky-300 focus:outline-none flex-shrink-0 shadow-sm"
-                title="Open Command Center (Cmd+B)"
+                className="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-xl transition-all text-slate-400 hover:text-slate-800 dark:hover:text-white focus:outline-none border border-transparent flex-shrink-0"
+                title="Open Sidebar (Cmd+B)"
               >
-                <Terminal size={16} strokeWidth={2.5} />
+                <PanelLeft size={16} className="text-slate-400" />
               </button>
             )}
-
-            {/* Brand Text - Shifts slightly right on hover to make room for the icon */}
-            <div className="flex flex-col justify-center transition-transform duration-300 group-hover:translate-x-1">
-              <h2 className="font-bold text-lg text-slate-900 dark:text-white font-sans leading-none tracking-tight">Ops Bot</h2>
-              <span className="text-[10px] text-sky-600 dark:text-sky-500 font-semibold tracking-widest mt-1.5 leading-none uppercase">Kaizen Ops AI</span>
+            <div className="flex flex-col justify-center">
+              <h2 className="font-bold text-lg dark:text-white text-black font-matrix leading-none">Ops Bot</h2>
+              <span className="text-xs text-matrix-amber font-semibold tracking-wide mt-1.5 leading-none font-matrix">Kaizen Ops AI Bot</span>
             </div>
           </div>
 
+
+
           {/* Micro Status Indicators on Far Right */}
-          <div className="flex items-center space-x-2.5">
-            <span className={`text-[10px] font-bold tracking-widest uppercase ${backendStatus === 'connected' ? 'text-emerald-500' : 'text-rose-500'}`}>
-              {backendStatus === 'connected' ? 'Connected' : 'Offline'}
+          <div className="flex items-center space-x-2">
+            <span className={`text-xs font-matrix tracking-wider mr-1 uppercase ${backendStatus === 'connected' ? 'dark:text-[#39d353] text-emerald-600' : 'text-rose-500'
+              }`}>
+              {backendStatus === 'connected' ? 'Server Running' : 'Offline'}
             </span>
             {/* Wireless status indicator */}
             <span className={`flex items-center justify-center p-1.5 rounded-lg border transition-all ${backendStatus === 'connected'
@@ -165,13 +153,14 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
               }`} title={backendStatus === 'connected' ? 'Server Connected' : 'Server Offline'}>
               <span className={`w-1.5 h-1.5 rounded-full ${backendStatus === 'connected' ? 'bg-[#39d353] animate-pulse' : 'bg-rose-500'}`} />
             </span>
-            <Cpu size={14} className={backendStatus === 'connected' ? 'text-emerald-500' : 'text-rose-500'} />
+            {/* Microchip icon for local server node connectivity */}
+            <Cpu size={14} className={backendStatus === 'connected' ? 'text-[#39d353]' : 'text-rose-500'} />
           </div>
         </header>
 
-        {/* Canvas Body - Messages Area */}
-        <div className="flex-1 overflow-y-auto px-4 md:px-8 pt-8 pb-4 space-y-6 scroll-smooth">
-          <div className="max-w-4xl mx-auto w-full">
+        {/* Canvas Body (Dynamic document flow) */}
+        <div className="flex-1 overflow-y-auto px-8 py-8 space-y-6">
+          <div className="max-w-3xl mx-auto w-full pb-36">
 
             {/* Document contents flow */}
             {messages.map((msg) => (
@@ -182,26 +171,25 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
               />
             ))}
 
-            {/* Loading State Container - Upgraded to Premium Card */}
             {isLoading && (
-              <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/80 rounded-2xl p-6 font-sans text-sm space-y-4 shadow-lg shadow-slate-200/40 dark:shadow-none max-w-[85%] md:max-w-2xl mx-auto my-8 select-none transition-all">
-                <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3 mb-3">
-                  <span className="font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider text-[11px]">Processing Query</span>
-                  <span className="font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider text-[11px]">
-                    {visibleLogs.length >= 4 ? 'Status: Finalizing' : 'Status: Computing'}
+              <div className="dark:bg-[#141923] bg-slate-50 border dark:border-[#21232b] border-slate-200 rounded-2xl p-6 font-mono text-xs space-y-2.5 shadow-2xl max-w-2xl mx-auto my-6 select-none">
+                <div className="flex items-center justify-between border-b dark:border-[#21232b] border-slate-200 pb-2 mb-2">
+                  <span className="font-bold dark:text-[#39d353] text-emerald-600 uppercase tracking-wider font-matrix">PROCESSING</span>
+                  <span className="font-bold dark:text-[#39d353] text-emerald-600 uppercase tracking-wider font-matrix">
+                    {visibleLogs.length >= 4 ? 'STATUS: DONE' : 'STATUS: THINKING...'}
                   </span>
                 </div>
-                <div className="space-y-2.5 font-medium text-slate-600 dark:text-slate-300">
+                <div className="space-y-1.5 opacity-90 leading-relaxed font-medium">
                   {visibleLogs.map((logText, idx) => (
-                    <p key={idx} className="flex items-center text-xs md:text-sm animate-fade-in">
-                      <Loader2 size={12} className="text-blue-500 mr-3 flex-shrink-0 animate-spin" />
+                    <p key={idx} className="flex items-start text-matrix-amber font-matrix-vt">
+                      <span className="dark:text-[#39d353] text-emerald-600 font-matrix-vt mr-2 flex-shrink-0">&gt;</span>
                       <span>{logText}</span>
                     </p>
                   ))}
                   {visibleLogs.length < 4 && (
-                    <p className="flex items-center text-slate-400 dark:text-slate-500 text-xs md:text-sm">
-                      <span className="w-3 h-0.5 bg-blue-500/50 mr-3 flex-shrink-0 animate-pulse" />
-                      <span className="animate-pulse">_</span>
+                    <p className="flex items-start text-slate-400">
+                      <span className="dark:text-[#39d353] text-emerald-600 font-matrix-vt mr-2 flex-shrink-0">&gt;</span>
+                      <span className="animate-pulse font-matrix-vt dark:text-[#39d353] text-[#39d353]">_</span>
                     </p>
                   )}
                 </div>
@@ -211,22 +199,30 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
           </div>
         </div>
 
-        {/* Bottom Docked Command Bar */}
-        <div className="w-full max-w-4xl mx-auto px-4 pb-6 pt-2 shrink-0 z-20">
+        {/* Bottom Centered Floating Command Bar */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-full max-w-3xl px-4 z-20">
 
-          {/* Suggested Questions - Premium Action Pills */}
+          {/* Staggered organic cluster of pill-shaped Intent Bubbles floating above */}
           {messages.length === 1 && !isLoading && (
-            <div className="flex flex-wrap items-center justify-center gap-2.5 mb-5 animate-fade-in">
-              {suggestedQuestions.map((item) => (
-                <button
-                  key={item.query}
-                  onClick={() => handleSuggestClick(item.query, item.mode)}
-                  // WE SHRANK PADDING, FONT SIZE, AND SOFTENED THE BORDERS
-                  className="font-sans text-[11px] py-1.5 px-3 font-medium text-slate-600 dark:text-slate-400 bg-transparent border border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-900 rounded-full transition-all duration-150 focus:outline-none"
-                >
-                  {item.label}
-                </button>
-              ))}
+            <div className="flex flex-wrap items-center justify-center gap-2.5 mb-4.5 animate-fade-in">
+              <button
+                onClick={() => handleSuggestClick("Compare FOB vs. CIF", 'comparison')}
+                className="text-[10px] font-matrix py-1.5 px-3 text-[#FFB200] bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 hover:border-amber-400 rounded-full shadow-md hover:-translate-y-0.5 transition-all focus:outline-none flex items-center space-x-1.5"
+              >
+                <span>⚡ Compare FOB vs CIF Risks</span>
+              </button>
+              <button
+                onClick={() => handleSuggestClick("Index Bill of Lading Chunk", 'detailed')}
+                className="text-[10px] font-matrix py-1.5 px-3 text-[#FFB200] bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 hover:border-amber-400 rounded-full shadow-md hover:-translate-y-0.5 transition-all focus:outline-none flex items-center space-x-1.5"
+              >
+                <span>🔍 Index Bill of Lading Chunk</span>
+              </button>
+              <button
+                onClick={() => handleSuggestClick("Simulate Route Delay", 'quick')}
+                className="text-[10px] font-matrix py-1.5 px-3 text-[#FFB200] bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 hover:border-amber-400 rounded-full shadow-md hover:-translate-y-0.5 transition-all focus:outline-none flex items-center space-x-1.5"
+              >
+                <span>📊 Simulate Route Delay</span>
+              </button>
             </div>
           )}
 
@@ -241,38 +237,36 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
 
       {/* Settings Drawer (Right Side) */}
       {settingsOpen && (
-        <aside className="w-64 bg-slate-50 dark:bg-black border-l border-slate-200 dark:border-slate-800 flex flex-col h-screen flex-shrink-0 relative transition-all duration-300 shadow-2xl z-30 animate-fade-in">
-
+        <aside className="w-80 bg-[#0f0f12] border-l border-[#21232b]/80 flex flex-col h-screen flex-shrink-0 relative transition-all duration-300 shadow-2xl z-30 animate-fade-in text-white">
           {/* Header */}
-          <div className="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-white dark:bg-black/50">
-            <div className="flex items-center space-x-2.5">
-              <SettingsIcon size={16} className="text-sky-500" />
-              <span className="text-xs font-bold text-slate-800 dark:text-white uppercase tracking-wider">Workspace Settings</span>
+          <div className="p-4 border-b border-[#21232b]/60 flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <SettingsIcon size={16} className="text-[#10b981]" />
+              <span className="text-xs font-bold text-foreground">Resources & Settings</span>
             </div>
             <button
               onClick={() => setSettingsOpen(false)}
-              className="p-1.5 hover:bg-slate-200 dark:hover:bg-slate-900 rounded-lg transition-all text-slate-500 hover:text-slate-900 dark:hover:text-white focus:outline-none"
+              className="p-1.5 hover:bg-accent rounded-lg transition-all text-muted-foreground hover:text-foreground focus:outline-none"
             >
-              <X size={16} />
+              <X size={14} />
             </button>
           </div>
 
-          <div className="flex-1 overflow-y-auto p-5 space-y-6">
-
+          <div className="flex-1 overflow-y-auto p-4 space-y-5">
             {/* Uploader Section */}
-            <div className="space-y-3">
-              <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Add Knowledge Source</span>
-              <label className="border-2 border-dashed border-slate-300 dark:border-slate-800 hover:border-sky-500 dark:hover:border-sky-500 rounded-2xl p-6 flex flex-col items-center justify-center cursor-pointer transition-all bg-white dark:bg-slate-900/50 hover:bg-slate-50 dark:hover:bg-slate-900 group">
+            <div className="space-y-2">
+              <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Add Custom Resources</span>
+              <label className="border-2 border-dashed border-[#21232b] hover:border-[#10b981] rounded-2xl p-4 flex flex-col items-center justify-center cursor-pointer transition-all bg-[#0f0f12]/50 hover:bg-white/5">
                 {uploading ? (
                   <>
-                    <Loader2 size={24} className="animate-spin text-sky-500 mb-3" />
-                    <span className="text-xs font-medium text-slate-500">Processing document...</span>
+                    <Loader2 size={24} className="animate-spin text-[#10b981] mb-2" />
+                    <span className="text-xs font-medium text-slate-400">Uploading resource...</span>
                   </>
                 ) : (
                   <>
-                    <Upload size={24} className="text-slate-400 group-hover:text-sky-500 transition-colors mb-3" />
-                    <span className="text-xs font-bold text-slate-700 dark:text-slate-300 text-center">Upload PDF, CSV, or TXT</span>
-                    <span className="text-[10px] text-slate-500 mt-1 font-medium">Max upload size: 10MB</span>
+                    <Upload size={24} className="text-slate-500 mb-2" />
+                    <span className="text-xs font-bold text-foreground text-center">Upload PDF, CSV, or TXT</span>
+                    <span className="text-[9px] text-muted-foreground mt-0.5 font-semibold">Max size 10MB</span>
                   </>
                 )}
                 <input
@@ -287,22 +281,20 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
 
             {/* List of Custom Uploads */}
             <div className="space-y-3">
-              <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Active Resources</span>
+              <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Custom Resources</span>
               {uploadedFiles.length === 0 ? (
-                <div className="text-center py-8 text-xs text-slate-500 font-medium border border-dashed border-slate-300 dark:border-slate-800 rounded-xl bg-white/50 dark:bg-slate-900/30">
-                  No custom resources found.
+                <div className="text-center py-6 text-[11px] text-slate-500 font-semibold border border-dashed border-[#21232b] rounded-xl">
+                  No custom resources uploaded
                 </div>
               ) : (
-                <div className="space-y-2.5">
+                <div className="space-y-2">
                   {uploadedFiles.map((file, idx) => (
-                    <div key={idx} className="p-3.5 bg-white dark:bg-slate-900/80 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between shadow-sm hover:border-sky-500/50 transition-colors">
-                      <div className="flex items-center space-x-3 overflow-hidden">
-                        <div className="p-2 bg-sky-50 dark:bg-sky-500/10 rounded-lg flex-shrink-0">
-                          <FileText size={14} className="text-sky-500" />
-                        </div>
+                    <div key={idx} className="p-3 bg-[#121318]/50 rounded-xl border border-[#21232b] flex items-center justify-between">
+                      <div className="flex items-center space-x-2 overflow-hidden">
+                        <FileText size={14} className="text-[#10b981] flex-shrink-0" />
                         <div className="overflow-hidden">
-                          <h4 className="text-xs font-bold text-slate-800 dark:text-slate-200 truncate">{file.filename}</h4>
-                          <span className="text-[10px] text-slate-500 font-medium">{file.records_count} vectorized chunks</span>
+                          <h4 className="text-xs font-bold text-foreground truncate">{file.filename}</h4>
+                          <span className="text-[9px] text-muted-foreground font-semibold">{file.records_count} chunks</span>
                         </div>
                       </div>
                     </div>
@@ -312,20 +304,21 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
             </div>
 
             {/* Color Theme Selector */}
-            <div className="pt-5 mt-5 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
-              <span className="text-xs font-bold text-slate-600 dark:text-slate-400">Interface Theme</span>
+            <div className="pt-4 border-t border-[#21232b]/60 flex items-center justify-between">
+              <span className="text-xs font-bold text-slate-500">Color Theme</span>
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className="p-2.5 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-xl transition-all border border-slate-200 dark:border-slate-800 shadow-sm focus:outline-none flex items-center space-x-2"
+                className="p-2 bg-white/5 hover:bg-white/10 text-slate-300 rounded-xl transition-all border border-[#21232b] shadow-sm focus:outline-none"
                 title="Toggle Theme"
               >
-                {darkMode ? <Sun size={14} /> : <Moon size={14} />}
-                <span className="text-[10px] font-bold uppercase">{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
+                {darkMode ? <Sun size={15} /> : <Moon size={15} />}
               </button>
             </div>
           </div>
         </aside>
       )}
+
+
     </div>
   );
 };

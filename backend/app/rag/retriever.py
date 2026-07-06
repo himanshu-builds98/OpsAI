@@ -1,6 +1,11 @@
+import logging
 from typing import List, Dict, Any
-from app.rag.vector_store import VectorStoreManager
+
+from app.config import settings
 from app.rag.query_processor import QueryAnalysis
+from app.rag.vector_store import VectorStoreManager
+
+logger = logging.getLogger("uvicorn.error")
 
 
 class Retriever:
@@ -8,10 +13,9 @@ class Retriever:
     Hybrid Retriever.
 
     Combines:
-    - Semantic Search (Chroma)
-    - Exact Term Match
-    - Alias Match
-    - Keyword Match
+    - Semantic Search
+    - Exact Term Boosting
+    - Query Contains Term Boosting
     """
 
     def __init__(self, vector_store: VectorStoreManager, threshold: float = 0.25):
@@ -19,65 +23,50 @@ class Retriever:
         self.threshold = threshold
 
     def retrieve(self, analysis: QueryAnalysis) -> List[Dict[str, Any]]:
-
         semantic_results = self.vector_store.search(
             analysis.search_query,
-            limit=max(analysis.top_k * 2, 8)
+            limit=max(analysis.top_k * 2, 8),
         )
 
-        query = analysis.search_query.lower()
-        query_words = set(query.split())
+        query = analysis.search_query.lower().strip()
 
         reranked = []
 
         for doc in semantic_results:
+            semantic_score = doc.get("score", 0.0)
 
-            score = doc.get("score", 0.0)
+            boost = 0.0
 
-            #################################################
-            # Exact Term Match
-            #################################################
+            if settings.ENABLE_EXACT_MATCH:
+                term = doc.get("term", "").lower().strip()
 
-            if doc["term"].lower() == query:
-                score += 0.40
+                if term == query:
+                    boost += settings.EXACT_MATCH_BOOST
+                elif term and term in query:
+                    boost += settings.CONTAINS_MATCH_BOOST
 
-            #################################################
-            # Alias Match
-            #################################################
+            final_score = semantic_score + boost
 
-            aliases = doc.get("aliases", [])
+            doc["final_score"] = final_score
 
-            for alias in aliases:
-                if alias.lower() in query:
-                    score += 0.30
-
-            #################################################
-            # Keyword Match
-            #################################################
-
-            keywords = {
-                k.lower()
-                for k in doc.get("keywords", [])
-            }
-
-            overlap = len(query_words & keywords)
-
-            score += overlap * 0.05
-
-            #################################################
-
-            doc["final_score"] = score
+            logger.info("=" * 34)
+            logger.info(f"Query          : {analysis.search_query}")
+            logger.info(f"Semantic score : {semantic_score:.4f}")
+            logger.info(f"Boost applied  : {boost:.4f}")
+            logger.info(f"Final score    : {final_score:.4f}")
+            logger.info("=" * 34)
 
             reranked.append(doc)
 
         reranked.sort(
             key=lambda x: x["final_score"],
-            reverse=True
+            reverse=True,
         )
 
         filtered = [
-            d for d in reranked
-            if d["final_score"] >= self.threshold
+            doc
+            for doc in reranked
+            if doc["final_score"] >= self.threshold
         ]
 
-        return filtered[:analysis.top_k]
+        return filtered[: analysis.top_k]
