@@ -3,7 +3,7 @@ import { useChat } from '../hooks/useChat';
 import { ChatMessage } from '../components/ChatMessage';
 import { ChatInput } from '../components/ChatInput';
 import { apiService } from '../services/api';
-import { Terminal, Loader2, X, Upload, FileText, Sun, Moon, Settings, PanelLeft, ChevronDown } from 'lucide-react';
+import { Loader2, X, Upload, FileText, Sun, Moon, Settings, PanelLeft, ChevronDown } from 'lucide-react';
 import ShieldBadgeIcon from '../svg/shield_infinity_circuit_badge.svg';
 
 // Add this near your other imports at the top of Chat.tsx
