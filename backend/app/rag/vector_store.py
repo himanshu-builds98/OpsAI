@@ -1,4 +1,3 @@
-from asyncio import windows_events
 import os
 import logging
 import chromadb
