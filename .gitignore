@@ -62,3 +62,7 @@ pnpm-debug.log*
 # OS files
 .DS_Store
 Thumbs.db
+backend/app/rag/response_engine/chroma.sqlite3
+backend/vector_store/
+vector_store/
+temp_backend_backup/
