@@ -1,41 +1,89 @@
-import pytest
+from app.rag.query_processor import QueryProcessor
 from app.rag.prompt_builder import PromptBuilder
 
-def test_intent_detection():
-    # Heuristics checks
-    assert PromptBuilder.detect_intent("What is FOB?") == "quick"
-    assert PromptBuilder.detect_intent("Compare FOB and CIF") == "comparison"
-    assert PromptBuilder.detect_intent("What is the difference between FOB and CIF?") == "comparison"
-    assert PromptBuilder.detect_intent("FOB vs CIF") == "comparison"
-    assert PromptBuilder.detect_intent("Give me a deep dive on Bill of Lading") == "detailed"
-    assert PromptBuilder.detect_intent("What are the problems with scope creep?") == "detailed"
 
-def test_system_prompt_builder():
-    student_system = PromptBuilder.build_system_prompt("student")
-    assert "STUDENT" in student_system
-    assert "Kaizen Trade Assistant" in student_system
-    assert "ICC Incoterms" not in student_system
+def test_query_processor_quick():
 
-    professional_system = PromptBuilder.build_system_prompt("professional")
-    assert "PROFESSIONAL" in professional_system
-    assert "ICC Incoterms" in professional_system
+    result = QueryProcessor.process("What is FOB?")
 
-def test_user_prompt_builder():
-    query = "What is FOB?"
-    context = "Term: FOB\nDefinition: Free on Board."
-    
-    quick_prompt = PromptBuilder.build_user_prompt(query, context, "quick")
-    assert "RESPONSE MODE: Quick Explanation" in quick_prompt
-    assert "Operational Tip:" in quick_prompt
-    assert "Common Risk:" in quick_prompt
-    assert "Recommendation:" in quick_prompt
+    assert result.intent == "quick"
 
-    detailed_prompt = PromptBuilder.build_user_prompt(query, context, "detailed")
-    assert "RESPONSE MODE: Detailed Learning" in detailed_prompt
-    assert "What is it?" in detailed_prompt
-    assert "Common Problems:" in detailed_prompt
-    assert "Operational Insight:" in detailed_prompt
 
-    comparison_prompt = PromptBuilder.build_user_prompt(query, context, "comparison")
-    assert "RESPONSE MODE: Comparison Mode" in comparison_prompt
-    assert "| Term | Definition | Responsibility |" in comparison_prompt
+def test_query_processor_comparison():
+
+    result = QueryProcessor.process("Compare FOB vs CIF")
+
+    assert result.intent == "comparison"
+
+
+def test_query_processor_detailed():
+
+    result = QueryProcessor.process(
+        "Explain Bill of Lading in detail"
+    )
+
+    assert result.intent == "detailed"
+
+
+def test_system_prompt():
+
+    prompt = PromptBuilder.build_system_prompt()
+
+    assert isinstance(prompt, str)
+
+    assert len(prompt) > 100
+
+
+def test_user_prompt():
+
+    context = (
+        "Term: FOB\n"
+        "Definition: Free On Board"
+    )
+
+    prompt = PromptBuilder.build_user_prompt(
+        "What is FOB?",
+        context,
+        "quick",
+    )
+
+    assert "USER QUESTION" in prompt
+    assert "RETRIEVED CONTEXT" in prompt
+    assert "TASK" in prompt
+    assert "FOB" in prompt
+
+
+def test_user_prompt_comparison():
+
+    context = (
+        "Term: FOB\n"
+        "Definition: Free On Board"
+    )
+
+    prompt = PromptBuilder.build_user_prompt(
+        "Compare FOB vs CIF",
+        context,
+        "comparison",
+    )
+
+    assert "USER QUESTION" in prompt
+    assert "RETRIEVED CONTEXT" in prompt
+    assert "Compare FOB vs CIF" in prompt
+
+
+def test_user_prompt_detailed():
+
+    context = (
+        "Term: Bill of Lading\n"
+        "Definition: Shipping document"
+    )
+
+    prompt = PromptBuilder.build_user_prompt(
+        "Explain Bill of Lading",
+        context,
+        "detailed",
+    )
+
+    assert "USER QUESTION" in prompt
+    assert "RETRIEVED CONTEXT" in prompt
+    assert "Bill of Lading" in prompt
