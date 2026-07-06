@@ -26,7 +26,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend, onClear, isLoading
   return (
     <div className="w-full relative select-none">
       {/* Centered Command Bar Container */}
-      <div className="glassmorphic rounded-2xl px-4 py-2 shadow-2xl border dark:border-slate-800/80 border-slate-200 flex items-center space-x-3.5 transition-all duration-200 dark:bg-[#141923] bg-slate-50">
+      <div className="glassmorphic rounded-2xl px-4 py-3 shadow-2xl border dark:border-slate-800/80 border-slate-200 flex items-center space-x-3.5 transition-all duration-200 dark:bg-[#141923] bg-slate-50">
 
         {/* Attachment Clip */}
         <button
