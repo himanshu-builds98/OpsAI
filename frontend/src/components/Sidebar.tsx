@@ -108,7 +108,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
   };
 
   return (
-    <aside className={`dark:bg-[#090c14] bg-slate-50 dark:text-[#fafafa] text-slate-800 flex flex-col justify-between h-screen flex-shrink-0 select-none shadow-2xl z-40 transition-all duration-300 ease-in-out ${isOpen ? 'w-64 opacity-100' : 'w-0 opacity-0 pointer-events-none'}`}>
+    <aside
+      className={`sidebar-bg dark:text-[#fafafa] text-slate-800 flex flex-col justify-between h-screen flex-shrink-0 select-none shadow-2xl z-40 transition-all duration-200 hover:translate-x-1 duration-300 ease-in-out ${isOpen ? 'w-64 opacity-100' : 'w-0 opacity-0 pointer-events-none'
+        }`}
+    >
       <div className="p-3 flex items-center justify-between shrink-0">
         <div className="w-8 h-8 flex items-center justify-center rounded-full overflow-hidden shrink-0">
           {/* Using your custom SVG */}
@@ -116,7 +119,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
         <button
           onClick={onToggleSidebar}
-          className="p-2 text-slate-400 hover:text-slate-800 dark:hover:text-white rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all focus:outline-none"
+          className="p-2 text-slate-400 hover:text-slate-800 dark:hover:text-white rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-200 hover:translate-x-1 focus:outline-none"
           title="Close sidebar"
         >
           <PanelLeft size={20} strokeWidth={1.5} />
@@ -161,7 +164,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             {filteredChats.map((chat) => (
               <div
                 key={chat.id}
-                className="group relative w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-xs font-bold transition-all border-l-2 text-left dark:text-slate-400 text-slate-600 border-transparent hover:bg-[#7c3aed]/10 hover:border-[#7c3aed] hover:dark:text-white"
+                className="group relative w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-xs font-bold transition-all duration-200 hover:translate-x-1 border-l-2 text-left dark:text-slate-400 text-slate-600 border-transparent hover:bg-[#7c3aed]/10 hover:border-[#7c3aed] hover:dark:text-white"
               >
                 {chat.pinned ? (
                   <Pin size={14} className="text-[#7c3aed] flex-shrink-0" />
@@ -252,19 +255,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {/* Unified Bottom Menu (Settings, Logout, Mode) */}
         <div className="space-y-1 pt-2">
           <button onClick={onToggleSettings}
-            className="w-full flex items-center space-x-3 px-4 py-2 rounded-xl text-[11px] font-bold dark:text-slate-400 text-slate-600 dark:hover:text-white hover:text-slate-800 hover:bg-black/5 dark:hover:bg-white/5 transition-all text-left">
+            className="w-full flex items-center space-x-3 px-4 py-2 rounded-xl text-[11px] font-bold dark:text-slate-400 text-slate-600 dark:hover:text-white hover:text-slate-800 hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-200 hover:translate-x-1 text-left">
             <SettingsIcon size={12} />
             <span className="font-matrix">Settings</span>
           </button>
 
           <button onClick={handleLogout}
-            className="w-full flex items-center space-x-3 px-4 py-2 rounded-xl text-[11px] font-bold text-rose-500 hover:bg-rose-500/10 transition-all text-left">
+            className="w-full flex items-center space-x-3 px-4 py-2 rounded-xl text-[11px] font-bold text-rose-500 hover:bg-rose-500/10 transition-all duration-200 hover:translate-x-1 text-left">
             <LogOut size={12} />
             <span className="font-matrix">Logout</span>
           </button>
 
           <button onClick={() => setDarkMode(!darkMode)}
-            className="w-full flex items-center space-x-3 px-4 py-2 rounded-xl text-[11px] font-bold dark:text-slate-400 text-slate-600 dark:hover:text-white hover:text-slate-800 hover:bg-black/5 dark:hover:bg-white/5 transition-all text-left focus:outline-none"
+            className="w-full flex items-center space-x-3 px-4 py-2 rounded-xl text-[11px] font-bold dark:text-slate-400 text-slate-600 dark:hover:text-white hover:text-slate-800 hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-200 hover:translate-x-1 text-left focus:outline-none"
           >
             {darkMode ? <Sun size={12} /> : <Moon size={12} />}
             <span className="font-matrix">{darkMode ? 'Light Mode' : 'Dark Mode'}</span>

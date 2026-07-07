@@ -7,7 +7,7 @@ export const KnowledgeBase: React.FC = () => {
   const [status, setStatus] = useState<KnowledgeStatusResponse | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  
+
   // File upload state
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isUploading, setIsUploading] = useState(false);
@@ -52,14 +52,14 @@ export const KnowledgeBase: React.FC = () => {
         const percent = Math.round((progressEvent.loaded * 100) / progressEvent.total);
         setUploadProgress(percent);
       });
-      
+
       setUploadResult({
         type: 'success',
         message: res.message
       });
       setSelectedFile(null);
       if (fileInputRef.current) fileInputRef.current.value = '';
-      
+
       // Reload database stats after ingestion
       fetchStatus();
     } catch (err: any) {
@@ -86,10 +86,10 @@ export const KnowledgeBase: React.FC = () => {
             <p className="text-[10px] text-muted-foreground font-medium">Manage RAG Corpora & Document Indexing</p>
           </div>
         </div>
-        <button 
-          onClick={fetchStatus} 
+        <button
+          onClick={fetchStatus}
           disabled={isLoading}
-          className="p-2 bg-card hover:bg-accent border border-border/80 hover:border-border text-muted-foreground hover:text-foreground rounded-xl transition-all shadow-sm focus:outline-none"
+          className="p-2 bg-card hover:bg-accent border border-border/80 hover:border-border text-muted-foreground hover:text-foreground rounded-xl transition-all duration-200 hover:translate-x-1 shadow-sm focus:outline-none"
         >
           <RefreshCw size={14} className={isLoading ? 'animate-spin' : ''} />
         </button>
@@ -97,7 +97,7 @@ export const KnowledgeBase: React.FC = () => {
 
       {/* Main Body */}
       <div className="flex-1 overflow-y-auto p-6 space-y-6">
-        
+
         {/* Status Telemetry Cards */}
         {error && (
           <div className="p-4 bg-destructive/5 text-destructive border border-destructive/10 rounded-xl flex items-center space-x-3 text-xs font-semibold shadow-sm animate-shake">
@@ -132,20 +132,20 @@ export const KnowledgeBase: React.FC = () => {
 
         {/* Action Ingestion Portal & Document Registry list layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          
+
           {/* Upload Portal */}
           <div className="bg-card border border-border/40 p-6 rounded-2xl shadow-sm space-y-4">
             <h3 className="font-bold text-sm text-foreground border-b border-border/40 pb-2.5 font-outfit">Ingest New Dataset</h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
               Upload compliance references, cargo terms sheets, or operational manifests. Files will be converted, embedded, and appended to the ChromaDB index.
             </p>
-            
+
             <form onSubmit={handleUploadSubmit} className="space-y-4">
-              <div 
+              <div
                 onClick={() => fileInputRef.current?.click()}
-                className="border-2 border-dashed border-border hover:border-primary/40 bg-accent/10 hover:bg-accent/20 transition-all rounded-xl p-6 text-center cursor-pointer flex flex-col items-center justify-center space-y-2.5 group"
+                className="border-2 border-dashed border-border hover:border-primary/40 bg-accent/10 hover:bg-accent/20 transition-all duration-200 hover:translate-x-1 rounded-xl p-6 text-center cursor-pointer flex flex-col items-center justify-center space-y-2.5 group"
               >
-                <div className="p-3 bg-card border border-border/60 group-hover:border-primary/20 text-muted-foreground group-hover:text-primary rounded-xl shadow-sm transition-all">
+                <div className="p-3 bg-card border border-border/60 group-hover:border-primary/20 text-muted-foreground group-hover:text-primary rounded-xl shadow-sm transition-all duration-200 hover:translate-x-1">
                   <Upload size={20} />
                 </div>
                 <div>
@@ -156,8 +156,8 @@ export const KnowledgeBase: React.FC = () => {
                     Supported: PDF, CSV, TXT (Max: 10MB)
                   </span>
                 </div>
-                <input 
-                  type="file" 
+                <input
+                  type="file"
                   ref={fileInputRef}
                   onChange={handleFileChange}
                   accept=".pdf,.csv,.txt"
@@ -173,17 +173,16 @@ export const KnowledgeBase: React.FC = () => {
                     <span>{uploadProgress}%</span>
                   </div>
                   <div className="w-full bg-accent/40 rounded-full h-1.5 overflow-hidden">
-                    <div className="bg-primary h-full transition-all duration-300" style={{ width: `${uploadProgress}%` }} />
+                    <div className="bg-primary h-full transition-all duration-200 hover:translate-x-1 duration-300" style={{ width: `${uploadProgress}%` }} />
                   </div>
                 </div>
               )}
 
               {uploadResult && (
-                <div className={`p-3.5 border rounded-xl flex items-start space-x-2 text-xs font-semibold ${
-                  uploadResult.type === 'success' 
-                    ? 'bg-emerald-500/5 dark:bg-emerald-500/10 border-emerald-500/20 text-emerald-600 dark:text-emerald-400' 
+                <div className={`p-3.5 border rounded-xl flex items-start space-x-2 text-xs font-semibold ${uploadResult.type === 'success'
+                    ? 'bg-emerald-500/5 dark:bg-emerald-500/10 border-emerald-500/20 text-emerald-600 dark:text-emerald-400'
                     : 'bg-destructive/5 text-destructive border-destructive/10'
-                }`}>
+                  }`}>
                   {uploadResult.type === 'success' ? <CheckCircle size={15} className="mt-0.5" /> : <AlertCircle size={15} className="mt-0.5" />}
                   <span className="leading-relaxed">{uploadResult.message}</span>
                 </div>
@@ -192,7 +191,7 @@ export const KnowledgeBase: React.FC = () => {
               <button
                 type="submit"
                 disabled={!selectedFile || isUploading}
-                className="w-full py-2.5 bg-primary hover:bg-primary/95 disabled:bg-primary/50 text-primary-foreground disabled:text-primary-foreground/70 font-semibold text-xs rounded-xl shadow-md disabled:shadow-none transition-all flex items-center justify-center space-x-2"
+                className="w-full py-2.5 bg-primary hover:bg-primary/95 disabled:bg-primary/50 text-primary-foreground disabled:text-primary-foreground/70 font-semibold text-xs rounded-xl shadow-md disabled:shadow-none transition-all duration-200 hover:translate-x-1 flex items-center justify-center space-x-2"
               >
                 <span>Upload Document</span>
               </button>
@@ -202,7 +201,7 @@ export const KnowledgeBase: React.FC = () => {
           {/* Files List Registry */}
           <div className="bg-card border border-border/40 p-6 rounded-2xl shadow-sm space-y-4 lg:col-span-2 flex flex-col">
             <h3 className="font-bold text-sm text-foreground border-b border-border/40 pb-2.5 font-outfit">Dataset Sources Registry</h3>
-            
+
             {isLoading ? (
               <div className="flex-1 flex flex-col items-center justify-center py-12 text-xs text-muted-foreground space-y-2">
                 <RefreshCw className="animate-spin text-primary" size={20} />
@@ -216,7 +215,7 @@ export const KnowledgeBase: React.FC = () => {
             ) : (
               <div className="divide-y divide-border/40 overflow-y-auto flex-1 max-h-[360px]">
                 {status.source_files.map((file: SourceFileInfo, idx: number) => (
-                  <div key={idx} className="py-3 flex items-center justify-between hover:bg-accent/5 px-2 rounded-xl transition-all">
+                  <div key={idx} className="py-3 flex items-center justify-between hover:bg-accent/5 px-2 rounded-xl transition-all duration-200 hover:translate-x-1">
                     <div className="flex items-center space-x-3">
                       <div className="p-2 bg-primary/5 border border-primary/10 text-primary rounded-lg">
                         <FileText size={15} />

@@ -141,7 +141,7 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
             {!sidebarOpen && (
               <button
                 onClick={onToggleSidebar}
-                className="p-2 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-all focus:outline-none flex items-center justify-center shrink-0"
+                className="p-2 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-all duration-200 hover:translate-x-1 focus:outline-none flex items-center justify-center shrink-0"
                 title="Open sidebar"
               >
                 <PanelLeft size={20} strokeWidth={1.5} />
@@ -175,7 +175,7 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
 
           {/* Right Side: Server Status */}
           <div className="flex items-center space-x-2 bg-slate-100 dark:bg-slate-900 px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-800">
-            <div className={`w-2 h-2 rounded-full ${backendStatus === 'connected' ? 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]' : 'bg-rose-500'}`} />
+            <div className={`w-2 h-2 rounded-full ${backendStatus === 'connected' ? 'bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]' : 'bg-rose-500'}`} />
             <span className={`text-[9px] font-matrix uppercase tracking-wider font-bold ${backendStatus === 'connected' ? 'text-emerald-500' : 'text-rose-500'}`}>
               {backendStatus === 'connected' ? 'System Online' : 'Offline'}
             </span>
@@ -188,7 +188,9 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
           <div className="max-w-4xl mx-auto w-full">
 
             {/* Document contents flow */}
-            {messages.map((msg) => (
+            {messages.filter((msg, index) =>
+              !(index === 0 && msg.sender === 'assistant' && messages.some(m => m.sender === 'user'))
+            ).map((msg) => (
               <ChatMessage
                 key={msg.id}
                 message={msg}
@@ -226,7 +228,7 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
                   <button
                     key={item.query}
                     onClick={() => handleSuggestClick(item.query, item.mode)}
-                    className="font-sans text-[11px] py-1.5 px-3 font-medium text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-all duration-150 focus:outline-none shadow-sm"
+                    className="font-sans text-[11px] py-1.5 px-3 font-medium text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-all duration-200 hover:translate-x-1 duration-150 focus:outline-none shadow-sm"
                   >
                     {item.label}
                   </button>
@@ -246,7 +248,7 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
 
       {/* Settings Drawer (Right Side) */}
       {settingsOpen && (
-        <aside className="w-64 bg-slate-50 dark:bg-black border-l border-slate-200 dark:border-slate-800 flex flex-col h-screen flex-shrink-0 relative transition-all duration-300 shadow-2xl z-30 animate-fade-in">
+        <aside className="w-64 bg-slate-50 dark:bg-black border-l border-slate-200 dark:border-slate-800 flex flex-col h-screen flex-shrink-0 relative transition-all duration-200 hover:translate-x-1 duration-300 shadow-2xl z-30 animate-fade-in">
 
           {/* Header */}
           <div className="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-white dark:bg-black/50">
@@ -258,7 +260,7 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
             </div>
             <button
               onClick={() => setSettingsOpen(false)}
-              className="p-1.5 hover:bg-slate-200 dark:hover:bg-slate-900 rounded-lg transition-all text-slate-500 hover:text-slate-900 dark:hover:text-white focus:outline-none"
+              className="p-1.5 hover:bg-slate-200 dark:hover:bg-slate-900 rounded-lg transition-all duration-200 hover:translate-x-1 text-slate-500 hover:text-slate-900 dark:hover:text-white focus:outline-none"
             >
               <X size={16} />
             </button>
@@ -269,7 +271,7 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
             {/* Uploader Section */}
             <div className="space-y-3">
               <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Add Knowledge Source</span>
-              <label className="border-2 border-dashed border-slate-300 dark:border-slate-800 hover:border-sky-500 dark:hover:border-sky-500 rounded-2xl p-6 flex flex-col items-center justify-center cursor-pointer transition-all bg-white dark:bg-slate-900/50 hover:bg-slate-50 dark:hover:bg-slate-900 group">
+              <label className="border-2 border-dashed border-slate-300 dark:border-slate-800 hover:border-sky-500 dark:hover:border-sky-500 rounded-2xl p-6 flex flex-col items-center justify-center cursor-pointer transition-all duration-200 hover:translate-x-1 bg-white dark:bg-slate-900/50 hover:bg-slate-50 dark:hover:bg-slate-900 group">
                 {uploading ? (
                   <>
                     <Loader2 size={24} className="animate-spin text-sky-500 mb-3" />
@@ -323,7 +325,7 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
               <span className="text-xs font-bold text-slate-600 dark:text-slate-400">Interface Theme</span>
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className="p-2.5 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-xl transition-all border border-slate-200 dark:border-slate-800 shadow-sm focus:outline-none flex items-center space-x-2"
+                className="p-2.5 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-xl transition-all duration-200 hover:translate-x-1 border border-slate-200 dark:border-slate-800 shadow-sm focus:outline-none flex items-center space-x-2"
                 title="Toggle Theme"
               >
                 {darkMode ? <Sun size={14} /> : <Moon size={14} />}

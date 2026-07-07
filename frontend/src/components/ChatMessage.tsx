@@ -261,7 +261,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onSelectTopic
               <button
                 key={index}
                 onClick={() => onSelectTopic && onSelectTopic(topic)}
-                className="font-sans text-sm py-1 px-3 font-semibold text-amber-400 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 hover:border-amber-400 rounded-full transition-all duration-150 shadow-sm"
+                className="font-sans text-sm py-1 px-3 font-semibold text-amber-400 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 hover:border-amber-400 rounded-full transition-all duration-200 hover:translate-x-1 duration-150 shadow-sm"
               >
                 {topic}
               </button>

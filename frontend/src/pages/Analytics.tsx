@@ -50,10 +50,10 @@ export const Analytics: React.FC = () => {
             <p className="text-[10px] text-muted-foreground font-medium">Monitor RAG Performance & Query Insights</p>
           </div>
         </div>
-        <button 
+        <button
           onClick={fetchAnalytics}
           disabled={isLoading}
-          className="p-2 bg-card hover:bg-accent border border-border/80 hover:border-border text-muted-foreground hover:text-foreground rounded-xl transition-all shadow-sm focus:outline-none"
+          className="p-2 bg-card hover:bg-accent border border-border/80 hover:border-border text-muted-foreground hover:text-foreground rounded-xl transition-all duration-200 hover:translate-x-1 shadow-sm focus:outline-none"
         >
           <RefreshCw size={14} className={isLoading ? 'animate-spin' : ''} />
         </button>
@@ -134,9 +134,9 @@ export const Analytics: React.FC = () => {
                         <span>{count} times</span>
                       </div>
                       <div className="w-full bg-accent/40 rounded-full h-2.5 overflow-hidden">
-                        <div 
-                          className="bg-primary h-full transition-all duration-500 rounded-full" 
-                          style={{ width: `${pct}%` }} 
+                        <div
+                          className="bg-primary h-full transition-all duration-200 hover:translate-x-1 duration-500 rounded-full"
+                          style={{ width: `${pct}%` }}
                         />
                       </div>
                     </div>
@@ -168,9 +168,9 @@ export const Analytics: React.FC = () => {
                         <span>{item.count} hits</span>
                       </div>
                       <div className="w-full bg-accent/40 rounded-full h-2.5 overflow-hidden">
-                        <div 
-                          className="bg-emerald-500 h-full transition-all duration-500 rounded-full" 
-                          style={{ width: `${pct}%` }} 
+                        <div
+                          className="bg-emerald-500 h-full transition-all duration-200 hover:translate-x-1 duration-500 rounded-full"
+                          style={{ width: `${pct}%` }}
                         />
                       </div>
                     </div>

@@ -30,7 +30,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend, onClear, isLoading
         <button
           type="button"
           title="Attach trade document"
-          className="p-2 hover:bg-black/5 dark:hover:bg-slate-800/60 rounded-xl transition-all text-slate-400 hover:text-slate-800 dark:hover:text-white focus:outline-none flex-shrink-0"
+          className="p-2 hover:bg-black/5 dark:hover:bg-slate-800/60 rounded-xl transition-all duration-200 hover:translate-x-1 text-slate-400 hover:text-slate-800 dark:hover:text-white focus:outline-none flex-shrink-0"
         >
           <Paperclip size={18} />
         </button>
@@ -40,9 +40,9 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend, onClear, isLoading
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Ask Questions Here"
+          placeholder="Ask OpsAI anything..."
           rows={1}
-          className="flex-1 bg-transparent border-0 focus:ring-0 focus:outline-none text-sm py-2 px-1 resize-none placeholder:text-slate-400 dark:text-slate-100 text-slate-850 transition-all leading-normal outline-none"
+          className="flex-1 bg-transparent border-0 focus:ring-0 focus:outline-none text-sm py-2 px-1 resize-none placeholder:text-slate-400 dark:text-slate-100 text-slate-850 transition-all duration-200 hover:translate-x-1 leading-normal outline-none"
           disabled={isLoading}
           style={{ maxHeight: '80px' }}
         />
@@ -62,7 +62,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend, onClear, isLoading
               type="button"
               onClick={handleSend}
               disabled={!inputText.trim()}
-              className="p-1.5 text-slate-400 hover:text-[#7c3aed] disabled:text-slate-600 transition-all"
+              className="p-1.5 text-slate-400 hover:text-[#7c3aed] disabled:text-slate-600 transition-all duration-200 hover:translate-x-1"
             >
               <Send size={12} />
             </button>
