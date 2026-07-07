@@ -3,7 +3,11 @@ import { useChat } from '../hooks/useChat';
 import { ChatMessage } from '../components/ChatMessage';
 import { ChatInput } from '../components/ChatInput';
 import { apiService } from '../services/api';
-import { Terminal, Loader2, X, Upload, FileText, Sun, Moon, Settings } from 'lucide-react';
+import { Loader2, X, Upload, FileText, Sun, Moon, Settings, PanelLeft, ChevronDown } from 'lucide-react';
+import ShieldBadgeIcon from '../svg/shield_infinity_circuit_badge.svg';
+
+// Add this near your other imports at the top of Chat.tsx
+
 interface ChatProps {
   sidebarOpen: boolean;
   onToggleSidebar: () => void;
@@ -123,29 +127,60 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
   ];
 
   return (
-    // FIXED: bg-slate-50 for light mode, pure black for dark mode.
     <div className="flex-1 flex h-full overflow-hidden relative bg-slate-50 dark:bg-black">
       {/* Workspace Canvas */}
       <div className="flex-1 flex flex-col h-full overflow-hidden relative">
 
-        {/* System Cockpit Top Status Bar - Glassmorphism applied with black base */}
-        <header className="px-6 py-3 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-black/70 backdrop-blur-md z-20 min-h-[50px]">
-          <div className="group flex items-center cursor-pointer">
+        {/* System Cockpit Top Status Bar */}
+        <header className="px-6 h-20 flex items-center justify-between bg-white/70 dark:bg-black/70 backdrop-blur-md z-20 shrink-0">
+          {/* Left Side: Brand and Menu */}
+          {/* Left Side: Toggle, Brand, and Menu */}
+          <div className="flex items-center space-x-4">
+
+            {/* 1. ChatGPT-Style Sidebar Toggle (Only shows when sidebar is closed) */}
             {!sidebarOpen && (
-              <button onClick={onToggleSidebar} className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 mr-3 p-1 text-[#7c3aed] transition-all">
-                <Terminal size={14} />
+              <button
+                onClick={onToggleSidebar}
+                className="p-2 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-all focus:outline-none flex items-center justify-center shrink-0"
+                title="Open sidebar"
+              >
+                <PanelLeft size={20} strokeWidth={1.5} />
               </button>
             )}
-            <div className="flex flex-col transition-transform group-hover:translate-x-1">
-              <h2 className="font-bold text-[13px] text-slate-900 dark:text-white leading-none">Ops Bot</h2>
-              <span className="text-[8px] text-sky-500 uppercase tracking-widest mt-1 font-matrix">Kaizen Ops AI</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <span className={`text-[10px] font-matrix ${backendStatus === 'connected' ? 'text-emerald-500' : 'text-rose-500'}`}>
-                {backendStatus === 'connected' ? 'Server Running' : 'Offline'}
-              </span>
+
+            {/* 2. Branding Block (Always visible, clean alignment) */}
+            <div className="flex items-center space-x-2.5 cursor-pointer group">
+
+              {/* Shield SVG - Increased Size */}
+              <div className="w-8 h-8 flex items-center justify-center shrink-0">
+                <img
+                  src={ShieldBadgeIcon}
+                  alt="Ops Bot Icon"
+                  className="w-full h-full object-contain dark:invert transition-transform group-hover:scale-105"
+                />
+              </div>
+
+              {/* Brand Text + Chevron */}
+              <div className="flex flex-col justify-center animate-fade-in">
+                <div className="flex items-center space-x-1.5">
+                  <h2 className="font-matrix uppercase font-bold text-xl text-slate-900 dark:text-white leading-none tracking-wider mt-1">Ops Bot</h2>
+                  {/* ChatGPT-style Chevron */}
+                  <ChevronDown size={14} className="text-slate-400 mt-1 opacity-0 group-hover:opacity-100 transition-opacity" strokeWidth={2} />
+                </div>
+                <span className="text-[9px] text-[#7c3aed] uppercase tracking-widest mt-1.5 font-matrix leading-none">Kaizen Ops AI</span>
+              </div>
+
             </div>
           </div>
+
+          {/* Right Side: Server Status */}
+          <div className="flex items-center space-x-2 bg-slate-100 dark:bg-slate-900 px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-800">
+            <div className={`w-2 h-2 rounded-full ${backendStatus === 'connected' ? 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]' : 'bg-rose-500'}`} />
+            <span className={`text-[9px] font-matrix uppercase tracking-wider font-bold ${backendStatus === 'connected' ? 'text-emerald-500' : 'text-rose-500'}`}>
+              {backendStatus === 'connected' ? 'System Online' : 'Offline'}
+            </span>
+          </div>
+
         </header>
 
         {/* Canvas Body - Messages Area */}
@@ -161,9 +196,9 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
               />
             ))}
 
-            {/* Loading State Container - Upgraded to Premium Card */}
+            {/* Loading State Container */}
             {isLoading && (
-              <div className="p-3 bg-slate-950 border border-slate-800 rounded-md w-full max-w-sm mx-auto shadow-sm my-4">
+              <div className="p-3 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-md w-full max-w-sm mx-auto shadow-sm my-4">
                 <div className="flex justify-between items-center mb-2">
                   <h2 className="text-[8px] font-bold text-slate-500 uppercase tracking-widest font-matrix">Processing...</h2>
                   <span className="text-[7px] text-slate-600 uppercase font-matrix">Status: Finalizing</span>
@@ -181,31 +216,31 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
           </div>
         </div>
 
-        {/* Bottom Docked Command Bar */}
-        <div className="w-full max-w-4xl mx-auto px-4 pb-6 pt-2 shrink-0 z-20">
+        {/* Bottom Docked Command Bar - Solid Background to prevent overlap */}
+        <div className="w-full bg-slate-50 dark:bg-black z-20 shrink-0">
+          <div className="max-w-4xl mx-auto px-4 pb-6 pt-4">
+            {/* Suggested Questions - Styled for better docking */}
+            {messages.length === 1 && !isLoading && (
+              <div className="flex flex-wrap items-center justify-center gap-2.5 mb-5 animate-fade-in">
+                {suggestedQuestions.map((item) => (
+                  <button
+                    key={item.query}
+                    onClick={() => handleSuggestClick(item.query, item.mode)}
+                    className="font-sans text-[11px] py-1.5 px-3 font-medium text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-all duration-150 focus:outline-none shadow-sm"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            )}
 
-          {/* Suggested Questions - Premium Action Pills */}
-          {messages.length === 1 && !isLoading && (
-            <div className="flex flex-wrap items-center justify-center gap-2.5 mb-5 animate-fade-in">
-              {suggestedQuestions.map((item) => (
-                <button
-                  key={item.query}
-                  onClick={() => handleSuggestClick(item.query, item.mode)}
-                  // WE SHRANK PADDING, FONT SIZE, AND SOFTENED THE BORDERS
-                  className="font-sans text-[11px] py-1.5 px-3 font-medium text-slate-600 dark:text-slate-400 bg-transparent border border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-900 rounded-full transition-all duration-150 focus:outline-none"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {/* Centered Command Bar */}
-          <ChatInput
-            onSend={sendMessage}
-            onClear={clearChat}
-            isLoading={isLoading}
-          />
+            {/* Centered Command Bar */}
+            <ChatInput
+              onSend={sendMessage}
+              onClear={clearChat}
+              isLoading={isLoading}
+            />
+          </div>
         </div>
       </div>
 

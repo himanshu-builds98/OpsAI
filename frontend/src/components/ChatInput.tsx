@@ -24,10 +24,8 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend, onClear, isLoading
   };
 
   return (
-    <div className="w-full relative select-none">
-      {/* Centered Command Bar Container */}
-      <div className="glassmorphic rounded-2xl px-4 py-3 shadow-2xl border dark:border-slate-800/80 border-slate-200 flex items-center space-x-3.5 transition-all duration-200 dark:bg-[#141923] bg-slate-50">
-
+    <div className="w-full max-w-2xl mx-auto px-4 pb-4 pt-1 shrink-0">
+      <div className="relative flex items-center bg-white dark:bg-[#0f0f12] border border-slate-200 dark:border-slate-800 rounded-md shadow-sm">
         {/* Attachment Clip */}
         <button
           type="button"
@@ -50,25 +48,23 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSend, onClear, isLoading
         />
 
         {/* Execution Arrow / Stop Button */}
-        <div className="flex-shrink-0 flex items-center">
+        <div className="pr-2">
           {isLoading ? (
             <button
               type="button"
               onClick={onClear}
-              className="w-9 h-9 bg-rose-500 text-white rounded-full flex items-center justify-center shadow-lg transition-all animate-pulse focus:outline-none"
-              title="Stop Agent Execution"
+              className="p-1.5 bg-rose-500/10 text-rose-500 rounded-md hover:bg-rose-500/20"
             >
-              <Square size={12} fill="white" />
+              <Square size={12} fill="currentColor" />
             </button>
           ) : (
             <button
               type="button"
               onClick={handleSend}
               disabled={!inputText.trim()}
-              className="w-9 h-9 bg-[#7c3aed] hover:bg-[#7c3aed]/95 disabled:bg-slate-800/50 text-white disabled:text-slate-600 rounded-full flex items-center justify-center shadow-lg transition-all focus:outline-none disabled:shadow-none"
-              title="Execute Agent Task"
+              className="p-1.5 text-slate-400 hover:text-[#7c3aed] disabled:text-slate-600 transition-all"
             >
-              <Send size={14} className="ml-0.5" />
+              <Send size={12} />
             </button>
           )}
         </div>

@@ -22,11 +22,11 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onSelectTopic
       /Recommendation:\s*[\s\S]*?(?=Operational Insight:|Common Risk:|$)/i,
       /Operational Tip:\s*[\s\S]*?(?=Operational Insight:|Common Risk:|$)/i
     ];
-    
+
     cleanRegexes.forEach(regex => {
       clean = clean.replace(regex, '');
     });
-    
+
     return clean.replace(/---\s*$/g, '').trim();
   };
 
@@ -36,12 +36,12 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onSelectTopic
     let inTable = false;
     let tableRows: string[][] = [];
     const elements: React.ReactNode[] = [];
-    
+
     let keyIndex = 0;
 
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i].trim();
-      
+
       if (line.startsWith('|') && line.endsWith('|')) {
         if (!inTable) {
           inTable = true;
@@ -57,7 +57,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onSelectTopic
           inTable = false;
           elements.push(renderHTMLTable(tableRows, keyIndex++));
         }
-        
+
         if (line) {
           const boldFormatted = line.split('**').map((part, index) => {
             const isPurpleWord = part.toLowerCase().includes('delta-9') || part.toLowerCase().includes('cif vs fob');
@@ -69,7 +69,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onSelectTopic
               part
             );
           });
-          
+
           elements.push(
             <p key={keyIndex++} className="font-mono text-base leading-relaxed mb-4 dark:text-[#e0dcd3] text-slate-700 font-normal">
               {boldFormatted}
@@ -80,11 +80,11 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onSelectTopic
         }
       }
     }
-    
+
     if (inTable) {
       elements.push(renderHTMLTable(tableRows, keyIndex++));
     }
-    
+
     return elements;
   };
 
@@ -92,7 +92,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onSelectTopic
     if (rows.length === 0) return null;
     const headers = rows[0];
     const dataRows = rows.slice(1);
-    
+
     return (
       <div key={key} className="overflow-x-auto my-3 border-b dark:border-border/40 border-slate-200">
         <table className="min-w-full font-mono text-sm font-light">
@@ -126,18 +126,24 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onSelectTopic
   if (isUser) {
     const parts = message.text.split(/(Route Delta-9|CIF vs FOB)/gi);
     return (
-      <div className="my-6 border-l-4 border-[#39d353] pl-4 animate-fade-in select-text">
-        <h2 className="text-2xl font-bold tracking-tight font-sans dark:text-white text-slate-800">
-          {parts.map((p, idx) => {
-            if (p.toLowerCase() === 'route delta-9') {
-              return <span key={idx} className="text-[#a78bfa]">{p}</span>;
-            }
-            if (p.toLowerCase() === 'cif vs fob') {
-              return <span key={idx} className="text-[#39d353]">{p}</span>;
-            }
-            return p;
-          })}
-        </h2>
+      <div className={`flex w-full mb-6 justify-end`}>
+        <div className={`max-w-[85%] text-right`}>
+          {/* Label */}
+          <span className="text-[9px] font-matrix uppercase tracking-widest text-[#39d353] mb-1 block">User Question</span>
+
+          {/* Flat Highlighted content (No Box) */}
+          <div className="text-sm font-matrix leading-relaxed text-[#7c3aed]">
+            {parts.map((p, idx) => {
+              if (p.toLowerCase() === 'route delta-9') {
+                return <span key={idx} className="text-[#a78bfa] font-bold">{p}</span>;
+              }
+              if (p.toLowerCase() === 'cif vs fob') {
+                return <span key={idx} className="text-[#39d353] font-bold">{p}</span>;
+              }
+              return p;
+            })}
+          </div>
+        </div>
       </div>
     );
   }
@@ -145,8 +151,11 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onSelectTopic
   const isComparison = responseData?.mode === 'comparison' || message.text.toLowerCase().includes('compare') || message.text.toLowerCase().includes('fob vs cif');
 
   return (
-    <div className="my-3 space-y-3 animate-fade-in select-text">
-      {/* Inline Flow Output */}
+    <div className="my-4 animate-fade-in select-text w-full">
+      {/* Bot Label */}
+      <span className="text-[9px] font-matrix uppercase tracking-widest text-[#39d353] mb-2 block">Ops Bot</span>
+
+      {/* Flat Bot Response (No Box, No borders) */}
       <div className="prose dark:prose-invert max-w-none">
         {formatText(cleanMainText)}
       </div>
@@ -225,14 +234,14 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onSelectTopic
       {/* Injected Risk/Insight widgets */}
       {responseData && <RiskCard text={message.text} />}
 
-      {/* Sources - Styled as clean inline list */}
+      {/* Sources - Styled as clean inline list with added top padding for separation */}
       {responseData && responseData.sources && responseData.sources.length > 0 && (
-        <div className="pt-2 border-t dark:border-border/40 border-slate-200 space-y-2">
+        <div className="mt-6 pt-4 space-y-3">
           <div className="flex items-center space-x-1.5 text-[10px] text-slate-400 font-bold uppercase tracking-wider">
             <FileCheck size={12} className="text-[#10b981]" />
             <span>Workspace Citations</span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {responseData.sources.map((source, index) => (
               <SourceCard key={index} source={source} />
             ))}
@@ -242,7 +251,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message, onSelectTopic
 
       {/* Topics */}
       {responseData && responseData.related_topics && responseData.related_topics.length > 0 && (
-        <div className="flex items-center space-x-2 pt-1.5">
+        <div className="flex items-center space-x-2 pt-2">
           <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider flex items-center space-x-1">
             <HelpCircle size={12} className="text-[#10b981]" />
             <span>Continue:</span>
