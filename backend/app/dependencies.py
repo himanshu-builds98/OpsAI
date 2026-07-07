@@ -5,10 +5,8 @@ from app.rag.vector_store import VectorStoreManager
 from app.rag.retriever import Retriever
 from app.rag.pipeline import RAGPipeline
 from app.rag.response_engine.engine import ResponseEngine
-from app.rag.response_engine.formatter_factory import FormatterFactory
-from app.llm.base import BaseLLM
-from app.llm.llm_factory import LLMFactory
 from app.services.analytics_service import AnalyticsService
+from app.rag.response_engine.formatter_factory import FormatterFactory
 
 # ============================================================
 # Singleton Instances
@@ -16,7 +14,7 @@ from app.services.analytics_service import AnalyticsService
 _embeddings: Optional[BGEEmbeddings] = None
 _vector_store: Optional[VectorStoreManager] = None
 _retriever: Optional[Retriever] = None
-_llm: Optional[BaseLLM] = None
+
 _analytics: Optional[AnalyticsService] = None
 _response_engine: Optional[ResponseEngine] = None
 _pipeline: Optional[RAGPipeline] = None
@@ -60,17 +58,6 @@ def get_retriever() -> Retriever:
     return _retriever
 
 # ============================================================
-# LLM
-# ============================================================
-def get_llm() -> BaseLLM:
-    global _llm
-
-    if _llm is None:
-        _llm = LLMFactory.get_llm()
-
-    return _llm
-
-# ============================================================
 # Analytics
 # ============================================================
 def get_analytics_service() -> AnalyticsService:
@@ -85,22 +72,10 @@ def get_analytics_service() -> AnalyticsService:
 # Response Engine
 # ============================================================
 def get_response_engine() -> ResponseEngine:
-    """
-    Builds the ResponseEngine used by the RAG pipeline. The concrete
-    formatter (LLMFormatter vs VerbatimFormatter) is selected by
-    FormatterFactory based on settings.ANSWER_MODE.
-
-    get_llm() is only called when ANSWER_MODE == "llm" - in "verbatim"
-    mode, no BaseLLM (Ollama/OpenAI) is ever constructed.
-    """
     global _response_engine
 
     if _response_engine is None:
-        if settings.ANSWER_MODE == "llm":
-            formatter = FormatterFactory.create(llm=get_llm())
-        else:
-            formatter = FormatterFactory.create()
-
+        formatter = FormatterFactory.create()
         _response_engine = ResponseEngine(formatter=formatter)
 
     return _response_engine
