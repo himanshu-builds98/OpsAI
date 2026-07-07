@@ -18,7 +18,6 @@ async def health_check():
         "status": "healthy",
         "database": "connected" if db_ok else "error",
         "records_indexed": db_count,
-        "llm_provider": settings.LLM_PROVIDER,
-        "llm_model": settings.LLM_MODEL,
-        "embedding_model": settings.EMBEDDING_MODEL_NAME
+        "embedding_model": settings.EMBEDDING_MODEL_NAME,
+        "vector_store": "MongoDB Atlas Vector Search",
     }
