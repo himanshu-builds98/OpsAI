@@ -27,7 +27,7 @@ async def lifespan(app: FastAPI):
             logger.info(f"Vector store is empty. Starting auto-ingestion of: {settings.TRADE_KNOWLEDGE_CSV}")
             records = CSVLoaderService.load_and_clean(settings.TRADE_KNOWLEDGE_CSV)
             if records:
-                indexed = vector_store.add_documents(records, source_name="trade_knowledge.csv")
+                indexed = vector_store.add_documents(records, source_name="Kaizen_Ops_Chatbot_Dataset.csv")
                 logger.info(f"Successfully auto-ingested {indexed} records into ChromaDB.")
             else:
                 logger.warning("Default trade knowledge CSV not found or is empty. Ingestion skipped.")

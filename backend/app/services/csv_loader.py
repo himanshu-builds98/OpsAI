@@ -25,11 +25,16 @@ class CSVLoaderService:
         cleaned_records = []
 
         try:
-            with open(filepath, mode="r", encoding="utf-8-sig") as f:
+            try:
+                with open(filepath, mode="r", encoding="utf-8-sig") as f:
+                    content = f.read()
+            except UnicodeDecodeError:
+                with open(filepath, mode="r", encoding="cp1252") as f:
+                    content = f.read()
 
-                reader = csv.DictReader(f)
-
-                for line_num, row in enumerate(reader, start=2):
+            import io
+            reader = csv.DictReader(io.StringIO(content))
+            for line_num, row in enumerate(reader, start=2):
 
                     cleaned_row = {
                         (k.strip() if k else ""): (v.strip() if v else "")

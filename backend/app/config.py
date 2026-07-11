@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     BACKEND_ROOT: str = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     REPO_ROOT: str = os.path.dirname(BACKEND_ROOT)
 
-    TRADE_KNOWLEDGE_CSV: str = os.path.join(REPO_ROOT, "data", "trade_knowledge.csv")
+    TRADE_KNOWLEDGE_CSV: str = os.path.join(REPO_ROOT, "data", "Kaizen_Ops_Chatbot_Dataset.csv")
     ANALYTICS_FILE: str = os.path.join(REPO_ROOT, "data", "analytics.json")
     UPLOADS_DIR: str = os.path.join(REPO_ROOT, "data", "uploads")
 

@@ -20,7 +20,7 @@ def main():
     # 1. Load configuration paths
     csv_path = settings.TRADE_KNOWLEDGE_CSV
     logger.info(f"Target knowledge CSV: {csv_path}")
-    logger.info(f"Vector Database Persist Path: {settings.CHROMA_PERSIST_DIR}")
+    logger.info(f"Vector Database: MongoDB Atlas ({settings.MONGODB_DB_NAME})")
     
     if not os.path.exists(csv_path):
         logger.error(f"Ingestion source file not found at: {csv_path}")
@@ -49,7 +49,7 @@ def main():
         
         # 5. Ingest and embed records
         logger.info(f"Generating embeddings and indexing {len(records)} records...")
-        indexed_count = vector_store.add_documents(records, source_name="trade_knowledge.csv")
+        indexed_count = vector_store.add_documents(records, source_name="Kaizen_Ops_Chatbot_Dataset.csv")
         
         # Log status after
         count_after = vector_store.get_count()
@@ -71,7 +71,7 @@ def _log_ingestion_metadata(count: int):
     registry_path = os.path.join(settings.REPO_ROOT, "data", "sources_registry.json")
     
     entry = {
-        "filename": "trade_knowledge.csv",
+        "filename": "Kaizen_Ops_Chatbot_Dataset.csv",
         "file_type": "csv",
         "records_count": count,
         "last_modified": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
@@ -85,7 +85,7 @@ def _log_ingestion_metadata(count: int):
                 history = json.load(f)
         
         # Dedup
-        history = [h for h in history if h["filename"] != "trade_knowledge.csv"]
+        history = [h for h in history if h["filename"] != "Kaizen_Ops_Chatbot_Dataset.csv"]
         history.append(entry)
         
         with open(registry_path, 'w', encoding='utf-8') as f:
