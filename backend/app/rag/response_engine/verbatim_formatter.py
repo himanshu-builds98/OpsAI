@@ -27,6 +27,38 @@ class VerbatimFormatter(ResponseFormatter):
         "common_problems": ("common_problems", "Common Problems"),
     }
 
+    """
+    Intent-aware formatter.
+
+    Instead of always returning the definition, this formatter
+    returns the field that best matches the user's question.
+
+    Examples
+    --------
+    "What is Kanban?"
+        -> Definition
+
+    "Who created Kanban?"
+        -> Created By
+
+    "Who uses Kanban?"
+        -> Used By
+
+    "What is the purpose of Kanban?"
+        -> Operational Purpose
+
+    "What problems does Kanban solve?"
+        -> Common Problems
+    """
+
+    FIELD_MAPPING = {
+        "definition": ("definition", "Definition"),
+        "created_by": ("created_by", "Created By"),
+        "used_by": ("used_by", "Used By"),
+        "purpose": ("purpose", "Operational Purpose"),
+        "common_problems": ("common_problems", "Common Problems"),
+    }
+
     def format(
         self,
         question: str,

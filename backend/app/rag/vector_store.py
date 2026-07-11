@@ -1,3 +1,4 @@
+import re
 import logging
 from typing import List, Dict, Any, Optional
 from pymongo import MongoClient
@@ -22,7 +23,27 @@ class VectorStoreManager:
             definition = doc.get("Definition", "").strip()
             if not term or not definition:
                 continue
-            texts.append(doc.get("SearchText", f"{term} {definition}"))
+
+            search_text = f"""
+            Term: {term}
+
+            Definition:
+            {definition}
+
+            Created By:
+            {doc.get("Created By", "")}
+
+            Used By:
+            {doc.get("Used By", "")}
+
+            Operational Purpose:
+            {doc.get("Purpose", "")}
+
+            Common Problems:
+            {doc.get("Common Problems", "")}
+            """.strip()
+
+            texts.append(search_text)
             valid_docs.append(doc)
 
         if not valid_docs:
@@ -66,7 +87,7 @@ class VectorStoreManager:
                     "index": "vector_index",
                     "path": "embedding",
                     "queryVector": query_embedding,
-                    "numCandidates": 100,
+                    "numCandidates": max(limit * 20, 100),
                     "limit": limit
                 }
             },
@@ -74,7 +95,7 @@ class VectorStoreManager:
                 "$project": {
                     "term": 1, "definition": 1, "created_by": 1,
                     "used_by": 1, "purpose": 1, "common_problems": 1,
-                    "doc_id": 1, "score": {"$meta": "vectorSearchScore"}
+                    "aliases": 1, "keywords": 1,
                 }
             },
             {"$match": {"score": {"$gte": settings.SIMILARITY_THRESHOLD}}}
@@ -88,11 +109,21 @@ class VectorStoreManager:
             "purpose": r.get("purpose", ""),
             "common_problems": r.get("common_problems", ""),
             "score": r.get("score", 0.0),
-            "doc_id": r.get("doc_id", "")
+            "doc_id": r.get("doc_id", ""),
+            "aliases": r.get("aliases", []),
+            "keywords": r.get("keywords", []),
         } for r in results]
 
     def search_exact_term(self, term: str) -> Optional[Dict[str, Any]]:
-        doc = self.collection.find_one({"term": term}, {"embedding": 0})
+        doc = self.collection.find_one(
+            {
+                "term": {
+                    "$regex": f"^{re.escape(term.strip())}$",
+                    "$options": "i",
+                }
+            },
+            {"embedding": 0},
+        )
         if doc:
             return {
                 "term": doc["term"],

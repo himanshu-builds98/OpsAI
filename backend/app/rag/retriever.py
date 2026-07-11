@@ -1,83 +1,158 @@
 from typing import List, Dict, Any
+
 from app.rag.vector_store import VectorStoreManager
 from app.rag.query_processor import QueryAnalysis
 
 
 class Retriever:
-    """
-    Hybrid Retriever.
-
-    Combines:
-    - Semantic Search (Chroma)
-    - Exact Term Match
-    - Alias Match
-    - Keyword Match
-    """
-
-    def __init__(self, vector_store: VectorStoreManager, threshold: float = 0.25):
+    def __init__(
+        self,
+        vector_store: VectorStoreManager,
+        threshold: float = 0.18,
+    ):
         self.vector_store = vector_store
         self.threshold = threshold
 
     def retrieve(self, analysis: QueryAnalysis) -> List[Dict[str, Any]]:
 
-        semantic_results = self.vector_store.search(
-            analysis.search_query,
-            limit=max(analysis.top_k * 2, 8)
+        semantic_results = []
+
+        if analysis.exact_term:
+            exact_doc = self.vector_store.search_exact_term(
+                analysis.exact_term
+            )
+
+            if exact_doc:
+                exact_doc["score"] = 2.0
+                semantic_results.append(exact_doc)
+
+        # -------------------------------------------------
+        # Semantic search
+        # -------------------------------------------------
+
+        semantic_results.extend(
+            self.vector_store.search(
+                analysis.search_query,
+                limit=max(analysis.top_k * 3, 10),
+            )
         )
 
         query = analysis.search_query.lower()
+
+        exact_term = (
+            analysis.exact_term.lower()
+            if analysis.exact_term
+            else ""
+        )
+
         query_words = set(query.split())
 
         reranked = []
 
         for doc in semantic_results:
 
-            score = doc.get("score", 0.0)
+            score = float(doc.get("score", 0))
 
-            #################################################
-            # Exact Term Match
-            #################################################
+            term = doc.get("term", "").lower()
 
-            if doc["term"].lower() == query:
-                score += 0.40
+            ####################################################
+            # Exact terminology match
+            ####################################################
 
-            #################################################
-            # Alias Match
-            #################################################
+            if exact_term and term == exact_term:
+                score += 0.50
 
-            aliases = doc.get("aliases", [])
+            ####################################################
+            # Partial terminology match
+            ####################################################
 
-            for alias in aliases:
-                if alias.lower() in query:
-                    score += 0.30
+            elif exact_term and (
+                exact_term in term
+                or term in exact_term
+            ):
+                score += 0.60
 
-            #################################################
-            # Keyword Match
-            #################################################
+            ####################################################
+            # Query contained inside terminology
+            ####################################################
+
+            if query and query in term:
+                score += 0.30
+
+            ####################################################
+            # Word overlap with terminology
+            ####################################################
+
+            term_words = set(term.split())
+
+            overlap = len(query_words & term_words)
+
+            score += overlap * 0.08
+
+            ####################################################
+            # Intent-aware boosting
+            ####################################################
+
+            intent_field = {
+                "definition": "definition",
+                "created_by": "created_by",
+                "used_by": "used_by",
+                "purpose": "purpose",
+                "common_problems": "common_problems",
+            }
+
+            field = intent_field.get(analysis.intent)
+
+            if field:
+
+                value = str(
+                    doc.get(field, "")
+                ).lower()
+
+                if value:
+                    score += 0.15
+
+            ####################################################
+            # Optional keyword boost
+            ####################################################
 
             keywords = {
-                k.lower()
+                str(k).lower()
                 for k in doc.get("keywords", [])
             }
 
-            overlap = len(query_words & keywords)
+            if keywords:
+                overlap = len(query_words & keywords)
+                score += overlap * 0.05
 
-            score += overlap * 0.05
+            ####################################################
+            # Optional alias boost
+            ####################################################
 
-            #################################################
+            aliases = [
+                a.lower()
+                for a in doc.get("aliases", [])
+            ]
 
-            doc["final_score"] = score
+            for alias in aliases:
+                if alias in query:
+                    score += 0.15
+
+            ####################################################
+
+            doc["final_score"] = round(score, 4)
 
             reranked.append(doc)
 
         reranked.sort(
             key=lambda x: x["final_score"],
-            reverse=True
+            reverse=True,
         )
 
         filtered = [
-            d for d in reranked
-            if d["final_score"] >= self.threshold
+            doc
+            for doc in reranked
+            if doc["final_score"] >= self.threshold
         ]
 
-        return filtered[:analysis.top_k]
+        return filtered[: analysis.top_k]

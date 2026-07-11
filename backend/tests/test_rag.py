@@ -2,40 +2,31 @@ from app.rag.query_processor import QueryProcessor
 from app.rag.prompt_builder import PromptBuilder
 
 
-def test_query_processor_quick():
-
+def test_query_processor_definition():
     result = QueryProcessor.process("What is FOB?")
-
-    assert result.intent == "quick"
+    assert result.intent == "definition"
 
 
 def test_query_processor_comparison():
-
     result = QueryProcessor.process("Compare FOB vs CIF")
-
     assert result.intent == "comparison"
 
 
 def test_query_processor_detailed():
-
     result = QueryProcessor.process(
         "Explain Bill of Lading in detail"
     )
-
     assert result.intent == "detailed"
 
 
 def test_system_prompt():
-
     prompt = PromptBuilder.build_system_prompt()
 
     assert isinstance(prompt, str)
-
     assert len(prompt) > 100
 
 
 def test_user_prompt():
-
     context = (
         "Term: FOB\n"
         "Definition: Free On Board"
@@ -44,7 +35,7 @@ def test_user_prompt():
     prompt = PromptBuilder.build_user_prompt(
         "What is FOB?",
         context,
-        "quick",
+        "definition",
     )
 
     assert "USER QUESTION" in prompt
@@ -54,7 +45,6 @@ def test_user_prompt():
 
 
 def test_user_prompt_comparison():
-
     context = (
         "Term: FOB\n"
         "Definition: Free On Board"
@@ -72,14 +62,13 @@ def test_user_prompt_comparison():
 
 
 def test_user_prompt_detailed():
-
     context = (
         "Term: Bill of Lading\n"
         "Definition: Shipping document"
     )
 
     prompt = PromptBuilder.build_user_prompt(
-        "Explain Bill of Lading",
+        "Explain Bill of Lading in detail",
         context,
         "detailed",
     )
