@@ -13,7 +13,7 @@ export const ContextualFlyout: React.FC<ContextualFlyoutProps> = ({ isOpen, onCl
   if (!isOpen || sources.length === 0) return null;
 
   return (
-    <aside className="w-80 bg-card border-l border-border/60 flex flex-col h-screen flex-shrink-0 relative transition-all duration-300 shadow-2xl select-none z-30 animate-fade-in">
+    <aside className="w-80 bg-card border-l border-border/60 flex flex-col h-screen flex-shrink-0 relative transition-all duration-200 hover:translate-x-1 duration-300 shadow-2xl select-none z-30 animate-fade-in">
       {/* Header */}
       <div className="p-4 border-b border-border/60 flex items-center justify-between">
         <div className="flex items-center space-x-2">
@@ -22,7 +22,7 @@ export const ContextualFlyout: React.FC<ContextualFlyoutProps> = ({ isOpen, onCl
         </div>
         <button
           onClick={onClose}
-          className="p-1.5 hover:bg-accent rounded-lg transition-all text-muted-foreground hover:text-foreground focus:outline-none"
+          className="p-1.5 hover:bg-accent rounded-lg transition-all duration-200 hover:translate-x-1 text-muted-foreground hover:text-foreground focus:outline-none"
         >
           <X size={14} />
         </button>
@@ -42,9 +42,9 @@ export const ContextualFlyout: React.FC<ContextualFlyoutProps> = ({ isOpen, onCl
             : '85'; // Default mock similarity percentage if not returned by mock VDB
 
           return (
-            <div 
+            <div
               key={index}
-              className="p-3.5 bg-accent/10 dark:bg-slate-800/30 rounded-xl border border-border/80 shadow-sm space-y-3 hover:border-[#0066FF]/30 transition-all"
+              className="p-3.5 bg-accent/10 dark:bg-slate-800/30 rounded-xl border border-border/80 shadow-sm space-y-3 hover:border-[#0066FF]/30 transition-all duration-200 hover:translate-x-1"
             >
               {/* Meta stats */}
               <div className="flex items-center justify-between border-b border-border/40 pb-2">
@@ -71,7 +71,7 @@ export const ContextualFlyout: React.FC<ContextualFlyoutProps> = ({ isOpen, onCl
                     <span><strong className="text-foreground">Scope:</strong> {src.purpose}</span>
                   </div>
                 )}
-                
+
                 {src.common_problems && (
                   <div className="text-[10px] leading-relaxed text-rose-600 dark:text-rose-400 flex items-start space-x-1.5 bg-rose-500/5 dark:bg-rose-500/10 p-2 rounded-lg border border-rose-500/10">
                     <AlertTriangle size={11} className="flex-shrink-0 mt-0.5" />

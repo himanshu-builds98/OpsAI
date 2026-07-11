@@ -48,7 +48,7 @@ export const RightPanel: React.FC<RightPanelProps> = ({ isOpen, onToggle }) => {
     return (
       <button
         onClick={onToggle}
-        className="fixed right-0 top-1/2 -translate-y-1/2 w-8 h-12 bg-[#0B192C] text-white border-l border-t border-b border-slate-700 rounded-l-xl flex items-center justify-center shadow-2xl hover:bg-slate-800 transition-all z-40 focus:outline-none"
+        className="fixed right-0 top-1/2 -translate-y-1/2 w-8 h-12 bg-[#0B192C] text-white border-l border-t border-b border-slate-700 rounded-l-xl flex items-center justify-center shadow-2xl hover:bg-slate-800 transition-all duration-200 hover:translate-x-1 z-40 focus:outline-none"
         title="Open Context Panel"
       >
         <ChevronLeft size={18} />
@@ -57,11 +57,11 @@ export const RightPanel: React.FC<RightPanelProps> = ({ isOpen, onToggle }) => {
   }
 
   return (
-    <aside className="w-80 bg-card border-l border-border/80 flex flex-col h-screen flex-shrink-0 relative transition-all duration-300 shadow-xl select-none z-30">
+    <aside className="w-80 bg-card border-l border-border/80 flex flex-col h-screen flex-shrink-0 relative transition-all duration-200 hover:translate-x-1 duration-300 shadow-xl select-none z-30">
       {/* Collapse Toggle Button */}
       <button
         onClick={onToggle}
-        className="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-10 bg-card border border-border/80 rounded-full flex items-center justify-center shadow-md hover:bg-accent transition-all focus:outline-none text-foreground"
+        className="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-10 bg-card border border-border/80 rounded-full flex items-center justify-center shadow-md hover:bg-accent transition-all duration-200 hover:translate-x-1 focus:outline-none text-foreground"
       >
         <ChevronRight size={14} />
       </button>
@@ -79,21 +79,19 @@ export const RightPanel: React.FC<RightPanelProps> = ({ isOpen, onToggle }) => {
       <div className="flex border-b border-border/40 p-2 bg-accent/25">
         <button
           onClick={() => setActiveTab('incoterms')}
-          className={`flex-1 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-            activeTab === 'incoterms'
+          className={`flex-1 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 hover:translate-x-1 ${activeTab === 'incoterms'
               ? 'bg-card text-foreground shadow-sm border border-border/40'
               : 'text-muted-foreground hover:text-foreground'
-          }`}
+            }`}
         >
           Incoterms
         </button>
         <button
           onClick={() => setActiveTab('quick-ref')}
-          className={`flex-1 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-            activeTab === 'quick-ref'
+          className={`flex-1 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 hover:translate-x-1 ${activeTab === 'quick-ref'
               ? 'bg-card text-foreground shadow-sm border border-border/40'
               : 'text-muted-foreground hover:text-foreground'
-          }`}
+            }`}
         >
           Quick Reference
         </button>
@@ -108,11 +106,10 @@ export const RightPanel: React.FC<RightPanelProps> = ({ isOpen, onToggle }) => {
                 <button
                   key={inco.code}
                   onClick={() => setSelectedIncoterm(inco.code)}
-                  className={`py-2 text-center rounded-lg text-[10px] font-bold border transition-all ${
-                    selectedIncoterm === inco.code
+                  className={`py-2 text-center rounded-lg text-[10px] font-bold border transition-all duration-200 hover:translate-x-1 ${selectedIncoterm === inco.code
                       ? 'bg-primary text-primary-foreground border-primary shadow-sm scale-105'
                       : 'bg-accent/30 text-muted-foreground border-border/40 hover:bg-accent/60'
-                  }`}
+                    }`}
                 >
                   {inco.code}
                 </button>
@@ -155,7 +152,7 @@ export const RightPanel: React.FC<RightPanelProps> = ({ isOpen, onToggle }) => {
         ) : (
           <div className="space-y-3">
             {quickReferences.map((ref, idx) => (
-              <div key={idx} className="p-3 bg-accent/10 rounded-xl border border-border/40 hover:border-[#0066FF]/20 hover:-translate-y-0.5 transition-all shadow-sm">
+              <div key={idx} className="p-3 bg-accent/10 rounded-xl border border-border/40 hover:border-[#0066FF]/20 hover:-translate-y-0.5 transition-all duration-200 hover:translate-x-1 shadow-sm">
                 <h4 className="font-bold text-xs text-foreground flex items-center space-x-1.5">
                   <FileText size={12} className="text-[#0066FF]" />
                   <span>{ref.label}</span>

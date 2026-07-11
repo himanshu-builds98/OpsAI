@@ -8,7 +8,7 @@ interface SourceCardProps {
 
 export const SourceCard: React.FC<SourceCardProps> = ({ source }) => {
   return (
-    <div className="dark:bg-[#141923] bg-slate-50 border dark:border-border/80 border-slate-200 rounded-xl transition-all duration-200 shadow-sm overflow-hidden flex flex-col">
+    <div className="dark:bg-[#141923] bg-slate-50 border dark:border-border/80 border-slate-200 rounded-xl transition-all duration-200 hover:translate-x-1 duration-200 shadow-sm overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-lg hover:border-emerald-500/40 dark:hover:border-emerald-500/40">
       {/* Header */}
       <div className="flex items-center justify-between p-2.5 border-b dark:border-border/40 border-slate-200 bg-accent/5">
         <div className="flex items-center space-x-2.5">
@@ -30,7 +30,7 @@ export const SourceCard: React.FC<SourceCardProps> = ({ source }) => {
           <span className="font-semibold text-foreground block mb-0.5">Definition:</span>
           <p className="leading-relaxed dark:text-slate-300 text-slate-700">{source.definition}</p>
         </div>
-        
+
         <div className="grid grid-cols-2 gap-3 text-xs pt-2 border-t dark:border-border/30 border-slate-200">
           <div>
             <span className="font-semibold text-foreground block">Created By:</span>
