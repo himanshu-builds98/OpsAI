@@ -17,10 +17,12 @@ class RelatedTopicsBuilder:
     """
 
     DEFAULT_RELATED_TOPICS = [
-        "Bill of Lading",
-        "FOB (Free on Board)",
-        "CIF (Cost, Insurance, and Freight)",
-        "Incoterms",
+        "Shipping Bill overview",
+        "What is Packing List?",
+        "What is Shipping Bill?",
+        "Who creates Commercial Invoice?",
+        "Purpose of Packing List?",
+        "Who receives Shipping Bill?",
     ]
 
     MAX_RESULTS = 3

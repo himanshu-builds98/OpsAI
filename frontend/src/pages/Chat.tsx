@@ -116,14 +116,11 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
 
   const suggestedQuestions = [
     "📄 What is Commercial Invoice?",
-    "🚢 What is Bill of Lading?",
     "📦 What is Packing List?",
-    "🏛️ What is Certificate of Origin?",
-    "🌍 What is FOB?",
-    "⚖️ Difference between FOB and CIF?",
-    "💳 What is Letter of Credit?",
     "📑 What is Shipping Bill?",
-    "📋 What is Delivery Order?",
+    "👤 Explain Commercial Invoice",
+    "🎯 Purpose of Packing List",
+    "🚢 Explain Shipping Bill",
   ];
 
   return (
@@ -224,13 +221,13 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
             {/* Suggested Questions - Styled for better docking */}
             {messages.length === 1 && !isLoading && (
               <div className="flex flex-wrap items-center justify-center gap-2.5 mb-5 animate-fade-in">
-                {suggestedQuestions.map((item) => (
+                {suggestedQuestions.map((question) => (
                   <button
-                    key={item.query}
-                    onClick={() => handleSuggestClick(item.query, item.mode)}
-                    className="font-sans text-[11px] py-1.5 px-3 font-medium text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-all duration-200 hover:translate-x-1 duration-150 focus:outline-none shadow-sm"
+                    key={question}
+                    onClick={() => handleSuggestClick(question, "quick")}
+                    className="font-sans text-[11px] py-1.5 px-3 font-medium text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-all duration-200 hover:translate-x-1 focus:outline-none shadow-sm"
                   >
-                    {item.label}
+                    {question}
                   </button>
                 ))}
               </div>

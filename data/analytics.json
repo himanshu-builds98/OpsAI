@@ -1,9 +1,11 @@
 {
-  "total_queries": 36,
+  "total_queries": 65,
   "mode_distribution": {
-    "quick": 19,
+    "quick": 34,
     "detailed": 13,
-    "comparison": 4
+    "comparison": 4,
+    "definition": 13,
+    "purpose": 1
   },
   "popular_terms": {
     "Final Deliverable\nAcceptance": 1,
@@ -28,7 +30,10 @@
     "Risk Register": 1,
     "Tornado Diagram": 2,
     "Ishikawa (Fishbone)\nDiagram": 1,
-    "Burn-down Chart": 1
+    "Burn-down Chart": 1,
+    "Shipping Bill": 6,
+    "Packing List": 7,
+    "Commercial Invoice": 5
   },
   "unresolved_queries": [
     {
@@ -82,7 +87,51 @@
     {
       "query": "Change request",
       "timestamp": "2026-07-03T13:14:44Z"
+    },
+    {
+      "query": "CIF (Cost, Insurance, and Freight)",
+      "timestamp": "2026-07-11T19:15:23Z"
+    },
+    {
+      "query": "FOB (Free on Board)",
+      "timestamp": "2026-07-11T19:15:25Z"
+    },
+    {
+      "query": "\ud83d\udea2 What is Bill of Lading?",
+      "timestamp": "2026-07-11T19:22:51Z"
+    },
+    {
+      "query": "Purchase Order",
+      "timestamp": "2026-07-11T19:22:52Z"
+    },
+    {
+      "query": "\ud83d\udea2 Who receives Shipping Bill?",
+      "timestamp": "2026-07-11T19:28:37Z"
+    },
+    {
+      "query": "\ud83d\udc64 Who creates Commercial Invoice?",
+      "timestamp": "2026-07-11T19:28:58Z"
+    },
+    {
+      "query": "\ud83d\udea2 Who receives Shipping Bill?",
+      "timestamp": "2026-07-11T19:29:06Z"
+    },
+    {
+      "query": "Shipping Bill overview",
+      "timestamp": "2026-07-11T19:36:07Z"
+    },
+    {
+      "query": "Shipping Bill overview",
+      "timestamp": "2026-07-11T19:36:12Z"
+    },
+    {
+      "query": "Shipping Bill overview",
+      "timestamp": "2026-07-11T19:36:15Z"
+    },
+    {
+      "query": "Who receives Shipping Bill?",
+      "timestamp": "2026-07-11T19:36:16Z"
     }
   ],
-  "total_execution_time": 2647.1516304016113
+  "total_execution_time": 2652.6951763629913
 }
