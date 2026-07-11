@@ -37,7 +37,7 @@ jobs:
           PYTHONPATH: ${{ github.workspace }}/backend
           ENVIRONMENT: test
           LLM_PROVIDER: ollama
-          LLM_MODEL: mistral:7b
+          LLM_MODEL: tinyllama:latest
           OLLAMA_URL: http://localhost:11434
           CHROMA_PATH: /tmp/chromadb_ci
           TRADE_KNOWLEDGE_CSV: data/sample_trade_knowledge.csv
