@@ -115,15 +115,15 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
   };
 
   const suggestedQuestions = [
-    { label: "⚡ Compare CPI vs SPI", query: "Compare CPI vs SPI", mode: "comparison" as const },
-    { label: "📋 Explain Project Charter", query: "Explain Project Charter", mode: "detailed" as const },
-    { label: "⚠ Explain Risk Register", query: "Explain Risk Register", mode: "detailed" as const },
-    { label: "👥 What is a RACI Matrix?", query: "What is a RACI Matrix?", mode: "quick" as const },
-    { label: "📅 Explain Gantt Chart", query: "Explain Gantt Chart", mode: "quick" as const },
-    { label: "📈 What is Earned Value?", query: "What is Earned Value?", mode: "quick" as const },
-    { label: "📝 Compare Business Case vs Project Charter", query: "Compare Business Case vs Project Charter", mode: "comparison" as const },
-    { label: "👤 Who creates the Business Case?", query: "Who creates the Business Case?", mode: "quick" as const },
-    { label: "📊 Explain Cost Performance Index", query: "Explain Cost Performance Index", mode: "detailed" as const },
+    "📄 What is Commercial Invoice?",
+    "🚢 What is Bill of Lading?",
+    "📦 What is Packing List?",
+    "🏛️ What is Certificate of Origin?",
+    "🌍 What is FOB?",
+    "⚖️ Difference between FOB and CIF?",
+    "💳 What is Letter of Credit?",
+    "📑 What is Shipping Bill?",
+    "📋 What is Delivery Order?",
   ];
 
   return (
