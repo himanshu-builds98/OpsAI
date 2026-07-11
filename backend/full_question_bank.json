@@ -1,0 +1,2842 @@
+{
+  "Commercial Invoice": {
+    "term": "Commercial Invoice",
+    "questions": [
+      "What is Commercial Invoice?",
+      "Who is responsible for the commercial Invoice?",
+      "What happens if the commercial Invoice is missing?"
+    ]
+  },
+  "Packing List": {
+    "term": "Packing List",
+    "questions": [
+      "What is Packing List?",
+      "Who is responsible for the packing List?",
+      "What happens if the packing List is missing?"
+    ]
+  },
+  "Certificate of Origin": {
+    "term": "Certificate of Origin",
+    "questions": [
+      "What is Certificate of Origin?",
+      "Who is responsible for the certificate of Origin?",
+      "What happens if the certificate of Origin is missing?"
+    ]
+  },
+  "Export Declaration": {
+    "term": "Export Declaration",
+    "questions": [
+      "What is Export Declaration?",
+      "Who is responsible for the export Declaration?",
+      "What happens if the export Declaration is missing?"
+    ]
+  },
+  "Cargo Booking Confirmation": {
+    "term": "Cargo Booking Confirmation",
+    "questions": [
+      "What is Cargo Booking Confirmation?",
+      "Who is responsible for the cargo Booking Confirmation?",
+      "What happens if the cargo Booking Confirmation is missing?"
+    ]
+  },
+  "Bill of Lading (B/L)": {
+    "term": "Bill of Lading (B/L)",
+    "questions": [
+      "What is Bill of Lading (B/L)?",
+      "Who is responsible for the bill of Lading (B/L)?",
+      "What happens if the bill of Lading (B/L) is missing?"
+    ]
+  },
+  "Letter of Credit (L/C)": {
+    "term": "Letter of Credit (L/C)",
+    "questions": [
+      "What is Letter of Credit (L/C)?",
+      "Who is responsible for the letter of Credit (L/C)?",
+      "What happens if the letter of Credit (L/C) is missing?"
+    ]
+  },
+  "Insurance Certificate": {
+    "term": "Insurance Certificate",
+    "questions": [
+      "What is Insurance Certificate?",
+      "Who is responsible for the insurance Certificate?",
+      "What happens if the insurance Certificate is missing?"
+    ]
+  },
+  "Fumigation Certificate": {
+    "term": "Fumigation Certificate",
+    "questions": [
+      "What is Fumigation Certificate?",
+      "Who is responsible for the fumigation Certificate?",
+      "What happens if the fumigation Certificate is missing?"
+    ]
+  },
+  "Dangerous Goods Declaration (DGD)": {
+    "term": "Dangerous Goods Declaration (DGD)",
+    "questions": [
+      "What is Dangerous Goods Declaration (DGD)?",
+      "Who is responsible for the dangerous Goods Declaration (DGD)?",
+      "What happens if the dangerous Goods Declaration (DGD) is missing?"
+    ]
+  },
+  "Phytosanitary / Health Certificate": {
+    "term": "Phytosanitary / Health Certificate",
+    "questions": [
+      "What is Phytosanitary / Health Certificate?",
+      "Who is responsible for the phytosanitary / Health Certificate?",
+      "What happens if the phytosanitary / Health Certificate is missing?"
+    ]
+  },
+  "Shipping Instruction": {
+    "term": "Shipping Instruction",
+    "questions": [
+      "What is Shipping Instruction?",
+      "Who is responsible for the shipping Instruction?",
+      "What happens if the shipping Instruction is missing?"
+    ]
+  },
+  "Proforma Invoice": {
+    "term": "Proforma Invoice",
+    "questions": [
+      "What is Proforma Invoice?",
+      "Who is responsible for the proforma Invoice?",
+      "What happens if the proforma Invoice is missing?"
+    ]
+  },
+  "Sales Contract": {
+    "term": "Sales Contract",
+    "questions": [
+      "What is Sales Contract?",
+      "Who is responsible for the sales Contract?",
+      "What happens if the sales Contract is missing?"
+    ]
+  },
+  "Puchase Order (P/O)": {
+    "term": "Puchase Order (P/O)",
+    "questions": [
+      "What is Puchase Order (P/O)?",
+      "Who is responsible for the puchase Order (P/O)?",
+      "What happens if the puchase Order (P/O) is missing?"
+    ]
+  },
+  "Certificate of Analysis (COA)": {
+    "term": "Certificate of Analysis (COA)",
+    "questions": [
+      "What is Certificate of Analysis (COA)?",
+      "Who is responsible for the certificate of Analysis (COA)?",
+      "What happens if the certificate of Analysis (COA) is missing?"
+    ]
+  },
+  "Beneficiary Certificate": {
+    "term": "Beneficiary Certificate",
+    "questions": [
+      "What is Beneficiary Certificate?",
+      "Who is responsible for the beneficiary Certificate?",
+      "What happens if the beneficiary Certificate is missing?"
+    ]
+  },
+  "Shipping Bill": {
+    "term": "Shipping Bill",
+    "questions": [
+      "What is Shipping Bill?",
+      "Who is responsible for the shipping Bill?",
+      "What happens if the shipping Bill is missing?"
+    ]
+  },
+  "LUT (Letter of Undertaking)": {
+    "term": "LUT (Letter of Undertaking)",
+    "questions": [
+      "What is LUT (Letter of Undertaking)?",
+      "Who is responsible for the lUT (Letter of Undertaking)?",
+      "What happens if the lUT (Letter of Undertaking) is missing?"
+    ]
+  },
+  "Drawback Declaration": {
+    "term": "Drawback Declaration",
+    "questions": [
+      "What is Drawback Declaration?",
+      "Who is responsible for the drawback Declaration?",
+      "What happens if the drawback Declaration is missing?"
+    ]
+  },
+  "Export License": {
+    "term": "Export License",
+    "questions": [
+      "What is Export License?",
+      "Who is responsible for the export License?",
+      "What happens if the export License is missing?"
+    ]
+  },
+  "AD Code Registration": {
+    "term": "AD Code Registration",
+    "questions": [
+      "What is AD Code Registration?",
+      "Who is responsible for the aD Code Registration?",
+      "What happens if the aD Code Registration is missing?"
+    ]
+  },
+  "GST LUT Acknowledgement": {
+    "term": "GST LUT Acknowledgement",
+    "questions": [
+      "What is GST LUT Acknowledgement?",
+      "Who is responsible for the gST LUT Acknowledgement?",
+      "What happens if the gST LUT Acknowledgement is missing?"
+    ]
+  },
+  "SCOMET (Special Chemicals, Organisms, Materials, Equipment, and Technologies) License": {
+    "term": "SCOMET (Special Chemicals, Organisms, Materials, Equipment, and Technologies) License",
+    "questions": [
+      "What is SCOMET (Special Chemicals, Organisms, Materials, Equipment, and Technologies) License?",
+      "Who is responsible for the sCOMET (Special Chemicals, Organisms, Materials, Equipment, and Technologies) License?",
+      "What happens if the sCOMET (Special Chemicals, Organisms, Materials, Equipment, and Technologies) License is missing?"
+    ]
+  },
+  "Bill of Entry": {
+    "term": "Bill of Entry",
+    "questions": [
+      "What is Bill of Entry?",
+      "Who is responsible for the bill of Entry?",
+      "What happens if the bill of Entry is missing?"
+    ]
+  },
+  "Duty Payment Challan": {
+    "term": "Duty Payment Challan",
+    "questions": [
+      "What is Duty Payment Challan?",
+      "Who is responsible for the duty Payment Challan?",
+      "What happens if the duty Payment Challan is missing?"
+    ]
+  },
+  "Import License": {
+    "term": "Import License",
+    "questions": [
+      "What is Import License?",
+      "Who is responsible for the import License?",
+      "What happens if the import License is missing?"
+    ]
+  },
+  "ADC / NOC (Assistant Drug Controller No-Objection Certificate)": {
+    "term": "ADC / NOC (Assistant Drug Controller No-Objection Certificate)",
+    "questions": [
+      "What is ADC / NOC (Assistant Drug Controller No-Objection Certificate)?",
+      "Who is responsible for the aDC / NOC (Assistant Drug Controller No-Objection Certificate)?",
+      "What happens if the aDC / NOC (Assistant Drug Controller No-Objection Certificate) is missing?"
+    ]
+  },
+  "Examination Order": {
+    "term": "Examination Order",
+    "questions": [
+      "What is Examination Order?",
+      "Who is responsible for the examination Order?",
+      "What happens if the examination Order is missing?"
+    ]
+  },
+  "Out of Charge Order": {
+    "term": "Out of Charge Order",
+    "questions": [
+      "What is Out of Charge Order?",
+      "Who is responsible for the out of Charge Order?",
+      "What happens if the out of Charge Order is missing?"
+    ]
+  },
+  "Express Release B/L": {
+    "term": "Express Release B/L",
+    "questions": [
+      "What is Express Release B/L?",
+      "Who is responsible for the express Release B/L?",
+      "What happens if the express Release B/L is missing?"
+    ]
+  },
+  "Sea Waybill": {
+    "term": "Sea Waybill",
+    "questions": [
+      "What is Sea Waybill?",
+      "Who is responsible for the sea Waybill?",
+      "What happens if the sea Waybill is missing?"
+    ]
+  },
+  "House Bill of Lading (HBL)": {
+    "term": "House Bill of Lading (HBL)",
+    "questions": [
+      "What is House Bill of Lading (HBL)?",
+      "Who is responsible for the house Bill of Lading (HBL)?",
+      "What happens if the house Bill of Lading (HBL) is missing?"
+    ]
+  },
+  "Master Bill of Lading (MBL)": {
+    "term": "Master Bill of Lading (MBL)",
+    "questions": [
+      "What is Master Bill of Lading (MBL)?",
+      "Who is responsible for the master Bill of Lading (MBL)?",
+      "What happens if the master Bill of Lading (MBL) is missing?"
+    ]
+  },
+  "Switch Bill of Lading": {
+    "term": "Switch Bill of Lading",
+    "questions": [
+      "What is Switch Bill of Lading?",
+      "Who is responsible for the switch Bill of Lading?",
+      "What happens if the switch Bill of Lading is missing?"
+    ]
+  },
+  "Telex Release": {
+    "term": "Telex Release",
+    "questions": [
+      "What is Telex Release?",
+      "Who is responsible for the telex Release?",
+      "What happens if the telex Release is missing?"
+    ]
+  },
+  "Surrender Request": {
+    "term": "Surrender Request",
+    "questions": [
+      "What is Surrender Request?",
+      "Who is responsible for the surrender Request?",
+      "What happens if the surrender Request is missing?"
+    ]
+  },
+  "Arrival Notice": {
+    "term": "Arrival Notice",
+    "questions": [
+      "What is Arrival Notice?",
+      "Who is responsible for the arrival Notice?",
+      "What happens if the arrival Notice is missing?"
+    ]
+  },
+  "Delivery Order (DO)": {
+    "term": "Delivery Order (DO)",
+    "questions": [
+      "What is Delivery Order (DO)?",
+      "Who is responsible for the delivery Order (DO)?",
+      "What happens if the delivery Order (DO) is missing?"
+    ]
+  },
+  "Freight Invoice": {
+    "term": "Freight Invoice",
+    "questions": [
+      "What is Freight Invoice?",
+      "Who is responsible for the freight Invoice?",
+      "What happens if the freight Invoice is missing?"
+    ]
+  },
+  "Debit Note": {
+    "term": "Debit Note",
+    "questions": [
+      "What is Debit Note?",
+      "Who is responsible for the debit Note?",
+      "What happens if the debit Note is missing?"
+    ]
+  },
+  "Credit Note": {
+    "term": "Credit Note",
+    "questions": [
+      "What is Credit Note?",
+      "Who is responsible for the credit Note?",
+      "What happens if the credit Note is missing?"
+    ]
+  },
+  "Vessel Schedule": {
+    "term": "Vessel Schedule",
+    "questions": [
+      "What is Vessel Schedule?",
+      "Who is responsible for the vessel Schedule?",
+      "What happens if the vessel Schedule is missing?"
+    ]
+  },
+  "Voyage Number": {
+    "term": "Voyage Number",
+    "questions": [
+      "What is Voyage Number?",
+      "Who is responsible for the voyage Number?",
+      "What happens if the voyage Number is missing?"
+    ]
+  },
+  "Mate\u0092s Receipt": {
+    "term": "Mate\u0092s Receipt",
+    "questions": [
+      "What is Mate\u0092s Receipt?",
+      "Who is responsible for the mate\u0092s Receipt?",
+      "What happens if the mate\u0092s Receipt is missing?"
+    ]
+  },
+  "Stowage Plan": {
+    "term": "Stowage Plan",
+    "questions": [
+      "What is Stowage Plan?",
+      "Who is responsible for the stowage Plan?",
+      "What happens if the stowage Plan is missing?"
+    ]
+  },
+  "Manifest": {
+    "term": "Manifest",
+    "questions": [
+      "What is Manifest?",
+      "Who is responsible for the manifest?",
+      "What happens if the manifest is missing?"
+    ]
+  },
+  "Import General Manifest (IGM)": {
+    "term": "Import General Manifest (IGM)",
+    "questions": [
+      "What is Import General Manifest (IGM)?",
+      "Who is responsible for the import General Manifest (IGM)?",
+      "What happens if the import General Manifest (IGM) is missing?"
+    ]
+  },
+  "Export General Manifest (EGM)": {
+    "term": "Export General Manifest (EGM)",
+    "questions": [
+      "What is Export General Manifest (EGM)?",
+      "Who is responsible for the export General Manifest (EGM)?",
+      "What happens if the export General Manifest (EGM) is missing?"
+    ]
+  },
+  "Notice of Readiness (NOR)": {
+    "term": "Notice of Readiness (NOR)",
+    "questions": [
+      "What is Notice of Readiness (NOR)?",
+      "Who is responsible for the notice of Readiness (NOR)?",
+      "What happens if the notice of Readiness (NOR) is missing?"
+    ]
+  },
+  "Statement of Facts": {
+    "term": "Statement of Facts",
+    "questions": [
+      "What is Statement of Facts?",
+      "Who is responsible for the statement of Facts?",
+      "What happens if the statement of Facts is missing?"
+    ]
+  },
+  "Container Release Order": {
+    "term": "Container Release Order",
+    "questions": [
+      "What is Container Release Order?",
+      "Who is responsible for the container Release Order?",
+      "What happens if the container Release Order is missing?"
+    ]
+  },
+  "Equipment Interchange Receipt (EIR)": {
+    "term": "Equipment Interchange Receipt (EIR)",
+    "questions": [
+      "What is Equipment Interchange Receipt (EIR)?",
+      "Who is responsible for the equipment Interchange Receipt (EIR)?",
+      "What happens if the equipment Interchange Receipt (EIR) is missing?"
+    ]
+  },
+  "Verified Gross Mass (VGM)": {
+    "term": "Verified Gross Mass (VGM)",
+    "questions": [
+      "What is Verified Gross Mass (VGM)?",
+      "Who is responsible for the verified Gross Mass (VGM)?",
+      "What happens if the verified Gross Mass (VGM) is missing?"
+    ]
+  },
+  "Stuffing Report": {
+    "term": "Stuffing Report",
+    "questions": [
+      "What is Stuffing Report?",
+      "Who is responsible for the stuffing Report?",
+      "What happens if the stuffing Report is missing?"
+    ]
+  },
+  "Container Load Plan": {
+    "term": "Container Load Plan",
+    "questions": [
+      "What is Container Load Plan?",
+      "Who is responsible for the container Load Plan?",
+      "What happens if the container Load Plan is missing?"
+    ]
+  },
+  "Seal Verification Record": {
+    "term": "Seal Verification Record",
+    "questions": [
+      "What is Seal Verification Record?",
+      "Who is responsible for the seal Verification Record?",
+      "What happens if the seal Verification Record is missing?"
+    ]
+  },
+  "Terminal Handling Charges (THC)": {
+    "term": "Terminal Handling Charges (THC)",
+    "questions": [
+      "What is Terminal Handling Charges (THC)?",
+      "Who is responsible for the terminal Handling Charges (THC)?",
+      "What happens if the terminal Handling Charges (THC) is missing?"
+    ]
+  },
+  "Destination THC (DTHC)": {
+    "term": "Destination THC (DTHC)",
+    "questions": [
+      "What is Destination THC (DTHC)?",
+      "Who is responsible for the destination THC (DTHC)?",
+      "What happens if the destination THC (DTHC) is missing?"
+    ]
+  },
+  "Wharfage": {
+    "term": "Wharfage",
+    "questions": [
+      "What is Wharfage?",
+      "Who is responsible for the wharfage?",
+      "What happens if the wharfage is missing?"
+    ]
+  },
+  "Port Dues": {
+    "term": "Port Dues",
+    "questions": [
+      "What is Port Dues?",
+      "Who is responsible for the port Dues?",
+      "What happens if the port Dues is missing?"
+    ]
+  },
+  "Berth Hire Charges": {
+    "term": "Berth Hire Charges",
+    "questions": [
+      "What is Berth Hire Charges?",
+      "Who is responsible for the berth Hire Charges?",
+      "What happens if the berth Hire Charges is missing?"
+    ]
+  },
+  "Stevedoring Charges": {
+    "term": "Stevedoring Charges",
+    "questions": [
+      "What is Stevedoring Charges?",
+      "Who is responsible for the stevedoring Charges?",
+      "What happens if the stevedoring Charges is missing?"
+    ]
+  },
+  "CFS Charges": {
+    "term": "CFS Charges",
+    "questions": [
+      "What is CFS Charges?",
+      "Who is responsible for the cFS Charges?",
+      "What happens if the cFS Charges is missing?"
+    ]
+  },
+  "Ground Rent": {
+    "term": "Ground Rent",
+    "questions": [
+      "What is Ground Rent?",
+      "Who is responsible for the ground Rent?",
+      "What happens if the ground Rent is missing?"
+    ]
+  },
+  "Lift On / Lift Off (LOLO)": {
+    "term": "Lift On / Lift Off (LOLO)",
+    "questions": [
+      "What is Lift On / Lift Off (LOLO)?",
+      "Who is responsible for the lift On / Lift Off (LOLO)?",
+      "What happens if the lift On / Lift Off (LOLO) is missing?"
+    ]
+  },
+  "Gate Charges": {
+    "term": "Gate Charges",
+    "questions": [
+      "What is Gate Charges?",
+      "Who is responsible for the gate Charges?",
+      "What happens if the gate Charges is missing?"
+    ]
+  },
+  "Basic Ocean Freight": {
+    "term": "Basic Ocean Freight",
+    "questions": [
+      "What is Basic Ocean Freight?",
+      "Who is responsible for the basic Ocean Freight?",
+      "What happens if the basic Ocean Freight is missing?"
+    ]
+  },
+  "Bunker Adjustment Factor (BAF)": {
+    "term": "Bunker Adjustment Factor (BAF)",
+    "questions": [
+      "What is Bunker Adjustment Factor (BAF)?",
+      "Who is responsible for the bunker Adjustment Factor (BAF)?",
+      "What happens if the bunker Adjustment Factor (BAF) is missing?"
+    ]
+  },
+  "Currency Adjustment Factor (CAF)": {
+    "term": "Currency Adjustment Factor (CAF)",
+    "questions": [
+      "What is Currency Adjustment Factor (CAF)?",
+      "Who is responsible for the currency Adjustment Factor (CAF)?",
+      "What happens if the currency Adjustment Factor (CAF) is missing?"
+    ]
+  },
+  "Peak Season Surcharge (PSS)": {
+    "term": "Peak Season Surcharge (PSS)",
+    "questions": [
+      "What is Peak Season Surcharge (PSS)?",
+      "Who is responsible for the peak Season Surcharge (PSS)?",
+      "What happens if the peak Season Surcharge (PSS) is missing?"
+    ]
+  },
+  "General Rate Increase (GRI)": {
+    "term": "General Rate Increase (GRI)",
+    "questions": [
+      "What is General Rate Increase (GRI)?",
+      "Who is responsible for the general Rate Increase (GRI)?",
+      "What happens if the general Rate Increase (GRI) is missing?"
+    ]
+  },
+  "Congestion Surcharge": {
+    "term": "Congestion Surcharge",
+    "questions": [
+      "What is Congestion Surcharge?",
+      "Who is responsible for the congestion Surcharge?",
+      "What happens if the congestion Surcharge is missing?"
+    ]
+  },
+  "War Risk Surcharge": {
+    "term": "War Risk Surcharge",
+    "questions": [
+      "What is War Risk Surcharge?",
+      "Who is responsible for the war Risk Surcharge?",
+      "What happens if the war Risk Surcharge is missing?"
+    ]
+  },
+  "Low Sulphur Surcharge (LSS)": {
+    "term": "Low Sulphur Surcharge (LSS)",
+    "questions": [
+      "What is Low Sulphur Surcharge (LSS)?",
+      "Who is responsible for the low Sulphur Surcharge (LSS)?",
+      "What happens if the low Sulphur Surcharge (LSS) is missing?"
+    ]
+  },
+  "Documentation Charges": {
+    "term": "Documentation Charges",
+    "questions": [
+      "What is Documentation Charges?",
+      "Who is responsible for the documentation Charges?",
+      "What happens if the documentation Charges is missing?"
+    ]
+  },
+  "Amendment Charges": {
+    "term": "Amendment Charges",
+    "questions": [
+      "What is Amendment Charges?",
+      "Who is responsible for the amendment Charges?",
+      "What happens if the amendment Charges is missing?"
+    ]
+  },
+  "Free Time": {
+    "term": "Free Time",
+    "questions": [
+      "What is Free Time?",
+      "Who is responsible for the free Time?",
+      "What happens if the free Time is missing?"
+    ]
+  },
+  "Demurrage": {
+    "term": "Demurrage",
+    "questions": [
+      "What is Demurrage?",
+      "Who is responsible for the demurrage?",
+      "What happens if the demurrage is missing?"
+    ]
+  },
+  "Detention": {
+    "term": "Detention",
+    "questions": [
+      "What is Detention?",
+      "Who is responsible for the detention?",
+      "What happens if the detention is missing?"
+    ]
+  },
+  "Rollover": {
+    "term": "Rollover",
+    "questions": [
+      "What is Rollover?",
+      "Who is responsible for the rollover?",
+      "What happens if the rollover is missing?"
+    ]
+  },
+  "Blank Sailing": {
+    "term": "Blank Sailing",
+    "questions": [
+      "What is Blank Sailing?",
+      "Who is responsible for the blank Sailing?",
+      "What happens if the blank Sailing is missing?"
+    ]
+  },
+  "Transshipment": {
+    "term": "Transshipment",
+    "questions": [
+      "What is Transshipment?",
+      "Who is responsible for the transshipment?",
+      "What happens if the transshipment is missing?"
+    ]
+  },
+  "Cut-off Time": {
+    "term": "Cut-off Time",
+    "questions": [
+      "What is Cut-off Time?",
+      "Who is responsible for the cut-off Time?",
+      "What happens if the cut-off Time is missing?"
+    ]
+  },
+  "No-Show Fee": {
+    "term": "No-Show Fee",
+    "questions": [
+      "What is No-Show Fee?",
+      "Who is responsible for the no-Show Fee?",
+      "What happens if the no-Show Fee is missing?"
+    ]
+  },
+  "Dead Freight": {
+    "term": "Dead Freight",
+    "questions": [
+      "What is Dead Freight?",
+      "Who is responsible for the dead Freight?",
+      "What happens if the dead Freight is missing?"
+    ]
+  },
+  "Storage Charges": {
+    "term": "Storage Charges",
+    "questions": [
+      "What is Storage Charges?",
+      "Who is responsible for the storage Charges?",
+      "What happens if the storage Charges is missing?"
+    ]
+  },
+  "MAWB (Master Air Waybill)": {
+    "term": "MAWB (Master Air Waybill)",
+    "questions": [
+      "What is MAWB (Master Air Waybill)?",
+      "Who is responsible for the mAWB (Master Air Waybill)?",
+      "What happens if the mAWB (Master Air Waybill) is missing?"
+    ]
+  },
+  "HAWB (House Air Waybill)": {
+    "term": "HAWB (House Air Waybill)",
+    "questions": [
+      "What is HAWB (House Air Waybill)?",
+      "Who is responsible for the hAWB (House Air Waybill)?",
+      "What happens if the hAWB (House Air Waybill) is missing?"
+    ]
+  },
+  "ULD (Unit Load Device)": {
+    "term": "ULD (Unit Load Device)",
+    "questions": [
+      "What is ULD (Unit Load Device)?",
+      "Who is responsible for the uLD (Unit Load Device)?",
+      "What happens if the uLD (Unit Load Device) is missing?"
+    ]
+  },
+  "Certificate of Origin (C/O)": {
+    "term": "Certificate of Origin (C/O)",
+    "questions": [
+      "What is Certificate of Origin (C/O)?",
+      "Who is responsible for the certificate of Origin (C/O)?",
+      "What happens if the certificate of Origin (C/O) is missing?"
+    ]
+  },
+  "IATA (International Air Transport Assoc.)": {
+    "term": "IATA (International Air Transport Assoc.)",
+    "questions": [
+      "What is IATA (International Air Transport Assoc.)?",
+      "Who is responsible for the iATA (International Air Transport Assoc.)?",
+      "What happens if the iATA (International Air Transport Assoc.) is missing?"
+    ]
+  },
+  "Dimensional Weight": {
+    "term": "Dimensional Weight",
+    "questions": [
+      "What is Dimensional Weight?",
+      "Who is responsible for the dimensional Weight?",
+      "What happens if the dimensional Weight is missing?"
+    ]
+  },
+  "Customs Entry (Form 7501)": {
+    "term": "Customs Entry (Form 7501)",
+    "questions": [
+      "What is Customs Entry (Form 7501)?",
+      "Who is responsible for the customs Entry (Form 7501)?",
+      "What happens if the customs Entry (Form 7501) is missing?"
+    ]
+  },
+  "Air Cargo Manifest": {
+    "term": "Air Cargo Manifest",
+    "questions": [
+      "What is Air Cargo Manifest?",
+      "Who is responsible for the air Cargo Manifest?",
+      "What happens if the air Cargo Manifest is missing?"
+    ]
+  },
+  "Proof of Delivery (POD)": {
+    "term": "Proof of Delivery (POD)",
+    "questions": [
+      "What is Proof of Delivery (POD)?",
+      "Who is responsible for the proof of Delivery (POD)?",
+      "What happens if the proof of Delivery (POD) is missing?"
+    ]
+  },
+  "Freight Collect": {
+    "term": "Freight Collect",
+    "questions": [
+      "What is Freight Collect?",
+      "Who is responsible for the freight Collect?",
+      "What happens if the freight Collect is missing?"
+    ]
+  },
+  "FOB (Free On Board)": {
+    "term": "FOB (Free On Board)",
+    "questions": [
+      "What is FOB (Free On Board)?",
+      "Who is responsible for the fOB (Free On Board)?",
+      "What happens if the fOB (Free On Board) is missing?"
+    ]
+  },
+  "ETD (Estimated Time of Departure)": {
+    "term": "ETD (Estimated Time of Departure)",
+    "questions": [
+      "What is ETD (Estimated Time of Departure)?",
+      "Who is responsible for the eTD (Estimated Time of Departure)?",
+      "What happens if the eTD (Estimated Time of Departure) is missing?"
+    ]
+  },
+  "Chargeable Weight": {
+    "term": "Chargeable Weight",
+    "questions": [
+      "What is Chargeable Weight?",
+      "Who is responsible for the chargeable Weight?",
+      "What happens if the chargeable Weight is missing?"
+    ]
+  },
+  "Known Shipper": {
+    "term": "Known Shipper",
+    "questions": [
+      "What is Known Shipper?",
+      "Who is responsible for the known Shipper?",
+      "What happens if the known Shipper is missing?"
+    ]
+  },
+  "Booking Confirmation": {
+    "term": "Booking Confirmation",
+    "questions": [
+      "What is Booking Confirmation?",
+      "Who is responsible for the booking Confirmation?",
+      "What happens if the booking Confirmation is missing?"
+    ]
+  },
+  "e-AWB (Electronic Air Waybill)": {
+    "term": "e-AWB (Electronic Air Waybill)",
+    "questions": [
+      "What is e-AWB (Electronic Air Waybill)?",
+      "Who is responsible for the e-AWB (Electronic Air Waybill)?",
+      "What happens if the e-AWB (Electronic Air Waybill) is missing?"
+    ]
+  },
+  "Carnet (ATA Carnet)": {
+    "term": "Carnet (ATA Carnet)",
+    "questions": [
+      "What is Carnet (ATA Carnet)?",
+      "Who is responsible for the carnet (ATA Carnet)?",
+      "What happens if the carnet (ATA Carnet) is missing?"
+    ]
+  },
+  "Bonded Warehouse": {
+    "term": "Bonded Warehouse",
+    "questions": [
+      "What is Bonded Warehouse?",
+      "Who is responsible for the bonded Warehouse?",
+      "What happens if the bonded Warehouse is missing?"
+    ]
+  },
+  "CBM (Cubic Meter)": {
+    "term": "CBM (Cubic Meter)",
+    "questions": [
+      "What is CBM (Cubic Meter)?",
+      "Who is responsible for the cBM (Cubic Meter)?",
+      "What happens if the cBM (Cubic Meter) is missing?"
+    ]
+  },
+  "Drayage": {
+    "term": "Drayage",
+    "questions": [
+      "What is Drayage?",
+      "Who is responsible for the drayage?",
+      "What happens if the drayage is missing?"
+    ]
+  },
+  "Screening Certificate": {
+    "term": "Screening Certificate",
+    "questions": [
+      "What is Screening Certificate?",
+      "Who is responsible for the screening Certificate?",
+      "What happens if the screening Certificate is missing?"
+    ]
+  },
+  "Back-to-Back Shipment": {
+    "term": "Back-to-Back Shipment",
+    "questions": [
+      "What is Back-to-Back Shipment?",
+      "Who is responsible for the back-to-Back Shipment?",
+      "What happens if the back-to-Back Shipment is missing?"
+    ]
+  },
+  "All-In Rate": {
+    "term": "All-In Rate",
+    "questions": [
+      "What is All-In Rate?",
+      "Who is responsible for the all-In Rate?",
+      "What happens if the all-In Rate is missing?"
+    ]
+  },
+  "FSC (Fuel Surcharge)": {
+    "term": "FSC (Fuel Surcharge)",
+    "questions": [
+      "What is FSC (Fuel Surcharge)?",
+      "Who is responsible for the fSC (Fuel Surcharge)?",
+      "What happens if the fSC (Fuel Surcharge) is missing?"
+    ]
+  },
+  "Delivery Order (D/O)": {
+    "term": "Delivery Order (D/O)",
+    "questions": [
+      "What is Delivery Order (D/O)?",
+      "Who is responsible for the delivery Order (D/O)?",
+      "What happens if the delivery Order (D/O) is missing?"
+    ]
+  },
+  "Phytosanitary Certificate": {
+    "term": "Phytosanitary Certificate",
+    "questions": [
+      "What is Phytosanitary Certificate?",
+      "Who is responsible for the phytosanitary Certificate?",
+      "What happens if the phytosanitary Certificate is missing?"
+    ]
+  },
+  "SLI (Shipper\u0092s Letter of Instruction)": {
+    "term": "SLI (Shipper\u0092s Letter of Instruction)",
+    "questions": [
+      "What is SLI (Shipper\u0092s Letter of Instruction)?",
+      "Who is responsible for the sLI (Shipper\u0092s Letter of Instruction)?",
+      "What happens if the sLI (Shipper\u0092s Letter of Instruction) is missing?"
+    ]
+  },
+  "GHA (Ground Handling Agent)": {
+    "term": "GHA (Ground Handling Agent)",
+    "questions": [
+      "What is GHA (Ground Handling Agent)?",
+      "Who is responsible for the gHA (Ground Handling Agent)?",
+      "What happens if the gHA (Ground Handling Agent) is missing?"
+    ]
+  },
+  "Consolidation": {
+    "term": "Consolidation",
+    "questions": [
+      "What is Consolidation?",
+      "Who is responsible for the consolidation?",
+      "What happens if the consolidation is missing?"
+    ]
+  },
+  "MSDS (Material Safety Data Sheet)": {
+    "term": "MSDS (Material Safety Data Sheet)",
+    "questions": [
+      "What is MSDS (Material Safety Data Sheet)?",
+      "Who is responsible for the mSDS (Material Safety Data Sheet)?",
+      "What happens if the mSDS (Material Safety Data Sheet) is missing?"
+    ]
+  },
+  "Weight & Balance Manifest": {
+    "term": "Weight & Balance Manifest",
+    "questions": [
+      "What is Weight & Balance Manifest?",
+      "Who is responsible for the weight & Balance Manifest?",
+      "What happens if the weight & Balance Manifest is missing?"
+    ]
+  },
+  "IATA Code": {
+    "term": "IATA Code",
+    "questions": [
+      "What is IATA Code?",
+      "Who is responsible for the iATA Code?",
+      "What happens if the iATA Code is missing?"
+    ]
+  },
+  "Tally Sheet": {
+    "term": "Tally Sheet",
+    "questions": [
+      "What is Tally Sheet?",
+      "Who is responsible for the tally Sheet?",
+      "What happens if the tally Sheet is missing?"
+    ]
+  },
+  "TSA (Transportation Security Admin)": {
+    "term": "TSA (Transportation Security Admin)",
+    "questions": [
+      "What is TSA (Transportation Security Admin)?",
+      "Who is responsible for the tSA (Transportation Security Admin)?",
+      "What happens if the tSA (Transportation Security Admin) is missing?"
+    ]
+  },
+  "Bonded Carrier": {
+    "term": "Bonded Carrier",
+    "questions": [
+      "What is Bonded Carrier?",
+      "Who is responsible for the bonded Carrier?",
+      "What happens if the bonded Carrier is missing?"
+    ]
+  },
+  "Commercial Invoice & Packing List (CIPL)": {
+    "term": "Commercial Invoice & Packing List (CIPL)",
+    "questions": [
+      "What is Commercial Invoice & Packing List (CIPL)?",
+      "Who is responsible for the commercial Invoice & Packing List (CIPL)?",
+      "What happens if the commercial Invoice & Packing List (CIPL) is missing?"
+    ]
+  },
+  "Intermodal": {
+    "term": "Intermodal",
+    "questions": [
+      "What is Intermodal?",
+      "Who is responsible for the intermodal?",
+      "What happens if the intermodal is missing?"
+    ]
+  },
+  "NVD (No Value Declared)": {
+    "term": "NVD (No Value Declared)",
+    "questions": [
+      "What is NVD (No Value Declared)?",
+      "Who is responsible for the nVD (No Value Declared)?",
+      "What happens if the nVD (No Value Declared) is missing?"
+    ]
+  },
+  "Part Charter": {
+    "term": "Part Charter",
+    "questions": [
+      "What is Part Charter?",
+      "Who is responsible for the part Charter?",
+      "What happens if the part Charter is missing?"
+    ]
+  },
+  "RCS (Received from Shipper)": {
+    "term": "RCS (Received from Shipper)",
+    "questions": [
+      "What is RCS (Received from Shipper)?",
+      "Who is responsible for the rCS (Received from Shipper)?",
+      "What happens if the rCS (Received from Shipper) is missing?"
+    ]
+  },
+  "SSP (Shipper's Security Program)": {
+    "term": "SSP (Shipper's Security Program)",
+    "questions": [
+      "What is SSP (Shipper's Security Program)?",
+      "Who is responsible for the sSP (Shipper's Security Program)?",
+      "What happens if the sSP (Shipper's Security Program) is missing?"
+    ]
+  },
+  "Tare Weight": {
+    "term": "Tare Weight",
+    "questions": [
+      "What is Tare Weight?",
+      "Who is responsible for the tare Weight?",
+      "What happens if the tare Weight is missing?"
+    ]
+  },
+  "Temperature Log": {
+    "term": "Temperature Log",
+    "questions": [
+      "What is Temperature Log?",
+      "Who is responsible for the temperature Log?",
+      "What happens if the temperature Log is missing?"
+    ]
+  },
+  "Valuable Cargo (VAL)": {
+    "term": "Valuable Cargo (VAL)",
+    "questions": [
+      "What is Valuable Cargo (VAL)?",
+      "Who is responsible for the valuable Cargo (VAL)?",
+      "What happens if the valuable Cargo (VAL) is missing?"
+    ]
+  },
+  "Vulnerable Cargo (VUN)": {
+    "term": "Vulnerable Cargo (VUN)",
+    "questions": [
+      "What is Vulnerable Cargo (VUN)?",
+      "Who is responsible for the vulnerable Cargo (VUN)?",
+      "What happens if the vulnerable Cargo (VUN) is missing?"
+    ]
+  },
+  "WPM (Wood Packaging Material)": {
+    "term": "WPM (Wood Packaging Material)",
+    "questions": [
+      "What is WPM (Wood Packaging Material)?",
+      "Who is responsible for the wPM (Wood Packaging Material)?",
+      "What happens if the wPM (Wood Packaging Material) is missing?"
+    ]
+  },
+  "Cartage": {
+    "term": "Cartage",
+    "questions": [
+      "What is Cartage?",
+      "Who is responsible for the cartage?",
+      "What happens if the cartage is missing?"
+    ]
+  },
+  "IATA Dangerous Goods Regs (DGR)": {
+    "term": "IATA Dangerous Goods Regs (DGR)",
+    "questions": [
+      "What is IATA Dangerous Goods Regs (DGR)?",
+      "Who is responsible for the iATA Dangerous Goods Regs (DGR)?",
+      "What happens if the iATA Dangerous Goods Regs (DGR) is missing?"
+    ]
+  },
+  "Neutral Air Waybill": {
+    "term": "Neutral Air Waybill",
+    "questions": [
+      "What is Neutral Air Waybill?",
+      "Who is responsible for the neutral Air Waybill?",
+      "What happens if the neutral Air Waybill is missing?"
+    ]
+  },
+  "Section II Lithium Batteries": {
+    "term": "Section II Lithium Batteries",
+    "questions": [
+      "What is Section II Lithium Batteries?",
+      "Who is responsible for the section II Lithium Batteries?",
+      "What happens if the section II Lithium Batteries is missing?"
+    ]
+  },
+  "Gateway": {
+    "term": "Gateway",
+    "questions": [
+      "What is Gateway?",
+      "Who is responsible for the gateway?",
+      "What happens if the gateway is missing?"
+    ]
+  },
+  "Advisory Label": {
+    "term": "Advisory Label",
+    "questions": [
+      "What is Advisory Label?",
+      "Who is responsible for the advisory Label?",
+      "What happens if the advisory Label is missing?"
+    ]
+  },
+  "Airport-to-Airport (ATA)": {
+    "term": "Airport-to-Airport (ATA)",
+    "questions": [
+      "What is Airport-to-Airport (ATA)?",
+      "Who is responsible for the airport-to-Airport (ATA)?",
+      "What happens if the airport-to-Airport (ATA) is missing?"
+    ]
+  },
+  "Bonded Area": {
+    "term": "Bonded Area",
+    "questions": [
+      "What is Bonded Area?",
+      "Who is responsible for the bonded Area?",
+      "What happens if the bonded Area is missing?"
+    ]
+  },
+  "Cargo IMP": {
+    "term": "Cargo IMP",
+    "questions": [
+      "What is Cargo IMP?",
+      "Who is responsible for the cargo IMP?",
+      "What happens if the cargo IMP is missing?"
+    ]
+  },
+  "Consignment Note": {
+    "term": "Consignment Note",
+    "questions": [
+      "What is Consignment Note?",
+      "Who is responsible for the consignment Note?",
+      "What happens if the consignment Note is missing?"
+    ]
+  },
+  "De-consolidation": {
+    "term": "De-consolidation",
+    "questions": [
+      "What is De-consolidation?",
+      "Who is responsible for the de-consolidation?",
+      "What happens if the de-consolidation is missing?"
+    ]
+  },
+  "Duty Drawback": {
+    "term": "Duty Drawback",
+    "questions": [
+      "What is Duty Drawback?",
+      "Who is responsible for the duty Drawback?",
+      "What happens if the duty Drawback is missing?"
+    ]
+  },
+  "Express Freight": {
+    "term": "Express Freight",
+    "questions": [
+      "What is Express Freight?",
+      "Who is responsible for the express Freight?",
+      "What happens if the express Freight is missing?"
+    ]
+  },
+  "Freight All Kinds (FAK)": {
+    "term": "Freight All Kinds (FAK)",
+    "questions": [
+      "What is Freight All Kinds (FAK)?",
+      "Who is responsible for the freight All Kinds (FAK)?",
+      "What happens if the freight All Kinds (FAK) is missing?"
+    ]
+  },
+  "GCR (General Cargo Rate)": {
+    "term": "GCR (General Cargo Rate)",
+    "questions": [
+      "What is GCR (General Cargo Rate)?",
+      "Who is responsible for the gCR (General Cargo Rate)?",
+      "What happens if the gCR (General Cargo Rate) is missing?"
+    ]
+  },
+  "Heavy Lift": {
+    "term": "Heavy Lift",
+    "questions": [
+      "What is Heavy Lift?",
+      "Who is responsible for the heavy Lift?",
+      "What happens if the heavy Lift is missing?"
+    ]
+  },
+  "Intermediate Consignee": {
+    "term": "Intermediate Consignee",
+    "questions": [
+      "What is Intermediate Consignee?",
+      "Who is responsible for the intermediate Consignee?",
+      "What happens if the intermediate Consignee is missing?"
+    ]
+  },
+  "Known Cargo": {
+    "term": "Known Cargo",
+    "questions": [
+      "What is Known Cargo?",
+      "Who is responsible for the known Cargo?",
+      "What happens if the known Cargo is missing?"
+    ]
+  },
+  "Logistics Hub": {
+    "term": "Logistics Hub",
+    "questions": [
+      "What is Logistics Hub?",
+      "Who is responsible for the logistics Hub?",
+      "What happens if the logistics Hub is missing?"
+    ]
+  },
+  "NOTOC (Notice to Captain)": {
+    "term": "NOTOC (Notice to Captain)",
+    "questions": [
+      "What is NOTOC (Notice to Captain)?",
+      "Who is responsible for the nOTOC (Notice to Captain)?",
+      "What happens if the nOTOC (Notice to Captain) is missing?"
+    ]
+  },
+  "Over-Dimensional (OD)": {
+    "term": "Over-Dimensional (OD)",
+    "questions": [
+      "What is Over-Dimensional (OD)?",
+      "Who is responsible for the over-Dimensional (OD)?",
+      "What happens if the over-Dimensional (OD) is missing?"
+    ]
+  },
+  "Release Note": {
+    "term": "Release Note",
+    "questions": [
+      "What is Release Note?",
+      "Who is responsible for the release Note?",
+      "What happens if the release Note is missing?"
+    ]
+  },
+  "SCR (Specific Commodity Rate)": {
+    "term": "SCR (Specific Commodity Rate)",
+    "questions": [
+      "What is SCR (Specific Commodity Rate)?",
+      "Who is responsible for the sCR (Specific Commodity Rate)?",
+      "What happens if the sCR (Specific Commodity Rate) is missing?"
+    ]
+  },
+  "Volumetric Ratio": {
+    "term": "Volumetric Ratio",
+    "questions": [
+      "What is Volumetric Ratio?",
+      "Who is responsible for the volumetric Ratio?",
+      "What happens if the volumetric Ratio is missing?"
+    ]
+  },
+  "C-TPAT Certificate": {
+    "term": "C-TPAT Certificate",
+    "questions": [
+      "What is C-TPAT Certificate?",
+      "Who is responsible for the c-TPAT Certificate?",
+      "What happens if the c-TPAT Certificate is missing?"
+    ]
+  },
+  "Montreal Convention": {
+    "term": "Montreal Convention",
+    "questions": [
+      "What is Montreal Convention?",
+      "Who is responsible for the montreal Convention?",
+      "What happens if the montreal Convention is missing?"
+    ]
+  },
+  "Sea-Air Service": {
+    "term": "Sea-Air Service",
+    "questions": [
+      "What is Sea-Air Service?",
+      "Who is responsible for the sea-Air Service?",
+      "What happens if the sea-Air Service is missing?"
+    ]
+  },
+  "Air Waybill (Neutral)": {
+    "term": "Air Waybill (Neutral)",
+    "questions": [
+      "What is Air Waybill (Neutral)?",
+      "Who is responsible for the air Waybill (Neutral)?",
+      "What happens if the air Waybill (Neutral) is missing?"
+    ]
+  },
+  "Bonded Transit (T1)": {
+    "term": "Bonded Transit (T1)",
+    "questions": [
+      "What is Bonded Transit (T1)?",
+      "Who is responsible for the bonded Transit (T1)?",
+      "What happens if the bonded Transit (T1) is missing?"
+    ]
+  },
+  "Bill of Lading (BOL)": {
+    "term": "Bill of Lading (BOL)",
+    "questions": [
+      "What is Bill of Lading (BOL)?",
+      "Who is responsible for the bill of Lading (BOL)?",
+      "What happens if the bill of Lading (BOL) is missing?"
+    ]
+  },
+  "Purchase Order (PO)": {
+    "term": "Purchase Order (PO)",
+    "questions": [
+      "What is Purchase Order (PO)?",
+      "Who is responsible for the purchase Order (PO)?",
+      "What happens if the purchase Order (PO) is missing?"
+    ]
+  },
+  "Warehouse Management System (WMS)": {
+    "term": "Warehouse Management System (WMS)",
+    "questions": [
+      "What is Warehouse Management System (WMS)?",
+      "Who is responsible for the warehouse Management System (WMS)?",
+      "What happens if the warehouse Management System (WMS) is missing?"
+    ]
+  },
+  "Packing Slip": {
+    "term": "Packing Slip",
+    "questions": [
+      "What is Packing Slip?",
+      "Who is responsible for the packing Slip?",
+      "What happens if the packing Slip is missing?"
+    ]
+  },
+  "SKU (Stock Keeping Unit)": {
+    "term": "SKU (Stock Keeping Unit)",
+    "questions": [
+      "What is SKU (Stock Keeping Unit)?",
+      "Who is responsible for the sKU (Stock Keeping Unit)?",
+      "What happens if the sKU (Stock Keeping Unit) is missing?"
+    ]
+  },
+  "Advance Shipping Notice (ASN)": {
+    "term": "Advance Shipping Notice (ASN)",
+    "questions": [
+      "What is Advance Shipping Notice (ASN)?",
+      "Who is responsible for the advance Shipping Notice (ASN)?",
+      "What happens if the advance Shipping Notice (ASN) is missing?"
+    ]
+  },
+  "Pick List": {
+    "term": "Pick List",
+    "questions": [
+      "What is Pick List?",
+      "Who is responsible for the pick List?",
+      "What happens if the pick List is missing?"
+    ]
+  },
+  "Goods Received Note (GRN)": {
+    "term": "Goods Received Note (GRN)",
+    "questions": [
+      "What is Goods Received Note (GRN)?",
+      "Who is responsible for the goods Received Note (GRN)?",
+      "What happens if the goods Received Note (GRN) is missing?"
+    ]
+  },
+  "Cross-Docking": {
+    "term": "Cross-Docking",
+    "questions": [
+      "What is Cross-Docking?",
+      "Who is responsible for the cross-Docking?",
+      "What happens if the cross-Docking is missing?"
+    ]
+  },
+  "Cycle Counting": {
+    "term": "Cycle Counting",
+    "questions": [
+      "What is Cycle Counting?",
+      "Who is responsible for the cycle Counting?",
+      "What happens if the cycle Counting is missing?"
+    ]
+  },
+  "Safety Data Sheet (SDS)": {
+    "term": "Safety Data Sheet (SDS)",
+    "questions": [
+      "What is Safety Data Sheet (SDS)?",
+      "Who is responsible for the safety Data Sheet (SDS)?",
+      "What happens if the safety Data Sheet (SDS) is missing?"
+    ]
+  },
+  "Putaway List": {
+    "term": "Putaway List",
+    "questions": [
+      "What is Putaway List?",
+      "Who is responsible for the putaway List?",
+      "What happens if the putaway List is missing?"
+    ]
+  },
+  "Master Bolter/Bill": {
+    "term": "Master Bolter/Bill",
+    "questions": [
+      "What is Master Bolter/Bill?",
+      "Who is responsible for the master Bolter/Bill?",
+      "What happens if the master Bolter/Bill is missing?"
+    ]
+  },
+  "Deadheading": {
+    "term": "Deadheading",
+    "questions": [
+      "What is Deadheading?",
+      "Who is responsible for the deadheading?",
+      "What happens if the deadheading is missing?"
+    ]
+  },
+  "LTL (Less Than Truckload)": {
+    "term": "LTL (Less Than Truckload)",
+    "questions": [
+      "What is LTL (Less Than Truckload)?",
+      "Who is responsible for the lTL (Less Than Truckload)?",
+      "What happens if the lTL (Less Than Truckload) is missing?"
+    ]
+  },
+  "Backorder": {
+    "term": "Backorder",
+    "questions": [
+      "What is Backorder?",
+      "Who is responsible for the backorder?",
+      "What happens if the backorder is missing?"
+    ]
+  },
+  "RMA (Return Merchandise Authorization)": {
+    "term": "RMA (Return Merchandise Authorization)",
+    "questions": [
+      "What is RMA (Return Merchandise Authorization)?",
+      "Who is responsible for the rMA (Return Merchandise Authorization)?",
+      "What happens if the rMA (Return Merchandise Authorization) is missing?"
+    ]
+  },
+  "Dock Audit": {
+    "term": "Dock Audit",
+    "questions": [
+      "What is Dock Audit?",
+      "Who is responsible for the dock Audit?",
+      "What happens if the dock Audit is missing?"
+    ]
+  },
+  "Inventory Aging Report": {
+    "term": "Inventory Aging Report",
+    "questions": [
+      "What is Inventory Aging Report?",
+      "Who is responsible for the inventory Aging Report?",
+      "What happens if the inventory Aging Report is missing?"
+    ]
+  },
+  "Quarantine Area": {
+    "term": "Quarantine Area",
+    "questions": [
+      "What is Quarantine Area?",
+      "Who is responsible for the quarantine Area?",
+      "What happens if the quarantine Area is missing?"
+    ]
+  },
+  "3PL (Third-Party Logistics)": {
+    "term": "3PL (Third-Party Logistics)",
+    "questions": [
+      "What is 3PL (Third-Party Logistics)?",
+      "Who is responsible for the 3PL (Third-Party Logistics)?",
+      "What happens if the 3PL (Third-Party Logistics) is missing?"
+    ]
+  },
+  "FIFO (First-In, First-Out)": {
+    "term": "FIFO (First-In, First-Out)",
+    "questions": [
+      "What is FIFO (First-In, First-Out)?",
+      "Who is responsible for the fIFO (First-In, First-Out)?",
+      "What happens if the fIFO (First-In, First-Out) is missing?"
+    ]
+  },
+  "Velocity Slotting": {
+    "term": "Velocity Slotting",
+    "questions": [
+      "What is Velocity Slotting?",
+      "Who is responsible for the velocity Slotting?",
+      "What happens if the velocity Slotting is missing?"
+    ]
+  },
+  "Pallet Pattern": {
+    "term": "Pallet Pattern",
+    "questions": [
+      "What is Pallet Pattern?",
+      "Who is responsible for the pallet Pattern?",
+      "What happens if the pallet Pattern is missing?"
+    ]
+  },
+  "Pick-to-Light": {
+    "term": "Pick-to-Light",
+    "questions": [
+      "What is Pick-to-Light?",
+      "Who is responsible for the pick-to-Light?",
+      "What happens if the pick-to-Light is missing?"
+    ]
+  },
+  "Service Level Agreement (SLA)": {
+    "term": "Service Level Agreement (SLA)",
+    "questions": [
+      "What is Service Level Agreement (SLA)?",
+      "Who is responsible for the service Level Agreement (SLA)?",
+      "What happens if the service Level Agreement (SLA) is missing?"
+    ]
+  },
+  "RF (Radio Frequency) Scanner": {
+    "term": "RF (Radio Frequency) Scanner",
+    "questions": [
+      "What is RF (Radio Frequency) Scanner?",
+      "Who is responsible for the rF (Radio Frequency) Scanner?",
+      "What happens if the rF (Radio Frequency) Scanner is missing?"
+    ]
+  },
+  "Pro Forma Invoice": {
+    "term": "Pro Forma Invoice",
+    "questions": [
+      "What is Pro Forma Invoice?",
+      "Who is responsible for the pro Forma Invoice?",
+      "What happens if the pro Forma Invoice is missing?"
+    ]
+  },
+  "LIFO (Last-In, First-Out)": {
+    "term": "LIFO (Last-In, First-Out)",
+    "questions": [
+      "What is LIFO (Last-In, First-Out)?",
+      "Who is responsible for the lIFO (Last-In, First-Out)?",
+      "What happens if the lIFO (Last-In, First-Out) is missing?"
+    ]
+  },
+  "Dimensional Weight (Dim Weight)": {
+    "term": "Dimensional Weight (Dim Weight)",
+    "questions": [
+      "What is Dimensional Weight (Dim Weight)?",
+      "Who is responsible for the dimensional Weight (Dim Weight)?",
+      "What happens if the dimensional Weight (Dim Weight) is missing?"
+    ]
+  },
+  "Kitting": {
+    "term": "Kitting",
+    "questions": [
+      "What is Kitting?",
+      "Who is responsible for the kitting?",
+      "What happens if the kitting is missing?"
+    ]
+  },
+  "Wave Picking": {
+    "term": "Wave Picking",
+    "questions": [
+      "What is Wave Picking?",
+      "Who is responsible for the wave Picking?",
+      "What happens if the wave Picking is missing?"
+    ]
+  },
+  "Inventory Shrinkage Report": {
+    "term": "Inventory Shrinkage Report",
+    "questions": [
+      "What is Inventory Shrinkage Report?",
+      "Who is responsible for the inventory Shrinkage Report?",
+      "What happens if the inventory Shrinkage Report is missing?"
+    ]
+  },
+  "AS/RS": {
+    "term": "AS/RS",
+    "questions": [
+      "What is AS/RS?",
+      "Who is responsible for the aS/RS?",
+      "What happens if the aS/RS is missing?"
+    ]
+  },
+  "Mezzanine": {
+    "term": "Mezzanine",
+    "questions": [
+      "What is Mezzanine?",
+      "Who is responsible for the mezzanine?",
+      "What happens if the mezzanine is missing?"
+    ]
+  },
+  "Dunnage": {
+    "term": "Dunnage",
+    "questions": [
+      "What is Dunnage?",
+      "Who is responsible for the dunnage?",
+      "What happens if the dunnage is missing?"
+    ]
+  },
+  "Blind Receiving": {
+    "term": "Blind Receiving",
+    "questions": [
+      "What is Blind Receiving?",
+      "Who is responsible for the blind Receiving?",
+      "What happens if the blind Receiving is missing?"
+    ]
+  },
+  "Waybill": {
+    "term": "Waybill",
+    "questions": [
+      "What is Waybill?",
+      "Who is responsible for the waybill?",
+      "What happens if the waybill is missing?"
+    ]
+  },
+  "Labor Management System (LMS)": {
+    "term": "Labor Management System (LMS)",
+    "questions": [
+      "What is Labor Management System (LMS)?",
+      "Who is responsible for the labor Management System (LMS)?",
+      "What happens if the labor Management System (LMS) is missing?"
+    ]
+  },
+  "Incidents Report": {
+    "term": "Incidents Report",
+    "questions": [
+      "What is Incidents Report?",
+      "Who is responsible for the incidents Report?",
+      "What happens if the incidents Report is missing?"
+    ]
+  },
+  "Free Trade Zone (FTZ)": {
+    "term": "Free Trade Zone (FTZ)",
+    "questions": [
+      "What is Free Trade Zone (FTZ)?",
+      "Who is responsible for the free Trade Zone (FTZ)?",
+      "What happens if the free Trade Zone (FTZ) is missing?"
+    ]
+  },
+  "Zone Picking": {
+    "term": "Zone Picking",
+    "questions": [
+      "What is Zone Picking?",
+      "Who is responsible for the zone Picking?",
+      "What happens if the zone Picking is missing?"
+    ]
+  },
+  "Dock Leveler": {
+    "term": "Dock Leveler",
+    "questions": [
+      "What is Dock Leveler?",
+      "Who is responsible for the dock Leveler?",
+      "What happens if the dock Leveler is missing?"
+    ]
+  },
+  "Lot Tracking": {
+    "term": "Lot Tracking",
+    "questions": [
+      "What is Lot Tracking?",
+      "Who is responsible for the lot Tracking?",
+      "What happens if the lot Tracking is missing?"
+    ]
+  },
+  "EDI (Electronic Data Interchange)": {
+    "term": "EDI (Electronic Data Interchange)",
+    "questions": [
+      "What is EDI (Electronic Data Interchange)?",
+      "Who is responsible for the eDI (Electronic Data Interchange)?",
+      "What happens if the eDI (Electronic Data Interchange) is missing?"
+    ]
+  },
+  "Pick-to-Voice": {
+    "term": "Pick-to-Voice",
+    "questions": [
+      "What is Pick-to-Voice?",
+      "Who is responsible for the pick-to-Voice?",
+      "What happens if the pick-to-Voice is missing?"
+    ]
+  },
+  "Re-warehousing": {
+    "term": "Re-warehousing",
+    "questions": [
+      "What is Re-warehousing?",
+      "Who is responsible for the re-warehousing?",
+      "What happens if the re-warehousing is missing?"
+    ]
+  },
+  "MHE (Material Handling Equipment)": {
+    "term": "MHE (Material Handling Equipment)",
+    "questions": [
+      "What is MHE (Material Handling Equipment)?",
+      "Who is responsible for the mHE (Material Handling Equipment)?",
+      "What happens if the mHE (Material Handling Equipment) is missing?"
+    ]
+  },
+  "Cross-Training Record": {
+    "term": "Cross-Training Record",
+    "questions": [
+      "What is Cross-Training Record?",
+      "Who is responsible for the cross-Training Record?",
+      "What happens if the cross-Training Record is missing?"
+    ]
+  },
+  "Dead Stock": {
+    "term": "Dead Stock",
+    "questions": [
+      "What is Dead Stock?",
+      "Who is responsible for the dead Stock?",
+      "What happens if the dead Stock is missing?"
+    ]
+  },
+  "Carton Flow Rack": {
+    "term": "Carton Flow Rack",
+    "questions": [
+      "What is Carton Flow Rack?",
+      "Who is responsible for the carton Flow Rack?",
+      "What happens if the carton Flow Rack is missing?"
+    ]
+  },
+  "Load Plan": {
+    "term": "Load Plan",
+    "questions": [
+      "What is Load Plan?",
+      "Who is responsible for the load Plan?",
+      "What happens if the load Plan is missing?"
+    ]
+  },
+  "Cold Chain Log": {
+    "term": "Cold Chain Log",
+    "questions": [
+      "What is Cold Chain Log?",
+      "Who is responsible for the cold Chain Log?",
+      "What happens if the cold Chain Log is missing?"
+    ]
+  },
+  "Slipsheet": {
+    "term": "Slipsheet",
+    "questions": [
+      "What is Slipsheet?",
+      "Who is responsible for the slipsheet?",
+      "What happens if the slipsheet is missing?"
+    ]
+  },
+  "Bollard": {
+    "term": "Bollard",
+    "questions": [
+      "What is Bollard?",
+      "Who is responsible for the bollard?",
+      "What happens if the bollard is missing?"
+    ]
+  },
+  "Honeycomb": {
+    "term": "Honeycomb",
+    "questions": [
+      "What is Honeycomb?",
+      "Who is responsible for the honeycomb?",
+      "What happens if the honeycomb is missing?"
+    ]
+  },
+  "Value-Added Services (VAS)": {
+    "term": "Value-Added Services (VAS)",
+    "questions": [
+      "What is Value-Added Services (VAS)?",
+      "Who is responsible for the value-Added Services (VAS)?",
+      "What happens if the value-Added Services (VAS) is missing?"
+    ]
+  },
+  "Last Mile Delivery": {
+    "term": "Last Mile Delivery",
+    "questions": [
+      "What is Last Mile Delivery?",
+      "Who is responsible for the last Mile Delivery?",
+      "What happens if the last Mile Delivery is missing?"
+    ]
+  },
+  "Floor Loading": {
+    "term": "Floor Loading",
+    "questions": [
+      "What is Floor Loading?",
+      "Who is responsible for the floor Loading?",
+      "What happens if the floor Loading is missing?"
+    ]
+  },
+  "Batch Picking": {
+    "term": "Batch Picking",
+    "questions": [
+      "What is Batch Picking?",
+      "Who is responsible for the batch Picking?",
+      "What happens if the batch Picking is missing?"
+    ]
+  },
+  "Cantilever Rack": {
+    "term": "Cantilever Rack",
+    "questions": [
+      "What is Cantilever Rack?",
+      "Who is responsible for the cantilever Rack?",
+      "What happens if the cantilever Rack is missing?"
+    ]
+  },
+  "Reach Truck": {
+    "term": "Reach Truck",
+    "questions": [
+      "What is Reach Truck?",
+      "Who is responsible for the reach Truck?",
+      "What happens if the reach Truck is missing?"
+    ]
+  },
+  "Dock Lock": {
+    "term": "Dock Lock",
+    "questions": [
+      "What is Dock Lock?",
+      "Who is responsible for the dock Lock?",
+      "What happens if the dock Lock is missing?"
+    ]
+  },
+  "Gaylord Box": {
+    "term": "Gaylord Box",
+    "questions": [
+      "What is Gaylord Box?",
+      "Who is responsible for the gaylord Box?",
+      "What happens if the gaylord Box is missing?"
+    ]
+  },
+  "RFID Tag": {
+    "term": "RFID Tag",
+    "questions": [
+      "What is RFID Tag?",
+      "Who is responsible for the rFID Tag?",
+      "What happens if the rFID Tag is missing?"
+    ]
+  },
+  "Order Consolidation": {
+    "term": "Order Consolidation",
+    "questions": [
+      "What is Order Consolidation?",
+      "Who is responsible for the order Consolidation?",
+      "What happens if the order Consolidation is missing?"
+    ]
+  },
+  "Cycle Time": {
+    "term": "Cycle Time",
+    "questions": [
+      "What is Cycle Time?",
+      "Who is responsible for the cycle Time?",
+      "What happens if the cycle Time is missing?"
+    ]
+  },
+  "Ebb and Flow": {
+    "term": "Ebb and Flow",
+    "questions": [
+      "What is Ebb and Flow?",
+      "Who is responsible for the ebb and Flow?",
+      "What happens if the ebb and Flow is missing?"
+    ]
+  },
+  "Purchase Requisition (PR)": {
+    "term": "Purchase Requisition (PR)",
+    "questions": [
+      "What is Purchase Requisition (PR)?",
+      "Who is responsible for the purchase Requisition (PR)?",
+      "What happens if the purchase Requisition (PR) is missing?"
+    ]
+  },
+  "Request for Quotation (RFQ)": {
+    "term": "Request for Quotation (RFQ)",
+    "questions": [
+      "What is Request for Quotation (RFQ)?",
+      "Who is responsible for the request for Quotation (RFQ)?",
+      "What happens if the request for Quotation (RFQ) is missing?"
+    ]
+  },
+  "Request for Proposal (RFP)": {
+    "term": "Request for Proposal (RFP)",
+    "questions": [
+      "What is Request for Proposal (RFP)?",
+      "Who is responsible for the request for Proposal (RFP)?",
+      "What happens if the request for Proposal (RFP) is missing?"
+    ]
+  },
+  "Request for Information (RFI)": {
+    "term": "Request for Information (RFI)",
+    "questions": [
+      "What is Request for Information (RFI)?",
+      "Who is responsible for the request for Information (RFI)?",
+      "What happens if the request for Information (RFI) is missing?"
+    ]
+  },
+  "Goods Receipt Note (GRN)": {
+    "term": "Goods Receipt Note (GRN)",
+    "questions": [
+      "What is Goods Receipt Note (GRN)?",
+      "Who is responsible for the goods Receipt Note (GRN)?",
+      "What happens if the goods Receipt Note (GRN) is missing?"
+    ]
+  },
+  "Procure-to-Pay (P2P)": {
+    "term": "Procure-to-Pay (P2P)",
+    "questions": [
+      "What is Procure-to-Pay (P2P)?",
+      "Who is responsible for the procure-to-Pay (P2P)?",
+      "What happens if the procure-to-Pay (P2P) is missing?"
+    ]
+  },
+  "Three-Way Matching": {
+    "term": "Three-Way Matching",
+    "questions": [
+      "What is Three-Way Matching?",
+      "Who is responsible for the three-Way Matching?",
+      "What happens if the three-Way Matching is missing?"
+    ]
+  },
+  "Supplier Scorecard": {
+    "term": "Supplier Scorecard",
+    "questions": [
+      "What is Supplier Scorecard?",
+      "Who is responsible for the supplier Scorecard?",
+      "What happens if the supplier Scorecard is missing?"
+    ]
+  },
+  "Bill of Materials (BOM)": {
+    "term": "Bill of Materials (BOM)",
+    "questions": [
+      "What is Bill of Materials (BOM)?",
+      "Who is responsible for the bill of Materials (BOM)?",
+      "What happens if the bill of Materials (BOM) is missing?"
+    ]
+  },
+  "Total Cost of Ownership (TCO)": {
+    "term": "Total Cost of Ownership (TCO)",
+    "questions": [
+      "What is Total Cost of Ownership (TCO)?",
+      "Who is responsible for the total Cost of Ownership (TCO)?",
+      "What happens if the total Cost of Ownership (TCO) is missing?"
+    ]
+  },
+  "Vendor Managed Inventory (VMI)": {
+    "term": "Vendor Managed Inventory (VMI)",
+    "questions": [
+      "What is Vendor Managed Inventory (VMI)?",
+      "Who is responsible for the vendor Managed Inventory (VMI)?",
+      "What happens if the vendor Managed Inventory (VMI) is missing?"
+    ]
+  },
+  "Blanket Purchase Order (BPO)": {
+    "term": "Blanket Purchase Order (BPO)",
+    "questions": [
+      "What is Blanket Purchase Order (BPO)?",
+      "Who is responsible for the blanket Purchase Order (BPO)?",
+      "What happens if the blanket Purchase Order (BPO) is missing?"
+    ]
+  },
+  "Spend Analysis": {
+    "term": "Spend Analysis",
+    "questions": [
+      "What is Spend Analysis?",
+      "Who is responsible for the spend Analysis?",
+      "What happens if the spend Analysis is missing?"
+    ]
+  },
+  "Lead Time": {
+    "term": "Lead Time",
+    "questions": [
+      "What is Lead Time?",
+      "Who is responsible for the lead Time?",
+      "What happens if the lead Time is missing?"
+    ]
+  },
+  "Sourcing": {
+    "term": "Sourcing",
+    "questions": [
+      "What is Sourcing?",
+      "Who is responsible for the sourcing?",
+      "What happens if the sourcing is missing?"
+    ]
+  },
+  "E-Procurement": {
+    "term": "E-Procurement",
+    "questions": [
+      "What is E-Procurement?",
+      "Who is responsible for the e-Procurement?",
+      "What happens if the e-Procurement is missing?"
+    ]
+  },
+  "Master Service Agreement (MSA)": {
+    "term": "Master Service Agreement (MSA)",
+    "questions": [
+      "What is Master Service Agreement (MSA)?",
+      "Who is responsible for the master Service Agreement (MSA)?",
+      "What happens if the master Service Agreement (MSA) is missing?"
+    ]
+  },
+  "Non-Disclosure Agreement (NDA)": {
+    "term": "Non-Disclosure Agreement (NDA)",
+    "questions": [
+      "What is Non-Disclosure Agreement (NDA)?",
+      "Who is responsible for the non-Disclosure Agreement (NDA)?",
+      "What happens if the non-Disclosure Agreement (NDA) is missing?"
+    ]
+  },
+  "Supplier Relationship Management (SRM)": {
+    "term": "Supplier Relationship Management (SRM)",
+    "questions": [
+      "What is Supplier Relationship Management (SRM)?",
+      "Who is responsible for the supplier Relationship Management (SRM)?",
+      "What happens if the supplier Relationship Management (SRM) is missing?"
+    ]
+  },
+  "Maverick Spend": {
+    "term": "Maverick Spend",
+    "questions": [
+      "What is Maverick Spend?",
+      "Who is responsible for the maverick Spend?",
+      "What happens if the maverick Spend is missing?"
+    ]
+  },
+  "Contract Lifecycle Management (CLM)": {
+    "term": "Contract Lifecycle Management (CLM)",
+    "questions": [
+      "What is Contract Lifecycle Management (CLM)?",
+      "Who is responsible for the contract Lifecycle Management (CLM)?",
+      "What happens if the contract Lifecycle Management (CLM) is missing?"
+    ]
+  },
+  "Supplier Onboarding": {
+    "term": "Supplier Onboarding",
+    "questions": [
+      "What is Supplier Onboarding?",
+      "Who is responsible for the supplier Onboarding?",
+      "What happens if the supplier Onboarding is missing?"
+    ]
+  },
+  "Strategic Sourcing": {
+    "term": "Strategic Sourcing",
+    "questions": [
+      "What is Strategic Sourcing?",
+      "Who is responsible for the strategic Sourcing?",
+      "What happens if the strategic Sourcing is missing?"
+    ]
+  },
+  "Just-in-Time (JIT) Procurement": {
+    "term": "Just-in-Time (JIT) Procurement",
+    "questions": [
+      "What is Just-in-Time (JIT) Procurement?",
+      "Who is responsible for the just-in-Time (JIT) Procurement?",
+      "What happens if the just-in-Time (JIT) Procurement is missing?"
+    ]
+  },
+  "Minimum Order Quantity (MOQ)": {
+    "term": "Minimum Order Quantity (MOQ)",
+    "questions": [
+      "What is Minimum Order Quantity (MOQ)?",
+      "Who is responsible for the minimum Order Quantity (MOQ)?",
+      "What happens if the minimum Order Quantity (MOQ) is missing?"
+    ]
+  },
+  "Safety Stock": {
+    "term": "Safety Stock",
+    "questions": [
+      "What is Safety Stock?",
+      "Who is responsible for the safety Stock?",
+      "What happens if the safety Stock is missing?"
+    ]
+  },
+  "Category Management": {
+    "term": "Category Management",
+    "questions": [
+      "What is Category Management?",
+      "Who is responsible for the category Management?",
+      "What happens if the category Management is missing?"
+    ]
+  },
+  "Statement of Work (SOW)": {
+    "term": "Statement of Work (SOW)",
+    "questions": [
+      "What is Statement of Work (SOW)?",
+      "Who is responsible for the statement of Work (SOW)?",
+      "What happens if the statement of Work (SOW) is missing?"
+    ]
+  },
+  "Two-Way Matching": {
+    "term": "Two-Way Matching",
+    "questions": [
+      "What is Two-Way Matching?",
+      "Who is responsible for the two-Way Matching?",
+      "What happens if the two-Way Matching is missing?"
+    ]
+  },
+  "Cost Avoidance": {
+    "term": "Cost Avoidance",
+    "questions": [
+      "What is Cost Avoidance?",
+      "Who is responsible for the cost Avoidance?",
+      "What happens if the cost Avoidance is missing?"
+    ]
+  },
+  "Cost Savings": {
+    "term": "Cost Savings",
+    "questions": [
+      "What is Cost Savings?",
+      "Who is responsible for the cost Savings?",
+      "What happens if the cost Savings is missing?"
+    ]
+  },
+  "Invoice Processing": {
+    "term": "Invoice Processing",
+    "questions": [
+      "What is Invoice Processing?",
+      "Who is responsible for the invoice Processing?",
+      "What happens if the invoice Processing is missing?"
+    ]
+  },
+  "Payment Terms": {
+    "term": "Payment Terms",
+    "questions": [
+      "What is Payment Terms?",
+      "Who is responsible for the payment Terms?",
+      "What happens if the payment Terms is missing?"
+    ]
+  },
+  "Open Account": {
+    "term": "Open Account",
+    "questions": [
+      "What is Open Account?",
+      "Who is responsible for the open Account?",
+      "What happens if the open Account is missing?"
+    ]
+  },
+  "Incoterms": {
+    "term": "Incoterms",
+    "questions": [
+      "What is Incoterms?",
+      "Who is responsible for the incoterms?",
+      "What happens if the incoterms is missing?"
+    ]
+  },
+  "Reverse Auction": {
+    "term": "Reverse Auction",
+    "questions": [
+      "What is Reverse Auction?",
+      "Who is responsible for the reverse Auction?",
+      "What happens if the reverse Auction is missing?"
+    ]
+  },
+  "Supplier Code of Conduct": {
+    "term": "Supplier Code of Conduct",
+    "questions": [
+      "What is Supplier Code of Conduct?",
+      "Who is responsible for the supplier Code of Conduct?",
+      "What happens if the supplier Code of Conduct is missing?"
+    ]
+  },
+  "Direct Procurement": {
+    "term": "Direct Procurement",
+    "questions": [
+      "What is Direct Procurement?",
+      "Who is responsible for the direct Procurement?",
+      "What happens if the direct Procurement is missing?"
+    ]
+  },
+  "Indirect Procurement": {
+    "term": "Indirect Procurement",
+    "questions": [
+      "What is Indirect Procurement?",
+      "Who is responsible for the indirect Procurement?",
+      "What happens if the indirect Procurement is missing?"
+    ]
+  },
+  "Order Acknowledgement": {
+    "term": "Order Acknowledgement",
+    "questions": [
+      "What is Order Acknowledgement?",
+      "Who is responsible for the order Acknowledgement?",
+      "What happens if the order Acknowledgement is missing?"
+    ]
+  },
+  "Early Payment Discount": {
+    "term": "Early Payment Discount",
+    "questions": [
+      "What is Early Payment Discount?",
+      "Who is responsible for the early Payment Discount?",
+      "What happens if the early Payment Discount is missing?"
+    ]
+  },
+  "Project Charter": {
+    "term": "Project Charter",
+    "questions": [
+      "What is Project Charter?",
+      "Who is responsible for the project Charter?",
+      "What happens if the project Charter is missing?"
+    ]
+  },
+  "Business Case": {
+    "term": "Business Case",
+    "questions": [
+      "What is Business Case?",
+      "Who is responsible for the business Case?",
+      "What happens if the business Case is missing?"
+    ]
+  },
+  "Stakeholder Register": {
+    "term": "Stakeholder Register",
+    "questions": [
+      "What is Stakeholder Register?",
+      "Who is responsible for the stakeholder Register?",
+      "What happens if the stakeholder Register is missing?"
+    ]
+  },
+  "Scope Statement": {
+    "term": "Scope Statement",
+    "questions": [
+      "What is Scope Statement?",
+      "Who is responsible for the scope Statement?",
+      "What happens if the scope Statement is missing?"
+    ]
+  },
+  "WBS (Work Breakdown Structure)": {
+    "term": "WBS (Work Breakdown Structure)",
+    "questions": [
+      "What is WBS (Work Breakdown Structure)?",
+      "Who is responsible for the wBS (Work Breakdown Structure)?",
+      "What happens if the wBS (Work Breakdown Structure) is missing?"
+    ]
+  },
+  "Project Management Plan": {
+    "term": "Project Management Plan",
+    "questions": [
+      "What is Project Management Plan?",
+      "Who is responsible for the project Management Plan?",
+      "What happens if the project Management Plan is missing?"
+    ]
+  },
+  "Gantt Chart": {
+    "term": "Gantt Chart",
+    "questions": [
+      "What is Gantt Chart?",
+      "Who is responsible for the gantt Chart?",
+      "What happens if the gantt Chart is missing?"
+    ]
+  },
+  "Risk Register": {
+    "term": "Risk Register",
+    "questions": [
+      "What is Risk Register?",
+      "Who is responsible for the risk Register?",
+      "What happens if the risk Register is missing?"
+    ]
+  },
+  "RACI Matrix": {
+    "term": "RACI Matrix",
+    "questions": [
+      "What is RACI Matrix?",
+      "Who is responsible for the rACI Matrix?",
+      "What happens if the rACI Matrix is missing?"
+    ]
+  },
+  "Change Request": {
+    "term": "Change Request",
+    "questions": [
+      "What is Change Request?",
+      "Who is responsible for the change Request?",
+      "What happens if the change Request is missing?"
+    ]
+  },
+  "Issue Log": {
+    "term": "Issue Log",
+    "questions": [
+      "What is Issue Log?",
+      "Who is responsible for the issue Log?",
+      "What happens if the issue Log is missing?"
+    ]
+  },
+  "Status Report": {
+    "term": "Status Report",
+    "questions": [
+      "What is Status Report?",
+      "Who is responsible for the status Report?",
+      "What happens if the status Report is missing?"
+    ]
+  },
+  "Quality Management Plan": {
+    "term": "Quality Management Plan",
+    "questions": [
+      "What is Quality Management Plan?",
+      "Who is responsible for the quality Management Plan?",
+      "What happens if the quality Management Plan is missing?"
+    ]
+  },
+  "Resource Calendar": {
+    "term": "Resource Calendar",
+    "questions": [
+      "What is Resource Calendar?",
+      "Who is responsible for the resource Calendar?",
+      "What happens if the resource Calendar is missing?"
+    ]
+  },
+  "Procurement Statement of Work": {
+    "term": "Procurement Statement of Work",
+    "questions": [
+      "What is Procurement Statement of Work?",
+      "Who is responsible for the procurement Statement of Work?",
+      "What happens if the procurement Statement of Work is missing?"
+    ]
+  },
+  "Milestone List": {
+    "term": "Milestone List",
+    "questions": [
+      "What is Milestone List?",
+      "Who is responsible for the milestone List?",
+      "What happens if the milestone List is missing?"
+    ]
+  },
+  "Communication Plan": {
+    "term": "Communication Plan",
+    "questions": [
+      "What is Communication Plan?",
+      "Who is responsible for the communication Plan?",
+      "What happens if the communication Plan is missing?"
+    ]
+  },
+  "Critical Path": {
+    "term": "Critical Path",
+    "questions": [
+      "What is Critical Path?",
+      "Who is responsible for the critical Path?",
+      "What happens if the critical Path is missing?"
+    ]
+  },
+  "Lesson Learned Register": {
+    "term": "Lesson Learned Register",
+    "questions": [
+      "What is Lesson Learned Register?",
+      "Who is responsible for the lesson Learned Register?",
+      "What happens if the lesson Learned Register is missing?"
+    ]
+  },
+  "Project Closure Report": {
+    "term": "Project Closure Report",
+    "questions": [
+      "What is Project Closure Report?",
+      "Who is responsible for the project Closure Report?",
+      "What happens if the project Closure Report is missing?"
+    ]
+  },
+  "Product Backlog": {
+    "term": "Product Backlog",
+    "questions": [
+      "What is Product Backlog?",
+      "Who is responsible for the product Backlog?",
+      "What happens if the product Backlog is missing?"
+    ]
+  },
+  "Sprint Backlog": {
+    "term": "Sprint Backlog",
+    "questions": [
+      "What is Sprint Backlog?",
+      "Who is responsible for the sprint Backlog?",
+      "What happens if the sprint Backlog is missing?"
+    ]
+  },
+  "Burn-down Chart": {
+    "term": "Burn-down Chart",
+    "questions": [
+      "What is Burn-down Chart?",
+      "Who is responsible for the burn-down Chart?",
+      "What happens if the burn-down Chart is missing?"
+    ]
+  },
+  "Velocity": {
+    "term": "Velocity",
+    "questions": [
+      "What is Velocity?",
+      "Who is responsible for the velocity?",
+      "What happens if the velocity is missing?"
+    ]
+  },
+  "Cost Performance Index (CPI)": {
+    "term": "Cost Performance Index (CPI)",
+    "questions": [
+      "What is Cost Performance Index (CPI)?",
+      "Who is responsible for the cost Performance Index (CPI)?",
+      "What happens if the cost Performance Index (CPI) is missing?"
+    ]
+  },
+  "Schedule Performance Index (SPI)": {
+    "term": "Schedule Performance Index (SPI)",
+    "questions": [
+      "What is Schedule Performance Index (SPI)?",
+      "Who is responsible for the schedule Performance Index (SPI)?",
+      "What happens if the schedule Performance Index (SPI) is missing?"
+    ]
+  },
+  "Assumption Log": {
+    "term": "Assumption Log",
+    "questions": [
+      "What is Assumption Log?",
+      "Who is responsible for the assumption Log?",
+      "What happens if the assumption Log is missing?"
+    ]
+  },
+  "Quality Metrics": {
+    "term": "Quality Metrics",
+    "questions": [
+      "What is Quality Metrics?",
+      "Who is responsible for the quality Metrics?",
+      "What happens if the quality Metrics is missing?"
+    ]
+  },
+  "Responsibility Assignment Matrix (RAM)": {
+    "term": "Responsibility Assignment Matrix (RAM)",
+    "questions": [
+      "What is Responsibility Assignment Matrix (RAM)?",
+      "Who is responsible for the responsibility Assignment Matrix (RAM)?",
+      "What happens if the responsibility Assignment Matrix (RAM) is missing?"
+    ]
+  },
+  "Variance Analysis": {
+    "term": "Variance Analysis",
+    "questions": [
+      "What is Variance Analysis?",
+      "Who is responsible for the variance Analysis?",
+      "What happens if the variance Analysis is missing?"
+    ]
+  },
+  "Kick-off Meeting Agenda": {
+    "term": "Kick-off Meeting Agenda",
+    "questions": [
+      "What is Kick-off Meeting Agenda?",
+      "Who is responsible for the kick-off Meeting Agenda?",
+      "What happens if the kick-off Meeting Agenda is missing?"
+    ]
+  },
+  "SLA (Service Level Agreement)": {
+    "term": "SLA (Service Level Agreement)",
+    "questions": [
+      "What is SLA (Service Level Agreement)?",
+      "Who is responsible for the sLA (Service Level Agreement)?",
+      "What happens if the sLA (Service Level Agreement) is missing?"
+    ]
+  },
+  "Definition of Done (DoD)": {
+    "term": "Definition of Done (DoD)",
+    "questions": [
+      "What is Definition of Done (DoD)?",
+      "Who is responsible for the definition of Done (DoD)?",
+      "What happens if the definition of Done (DoD) is missing?"
+    ]
+  },
+  "Baseline (Schedule/Cost)": {
+    "term": "Baseline (Schedule/Cost)",
+    "questions": [
+      "What is Baseline (Schedule/Cost)?",
+      "Who is responsible for the baseline (Schedule/Cost)?",
+      "What happens if the baseline (Schedule/Cost) is missing?"
+    ]
+  },
+  "User Stories": {
+    "term": "User Stories",
+    "questions": [
+      "What is User Stories?",
+      "Who is responsible for the user Stories?",
+      "What happens if the user Stories is missing?"
+    ]
+  },
+  "Histogram (Resource)": {
+    "term": "Histogram (Resource)",
+    "questions": [
+      "What is Histogram (Resource)?",
+      "Who is responsible for the histogram (Resource)?",
+      "What happens if the histogram (Resource) is missing?"
+    ]
+  },
+  "Probability and Impact Matrix": {
+    "term": "Probability and Impact Matrix",
+    "questions": [
+      "What is Probability and Impact Matrix?",
+      "Who is responsible for the probability and Impact Matrix?",
+      "What happens if the probability and Impact Matrix is missing?"
+    ]
+  },
+  "Change Log": {
+    "term": "Change Log",
+    "questions": [
+      "What is Change Log?",
+      "Who is responsible for the change Log?",
+      "What happens if the change Log is missing?"
+    ]
+  },
+  "Final Deliverable Acceptance": {
+    "term": "Final Deliverable Acceptance",
+    "questions": [
+      "What is Final Deliverable Acceptance?",
+      "Who is responsible for the final Deliverable Acceptance?",
+      "What happens if the final Deliverable Acceptance is missing?"
+    ]
+  },
+  "SIPOC Diagram": {
+    "term": "SIPOC Diagram",
+    "questions": [
+      "What is SIPOC Diagram?",
+      "Who is responsible for the sIPOC Diagram?",
+      "What happens if the sIPOC Diagram is missing?"
+    ]
+  },
+  "Ishikawa (Fishbone) Diagram": {
+    "term": "Ishikawa (Fishbone) Diagram",
+    "questions": [
+      "What is Ishikawa (Fishbone) Diagram?",
+      "Who is responsible for the ishikawa (Fishbone) Diagram?",
+      "What happens if the ishikawa (Fishbone) Diagram is missing?"
+    ]
+  },
+  "Monte Carlo Simulation": {
+    "term": "Monte Carlo Simulation",
+    "questions": [
+      "What is Monte Carlo Simulation?",
+      "Who is responsible for the monte Carlo Simulation?",
+      "What happens if the monte Carlo Simulation is missing?"
+    ]
+  },
+  "Work Package": {
+    "term": "Work Package",
+    "questions": [
+      "What is Work Package?",
+      "Who is responsible for the work Package?",
+      "What happens if the work Package is missing?"
+    ]
+  },
+  "Kanban Board": {
+    "term": "Kanban Board",
+    "questions": [
+      "What is Kanban Board?",
+      "Who is responsible for the kanban Board?",
+      "What happens if the kanban Board is missing?"
+    ]
+  },
+  "Critical Success Factors (CSF)": {
+    "term": "Critical Success Factors (CSF)",
+    "questions": [
+      "What is Critical Success Factors (CSF)?",
+      "Who is responsible for the critical Success Factors (CSF)?",
+      "What happens if the critical Success Factors (CSF) is missing?"
+    ]
+  },
+  "Contingency Reserve": {
+    "term": "Contingency Reserve",
+    "questions": [
+      "What is Contingency Reserve?",
+      "Who is responsible for the contingency Reserve?",
+      "What happens if the contingency Reserve is missing?"
+    ]
+  },
+  "Management Reserve": {
+    "term": "Management Reserve",
+    "questions": [
+      "What is Management Reserve?",
+      "Who is responsible for the management Reserve?",
+      "What happens if the management Reserve is missing?"
+    ]
+  },
+  "Pareto Chart": {
+    "term": "Pareto Chart",
+    "questions": [
+      "What is Pareto Chart?",
+      "Who is responsible for the pareto Chart?",
+      "What happens if the pareto Chart is missing?"
+    ]
+  },
+  "Earned Value (EV)": {
+    "term": "Earned Value (EV)",
+    "questions": [
+      "What is Earned Value (EV)?",
+      "Who is responsible for the earned Value (EV)?",
+      "What happens if the earned Value (EV) is missing?"
+    ]
+  },
+  "Product Roadmap": {
+    "term": "Product Roadmap",
+    "questions": [
+      "What is Product Roadmap?",
+      "Who is responsible for the product Roadmap?",
+      "What happens if the product Roadmap is missing?"
+    ]
+  },
+  "S.O.W. (Statement of Work)": {
+    "term": "S.O.W. (Statement of Work)",
+    "questions": [
+      "What is S.O.W. (Statement of Work)?",
+      "Who is responsible for the s.O.W. (Statement of Work)?",
+      "What happens if the s.O.W. (Statement of Work) is missing?"
+    ]
+  },
+  "Velocity Trend": {
+    "term": "Velocity Trend",
+    "questions": [
+      "What is Velocity Trend?",
+      "Who is responsible for the velocity Trend?",
+      "What happens if the velocity Trend is missing?"
+    ]
+  },
+  "Retrospective Minutes": {
+    "term": "Retrospective Minutes",
+    "questions": [
+      "What is Retrospective Minutes?",
+      "Who is responsible for the retrospective Minutes?",
+      "What happens if the retrospective Minutes is missing?"
+    ]
+  },
+  "Feasibility Study": {
+    "term": "Feasibility Study",
+    "questions": [
+      "What is Feasibility Study?",
+      "Who is responsible for the feasibility Study?",
+      "What happens if the feasibility Study is missing?"
+    ]
+  },
+  "Resource Leveling": {
+    "term": "Resource Leveling",
+    "questions": [
+      "What is Resource Leveling?",
+      "Who is responsible for the resource Leveling?",
+      "What happens if the resource Leveling is missing?"
+    ]
+  },
+  "Dependency Log": {
+    "term": "Dependency Log",
+    "questions": [
+      "What is Dependency Log?",
+      "Who is responsible for the dependency Log?",
+      "What happens if the dependency Log is missing?"
+    ]
+  },
+  "Escalation Matrix": {
+    "term": "Escalation Matrix",
+    "questions": [
+      "What is Escalation Matrix?",
+      "Who is responsible for the escalation Matrix?",
+      "What happens if the escalation Matrix is missing?"
+    ]
+  },
+  "Benefits Realization Plan": {
+    "term": "Benefits Realization Plan",
+    "questions": [
+      "What is Benefits Realization Plan?",
+      "Who is responsible for the benefits Realization Plan?",
+      "What happens if the benefits Realization Plan is missing?"
+    ]
+  },
+  "Acceptance Criteria": {
+    "term": "Acceptance Criteria",
+    "questions": [
+      "What is Acceptance Criteria?",
+      "Who is responsible for the acceptance Criteria?",
+      "What happens if the acceptance Criteria is missing?"
+    ]
+  },
+  "Value Stream Map": {
+    "term": "Value Stream Map",
+    "questions": [
+      "What is Value Stream Map?",
+      "Who is responsible for the value Stream Map?",
+      "What happens if the value Stream Map is missing?"
+    ]
+  },
+  "Project Funding Requirements": {
+    "term": "Project Funding Requirements",
+    "questions": [
+      "What is Project Funding Requirements?",
+      "Who is responsible for the project Funding Requirements?",
+      "What happens if the project Funding Requirements is missing?"
+    ]
+  },
+  "Tornado Diagram": {
+    "term": "Tornado Diagram",
+    "questions": [
+      "What is Tornado Diagram?",
+      "Who is responsible for the tornado Diagram?",
+      "What happens if the tornado Diagram is missing?"
+    ]
+  },
+  "MoSCoW Prioritization": {
+    "term": "MoSCoW Prioritization",
+    "questions": [
+      "What is MoSCoW Prioritization?",
+      "Who is responsible for the moSCoW Prioritization?",
+      "What happens if the moSCoW Prioritization is missing?"
+    ]
+  },
+  "Burndown Velocity": {
+    "term": "Burndown Velocity",
+    "questions": [
+      "What is Burndown Velocity?",
+      "Who is responsible for the burndown Velocity?",
+      "What happens if the burndown Velocity is missing?"
+    ]
+  },
+  "Lead and Lag": {
+    "term": "Lead and Lag",
+    "questions": [
+      "What is Lead and Lag?",
+      "Who is responsible for the lead and Lag?",
+      "What happens if the lead and Lag is missing?"
+    ]
+  },
+  "Firm Fixed Price (FFP)": {
+    "term": "Firm Fixed Price (FFP)",
+    "questions": [
+      "What is Firm Fixed Price (FFP)?",
+      "Who is responsible for the firm Fixed Price (FFP)?",
+      "What happens if the firm Fixed Price (FFP) is missing?"
+    ]
+  },
+  "Cost Plus (CPFF)": {
+    "term": "Cost Plus (CPFF)",
+    "questions": [
+      "What is Cost Plus (CPFF)?",
+      "Who is responsible for the cost Plus (CPFF)?",
+      "What happens if the cost Plus (CPFF) is missing?"
+    ]
+  },
+  "Control Account": {
+    "term": "Control Account",
+    "questions": [
+      "What is Control Account?",
+      "Who is responsible for the control Account?",
+      "What happens if the control Account is missing?"
+    ]
+  },
+  "Project Dashboard": {
+    "term": "Project Dashboard",
+    "questions": [
+      "What is Project Dashboard?",
+      "Who is responsible for the project Dashboard?",
+      "What happens if the project Dashboard is missing?"
+    ]
+  },
+  "Precedence Diagramming Method (PDM)": {
+    "term": "Precedence Diagramming Method (PDM)",
+    "questions": [
+      "What is Precedence Diagramming Method (PDM)?",
+      "Who is responsible for the precedence Diagramming Method (PDM)?",
+      "What happens if the precedence Diagramming Method (PDM) is missing?"
+    ]
+  },
+  "Basis of Estimates (BOE)": {
+    "term": "Basis of Estimates (BOE)",
+    "questions": [
+      "What is Basis of Estimates (BOE)?",
+      "Who is responsible for the basis of Estimates (BOE)?",
+      "What happens if the basis of Estimates (BOE) is missing?"
+    ]
+  },
+  "Procurement Audit": {
+    "term": "Procurement Audit",
+    "questions": [
+      "What is Procurement Audit?",
+      "Who is responsible for the procurement Audit?",
+      "What happens if the procurement Audit is missing?"
+    ]
+  },
+  "Project Management Information System (PMIS)": {
+    "term": "Project Management Information System (PMIS)",
+    "questions": [
+      "What is Project Management Information System (PMIS)?",
+      "Who is responsible for the project Management Information System (PMIS)?",
+      "What happens if the project Management Information System (PMIS) is missing?"
+    ]
+  },
+  "Work Authorization System": {
+    "term": "Work Authorization System",
+    "questions": [
+      "What is Work Authorization System?",
+      "Who is responsible for the work Authorization System?",
+      "What happens if the work Authorization System is missing?"
+    ]
+  },
+  "Project Governance Framework": {
+    "term": "Project Governance Framework",
+    "questions": [
+      "What is Project Governance Framework?",
+      "Who is responsible for the project Governance Framework?",
+      "What happens if the project Governance Framework is missing?"
+    ]
+  },
+  "Transition Plan": {
+    "term": "Transition Plan",
+    "questions": [
+      "What is Transition Plan?",
+      "Who is responsible for the transition Plan?",
+      "What happens if the transition Plan is missing?"
+    ]
+  },
+  "Teaming Agreement": {
+    "term": "Teaming Agreement",
+    "questions": [
+      "What is Teaming Agreement?",
+      "Who is responsible for the teaming Agreement?",
+      "What happens if the teaming Agreement is missing?"
+    ]
+  },
+  "Requirement Traceability Matrix (RTM)": {
+    "term": "Requirement Traceability Matrix (RTM)",
+    "questions": [
+      "What is Requirement Traceability Matrix (RTM)?",
+      "Who is responsible for the requirement Traceability Matrix (RTM)?",
+      "What happens if the requirement Traceability Matrix (RTM) is missing?"
+    ]
+  },
+  "Gold Plating": {
+    "term": "Gold Plating",
+    "questions": [
+      "What is Gold Plating?",
+      "Who is responsible for the gold Plating?",
+      "What happens if the gold Plating is missing?"
+    ]
+  },
+  "Project Portfolio Map": {
+    "term": "Project Portfolio Map",
+    "questions": [
+      "What is Project Portfolio Map?",
+      "Who is responsible for the project Portfolio Map?",
+      "What happens if the project Portfolio Map is missing?"
+    ]
+  },
+  "Variance at Completion (VAC)": {
+    "term": "Variance at Completion (VAC)",
+    "questions": [
+      "What is Variance at Completion (VAC)?",
+      "Who is responsible for the variance at Completion (VAC)?",
+      "What happens if the variance at Completion (VAC) is missing?"
+    ]
+  },
+  "Operational Readiness Review (ORR)": {
+    "term": "Operational Readiness Review (ORR)",
+    "questions": [
+      "What is Operational Readiness Review (ORR)?",
+      "Who is responsible for the operational Readiness Review (ORR)?",
+      "What happens if the operational Readiness Review (ORR) is missing?"
+    ]
+  },
+  "Post-Implementation Review (PIR)": {
+    "term": "Post-Implementation Review (PIR)",
+    "questions": [
+      "What is Post-Implementation Review (PIR)?",
+      "Who is responsible for the post-Implementation Review (PIR)?",
+      "What happens if the post-Implementation Review (PIR) is missing?"
+    ]
+  },
+  "Certificate of Practical Completion": {
+    "term": "Certificate of Practical Completion",
+    "questions": [
+      "What is Certificate of Practical Completion?",
+      "Who is responsible for the certificate of Practical Completion?",
+      "What happens if the certificate of Practical Completion is missing?"
+    ]
+  }
+}
