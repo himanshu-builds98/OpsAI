@@ -1,8 +1,14 @@
 [
   {
-    "filename": "trade_knowledge.csv",
+    "filename": "Kaizen_Ops_Chatbot_Dataset.cs",
     "file_type": "csv",
     "records_count": 85,
     "last_modified": "2026-06-28T14:34:07Z"
+  },
+  {
+    "filename": "Kaizen_Ops_Chatbot_Dataset.csv",
+    "file_type": "csv",
+    "records_count": 359,
+    "last_modified": "2026-07-11T17:53:45Z"
   }
 ]

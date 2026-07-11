@@ -59,7 +59,7 @@ opsai/
 │   └── package.json
 ├── data/
 │   ├── sample_trade_knowledge.csv # Sample cargo terms sheet
-│   └── trade_knowledge.csv        # 85-row raw trade knowledge dataset
+│   └── Kaizen_Ops_Chatbot_Dataset.csv        # 85-row raw trade knowledge dataset
 ├── render.yaml             # Render.com backend blueprint config
 ├── .env.example
 ├── docker-compose.yml

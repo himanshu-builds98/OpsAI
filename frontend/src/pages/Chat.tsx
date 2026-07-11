@@ -80,11 +80,11 @@ export const Chat: React.FC<ChatProps> = ({ sidebarOpen, onToggleSidebar, settin
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isLoading]);
 
-  // Fetch only custom resource files (exclude trade_knowledge.csv) and total vectors
+  // Fetch only custom resource files (exclude Kaizen_Ops_Chatbot_Dataset.csv) and total vectors
   const fetchCustomResources = async () => {
     try {
       const res = await apiService.getKnowledgeStatus();
-      const customOnly = res.source_files.filter((f: any) => f.filename !== 'trade_knowledge.csv');
+      const customOnly = res.source_files.filter((f: any) => f.filename !== 'Kaizen_Ops_Chatbot_Dataset.csv');
       setUploadedFiles(customOnly);
     } catch {
       // Offline fallback

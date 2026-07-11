@@ -27,7 +27,7 @@ services:
       - key: CHROMA_PATH
         value: /app/vector_store/chromadb
       - key: TRADE_KNOWLEDGE_CSV
-        value: data/trade_knowledge.csv
+        value: data/Kaizen_Ops_Chatbot_Dataset.csv
 
     # Persistent disk to save vector store and analytics JSON in Render
     disk:

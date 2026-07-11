@@ -1,0 +1,1748 @@
+Sr. No.,Terminology / Document,Defination,Who creates / sends it (If any),Who recevies it (If Any),Purpose,"If not available, whats the issue?"
+1,Commercial Invoice,"A detailed bill from the seller to the buyer, listing goods, value, and payment terms.",Seller/Shipper/Exporter,"Buyer/Consignee/
+Importer",Used by customs to assess duties and taxes,Shipment is blocked at customs; fines for under-declaration; delays in seller payment.
+2,Packing List,"An itemized list of products, including weights, dimensions, and quantities.",Seller/Shipper/Exporter,Customs Authorities,Determines tariff treatment and eligibility for duty benefits under trade agreements.,"Cargo could be blocked by customs; detention, and demurrages will be applied"
+3,Certificate of Origin,Document certifying the country in which the goods were manufactured or produced.,Seller/Shipper/Exporter / Chamber of Commerce,Importer / Customs at Destination,Eligibility for Duty Free Concessions / FTA Benefits,"Cargo does not enter the destination country, or higher trade import duties; trade benefit denied"
+4,Export Declaration,Statutory declaration of export cargo details/value.,Exxporter/CHA (Customs Broker),Customs Authorities,Government Export Permission,Goods cannot leave the country
+5,Cargo Booking Confirmation,Confirmation from shipping line or forwarder that space has been allocated on a specific vessel for the cargo.,Freight Forwarder / Shipping Line,Exporter / Shipper,Space Reservation on Vessel,Shipment delayed
+6,Bill of Lading (B/L),A legal contract between shipper and carrier acknowledging receipt of cargo for shipment. Acts as a title document.,Shipping Line/ Carrier,"Buyer/Consignee/
+Importer",Title of Goods; Proof of Shipment,Cargo cannot be released at deatination
+7,Letter of Credit (L/C),A bank guarantee issued by the importer's bank assuring payment to the exporter upon meeting stated conditions.,Importer's Bank,Expoter's Bank,Payment security for exporter,Payment Risk / Fraud
+8,Insurance Certificate,Document evidencing that cargo is insured against loss or damage during transit.,Seller/Shipper/Exporter,"Buyer/Consignee/
+Importer",Risk Coverage During Shipment,No claim possible if cargo is damaged/ lost
+9,Fumigation Certificate,Proof that wooden packaging or cargo has been fumigated to prevent pest infestation per ISPM-15 standards.,Fumigation Agency,Importer / Customs at Destination,Pest control compliance for wood packaging,Shipment refused or fumigated at cost at destination
+10,Dangerous Goods Declaration (DGD),"Mandatory document for shipments containing hazardous materials, detailing classification, packaging, and handling.",Exporter/ Freight Forwarder,"Shipping Line, Port Authority, Customs Authorities",Safe handling & regulatory compliance,Shipment refused; legal liability for exporter
+11,Phytosanitary / Health Certificate,"Issued by government authority confirming goods (agri, food) are free from pests and meet importing country's standards.","Govt. Authority (e.g., APEDA, FSSAI)","Importer, Customs at destination",Compliance with sanitary regulations,Consignment rejected or destroyed at port
+12,Shipping Instruction,"A formal document providing specific details on how a shipment should be handled, billed, and transported.",Seller/Shipper/Exporter,Freight Forwarder or Carrier,To provide the data needed to issue the Bill of Lading and file customs declarations.,Shipment delayed
+13,Proforma Invoice,Preliminary commercial quote before order confirmation.,Exporter,Buyer / Bank,Buyer approval / LC initiation,Purchase delays
+14,Sales Contract,"Agreed contract covering quantity, price, specs, shipment terms.",Buyer & Seller,Both parties / Bank,Commercial governance,Legal/payment disputes
+15,Puchase Order (P/O),Formal order placed by buyer.,Importer / Buyer,Exporter,Order execution reference,Quantity/specification disputes
+16,Certificate of Analysis (COA),Confirms product quality/specifications through test results.,Manufacturer,Buyer / Customs,Quality compliance,Shipment Rejection
+17,Beneficiary Certificate,Declaration required under LC confirming terms fulfilled.,Exporter,Bank,LC Documentation Compliance,Payment delay / discrepancy
+18,Shipping Bill,Export customs declaration permitting shipment from origin country.,CHA / Exporter,Customs / Port,Export clearance,Cargo cannot export
+19,LUT (Letter of Undertaking),Undertaking to export without IGST payment under applicable rules.,Exporter,Tax / Customs Authorities,Tax-efficient export process,Working capital blockage
+20,Drawback Declaration,Claim filing for eligible duty drawback incentives.,Exporter / CHA,Customs,Incentive recovery,Refund loss
+21,Export License,Mandatory approval for restricted goods export.,Govt Authority,Exporter / Customs,Legal export permission,Cargo seizure / fines
+22,AD Code Registration,Authorized dealer bank code linked for export proceeds realization.,Exporter Bank,Customs,Export remittance tracking,Shipping bill filing blocked
+23,GST LUT Acknowledgement,Proof of LUT acceptance.,Tax Authority,Exporter,Audit support,Tax disputes
+24,"SCOMET (Special Chemicals, Organisms, Materials, Equipment, and Technologies) License",Export license for dual-use / controlled items.,DGFT / Govt Authority,Exporter / Customs,Strategic goods compliance,Severe legal penalty
+25,Bill of Entry,Primary import customs clearance declaration.,CHA / Importer,Customs,Import assessment and release,Cargo stuck at port
+26,Duty Payment Challan,Evidence of customs duty/tax payment.,Importer,Customs,Final release processing,Release delay
+27,Import License,Mandatory authorization for restricted imports.,Govt Authority,Importer / Customs,Legal importation,Seizure / penalties
+28,ADC / NOC (Assistant Drug Controller No-Objection Certificate),Additional departmental clearance / no objection certificate.,Regulatory Agency,Customs / Importer,Product-specific approvals,Cargo hold
+29,Examination Order,Customs instruction for physical inspection.,Customs,Terminal / CHA,Risk verification,Clearance delay
+30,Out of Charge Order,Final customs release authorization after assessment.,Customs,Importer / Terminal,Cargo release,Cargo cannot move
+31,Express Release B/L,Non-original release arrangement allowing faster delivery.,Carrier,Consignee,Quick cargo release,Misdelivery risk if data incorrect
+32,Sea Waybill,Non-negotiable transport document without title transfer function.,Carrier,Consignee,Faster direct release,Release to wrong party risk
+33,House Bill of Lading (HBL),B/L issued by freight forwarder/NVOCC to customer.,Forwarder / NVOCC,Shipper / Consignee,"Consolidated shipment
+management",Ownership disputes
+34,Master Bill of Lading (MBL),Main B/L issued by shipping line to forwarder.,Carrier,Forwarder,Ocean carriage contract,Release mismatch
+35,Switch Bill of Lading,Replacement B/L issued to alter commercial details legally.,Carrier / Agent,Trader / Shipper,Triangular trade confidentiality,Fraud/compliance risk
+36,Telex Release,Electronic instruction permitting release without originals.,Carrier,Destination Agent,Faster documentation flow,Cargo hold if not processed
+37,Surrender Request,Request to surrender originals at origin for telex release.,Shipper,Carrier,Convert to paperless release,Delay in destination release
+38,Arrival Notice,Notice informing cargo ETA and charges payable.,Carrier / Agent,Consignee,Import planning and clearance,Storage / demurrage charges
+39,Delivery Order (DO),Authorization to terminal/CFS to release cargo.,Carrier / Agent,Importer / CHA,Cargo pickup,Cargo will not be released
+40,Freight Invoice,Invoice for ocean freight and related charges.,Carrier / Forwarder,Customer,Revenue collection,Cargo held for non-payment
+41,Debit Note,Additional charges claimed post billing.,Carrier / Vendor,Customer,Cost recovery,Payment disputes
+42,Credit Note,Adjustment/refund against excess billing.,Carrier / Vendor,Customer,Financial reconciliation,Ledger mismatch
+43,Vessel Schedule,Published sailing schedule with ETD/ETA.,Carrier,Customers,Supply chain planning,Missed connections
+44,Voyage Number,Unique sailing reference for vessel trip.,Carrier,All parties,Shipment tracking,Documentation confusion
+45,Mate’s Receipt,Receipt confirming cargo loaded onboard.,Vessel Officer,Shipper,Basis for final B/L issuance,B/L delay
+46,Stowage Plan,Vessel loading plan showing cargo/container positions.,Carrier / Vessel Planner,Terminal / Ops,Safe loading sequence,Misload / operational risk
+47,Manifest,Consolidated cargo list onboard vessel.,Carrier,Customs / Port,Regulatory filing,Clearance blocked
+48,Import General Manifest (IGM),Advance filing of import cargo details before arrival.,Carrier / Agent,Customs,Import processing,BOE filing blocked
+49,Export General Manifest (EGM),Final export cargo filing after vessel departure.,Carrier / Agent,Customs,Export proof / incentive closure,Refund claims delayed
+50,Notice of Readiness (NOR),Notice vessel ready for loading/unloading.,Carrier / Master,Charterer / Port,Laytime commencement,Disputes on delays
+51,Statement of Facts,Chronological record of port activities/events.,Agent / Master,Charterer / Owner,Demurrage/claims evidence,Billing disputes
+52,Container Release Order,Authorization to collect empty container.,Carrier,Exporter / Transporter,Export stuffing preparation,Shipment delay
+53,"Equipment Interchange Receipt
+(EIR)",Record of container handover condition/status.,Depot / Terminal,Transporter / Carrier,Damage accountability,Damage disputes
+54,Verified Gross Mass (VGM),Certified total loaded container weight under SOLAS.,Shipper,Carrier / Terminal,Safe vessel loading,Container denied loading
+55,Stuffing Report,Record of cargo loaded into container incl. seal no.,Warehouse / Surveyor,Exporter / Buyer,Packing verification,Quantity disputes
+56,Container Load Plan,Layout of cargo placement inside container.,Exporter / Warehouse,Ops Team,Weight balance / cargo safety,Cargo damage risk
+57,Seal Verification Record,Confirmation of container seal integrity/number.,Warehouse / Terminal,Carrier / Customs,Security control,Tampering suspicion
+58,Terminal Handling Charges (THC),Charges for handling container at terminal (loading/unloading).,Terminal / Carrier,Shipper / Consignee,Covers port handling operations,Cargo not processed
+59,Destination THC (DTHC),Handling charges applicable at destination port.,Carrier / Terminal,Importer,Import-side operations cost,Cargo hold
+60,Wharfage,Fee charged for cargo passing through port.,Port Authority,Importer / Exporter,Port usage fee,Cargo movement blocked
+61,Port Dues,Charges levied on vessel for using port facilities.,Port Authority,Carrier,Port revenue recovery,Vessel clearance delay
+62,Berth Hire Charges,Charges for occupying berth space.,Port Authority,Carrier,Vessel docking cost,Increased port cost
+63,Stevedoring Charges,Cost for loading/unloading cargo from vessel.,Stevedore Company,Carrier / Shipper,Cargo handling,Operational delays
+64,CFS Charges,Charges for handling cargo at Container Freight Station.,CFS Operator,Importer / Exporter,Storage & handling,Cargo hold
+65,Ground Rent,Charges for cargo staying in port/CFS beyond free time.,Port / CFS,Importer,Storage cost recovery,Increased expenses
+66,Lift On / Lift Off (LOLO),Charges for lifting container on/off truck/vessel.,Terminal,Carrier / Customer,Equipment movement,Operational delay
+67,Gate Charges,Fees for entry/exit of trucks at terminal.,Terminal,Transporter,Terminal access,Movement delay
+68,Basic Ocean Freight,Base cost of transporting cargo by sea.,Carrier / Forwarder,Customer,Core freight pricing,Booking cancellation
+69,Bunker Adjustment Factor (BAF),Fuel surcharge adjusted based on oil price fluctuations.,Carrier,Customer,Cost recovery for fuel,Pricing mismatch
+70,Currency Adjustment Factor (CAF),Surcharge due to currency exchange fluctuations.,Carrier,Customer,Hedge forex risk,Financial loss
+71,Peak Season Surcharge (PSS),Extra charge during high demand periods.,Carrier,Customer,Demand-based pricing,Higher logistics cost
+72,General Rate Increase (GRI),Carrier-announced freight rate increase.,Carrier,Customer,Rate revision,Budget mismatch
+73,Congestion Surcharge,Applied when port congestion increases turnaround time.,Carrier,Customer,Delay cost recovery,Increased cost
+74,War Risk Surcharge,Extra charge for shipping through high-risk zones.,Carrier,Customer,Risk coverage,Insurance exposure
+75,Low Sulphur Surcharge (LSS),Charge for compliant low-sulphur fuel usage.,Carrier,Customer,Environmental compliance,Regulatory penalty
+76,Documentation Charges,Fees for preparing shipping documents.,Carrier / Forwarder,Customer,Admin cost recovery,Process delay
+77,Amendment Charges,Charges for modifying shipment documents.,Carrier,Customer,Data correction,Incorrect documentation
+78,Free Time,Allowed days before demurrage/detention applies.,Carrier,Customer,Cost control,Extra charges
+79,Demurrage,Charges for container staying at port beyond free time.,Carrier,Importer,Equipment utilization,Cost escalation
+80,Detention,Charges for container held outside terminal beyond free days.,Carrier,Customer,Container cycle control,Increased cost
+81,Rollover,Cargo shifted to next vessel due to space/operational issues.,Carrier,Shipper,Schedule adjustment,Delivery delay
+82,Blank Sailing,Cancellation of scheduled vessel sailing.,Carrier,Customer,Network adjustment,Supply chain disruption
+83,Transshipment,Cargo transferred via intermediate port before destination.,Carrier,Customer,Route optimization,Delay risk
+84,Cut-off Time,Deadline for documentation or cargo gate-in.,Carrier / Terminal,Shipper,Shipment planning,Cargo miss
+85,No-Show Fee,Penalty for not utilizing confirmed booking.,Carrier,Shipper,Capacity management,Financial penalty
+86,Dead Freight,Charges for booked but unused cargo space.,Carrier,Shipper,Revenue protection,Financial loss
+87,Storage Charges,Fees for storing cargo at terminal/warehouse.,Terminal / CFS,Customer,Space utilization,Cost escalation
+88,MAWB (Master Air Waybill),"The main contract of carriage
+issued by the airline.","Main Carrier
+(Airline)","Freight Forwarder
+/ Agent","Evidence of contract and
+receipt of goods.","Goods cannot be loaded or tracked
+officially."
+89,HAWB (House Air Waybill),"A document issued by a
+forwarder for a specific shipment.",Freight Forwarder,"Actual Shipper /
+Consignee","Relates the shipment to the
+specific customer.","Breakdown of consolidated cargo is
+impossible."
+90,Commercial Invoice,"The primary document used by
+customs to determine value.",Shipper (Seller),"Consignee (Buyer)/
+Customs","Used for tax/duty
+assessment and payment.","Shipment held by customs; potential
+fines."
+91,Packing List,"A detailed list showing the
+contents and weight of each
+package.",Shipper,Consignee / Carrier,"Helps in identifying items
+during inspection.","Delays in unloading and higher risk
+of lost items."
+92,ULD (Unit Load Device),"A pallet or container used to load
+luggage/freight on aircraft.","Airline / Ground
+Handler",Ground Handler,"Ensures safe, standardized
+loading in the plane.","Manual loading required; high risk of
+damage."
+93,Certificate of Origin (C/O),"A document certifying the country
+where goods were made.","Chamber of
+Commerce / Shipper","Customs
+Authorities","Determines eligibility for
+trade deals/tariffs.",Higher taxes applied or entry refused.
+94,"IATA (International Air
+Transport Assoc.)","The trade association for the
+world’s airlines.","N/A (Regulatory
+Body)","Industry
+Stakeholders","Sets global standards for
+safety and pricing.",Lack of industry standardization.
+95,"Dangerous Goods
+Declaration (DGD)","Form certifying that hazardous
+materials are packed correctly.","Shipper / Specialist
+Packer",Airline / Captain,"Ensures safety of the
+aircraft and crew.","Shipment rejected; legal penalties for
+shipper."
+96,Dimensional Weight,"A pricing technique using volume
+instead of actual weight.","Freight Forwarder
+/ Airline",Shipper,"Ensures carriers are paid for
+space occupied.",Incorrect billing and unexpected costs.
+97,Customs Entry (Form 7501),"A formal statement of goods
+entering a country.",Customs Broker,Customs Authority,"To clear goods through the
+border legally.","Goods seized or stuck in bonded
+warehouse."
+98,Letter of Credit (L/C),"A bank guarantee that payment
+will be made to the seller.",Buyer's Bank,"Seller (via Seller's
+Bank)","Minimizes financial risk for
+the exporter.",Seller may refuse to ship the goods.
+99,Air Cargo Manifest,"A list of all cargo on a specific
+flight.","Airline / Ground
+Handler","Customs / Airport
+Authority","Summary for security and
+logistical planning.","Plane cannot be cleared for take-off or
+landing."
+100,Proof of Delivery (POD),"A document signed by the
+receiver confirming arrival.",Consignee,Carrier / Forwarder,"Confirms the shipment
+reached its destination.","Impossible to settle claims or prove
+fulfillment."
+101,Freight Collect,"A payment term where the
+receiver pays shipping costs.",Shipper / Forwarder,Consignee,"Shifts the financial burden to
+the buyer.",Carrier will not release cargo until paid.
+102,FOB (Free On Board),"An Incoterm where the seller pays
+until the airport of origin.","International
+Chamber of
+Commerce",Shipper / Buyer,"Defines the point where risk
+transfers.","Disputes over who pays for local
+transport."
+103,"ETD (Estimated Time
+of Departure)","The projected time the aircraft will
+leave.",Airline / Forwarder,"Shipper
+/ Consignee","Used for supply chain
+planning.","Inability to coordinate pickup or
+production."
+104,Chargeable Weight,"The higher value between actual
+and dimensional weight.",Airline / Forwarder,Shipper,"The weight used to calculate
+the freight rate.",Financial loss for the carrier or shipper.
+105,Known Shipper,"A status given to shippers who
+have passed security audits.","TSA / Regulatory
+Body",Freight Forwarder,"Allows goods to move on
+passenger aircraft.","Cargo restricted to ""freighter-only""
+planes (slower)."
+106,Booking Confirmation,"A document confirming space is
+reserved on a flight.",Airline / Forwarder,Shipper,"Guarantees the schedule for
+the shipment.","Goods sit in the warehouse with
+no transit."
+107,Export License,"Government permit required to
+export certain goods.",Government Agency,Shipper / Customs,"Controls the flow of
+restricted/sensitive goods.",Illegal export; heavy fines and jail time.
+108,"e-AWB (Electronic
+Air Waybill)","The digital version of the
+traditional paper Air Waybill.",Freight Forwarder,Airline,"To streamline data entry and
+reduce paper waste.","Slower processing and potential ""paper
+surcharge"" fees."
+109,Arrival Notice,"A notification that the shipment
+has reached its destination.","Carrier /
+Destination Agent","Consignee /
+Notify Party","Alerts the buyer to arrange
+for pickup and clearance.","Storage (demurrage) fees
+start to accrue."
+110,Carnet (ATA Carnet),"A ""merchandise passport"" for
+temporary imports/exports.","Chamber of
+Commerce","Customs
+Authorities","Allows duty-free temporary
+import (e.g., trade shows).",Importer must pay full duties and taxes.
+111,Bonded Warehouse,"A secured facility where goods
+are stored before duties are paid.","Warehouse
+Operator","Customs /
+Consignee","Allows storage without
+immediate tax payment.","Immediate tax payment required
+upon arrival."
+112,CBM (Cubic Meter),"A standard unit of measurement
+for cargo volume.",Shipper / Forwarder,Airline / Forwarder,"Used to calculate the
+dimensional weight.","Incorrect freight charges and
+space booking."
+113,Drayage,"Short-distance trucking (e.g.,
+from airport to warehouse).",Trucking Company,Forwarder / Shipper,"Connects the air leg to the
+final ground destination.",Cargo stays stuck at the airport terminal.
+114,Screening Certificate,"Proof that cargo has been
+scanned for explosives/threats.","TSA / Regulated
+Agent",Airline,"Ensures the aircraft is safe
+from sabotage.",Cargo is rejected and cannot be loaded.
+115,Back-to-Back Shipment,"A single shipment covered by one
+MAWB and one HAWB.",Freight Forwarder,Airline / Consignee,"Used for urgent, non-
+consolidated direct moves.","Loss of individual shipment tracking
+and control."
+116,All-In Rate,"A freight quote that includes all
+surcharges (fuel, security).",Forwarder / Airline,Shipper,"Provides a transparent,
+final cost for shipping.","Unexpected ""hidden"" fees on the
+final invoice."
+117,FSC (Fuel Surcharge),"An extra fee to cover fluctuating
+jet fuel prices.",Airline,Shipper / Forwarder,"Protects carriers from
+volatile energy markets.","Carrier loses money on the flight
+operation."
+118,Delivery Order (D/O),"A document releasing cargo to a
+specific trucker.",Consignee / Agent,"Ground Handler /
+Terminal","Authorizes the physical
+release of the cargo.","Warehouse will not release goods to
+the driver."
+119,Phytosanitary Certificate,"Document certifying plants/food
+are free from pests.",Agriculture Dept.,"Customs /
+Consignee","Prevents the spread of
+invasive species/diseases.","Goods are confiscated and destroyed
+by customs."
+120,"SLI (Shipper’s Letter of
+Instruction)","A letter providing specific
+instructions to the forwarder.",Shipper,Freight Forwarder,"Acts as a ""to-do"" list for
+handling the cargo.","Errors in documentation or wrong
+shipping mode."
+121,GHA (Ground Handling Agent),"The company that loads/unloads
+the plane at the airport.",N/A,Airline,"Physical movement of cargo
+on the tarmac.","Planes cannot be serviced;
+logistics halt."
+122,Consolidation,"Combining multiple small
+shipments into one ULD.",Freight Forwarder,Airline,"To get better freight rates
+through bulk volume.","Higher costs for shipping small
+individual boxes."
+123,"MSDS
+(Material Safety Data Sheet)","A document detailing chemical
+properties and risks.",Manufacturer,Forwarder / Airline,"Informs handlers how to
+manage spills or fire.","Refusal to transport by the airline for
+safety."
+124,Weight & Balance Manifest,"A report calculating the center of
+gravity for the plane.",Pilot / Ground Crew,Airline Operations,"Crucial for the aerodynamic
+safety of the flight.","High risk of aircraft crash or fuel
+inefficiency."
+125,IATA Code,"A 3-letter code for airports
+(e.g., JFK, LHR, DXB).",IATA,Industry-wide,"Standardizes destination
+and origin identification.","Misrouting of cargo to the wrong
+city/country."
+126,Insurance Certificate,"Proof that the cargo is covered
+against loss or damage.",Insurance Company,"Shipper /
+Consignee","Provides financial protection
+during transit.","Total financial loss if the plane crashes
+or leaks."
+127,Tally Sheet,"A checklist used during the 
+loading/unloading process.",Warehouse Staff,Forwarder / Shipper,"Verifies the actual piece 
+count against documents.","Discrepancies in inventory and 
+""missing"" boxes."
+128,"TSA (Transportation 
+Security Admin)","U.S. agency overseeing civil
+aviation security.",Regulatory Body,All Industry Players,"Sets the rules for what can 
+fly and how.",Security breaches and grounded flights.
+129,Transshipment,"Unloading goods from one aircraft
+and loading into another.",Carrier / GHA,Freight Forwarder,"To reach destinations not
+served by direct flights.","Shipment stuck at the hub/intermediate
+port."
+130,Bonded Carrier,"A carrier licensed to move goods
+that haven't cleared customs.",Trucking Co / Airline,Customs Authorities,"Allows goods to move to
+inland ports for clearance.","Goods must be cleared at the first
+point of entry."
+131,"Commercial Invoice &
+Packing List (CIPL)","A combined document for value
+and content details.",Shipper,"Customs /
+Consignee","Streamlines paperwork for
+small shipments.","Documentation delays; customs may
+demand separate forms."
+132,Demurrage,A fee charged for cargo staying too long at the terminal.,Airline / Terminal,Forwarder / Consignee,Encourages fast pickup to prevent airport congestion.,"High storage costs and potential ""abandoned"" status."
+133,Intermodal,"Moving freight using two or more modes (e.g., Truck + Air).",Forwarder,Shipper / Consignee,Combines the speed of air with the reach of road.,Logistical gaps; cargo stranded between modes.
+134,NVD (No Value Declared),A notation on an AWB when no insurance value is stated.,Shipper / Forwarder,Airline,Limits carrier liability to standard IATA rates.,Minimal payout if goods are lost or damaged.
+135,Part Charter,Renting a portion of a dedicated freighter aircraft.,Charter Broker,Shipper,Moves oversized or high-volume cargo efficiently.,High costs of shipping via standard commercial slots.
+136,RCS (Received from Shipper),An electronic status code indicating cargo is with the airline.,Airline,Forwarder,Confirms the carrier has physical possession.,No proof that the airline ever took the goods.
+137,SSP (Shipper's Security Program),A set of security protocols for high-volume shippers.,Shipper,TSA / Government,Pre-approves cargo to speed up screening.,100% manual screening required (slow/expensive).
+138,Tare Weight,The weight of an empty ULD or container.,Manufacturer / Carrier,Ground Handler,Used to calculate the actual net weight of cargo.,Inaccurate weight calculations and fuel planning.
+139,Temperature Log,A record from a device tracking the cargo's temperature.,Shipper (via Datalogger),Consignee / Pharma,"Proves the ""cold chain"" was never broken.",Goods (like vaccines) may be deemed unsafe/spoiled.
+140,Valuable Cargo (VAL),"High-value items (gold, jewelry) requiring extra security.",Shipper,Airline / Security,Triggers special storage and armed escort protocols.,High risk of theft or refusal to carry by the airline.
+141,Vulnerable Cargo (VUN),"Goods that are not ""Valuable"" but are prone to theft (e.g., iPhones).",Forwarder / Shipper,Airline / GHA,"Alerts handlers to keep goods in ""cages"" or safe zones.",High shrinkage (theft) rates during transit.
+142,WPM (Wood Packaging Material),Wooden pallets/crates used to hold air cargo.,Shipper / Crating Co.,Customs / Agriculture,Subject to ISPM-15 heat treatment rules.,Goods rejected or quarantined due to pest risk.
+143,Cartage,The act of moving goods within a small radius (town/city).,Local Trucker,Forwarder / Shipper,Transfers cargo from the forwarder's dock to the airport.,Cargo cannot reach the airport for the flight.
+144,IATA Dangerous Goods Regs (DGR),"The ""Bible"" for shipping chemicals and hazards by air.",IATA,Industry-wide,Global standard for what is safe to fly.,Confusion on packing leads to flight safety risks.
+145,Neutral Air Waybill,A standard AWB form without a pre-printed airline name.,Forwarder,Airline,Allows forwarders to print any airline’s info on it.,Manual typing errors or stock shortages.
+146,Section II Lithium Batteries,A specific classification for shipping small batteries.,Shipper,Airline / Pilot,Dictates labeling and quantity limits for fire safety.,Potential for cargo fires; heavy fines for mislabeling.
+147,Gateway,A major hub airport where regional cargo is consolidated.,N/A (Infrastructure),Logistics Providers,Acts as a central point for international departures.,Inefficient routing and higher costs via smaller airports.
+148,Advisory Label,"Labels indicating special handling (e.g., ""Fragile"" or ""This Side Up"").",Shipper,Ground Handlers,Instructs staff on how to physically move the cargo.,Higher risk of physical damage to the goods.
+149,Airport-to-Airport (ATA),A service level where the carrier only moves goods between airports.,Airline / Forwarder,Shipper,Defines the scope of the transport contract.,"Confusion over who handles the ""last mile"" delivery."
+150,Bonded Area,A customs-controlled area for non-cleared goods.,Airport Authority,Carriers / Forwarders,Allows cargo to stay in transit without paying local tax.,Goods must be cleared immediately or face seizure.
+151,Cargo IMP,Standardized messaging for air cargo electronic data.,IATA / IT Systems,Airlines / Forwarders,"Ensures different computer systems can ""talk"" to each other.",Data errors and manual entry delays.
+152,Chargeable Weight,The weight used for billing (higher of Actual vs. Volumetric).,Airline / Forwarder,Shipper,Determines the final cost based on space and mass.,Billing disputes and loss of revenue for carriers.
+153,Consignment Note,A general term for a document accompanying a shipment.,Shipper / Carrier,Receiver,Acts as a record of the transaction and contents.,No paper trail for the physical movement of goods.
+154,De-consolidation,Breaking down a bulk shipment into individual orders.,Destination Agent,Consignees,To sort and deliver items to multiple end-buyers.,Individual customers cannot receive their specific orders.
+155,Duty Drawback,A refund on duties paid for goods that are later exported.,Customs Authority,Exporter / Shipper,Encourages trade by reducing tax on re-exported items.,Financial loss for the company; higher cost of goods.
+156,Express Freight,High-priority cargo moving on the first available flight.,Airline / Integrator,Shipper,Guarantees the fastest possible transit time.,Shipments may be delayed by 2–5 days.
+157,Freight All Kinds (FAK),A flat rate regardless of the specific commodity.,Carrier / Forwarder,Shipper,Simplifies pricing for mixed cargo loads.,"Complex, individual pricing for every small item."
+158,GCR (General Cargo Rate),The standard price for cargo that isn't specialized.,Airline,Forwarder / Shipper,Sets a baseline for market shipping costs.,Inconsistent pricing across the industry.
+159,Heavy Lift,Cargo that exceeds standard ULD weight limits.,Specialized Carrier,Shipper,Requires special cranes or nose-loading aircraft.,Goods cannot be loaded onto standard planes.
+160,Intermediate Consignee,A party that handles the goods before the final buyer.,Shipper,Bank / Agent,Often used in complex financial or routing setups.,Legal confusion over ownership during transit.
+161,Known Cargo,Cargo from a trusted source that requires less screening.,TSA / Forwarder,Airline,Speeds up the boarding process for freight.,"Cargo is subjected to lengthy, expensive screening."
+162,Logistics Hub,A central point for sorting and distributing air cargo.,Airport / Govt,Global Industry,Maximizes efficiency by centralizing routes.,Fragmented shipping routes and higher costs.
+163,NOTOC (Notice to Captain),A list of dangerous goods on board for the pilot.,Ground Handler,Aircraft Pilot,Informs the pilot of risks in case of an emergency.,Pilot cannot react correctly to a fire or leak.
+164,Over-Dimensional (OD),Cargo too large to fit in a standard container/ULD.,Shipper,Airline,"Requires ""open"" pallets or special flight scheduling.",Shipment rejected due to physical size constraints.
+165,Release Note,A document confirming all fees are paid and goods are free.,Forwarder / Bank,Terminal / Warehouse,Proof that the buyer is allowed to take the cargo.,Cargo is held hostage at the warehouse.
+166,SCR (Specific Commodity Rate),"Lower rates applied to specific types of goods (e.g., fruit).",Airline,Forwarder,Encourages the movement of specific trade goods.,Higher shipping costs for low-margin products.
+167,Volumetric Ratio,"The formula (e.g., 1:6000) used to find volume weight.",IATA / Airline,Forwarder,"Standardizes how ""light but bulky"" items are charged.",Inconsistent pricing and unfair billing for shippers.
+168,C-TPAT Certificate,A voluntary supply chain security program certification.,Customs (CBP),Shipper / Importer,"To speed up customs processing through ""low risk"" status.","Frequent, time-consuming physical inspections."
+169,Montreal Convention,A treaty that establishes airline liability for cargo loss.,International Treaty,Airlines / Shippers,Standardizes the dollar amount of compensation for damage.,Legal chaos and unpredictable payouts for lost goods.
+170,Sea-Air Service,"A hybrid transport mode (Ship to a hub, then Air).",Freight Forwarder,Shipper / Consignee,Balances the cost of sea freight with the speed of air.,Over-spending on air or over-waiting on sea freight.
+171,Air Waybill (Neutral),An AWB without a pre-printed airline name or logo.,Freight Forwarder,Airline,Allows flexibility to use any carrier with the same form.,Stock delays if specific airline paper is unavailable.
+172,Bonded Transit (T1),A customs status for goods moving across multiple borders.,Customs Authority,Carrier,Allows cargo to move through countries without paying tax.,Mandatory tax payment at every single border crossed.
+173,Bill of Lading (BOL),"A legal document between 
+the shipper and carrier detailing type, 
+quantity, and destination of goods.",Shipper / Warehouse,Carrier / Consignee,"Acts as a receipt of
+shipment and a contract 
+of carriage.","Legal disputes over ownership;
+carrier cannot legally transport
+goods."
+174,Purchase Order (PO),"A commercial document indicating 
+types, quantities, and agreed prices
+for products.",Buyer / Procurement,Supplier / Warehouse,"Authorizes a transaction
+and sets expectations 
+for incoming stock.","Unauthorized shipments; inability
+to verify if the correct items were
+sent."
+175,"Warehouse Management
+System (WMS)","Software designed to optimize 
+warehouse functionality and distribution
+center management.",System Admin / IT,Warehouse Staff,"To track inventory levels, stock
+locations, and fulfillment
+workflows.","Manual errors; slow processing;
+complete lack of real-time inventory
+visibility."
+176,Packing Slip,"A document included in a shipmentthat
+lists all items included in the package.",Warehouse Picker,End Customer / Receiver,"Allows the receiver to
+verify that all ordered
+items are physically
+present.","Difficulty in identifying missing items
+or shipping errors upon arrival."
+177,SKU (Stock Keeping Unit),"A unique scannable bar code or
+alphanumeric code used to track inventory.","Merchandising /
+Inventory Dept",Warehouse Operations,"To differentiate products
+by size, color, or model for
+accurate tracking.","Inability to track specific items; high
+risk of ""mis-picks"" during shipping."
+178,"Advance Shipping
+Notice (ASN)",An electronic notification of a pending delivery.,Supplier / Sender,Warehouse Manager,"To prepare the warehouse
+for labor and space
+requirements before the
+truck arrives.","Warehouse bottlenecks; unscheduled
+arrivals leading to unloading delays."
+179,Pick List,"A document used by warehouse workers
+to find items to fulfill an order.",WMS / Inventory Manager,Warehouse Picker,"Directs staff to the
+exact bin location to retrieve
+specific quantities of items.","Extremely slow fulfillment; high risk of
+picking the wrong product."
+180,"Goods Received
+Note (GRN)","A record used to confirm that the goods 
+have been received after inspection.",Receiving Clerk,Finance / Purchasing Dept,"Used to update inventory
+records and authorize payment
+to the supplier.","Inaccurate stock levels; payment made
+for damaged or missing goods."
+181,Cross-Docking,"A logistics practice where products are unloaded 
+and loaded directly with little to no storage.",Logistics Coordinator,Warehouse Staff,"To reduce handling time and
+storage costs by moving goods
+quickly to the next leg.","Higher storage costs; increased lead
+times for time-sensitive goods."
+182,Cycle Counting,"An inventory auditing procedure where a 
+small subset of inventory is counted on a specific day.",Inventory Controller,Management / Audit Team,"To maintain high inventory
+accuracy without closing the
+entire warehouse for a full count.","Large inventory discrepancies; financial
+reporting errors; stockouts."
+183,Safety Data Sheet (SDS),"A document providing info on handling, storage,
+and emergency measures for chemicals/hazmat.",Manufacturer / Supplier,Warehouse Safety Officer,"To ensure safe handling and
+compliance with health and safety
+regulations.","Legal penalties; extreme danger to staff
+during spills or fires."
+184,Putaway List,"A set of instructions detailing where received goods
+should be stored.",WMS / Receiving Manager,Forklift Operator,"To ensure items are stored in the
+most efficient location for later
+retrieval.","Lost inventory; cluttered aisles;
+""honeycombing"" (inefficient space use)."
+185,Tally Sheet,"A manual or digital count sheet used to record items
+during loading or unloading.",Receiving/Shipping Clerk,Warehouse Supervisor,"To cross-verify physical counts
+against the manifest in real-time.","Inaccuracies between system data and
+physical stock; shipping errors."
+186,Master Bolter/Bill,"A summary document used when multiple small
+shipments are consolidated into one large load.",Freight Forwarder,Carrier / Port Authority,"To simplify documentation for bulk
+transport of various smaller orders.","Confusion at customs or checkpoints;
+difficulty tracking individual parcels."
+187,Manifest,"A comprehensive list of all cargo on a specific
+vehicle or container.",Logistics Coordinator,Carrier / Gate Security,"To provide a summary of the
+entire vehicle's load for security
+and logistics.","Security delays; inability to verify if a
+truck is fully loaded/unloaded."
+188,Deadheading,"Running a commercial vehicle or container without
+any cargo (empty).",Dispatcher,Driver / Fleet Manager,"To relocate equipment to a high-
+demand area where cargo
+is waiting.","High fuel waste and loss of revenue for
+the transport department."
+189,LTL (Less Than Truckload),"A shipping mode for relatively small freight that
+doesn't fill an entire truck.",Shipping Manager,Carrier / 3PL Provider,"To save costs by sharing truck
+space with other shippers.","High shipping costs if forced to pay for a
+full truck (FTL) for small loads."
+190,Backorder,"An order for a product that is temporarily out of stock
+but expected soon.",Sales Dept / WMS,Customer / Procurement,"To retain a sale and notify the
+customer that the item will
+ship later.","Lost sales; customer dissatisfaction;
+lack of demand forecasting."
+191,"RMA (Return Merchandise
+Authorization)","A numbered authorization used to return a product
+to the warehouse.",Customer Service,Customer / Returns Dept,"To track and validate returns for
+inspection, repair, or refund.","Chaos in the returns area; unable to
+verify if a return is legitimate."
+192,Dock Audit,"A quality check performed on finished pallets right
+before they are loaded.",Quality Control (QC),Shipping Supervisor,"To ensure the right items, labels,
+and packaging are present before
+leaving.","High ""cost of quality"" due to shipping
+errors and customer complaints."
+193,Inventory Aging Report,"A document showing how long stock has been
+sitting in the warehouse.",WMS / Inventory Analyst,Finance / Sales Manager,"To identify slow-moving
+orobsolete stock that needs
+to be cleared.","High holding costs; capital tied up in
+""dead"" inventory."
+194,Quarantine Area,"A designated space for goods that are damaged,
+expired, or pending inspection.",Quality Control (QC),Receiving Team,"To prevent ""unfit"" stock from
+being mixed with sellable
+inventory.","Risk of shipping damaged or unsafe
+goods to customers."
+195,Commercial Invoice,"A legal document for international shipments used
+for customs declaration.",Shipper / Exporter,Customs / Importer,"To determine the value of goodsf
+or taxes, duties, and border control.","Shipments held at customs; legal fines;
+delivery delays."
+196,3PL (Third-Party Logistics),"An outsourced provider that handles warehouse and
+distribution services.",Service Provider,Business Owner,"To allow a company to scale
+operations without owning physical
+warehouses.","High overhead costs for small
+businesses trying to manage their
+own logistics."
+197,"FIFO (First-In, First-Out)","An inventory management method where the oldest
+stock is shipped first.",Operations Manager,Warehouse Pickers,"To ensure product rotation, especially
+for perishable items or electronics.","Product spoilage; obsolete stock;
+financial losses due to expired goods."
+198,Bonded Warehouse,"A secured facility where imported goods are stored
+before duties are paid.",Customs Authority,Importer / Warehouse,"To defer payment of taxes until the
+goods are ready for domestic sale.","Immediate cash flow strain from paying
+taxes on unsold goods."
+199,Velocity Slotting,"Organizing the warehouse based on how frequently
+items are picked.",WMS / Facility Planner,Floor Staff,"To place ""fast-movers"" near the
+shipping area to reduce travel time.","High labor costs; slow fulfillment cycles;
+worker fatigue."
+200,"Certificate of Analysis
+(COA)","A document confirming that a product meets its
+required specifications.",Lab / Manufacturer,Quality Dept / Buyer,"To verify the quality and purity of
+goods (common in food/pharma).","Legal liability; rejection of goods by the
+end customer."
+201,Pallet Pattern,"A diagram showing how cases should be stacked on
+a pallet for stability.",Warehouse Engineer,Packers / Loaders,"To maximize space and prevent
+products from collapsing
+during transit.","Damaged goods due to shifting; inefficient
+use of truck space."
+202,Pick-to-Light,"A system using lights and LEDs on racks to guide
+pickers to items.",System Integrator,Warehouse Pickers,"To increase picking speed and
+accuracy by removing the need\
+for paper.","High error rates; slower training time for
+new warehouse staff."
+203,"Service Level
+Agreement (SLA)","A contract defining the expected level of service
+(e.g., shipping speed).",Client / Customer,Warehouse / 3PL,"To set measurable performance
+standards and penalties for failure.","Lack of accountability; inconsistent
+service quality; disputes."
+204,"RF (Radio Frequency)
+Scanner","A handheld device used to scan barcodes and
+update the WMS in real-time.",IT Dept,Warehouse Staff,"To eliminate manual data entry and
+ensure inventory accuracy.","High human error; delayed data
+updates; reliance on paper logs."
+205,Pro Forma Invoice,"A preliminary bill of sale sent to buyers in advance of
+a shipment.",Sales / Export Dept,Buyer / Customs,"To provide a formal quote for customs
+or to secure pre-payment.","Delays in financing; customs clearance
+issues for international trade."
+206,"LIFO (Last-In, First-Out)","An inventory method where the most recently
+produced items are sold first.",Finance / Accounting,Warehouse Pickers,"Used for non-perishable goods or
+for specific tax/accounting benefits.","Outdated stock stays at the back;
+potential for inventory ""drift."""
+207,"Dimensional Weight
+(Dim Weight)","A pricing technique using volume (L x W x H) rather
+than actual weight.",Carrier,Shipper,"To charge for the space a package
+occupies on a truck or plane.","Unexpectedly high shipping costs for
+light but bulky items."
+208,Proof of Delivery (POD),"A document (often digital) signed by the recipient to
+confirm arrival.",Carrier / Driver,Consignee,"To legally confirm that the shipment
+reached its final destination.","Inability to prove delivery; difficulty in
+resolving ""lost shipment"" claims."
+209,Kitting,"The process of taking individual items and bundling
+them into a single unit.",Inventory Manager,Warehouse Packers,"To simplify the sale of ""sets"" or
+""bundles"" and speed up shipping.","Inefficient picking; inability to sell
+promotional bundles quickly."
+210,Wave Picking,"A picking strategy where multiple orders are grouped
+and picked together.",WMS / Floor Manager,Warehouse Pickers,"To reduce travel time by picking for
+many orders in one ""wave"" or trip.","Extreme congestion in aisles; 
+sloworder processing for high volumes."
+211,Consolidation,"Combining multiple small shipments from different
+suppliers into one load.",Freight Forwarder,Warehouse / Carrier,"To lower transportation costs by
+maximizing vehicle capacity.","Higher shipping costs due to multiple
+""half-empty"" truck runs."
+212,"Inventory Shrinkage
+Report","A report documenting the difference between
+recorded and actual stock.",Inventory Auditor,"Management /
+Loss Prevention","To identify loss due to theft, damage,
+or administrative errors.","Financial leakage; inaccurate stock
+levels leading to overselling."
+213,AS/RS,"Automated Storage and Retrieval Systems;
+computer-controlled systems for placing/retrieving
+loads.",System Integrator,Warehouse Ops,"To automate high-density storage
+and reduce manual labor.","High labor costs; slow retrieval in
+massive facilities."
+214,Mezzanine,"An intermediate floor built between main floors to
+increase storage space.",Facility Engineer,Warehouse Manager,"To double or triple usable floor
+space without expanding the building
+footprint.","Overcrowding; wasted vertical space;
+high real estate costs."
+215,Dunnage,"Padding material (air bags, foam, scrap) used to
+protect goods during transport.",Warehouse Packer,End Customer,"To prevent movement and damage
+of goods inside a container or box.","High rate of damaged goods/returns;
+customer dissatisfaction."
+216,Blind Receiving,"A process where the receiver counts stock without
+knowing the expected quantity.",Inventory Manager,Receiving Clerk,"To ensure the clerk actually counts
+the stock rather than ""rubber-
+stamping"" the PO.","Inaccurate inventory counts; hidden
+shipping discrepancies."
+217,Waybill,A document issued by a carrier giving details and instructions relating to the shipment.,Carrier,Consignee / Customs,To act as a non-negotiable receipt and tracking document for air/rail freight.,"Inability to track cargo; legal issues at
+transit checkpoints."
+218,"Labor Management
+System (LMS)","Software that tracks and evaluates the productivity
+of warehouse workers.",HR / Operations,Supervisors / Staff,"To optimize staffing levels and
+identify training needs or high
+performers.","Low productivity; inability to track labor
+costs per order."
+219,Incidents Report,"A formal document recording accidents, near-misses,
+or equipment damage.",Safety Officer,Management / OSHA,"To track safety trends and implement
+corrective actions.","Repeated accidents; legal liability; high
+insurance premiums."
+220,Free Trade Zone (FTZ),"A specific area where goods can be landed, handled,
+and manufactured without customs intervention.",Govt Authority,Importers / Manufacturers,"To encourage commerce by deferring
+or eliminating duties and taxes.","Competitive disadvantage; high upfront
+customs costs."
+221,Zone Picking,"A method where pickers are assigned to specific
+""zones"" and pick only items in that area.",Warehouse Supervisor,Warehouse Pickers,"To minimize travel time by keeping
+workers in a confined section of the
+warehouse.","Inefficient travel paths; ""bottlenecks"" if
+one zone is busier than others."
+222,Dock Leveler,"Equipment used to bridge the gap between a
+warehouse dock and a truck bed.",Maintenance Team,Forklift Operators,"To allow safe and smooth loading/
+unloading of heavy pallets.","Forklift accidents; damaged goods
+during loading; slow operations."
+223,Lot Tracking,"The ability to track a group of items produced under
+the same conditions/date.",Quality Dept,WMS / Consumers,"To facilitate targeted recalls in case
+of a product defect.","Inability to perform recalls; massive legal/
+safety risks."
+224,"EDI (Electronic Data
+Interchange)","The computer-to-computer exchange of business
+documents in a standard format.",IT / Partners,All Stakeholders,"To automate communication between
+suppliers, warehouses, and retailers.","Slow manual data entry; high risk
+of clerical errors."
+225,Pick-to-Voice,"A system where workers wear headsets and receive
+verbal picking instructions.",IT / WMS Provider,Warehouse Pickers,"To allow ""eyes-up, hands-free"" picking
+for higher speed and safety.","Slower picking; higher error rates due
+to distractions."
+226,Re-warehousing,"The process of moving items within a warehouse to
+optimize space or picking paths.",Inventory Analyst,Forklift Operator,"To adjust storage based on changing
+demand (e.g., seasonal items).","Inefficient picking; ""dead"" space in high-
+traffic areas."
+227,"MHE (Material Handling
+Equipment)","Mechanical equipment used for the movement and
+storage of goods (e.g., forklifts).",Procurement,Warehouse Staff,"To move heavy loads that cannot be
+handled manually.","Inability to move stock; high risk of
+worker injury."
+228,Cross-Training Record,"A log showing which employees are trained on
+different warehouse tasks.",HR / Floor Manager,Management,"To ensure operational flexibility
+when staff members are absent.","Operational halts if a ""key"" person is
+missing; low morale."
+229,Dead Stock,"Inventory that has no sales or usage for a long
+period of time.",Inventory Analyst,Finance Dept,"To identify items that should be
+liquidated or disposed of to save
+space.","High holding costs; lack of space for
+new, profitable items."
+230,Carton Flow Rack,"A storage system using inclined rollers to allow boxes
+to slide forward.",Facility Planner,Pickers,"To ensure FIFO at the picking face
+and reduce reaching for workers.","Inefficient picking; messy aisles; stock
+hidden at the back."
+231,Load Plan,"A diagram or list showing how cargo should be
+arranged in a truck/container.",Logistics Planner,Loader / Driver,"To balance weight distribution and
+ensure the last-stop items are
+loaded last.","Vehicle instability/accidents; excessive
+unloading time at stops."
+232,Cold Chain Log,"A record of temperature readings for perishable goods
+during storage/transit.",Quality Control,Regulatory Bodies,"To prove that food or medicine remained
+at safe temperatures.","Product spoilage; health risks; rejection
+of entire shipments."
+233,Slipsheet,"A thin, pallet-sized sheet of plastic or fiberboard used
+for heavy loads.",Shipper,Receiver,"To save space and weight in shipping
+containers compared to wooden pallets.","Inefficient space usage; higher shipping
+costs due to pallet weight."
+234,Bollard,"A short, sturdy post installed to protect racks and
+walls from forklift impact.",Facility Manager,Maintenance Team,"To prevent structural damage to the
+warehouse during vehicle maneuvers.","Expensive repairs; risk of rack collapse
+from accidental bumps."
+235,Honeycomb,"A situation where storage cells are only partially filled,
+wasting space.",Inventory Analyst,Warehouse Manager,"Term used to identify and fix inefficient
+storage patterns.","Wasted storage capacity; increased
+footprint costs."
+236,Value-Added Services (VAS),"Extra tasks like labeling, gift wrapping, or assembly
+performed in the warehouse.",Client / Customer,Warehouse Team,"To customize products for the end
+consumer before they ship.","Missed revenue; inability to meet specific
+retailer requirements."
+237,Last Mile Delivery,"The final leg of the logistics journey, from the
+warehouse to the customer's door.",Dispatcher,End Customer,"To ensure the product reaches the final
+user efficiently.","Poor customer experience; high shipping
+costs; delivery failures."
+238,Floor Loading,"Stacking goods directly on the floor of a container
+rather than on pallets.",Loading Supervisor,Receiver,"To maximize every cubic inch of space
+in an ocean container.","Slower unloading times; requires more
+manual labor at the destination."
+239,Batch Picking,"Picking all the items for a group of orders at once
+to minimize trips.",WMS,Warehouse Picker,"To increase efficiency by visiting one
+location to fulfill multiple orders.","Extremely high travel time for pickers; low
+productivity."
+240,Cantilever Rack,"Storage racks with arms that extend out, used for
+long items like pipes or lumber.",Procurement,Operations Team,"To safely store oversized or awkwardly
+shaped materials.","Safety hazards; damage to long materials;
+inefficient storage."
+241,Reach Truck,"A type of forklift designed to reach into deep racking
+systems.",Fleet Manager,Operator,"To operate in narrow aisles and reach
+high-density storage levels.","Inability to use high-level storage;
+requirement for wider aisles."
+242,Dock Lock,"A safety device that hooks onto a truck’s rear
+underride guard to prevent it from moving.",Warehouse Safety,Truck Driver,"To prevent ""trailer creep"" or accidental
+pull-outs while loading.","Forklift falls from the dock; serious injuries
+or death."
+243,Gaylord Box,"A large, pallet-sized corrugated box used for bulk
+shipping or scrap collection.",Packaging Supplier,Warehouse Staff,"To consolidate loose parts or bulk waste
+for easy transport.","Messy warehouse floor; difficulty handling
+bulk small items."
+244,RFID Tag,"A tag that uses radio waves to transmit data about an
+item without direct line-of-sight.",Manufacturer,Warehouse Receiving,"To allow for instant, bulk counting of
+items in a box or pallet.","Manual scanning required; slower receiving
+and inventory counts."
+245,Order Consolidation,"Grouping items from different areas of the warehouse
+into one single shipment.",WMS / Packer,Customer,"To reduce shipping costs and provide a
+better ""unboxing"" experience.","High shipping costs (paying for multiple
+boxes for one order)."
+246,Cycle Time,"The total time it takes to complete a warehouse process
+(e.g., dock-to-stock).",Operations Analyst,Management,"To measure and improve the speed of
+warehouse operations.","Process bottlenecks; inability to meet
+customer delivery promises."
+247,Ebb and Flow,"The fluctuation of inventory levels based on seasonal
+demand.",Planning Dept,Warehouse Manager,"To plan for temporary labor and extra
+space during peak seasons.",Overstaffing during slow
+248,Purchase Requisition (PR),An internal document requesting the purchase of goods or services.,Department Head / Employee,Procurement Department,To initiate the purchasing process and secure budget approval.,Unauthorized spending; procurement cannot officially begin sourcing.
+249,Request for Quotation (RFQ),A document sent to suppliers asking for pricing and terms for specific items.,Procurement / Sourcing Buyer,Suppliers / Vendors,To compare prices and select the most cost-effective vendor.,Overpaying for goods; inability to compare market rates fairly.
+250,Request for Proposal (RFP),A detailed document seeking comprehensive solutions and pricing for complex projects.,Procurement / Project Manager,Vendors / Service Providers,To evaluate potential suppliers based on value methodology and price.,Selection of an unqualified vendor; misalignment on project scope and deliverables.
+251,Request for Information (RFI),A preliminary document used to gather general information about potential suppliers.,Procurement,Suppliers / Vendors,To build a database of potential vendors for future sourcing.,Lack of market awareness; missing out on capable new suppliers.
+252,Purchase Order (PO),"A legally binding document authorizing a transaction and specifying items, quantities, and prices.",Procurement / Buyer,Supplier / Vendor,To legally commit to a purchase and set clear delivery expectations.,Legal disputes over orders; incorrect items or quantities delivered.
+253,Goods Receipt Note (GRN),An internal document acknowledging the delivery and acceptance of goods.,Receiving Dept / Warehouse,Procurement / Finance,To confirm items were received in good condition before payment.,Paying for goods that were never delivered or arrived damaged.
+254,Procure-to-Pay (P2P),The end-to-end process cycle from identifying a need to paying the supplier.,Procurement / Finance,Internal Stakeholders / Suppliers,To streamline purchasing and ensure accurate financial settlement.,Process bottlenecks; delayed vendor payments; financial inaccuracies.
+255,Three-Way Matching,"The process of comparing the Purchase Order, the GRN, and the supplier invoice.",Accounts Payable / Finance,Procurement / Auditors,To ensure payment is only made for goods requested and received.,Invoice fraud; overpayment; paying for unreceived goods.
+256,Supplier Scorecard,A tracking tool used to evaluate a vendor's performance over time.,Procurement / Vendor Manager,Supplier / Internal Management,"To measure KPIs like delivery time, quality, and responsiveness.",Continuing to use poor-performing vendors; supply chain disruptions.
+257,Service Level Agreement (SLA),"A contract specifying the expected quality, speed, and standards of a service.",Procurement / Legal,Service Provider / Vendor,To define specific performance metrics and penalties for non-compliance.,Poor service quality with no legal recourse to penalize the vendor.
+258,Bill of Materials (BOM),"A comprehensive list of raw materials, components, and instructions required to construct a product.",Engineering / Planning,Procurement / Manufacturing,To ensure exactly the right materials are sourced for production.,Purchasing incorrect parts; complete halt of the manufacturing line.
+259,Total Cost of Ownership (TCO),A financial estimate combining the purchase price and the direct/indirect costs of operation.,Procurement Analyst,Management / Finance,To evaluate the long-term cost of an asset beyond just the initial price tag.,"Buying a ""cheap"" item that ends up costing excessively in maintenance and operation."
+260,Vendor Managed Inventory (VMI),An arrangement where the supplier manages and replenishes inventory at the buyer's location.,Supplier,Procurement / Warehouse,To reduce inventory holding costs and prevent stockouts.,Higher warehousing costs; frequent stockouts of critical materials.
+261,Blanket Purchase Order (BPO),A long-term agreement with a supplier to buy goods at a set price over a period of time.,Procurement,Supplier,To secure volume discounts and simplify repetitive purchasing.,Constant administrative work for minor orders; lost volume discounts.
+262,Spend Analysis,"The process of collecting, cleansing, and evaluating purchasing data.",Procurement Analyst,Procurement Head / CFO,To identify cost-saving opportunities and understand spending patterns.,Unnoticed rogue spending; missed opportunities for bulk negotiations.
+263,Lead Time,The total time elapsed between placing an order and receiving the goods.,Procurement / Planning,Production / Operations,To accurately plan inventory levels and production schedules.,Stockouts; production delays while waiting for materials to arrive.
+264,Sourcing,"The process of identifying, evaluating, and engaging suppliers.",Procurement,N/A,To find the most reliable and cost-effective supply base.,Limited supplier options leading to higher costs and lower quality.
+265,E-Procurement,The business-to-business requisitioning and purchasing of goods over the internet.,Procurement / IT,Internal Users / Suppliers,To automate manual procurement tasks and increase transparency.,Slow manual processes; high paperwork costs; human errors in ordering.
+266,Master Service Agreement (MSA),A contract negotiated to govern all future transactions and agreements between parties.,Legal / Procurement,Supplier / Legal,To speed up future contracts by agreeing on foundational terms upfront.,Lengthy legal negotiations for every single minor purchase or project.
+267,Non-Disclosure Agreement (NDA),A legal contract protecting sensitive information shared during the sourcing process.,Legal / Procurement,Supplier,To ensure proprietary company data is not shared with competitors.,Data breaches; intellectual property theft.
+268,Supplier Relationship Management (SRM),A systematic approach to evaluating and managing vendor relationships.,Procurement Head,Suppliers,To build strategic partnerships and drive continuous improvement.,Strained vendor relations; lack of innovation or priority during shortages.
+269,Maverick Spend,Purchasing goods or services outside of established contracts or procedures.,Internal Employees,N/A,N/A (This is a negative behavior tracked to prevent it),Loss of negotiated discounts; compliance risks; budget overruns.
+270,Contract Lifecycle Management (CLM),The proactive management of a contract from initiation to renewal or termination.,Contract Manager,Legal / Suppliers,To ensure compliance and avoid missing renewal deadlines.,Expired contracts; unintentional auto-renewals; compliance violations.
+271,Supplier Onboarding,The process of collecting data and integrating a new vendor into the purchasing system.,Procurement / Master Data,New Supplier,To ensure the vendor meets all legal and financial compliance standards before doing business.,Fraudulent vendors; tax compliance issues; payment delays.
+272,Strategic Sourcing,A comprehensive approach to sourcing that focuses on the total value and long-term goals.,Sourcing Manager,Executive Management,To align purchasing strategies with the overall business objectives.,Tactical buying that focuses only on lowest price rather than overall value.
+273,Just-in-Time (JIT) Procurement,A strategy where materials are ordered to arrive exactly when they are needed in production.,Procurement / Planning,Suppliers,To minimize inventory holding costs and reduce warehouse space requirements.,High storage costs; inventory obsolescence; capital tied up in stock.
+274,Minimum Order Quantity (MOQ),The smallest amount of stock a supplier is willing to sell in a single order.,Supplier,Procurement,To ensure the supplier covers their setup and production costs.,Orders are rejected by the supplier; forced to buy more stock than needed.
+275,Safety Stock,Extra inventory held to guard against unexpected spikes in demand or supply delays.,Inventory Planning,Warehouse,To act as a buffer against supply chain disruptions.,Severe stockouts leading to halted production or lost sales.
+276,Category Management,The practice of grouping similar items to buy them more efficiently.,Category Manager,Suppliers,To leverage buying power and develop deep market expertise in specific areas.,Fragmented purchasing; missed volume discounts across different departments.
+277,Statement of Work (SOW),"A document defining project-specific activities, deliverables, and timelines.",Project Manager / Procurement,Service Provider,To set clear boundaries and expectations for a service contract.,Scope creep; disputes over what work was actually paid for.
+278,Two-Way Matching,Verifying that the Purchase Order and the Invoice match (typically used for services where there is no GRN).,Accounts Payable,Supplier,To authorize payment for intangible services.,Paying for services that were not agreed upon or authorized.
+279,Cost Avoidance,Actions taken to prevent future cost increases rather than reducing current costs.,Procurement,Finance / Management,To protect the budget from inflation or upcoming price hikes.,Uncontrolled budget inflation; hidden supply chain costs.
+280,Cost Savings,Tangible reductions in the unit price of goods or services compared to historical prices.,Procurement,Finance / Management,To directly improve the company's bottom line profitability.,Stagnant profitability; failure to leverage market changes.
+281,Invoice Processing,The steps taken to handle a supplier invoice from receipt to final payment.,Accounts Payable,Supplier,To ensure timely and accurate settlement of debts.,Late payment fees; damaged supplier relationships.
+282,Payment Terms,The conditions under which a seller will complete a sale (e.g. Net 30 or Net 60).,Procurement / Finance,Supplier,To manage the company's cash flow effectively.,Cash flow shortages; disputes over when payment is due.
+283,Open Account,A trade arrangement where goods are shipped and delivered before payment is due.,Supplier,Procurement,To provide flexible purchasing without immediate upfront cash.,High risk for the supplier; requires strong buyer creditworthiness.
+284,Incoterms,International rules defining the responsibilities of buyers and sellers in global trade.,International Chamber of Commerce,Procurement / Logistics,To clearly define who pays for shipping and who bears the risk of loss.,Legal disputes over damaged cargo; unexpected freight or insurance costs.
+285,Letter of Credit (L/C),A bank guarantee that a buyer's payment to a seller will be received on time.,Buyer's Bank,Supplier's Bank,To eliminate credit risk for the seller in international transactions.,Suppliers refuse to ship goods; extreme financial risk in global trade.
+286,Reverse Auction,An event where multiple sellers compete to obtain business by lowering their prices.,Procurement,Suppliers,To rapidly drive down prices for highly standardized commodities.,Overpaying for standard goods; slow manual negotiation processes.
+287,Supplier Code of Conduct,Guidelines detailing the ethical and environmental standards expected from vendors.,Compliance / Procurement,Suppliers,To ensure suppliers align with the company's ESG and legal standards.,Public relations disasters; association with unethical labor or environmental practices.
+288,Direct Procurement,Purchasing raw materials and components directly used in manufacturing the final product.,Procurement,Suppliers,To maintain the core production line and revenue generation.,Production line stoppages; immediate loss of sales.
+289,Indirect Procurement,Purchasing goods and services needed for day-to-day operations (e.g. software or office supplies).,Procurement,Suppliers,To keep the business running and support internal employees.,Inefficient workplace operations; employee frustration; unchecked operational spending.
+290,Order Acknowledgement,A supplier's formal confirmation that they have received and accepted a Purchase Order.,Supplier,Procurement,To confirm that pricing and delivery dates are agreed upon.,Uncertainty if goods will arrive; supplier unexpectedly rejects the order later.
+291,Backorder,An order for a good or service that cannot be filled at the current time due to lack of stock.,Supplier,Procurement / Customer,To keep the order active until inventory is replenished.,Lost sales; customer dissatisfaction if they are not informed of the delay.
+292,Early Payment Discount,A percentage deduction offered by a seller if the buyer pays the invoice before its due date.,Supplier,Accounts Payable / Finance,To incentivize fast payment and improve the supplier's cash flow.,Missed opportunities for immediate cost savings; higher overall purchase costs.
+293,Project Charter,"A document that formally authorizes the
+existence of a project.",Project Sponsor,Project Manager,"Provides the PM authority to
+use organizational resources.","No clear authority; project may be
+seen as ""unauthorized."""
+294,Business Case,"A justification for the project based on cost,
+benefits, and risks.",Sponsor / Business Analyst,Steering Committee,"To prove the project is worth
+the investment.","Money may be wasted on projects
+with no ROI."
+295,Stakeholder Register,"A list identifying all people or groups interested
+in the project.",Project Manager,Project Team,"To track influence and
+communication needs.","Key people might be ignored,
+leading to resistance."
+296,Scope Statement,"A detailed description of project deliverables
+and boundaries.",Project Manager,Client / Team,"To define what is (and isn't)
+included in the project.","""Scope creep"" where work grows
+uncontrollably."
+297,"WBS 
+(Work Breakdown Structure)","A hierarchical decomposition of the total scope
+of work.",Project Team,Project Manager,"To break down complex tasks
+into manageable chunks.","Tasks are missed; poor cost and
+time estimation."
+298,Project Management Plan,"The master document defining how the project is
+executed and controlled.",Project Manager,All Stakeholders,"To provide a baseline for
+progress and decision-making.","Lack of direction; team works in
+silos."
+299,Gantt Chart,"A visual timeline showing tasks, durations, and
+dependencies.",Project Manager,Project Team / Client,"To track the schedule and see
+task overlaps.","Deadlines are missed; team
+doesn't know what's next."
+300,Risk Register,"A log of potential ""what-if"" scenarios and their
+response plans.",Project Team,Project Manager,"To identify and mitigate threats
+before they happen.","Project is blindsided by predictable
+problems."
+301,RACI Matrix,"A chart showing who is Responsible,
+Accountable, Consulted, and Informed.",Project Manager,Project Team,"To clarify roles and avoid
+confusion over task ownership.","Duplicate work or tasks ""falling
+through the cracks."""
+302,Change Request,"A formal proposal to modify any document,
+deliverable, or baseline.",Any Stakeholder,"Change Control
+Board (CCB)","To ensure changes are
+evaluated for impact on
+cost/time.","Uncontrolled changes lead to
+budget and time overruns."
+303,Issue Log,"A record of current problems affecting the
+project.",Project Manager,Project Team,"To document, track, and resolve
+active hurdles.","Problems are forgotten and
+escalate into disasters."
+304,Status Report,"A regular update on the current health of the
+project.",Project Manager,Sponsor / Client,"To keep stakeholders informed
+on progress vs. plan.","Stakeholders lose trust or lack
+visibility."
+305,Quality Management Plan,"Standards and criteria the project must meet to
+be successful.",Quality Lead / PM,Project Team,"To ensure the final product is
+fit for use.","High defect rates and client
+dissatisfaction."
+306,Resource Calendar,"A schedule showing when specific resources
+(people/equip) are available.",Resource Manager,Project Manager,"To avoid over-allocating people
+or tools.","Resource conflicts; team members
+are overworked."
+307,"Procurement Statement
+of Work","A description of work to be done by an outside
+vendor.",Project Manager,Potential Vendors,"To clearly define what a
+contractor must deliver.","Disputes with vendors over what
+was ""promised."""
+308,Milestone List,A list of significant points or events in a project.,Project Manager,Client / Sponsor,"To show high-level progress
+without getting lost in details.","Hard to judge if the project is
+""on track"" overall."
+309,Communication Plan,"A strategy for who gets what info, when,
+and how.",Project Manager,All Stakeholders,"To ensure the right people are
+always informed.","Information silos; stakeholders
+feel left out."
+310,Critical Path,"The sequence of tasks that determines the
+shortest project duration.",Project Manager,Project Team,"To identify tasks that cannot be
+delayed without delaying
+the project.","Inability to prioritize tasks that
+impact the end date."
+311,Lesson Learned Register,"A document recording what went well and what
+didn't.",Project Team,Organization (PMO),"To improve performance in
+future projects.","Repeating the same mistakes in
+the next project."
+312,Project Closure Report,"A formal document confirming the project is
+finished.",Project Manager,Sponsor / Client,"To handover deliverables and
+release resources.","Projects ""drag on"" indefinitely
+without a clean end."
+313,Product Backlog,"An ordered list of everything that might
+be needed in the product.",Product Owner,Scrum Team,"To serve as the single source of
+requirements for any changes.","Team lacks a clear priority of what
+to build next."
+314,Sprint Backlog,"A set of backlog items selected for a specific
+Sprint (short work cycle).",Development Team,Scrum Team,"To define the work the team
+commits to doing in the next
+2-4 weeks.","Lack of focus during the work
+cycle; over-commitment."
+315,Burn-down Chart,"A graphic representation of work left to do
+versus time.",Scrum Master / PM,Project Team,"To track the progress of a sprint
+and predict if work will finish.","Team won't realize they are
+behind until the deadline hits."
+316,Velocity,"A measure of the amount of work a team
+can tackle during a single period.",Development Team,Product Owner / PM,"To help in planning future
+capacity and timelines.","Unrealistic scheduling and
+""guess-work"" planning."
+317,"Cost Performance
+Index (CPI)","A measure of the financial effectiveness of a
+project ($EV / AC$).",Project Manager,Sponsor / Stakeholders,"To see if the project is under or
+over budget.","Financial ""bleeding"" goes
+unnoticed until funds run out."
+318,"Schedule Performance
+Index (SPI)",A measure of schedule efficiency ($EV / PV$).,Project Manager,Sponsor / Stakeholders,"To see if the project is ahead of
+or behind schedule.","Delays are not quantified,
+making recovery difficult."
+319,Assumption Log,"A record of all factors believed to be true without
+proof.",Project Manager,Project Team,"To track variables that could
+become risks if proven false.","Decisions are made based on
+""guesses"" that may fail."
+320,Quality Metrics,"Specifically defined attributes to be measured
+(e.g., failure rate).",Quality Lead,Project Team,"To provide an objective way to
+measure ""success.""","Quality is subjective; arguments
+over ""finished"" work."
+321,"Responsibility Assignment
+Matrix (RAM)","A grid showing project resources assigned to
+each work package.",Project Manager,Functional Managers,"To ensure every task has a
+body assigned to it.","Resources are under-utilized or
+double-booked."
+322,Variance Analysis,"The practice of comparing planned results with
+actual results.",Project Manager,Project Board,"To identify why the project is
+deviating from the plan.","No understanding of why the
+project is failing or succeeding."
+323,Kick-off Meeting Agenda,"A document outlining the first formal meeting
+with all stakeholders.",Project Manager,All Stakeholders,"To align everyone on goals and
+set the tone for the project.","Confusion from day one; lack of
+team cohesion."
+324,"Request for
+Proposal (RFP)","A document that solicits proposals from vendors
+for a solution.",Procurement Dept / PM,Potential Vendors,"To compare different vendors'
+solutions and pricing fairly.","Biased vendor selection or
+overpaying for services."
+325,"SLA
+(Service Level Agreement)","A contract between a service provider and a
+customer.",Service Provider,Client,"To define the level of service
+(uptime, speed) expected.","No legal recourse if the service
+provider performs poorly."
+326,"Definition of
+Done (DoD)","A shared understanding of what it means for
+work to be complete.",Project Team,Stakeholders,"To ensure quality and prevent
+""half-baked"" deliverables.","Tasks are marked ""done"" but still
+require bug fixes later."
+327,"Baseline
+(Schedule/Cost)","The original approved version of the project
+schedule or budget.",Project Manager,Sponsor,"To serve as the ""yardstick"" for
+measuring performance.","No way to know if you are over
+budget or late."
+328,User Stories,"Informal, natural language descriptions of
+features from the end-user's view.",Product Owner / User,Development Team,"To capture functional
+requirements in a way that
+provides value.","Features are built that the
+customer doesn't actually want."
+329,Histogram (Resource),"A bar chart showing the amount of time a
+resource is scheduled.",Project Manager,Resource Manager,"To visually identify resource
+overloads or ""burnout.""","Team members are overworked
+while others sit idle."
+330,"Probability and
+Impact Matrix","A grid mapping the likelihood and severity
+of risks.",Risk Manager / PM,Project Team,"To prioritize which risks need
+immediate attention.","Waste of time focusing on
+""unlikely"" or ""minor"" risks."
+331,Change Log,"A list of all changes submitted and their current
+status.",Project Manager,Stakeholders,"To keep a history of how the
+project evolved from the original
+plan.","No record of why the budget or
+scope increased."
+332,"Final Deliverable
+Acceptance","A formal sign-off from the customer on the end
+product.",Client / Customer,Project Manager,"To legally and professionally
+close the project and stop work.","The client keeps asking for ""one
+more thing"" forever."
+333,SIPOC Diagram,"A tool to document Suppliers, Inputs, Process,
+Outputs, and Customers.",Project Team,Stakeholders,"To provide a high-level view of
+a process before detailing it.","Misunderstanding of where the
+project boundaries start/end."
+334,"Ishikawa (Fishbone)
+Diagram","A visualization tool to categorize potential causes
+of a problem.",Project Team,Project Manager,"To identify the root cause of an
+issue rather than just symptoms.","Solving the wrong problem; issues
+keep recurring."
+335,Monte Carlo Simulation,"A computerized mathematical technique to
+account for risk in quantitative analysis.",Data Analyst / PM,Sponsor,"To predict the probability of
+completing a project on a
+specific date.","Unrealistic confidence in a single
+""best-case"" date."
+336,Work Package,"The lowest level of the Work
+Breakdown Structure (WBS).",Project Manager,Team Lead,"To define specific tasks that
+can be estimated and managed.","Work is too vague to assign or
+estimate accurately."
+337,Kanban Board,"A visual workflow tool that uses cards to
+represent work items.",Project Team,Project Team,"To manage work-in-progress
+(WIP) and optimize flow.","Work gets ""stuck"" in bottlenecks
+without being noticed."
+338,"Critical Success
+Factors (CSF)","Key areas that must go right for the project to be
+a success.",Project Sponsor,Project Manager,"To focus the team's energy on
+the most important variables.","Efforts are wasted on ""nice-to-have""
+features that don't matter."
+339,Contingency Reserve,"Budget or time set aside for ""known-unknowns""
+(identified risks).",Project Manager,Project Team,"To handle risks that were
+predicted in the Risk Register.","Project runs out of money as soon
+as a single risk occurs."
+340,Management Reserve,"Budget set aside for ""unknown-unknowns""
+(unforeseen events).",Sponsor,Project Manager,"To provide a safety net for
+totally unexpected disasters.","Project is cancelled if a random,
+unpredicted crisis hits."
+341,Pareto Chart,"A bar graph where values are plotted in
+decreasing order of frequency.",Quality Manager,Project Team,"To follow the 80/20 rule (focus
+on the 20% of causes creating
+80% of problems).","Fixing minor issues while the
+biggest failures are ignored."
+342,Earned Value (EV),"The value of work actually performed expressed
+in terms of the budget.",Project Manager,Finance Dept,"To measure the ""true"" progress
+of a project vs. money spent.","Thinking you are ""under budget""
+just because you haven't spent
+much."
+343,Product Roadmap,"A high-level visual summary that maps out the
+vision of a product over time.",Product Manager,Stakeholders,"To communicate the long-term
+strategy and direction.","The team focuses on immediate
+tasks and loses the ""big picture."""
+344,"S.O.W.
+(Statement of Work)","A narrative description of products, services, or
+results to be delivered.",Client,Project Manager,"To define the technical and
+performance requirements
+of a contract.","Legal disputes over what was
+supposed to be built."
+345,Velocity Trend,A tracking of velocity over multiple sprints.,Scrum Master,Product Owner,"To see if the team is becoming
+more or less efficient over time.","Inability to forecast long-term
+release dates for the product."
+346,Retrospective Minutes,"Notes from a meeting where the team discusses
+how to improve.",Scrum Master,Project Team,"To implement process
+improvements immediately.","The team continues to work in an
+inefficient or toxic way."
+347,Feasibility Study,"An assessment of the practicality of a proposed
+plan or method.",Subject Matter Expert,Sponsor,"To determine if a project is
+technically or financially
+possible.","Investing millions into a project
+that is impossible to finish."
+348,Resource Leveling,"A technique in which start/finish dates are
+adjusted based on resource constraints.",Project Manager,Team Members,"To ensure no one person is
+assigned 60 hours of work in
+a 40-hour week.",High staff turnover and burnout.
+349,Dependency Log,"A list of tasks that rely on other tasks or external
+factors.",Project Manager,Project Team,"To ensure ""Task B"" doesn't start
+before ""Task A"" is finished.","Team members sit idle waiting for
+others to finish work."
+350,Escalation Matrix,"A plan defining when and how to move a
+problem to higher management.",Project Manager,Stakeholders,"To ensure big problems get the
+attention they need quickly.","Junior staff try to fix massive
+problems alone, wasting time."
+351,Benefits Realization Plan,"A plan to ensure the project benefits are actually
+achieved after closing.",Project Sponsor,Business Owner,"To track if the project actually
+improved the business as
+intended.","The project is ""finished,""
+but the business never sees
+the profit."
+352,Acceptance Criteria,"A set of conditions that must be met before a
+deliverable is accepted.",Product Owner,Project Team,"To remove ambiguity regarding
+""quality"" or ""completion.""","Rejection of work by the client
+at the very last minute."
+353,Value Stream Map,"A lean tool used to document every step in a
+process from start to finish.",Project Team,Stakeholders,"To identify and eliminate non-
+value-added activities (waste).","The project team remains
+inefficient without knowing where
+the lag is."
+354,"Project Funding
+Requirements","A forecast of project costs to be paid that
+includes the ""when"" and ""how much.""",Project Manager,Sponsor / Finance,"To ensure the organization has
+the cash flow ready for project
+bills.","Project stops abruptly because
+there is no cash to pay vendors."
+355,Tornado Diagram,"A sensitivity analysis tool showing which risks
+have the most impact.",Risk Manager,Project Manager,"To visually prioritize the risks
+that could swing the budget the
+most.","Focus is spread thin across all
+risks instead of the ""big hitters."""
+356,MoSCoW Prioritization,"A technique to categorize requirements: Must
+have, Should have, Could have, Won't have.",Product Owner,Project Team,"To manage scope when time or
+budget is limited.","Everything is treated as ""urgent,""
+leading to total project burnout."
+357,Burndown Velocity,"The rate at which the remaining work is
+decreasing.",Scrum Master,Team,"To predict the exact day the
+current workload will hit zero.","Management sets unrealistic
+launch dates based on hope,
+not data."
+358,Lead and Lag,"Adjustments to the start/end of dependent tasks
+(Lead accelerates, Lag delays).",Project Manager,Project Team,"To fine-tune the schedule for
+realistic transitions between
+tasks.","The schedule is too rigid or
+physically impossible to execute."
+359,Firm Fixed Price (FFP),"A contract type where the price is set and does
+not change.",Procurement,Vendor,"To shift the financial risk onto
+the seller/vendor.","Cost overruns by the vendor
+become the buyer's financial
+problem."
+360,Cost Plus (CPFF),"A contract where the buyer pays for costs plus a
+fixed fee.",Procurement,Vendor,"To encourage vendors to take
+on high-risk, experimental work.","No incentive for the vendor to
+control costs; budget may spiral."
+361,Control Account,"A management control point where scope, cost,
+and schedule are integrated.",Project Manager,Finance Dept,"To track performance at a level
+above individual work packages.","Hard to pinpoint which specific
+department is overspending."
+362,Project Dashboard,"A real-time visual display of Key Performance
+Indicators (KPIs).",Project Manager,All Stakeholders,"To provide an ""at-a-glance""
+health check of the project.","Stakeholders have to dig through
+50-page reports to find basic info."
+363,"Precedence Diagramming
+Method (PDM)","A technique used for constructing a schedule
+model (Boxes and Arrows).",Project Manager,Project Team,"To visualize how all tasks are
+logically connected.","Logic errors in the schedule
+(e.g., building the roof before
+the walls)."
+364,Basis of Estimates (BOE),"Supporting documentation explaining how
+cost/time figures were calculated.",Project Team,Project Manager,"To provide transparency and
+""defend"" the budget to the
+board.","The budget looks like
+""made-up numbers"" and gets
+cut by management."
+365,Procurement Audit,"A structured review of the procurement process
+from start to finish.",Auditor / PMO,Project Team,"To identify successes and
+failures in vendor management.","Legal loopholes or bad vendor
+behaviors are repeated in next
+project."
+366,"Project Management
+Information System (PMIS)","The software or tools used to gather and
+distribute information.",Organization / IT,Project Team,"To centralize all project data
+(e.g., Jira, MS Project, Asana).","Information is lost in email threads
+and personal spreadsheets."
+367,Work Authorization System,A formal procedure for sanctioning project work.,Project Manager,Functional Team,"To ensure work is done at the
+right time and in the right
+sequence.","Team members start tasks too
+early, wasting resources."
+368,"Project Governance
+Framework","The rules, roles, and processes that guide
+project activities.",PMO / Executive,Project Manager,"To ensure the project aligns
+with the company’s strategic
+goals.","The project is successful
+technically but fails the
+company's mission."
+369,Transition Plan,"A document detailing how the ""end product""
+moves to the ""end user.""",Project Manager,Operations Team,"To ensure the project isn't
+""dropped"" on users without
+training.","The product is built but nobody
+knows how to maintain or use it."
+370,Teaming Agreement,"A legal agreement between two entities to work
+together on a project.",Legal / Sponsor,Project Partners,"To define the partnership
+before a full contract is signed.","Partners fight over intellectual
+property or profit sharing later."
+371,"Requirement Traceability
+Matrix (RTM)","A grid that links requirements from their origin to
+the deliverables.",Project Manager,Quality Team,"To ensure that every single
+requirement is actually tested
+and met.","Features are missed during
+development, failing the client's
+needs."
+372,Gold Plating,"The practice of adding extra features not
+requested by the client.",Development Team,Project Manager,"(Often an error) Trying to ""wow""
+the client with unrequested work.","Wasted budget and time on things
+the client didn't ask for."
+373,Project Portfolio Map,"A high-level visual of all active projects within an
+organization.",PMO / Director,Executive Board,"To ensure the mix of projects
+balances risk and strategic
+reward.","The company takes on too many
+high-risk projects at once."
+374,"Variance at Completion
+(VAC)","A projection of the budget deficit or surplus at the
+end of the project.",Project Manager,Project Sponsor,"To warn stakeholders exactly
+how much the project will be
+over/under budget.","Financial surprises at the very
+end of the project when it's too
+late."
+375,"Operational Readiness
+Review (ORR)","An audit to ensure the organization is ready to
+support the new product.",Operations Manager,Project Manager,"To confirm that support staff,
+manuals, and tools are in place
+for launch.","The project ""goes live"" but the
+support team is unable to help
+users."
+376,"Post-Implementation
+Review (PIR)","An evaluation conducted months after the
+project is closed.",Business Analyst,Stakeholders,"To measure if the project actually
+delivered the expected long-term
+value.","No one knows if the project
+actually solved the original
+business problem."
+377,"Certificate of Practical
+Completion","A legal document stating the work is substantially
+complete and safe for use.",Project Manager / Architect,Client,"To hand over the responsibility/
+liability of the site or product
+to the owner.","Ongoing legal liability for the
+project team even after they
+have left."
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
